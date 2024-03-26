@@ -1,15 +1,14 @@
 import React from 'react'
 import './App.css'
+import Header from './pages/Header'
 
 function App() {
 
   return (
     <>
-      <div>
-        <p className='text-6xl text-yellow-800'>hello</p>
-      </div>
+      <Header/>
     </>
-  )
+  ) 
 }
 
 export default App
