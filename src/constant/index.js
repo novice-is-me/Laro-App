@@ -17,10 +17,26 @@ export const links = [
         ]
     },{
         footerLink:[
-            "Home",
-            "Matches",
-            "Courts",
-            "About"
+            {
+                title: "Contact Us",
+                links: [
+                    "hello@laroph.com" ,
+                    "(+63)00-00-000-00"
+                ]
+            },{
+                title: "Navigate",
+                links: [
+                    "Home",
+                    "About",
+                    "Play Now"
+                ]
+            },{
+                title: "FAQs",
+                links: [
+                    "Earn Money",
+                    "Referral Program"
+                ]
+            }
         ]
     },{
         headerBtn: [
@@ -34,5 +50,32 @@ export const links = [
                 path: "/play" 
             }
         ]
-    } 
+    },{
+        policies: [
+            "Privay and Cookies",
+            "Content Policy",
+            "Terms of Use",
+            "Feedback"
+        ]
+    },{
+        footerBtn: [
+            {
+                id: 1,
+                name: "Login",
+                path: "/login"
+            },{
+                id: 2,
+                name: "Create Account",
+                path: "/register"
+            },{
+                id: 3,
+                name: "Apply as Organizer",
+                path: "/organizer"
+            },{
+                id: 4,
+                name: "Apply as Court Owner",
+                path: "/court-owner"
+            }
+        ]
+    }
 ]
