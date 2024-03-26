@@ -30,8 +30,8 @@ export const links = [
                 path: "/login"
             },{
                 id: 2,
-                name: "Sign Up",
-                path: "/signup"
+                name: "Play Now",
+                path: "/play" 
             }
         ]
     } 

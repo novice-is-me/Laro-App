@@ -7,8 +7,8 @@ const LoginSignUpButton = ({text, path, value}) => {
     ${value === 1 ? "border-orange bg-[#FFF6F2] text-[#FA5000]" 
     : "border-[#FFF6F2] bg-[#FA5000] text-[#FFFFFF]"}`}>
       <Link to={path}>
-        <a href=""
-        className='font-poppins text-sm'>{text}</a>
+        <p href=""
+        className='font-poppins text-sm'>{text}</p>
     </Link>
     </div>
   )

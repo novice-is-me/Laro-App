@@ -9,7 +9,7 @@ const NavLinks = ({text, path}) => {
       <NavLink to={path} 
       style={{width: '30px'}}
       className={({isActive}) => isActive ? active : ''}>
-        <a href="" className='font-poppins border-0 text-sm'>{text}</a>
+        <p href="" className='font-poppins border-0 text-sm'>{text}</p>
       </NavLink>  
     </div>
   )
