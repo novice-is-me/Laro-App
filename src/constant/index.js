@@ -1,10 +1,81 @@
-const links = [
+export const links = [
     {
         navigationBar:[
-            "Home",
-            "Matches",
-            "Courts",
-            "About"
+            {
+                name: "Home",
+                path: "/"
+            },{
+                name: "Matches",
+                path: "/matches"
+            },{
+                name: "Courts",
+                path: "/court"
+            },{
+                name: "About",
+                path: "/about"
+            }
+        ]
+    },{
+        footerLink:[
+            {
+                title: "Contact Us",
+                links: [
+                    "hello@laroph.com" ,
+                    "(+63)00-00-000-00"
+                ]
+            },{
+                title: "Navigate",
+                links: [
+                    "Home",
+                    "About",
+                    "Play Now"
+                ]
+            },{
+                title: "FAQs",
+                links: [
+                    "Earn Money",
+                    "Referral Program"
+                ]
+            }
+        ]
+    },{
+        headerBtn: [
+            {
+                id: 1,
+                name: "Login",
+                path: "/login"
+            },{
+                id: 2,
+                name: "Play Now",
+                path: "/play" 
+            }
+        ]
+    },{
+        policies: [
+            "Privay and Cookies",
+            "Content Policy",
+            "Terms of Use",
+            "Feedback"
+        ]
+    },{
+        footerBtn: [
+            {
+                id: 1,
+                name: "Login",
+                path: "/login"
+            },{
+                id: 2,
+                name: "Create Account",
+                path: "/register"
+            },{
+                id: 3,
+                name: "Apply as Organizer",
+                path: "/organizer"
+            },{
+                id: 4,
+                name: "Apply as Court Owner",
+                path: "/court-owner"
+            }
         ]
     }
 ]
