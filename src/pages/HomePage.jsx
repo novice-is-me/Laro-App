@@ -1,13 +1,12 @@
 import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
+import CreateAccount from './CreateAccount'
 
 const HomePage = () => {
   return (
     <div>
-      <Header/>
-      Home
-      <Footer/>
+      <Footer />
     </div>
   )
 }

@@ -15,16 +15,15 @@ function App() {
     <>
       <Header />
 
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<HomePage/>}></Route>
-          <Route path='/matches' element={<Matches/>}></Route>
-          <Route path='/court' element={<Court/>}></Route>
-          <Route path='/about' element={<About/>}></Route>
-          <Route path='/login' element={<Login/>}></Route>
-          <Route path='/create' element={''}></Route> 
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path='/' element={<HomePage />}></Route>
+        <Route path='/matches' element={<Matches />}></Route>
+        <Route path='/court' element={<Court />}></Route>
+        <Route path='/about' element={<About />}></Route>
+        <Route path='/login' element={<Login />}></Route>
+        <Route path='/create' element={''}></Route>
+      </Routes>
+
     </>
   )
 }
