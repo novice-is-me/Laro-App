@@ -34,6 +34,9 @@ export default {
 
       'sm': { 'max': '639px' },
       // => @media (max-width: 639px) { ... }
+
+      'xsm': { 'max': '539px' }, 
+      // => @media (max-width: 479px) { ... }
     }
   }, 
 },
