@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import PictureComponent from './PictureComponent';
+import player from '../assets/image/player.png'
 
 
 const CreateAccount = () => {
@@ -58,7 +59,7 @@ const CreateAccount = () => {
             </div>
 
             <div className='w-[50%] flex items-center justify-center sm:hidden 832px:scale-[0.8] 770px:scale-[0.7]'>
-                <PictureComponent />
+                <PictureComponent img={player} value={'create'}/>
             </div>
 
 

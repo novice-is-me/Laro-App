@@ -6,9 +6,15 @@ export default {
   ],
   theme: {
     extend: {
-    },
     fontFamily: {
       'Poppins': ['Poppins', 'sans-serif'],
+    },
+    colors:{
+      'orange' : '#FA5000',
+      'bgColor': '#FFF6F2' 
+    },
+    dropShadow:{
+      shadowBtn : '0px 5px 1px rgba(0,0,0,0.16 )'
     },
     screens: {
       '2xl': { 'max': '1535px' },
@@ -28,16 +34,9 @@ export default {
 
       'sm': { 'max': '639px' },
       // => @media (max-width: 639px) { ... }
-
-      colors:{
-        'orange' : '#FA5000',
-        'bgColor': '#FFF6F2'
-      },
-      dropShadow:{
-        shadowBtn : '0px 5px 1px rgba(0,0,0,0.16 )'
-      }
-    },
-  },
+    }
+  }, 
+},
   plugins: [],
 }
 
