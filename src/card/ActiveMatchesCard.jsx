@@ -1,7 +1,4 @@
 import React from 'react'
-import img1 from '../assets/Active Match/activematch1.jpg'
-import player1 from '../assets/Active Match/player1.jpg'
-import { faTrophy } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 

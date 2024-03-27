@@ -8,11 +8,16 @@ import img1 from '../assets/Active Match/activematch1.jpg'
 import img2 from '../assets/Active Match/activematch2.jpeg'
 import img3 from '../assets/Active Match/activematch3.jpg'
 import img4 from '../assets/Active Match/activematch4.jpg'
+import court1 from '../assets/Active Match/court1.jpg'
+import court2 from '../assets/Active Match/court2.jpeg'
+import court3 from '../assets/Active Match/court3.jpeg'
+import court4 from '../assets/Active Match/court4.jpg'
+
 
 export const ActiveMatch = [
     {
         id: 1,
-        imagecard: img1 ,
+        imagecard: img1,
         type: "Veteran",
         title: "Championship",
         icon: faTrophy,
@@ -45,5 +50,32 @@ export const ActiveMatch = [
         icon: faTrophy,
         profilephoto: player4,
         organizer: "Kenneth Quinto"
+    },
+]
+
+export const CardData = [
+    {
+        id: 1,
+        isAvailable: false,
+        imagecard: court1,
+        location: "Pasig city",
+    },
+    {
+        id: 2,
+        isAvailable: true,
+        imagecard: court2,
+        location: "Mandaluyong",
+    },
+    {
+        id: 3,
+        isAvailable: false,
+        imagecard: court3,
+        location: "Marikina City",
+    },
+    {
+        id: 4,
+        isAvailable: true,
+        imagecard: court4,
+        location: "Antipolo city",
     },
 ]
