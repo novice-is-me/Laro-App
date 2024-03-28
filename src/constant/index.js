@@ -1,3 +1,6 @@
+import { faCompass, faSquarePen, faStar } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
 export const links = [
     {
         navigationBar:[
@@ -77,5 +80,24 @@ export const links = [
                 path: "/court-owner"
             }
         ]
+    }
+]
+
+export const choices = [
+    {
+        icon: faCompass,  
+        text: 'Joined a game near you?',
+        choice: 'Find',
+        placeholder: "Enter Matches (ex) Shooting"
+    },{
+        icon: faSquarePen,
+        text: 'Organize a game',
+        choice: 'Setup',
+        placeholder: "Create Event"
+    },{
+        icon: faStar,
+        text: 'Find Courts near you?',
+        choice: 'Find',
+        placeholder: "Enter Location"
     }
 ]

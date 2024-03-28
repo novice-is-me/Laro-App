@@ -26,6 +26,7 @@ export default {
       'lg': { 'max': '1023px' },
       // => @media (max-width: 1023px) { ... }
 
+      '950px': { 'max': '950px'},
       '832px': { 'max': '832px' },
       '770px': { 'max': '770px' },
 
