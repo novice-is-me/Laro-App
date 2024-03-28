@@ -10,7 +10,7 @@ const Header = () => {
   const [isClicked, setIsClicked] = useState(false)
 
   return (
-    <div className='py-8 px-[3rem] flex justify-between bg-bgColor items-center'>
+    <div className='py-8 px-[5rem] flex justify-between bg-bgColor items-center'>
       <div>
         <img src={Logo} alt="logo" />
       </div>

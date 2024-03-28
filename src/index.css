@@ -9,12 +9,21 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-#navLink a.active{ 
-    border-bottom: 5px solid orange;
-    background-color: red;
-} 
-
+ 
 .icon{
     color: #FA5000;
+}
+
+@layer utilities{
+    .bg-join{
+        background: linear-gradient(90deg, #000000 47%, #FA5000 47%);
+    }    
+
+    .bg-join2{
+        background: linear-gradient(180deg, #000000 47%, #FA5000 47%);
+    }  
+
+    .bg-join3{
+        background: linear-gradient(90deg, #000000, #000000); 
+    }
 }

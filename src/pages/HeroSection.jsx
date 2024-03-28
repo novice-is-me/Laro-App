@@ -6,7 +6,7 @@ import { image1, image2 } from '../assets'
 
 const HeroSection = () => {
   return (
-    <div className=' bg-bgColor flex gap-8 justify-between p-[3rem]'>
+    <div className=' bg-bgColor flex gap-8 justify-between py-[3rem] px-[5rem]'>
       <div className=' flex flex-col 950px:items-center 950px:text-center'>  
         <div className='flex flex-col gap-y-8 mb-8'>
           <h1 className='uppercase font-Poppins text-[50px] font-bold leading-[60px] xsm:text-[20px] xsm:leading-normal'>
