@@ -10,7 +10,7 @@ const Options = ({icon, text, choice, placeholder}) => {
     onMouseLeave={() => setIsHovered(false)}>
       <div className='bg-white rounded-[40px] p-4 w-[250px] hover:cursor-pointer xsm:p-2 xsm:w-[230px]'>  
         <div className='flex gap-8 items-center'>
-            <FontAwesomeIcon icon={icon} 
+            <FontAwesomeIcon icon={icon}  
             className='icon fa-2x'/>    
             <input className='font-poppins text-[#818181] text-sm border-transparent outline-none' 
             placeholder={(isHovered === true ? placeholder : text)}/>

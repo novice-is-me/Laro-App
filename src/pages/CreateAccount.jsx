@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import PictureComponent from './PictureComponent';
-import player from '../assets/image/player.png'
+import PictureComponent from '../components/PictureComponent';
+import player from '../assets/image/player.png' 
 
 
 const CreateAccount = () => {

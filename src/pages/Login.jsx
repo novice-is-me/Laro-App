@@ -1,8 +1,7 @@
 import React from 'react'
 import LoginForm from '../components/LoginForm'
 import { Link } from 'react-router-dom'
-import PictureComponent from './PictureComponent'
-import Header from './Header'
+import PictureComponent from '../components/PictureComponent' 
 import { loginImg } from '../assets'
 import Footer from './Footer'
 

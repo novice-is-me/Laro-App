@@ -24,28 +24,14 @@ const Matches = () => {
               className='py-3 text-sm font-Poppins rounded-[30px] pl-5 pr-20 outline-none' />
 
             <FontAwesomeIcon icon={faMagnifyingGlass} className='absolute right-5 top-3' />
-
           </div>
-
-
-
-
-        </div>
-
+        </div> 
         <div className='flex gap-2 flex-wrap scale-[1] mt-5 justify-center'>
           {ActiveMatch.map(card => (
             <ActiveMatchesCard key={card.id} card={card} />
           ))}
-
-
         </div>
-
-
-
-
       </div>
-
-
     </div>
   )
 }
