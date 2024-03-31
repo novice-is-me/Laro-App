@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { ActiveMatch } from '../constant/ActiveMatchData'
 
+
 const Matches = () => {
   return (
     <div className='bg-[#fff6f2] w-full px-9 py-7'>
@@ -25,7 +26,7 @@ const Matches = () => {
 
             <FontAwesomeIcon icon={faMagnifyingGlass} className='absolute right-5 top-3' />
           </div>
-        </div> 
+        </div>
         <div className='flex gap-2 flex-wrap scale-[1] mt-5 justify-center'>
           {ActiveMatch.map(card => (
             <ActiveMatchesCard key={card.id} card={card} />
