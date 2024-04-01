@@ -11,11 +11,11 @@ const Advertisments = () => {
              xsm:text-[20px]'>
                 Advertisments Placements</h1> 
         </div>    
-        <div>
+        <div> 
             <img src={Ads} alt="" />
         </div>
       </div>
-    </div>
+    </div> 
   )
 }
 
