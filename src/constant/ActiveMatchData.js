@@ -79,3 +79,9 @@ export const CardData = [
         location: "Antipolo city",
     },
 ]
+
+export const PlayersData = [
+    {
+
+    }
+]
