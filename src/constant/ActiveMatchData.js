@@ -82,6 +82,68 @@ export const CardData = [
 
 export const PlayersData = [
     {
+        id: 1,
+        name: "Bryan Angelo Aguillera",
+        status: "Veteran"
+    },
 
+    {
+        id: 2,
+        name: "Mhel Yrvin De Torres",
+        status: "Veteran"
+    },
+
+    {
+        id: 3,
+        name: "Desiree Diane Cabales",
+        status: "Veteran"
+    },
+
+    {
+        id: 4,
+        name: "Paul Kenneth Quinto",
+        status: "Veteran"
+    },
+    {
+        id: 5,
+        name: "Rhezel Landicho",
+        status: "Veteran"
+    },
+
+    {
+        id: 6,
+        name: "Dixie Mae Endozo",
+        status: "Veteran"
+    },
+    {
+        id: 7,
+        name: "Angelo Burog",
+        status: "Veteran"
+    },
+    // {
+    //     id: 8,
+    //     name: "Jean Badinas",
+    //     status: "Veteran"
+    // },
+    // {
+    //     id: 9,
+    //     name: "Leonard Arguelles",
+    //     status: "Veteran"
+    // },
+    // {
+    //     id: 10,
+    //     name: "Regina Jalandoni",
+    //     status: "Veteran"
+    // },
+]
+
+export const RefereesData = [
+    {
+        id: 1,
+        name: "Bini Maloi",
+    },
+    {
+        id: 2,
+        name: "Bini Jhoanna"
     }
 ]

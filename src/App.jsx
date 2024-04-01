@@ -14,7 +14,6 @@ function App() {
   return (
     <>
       <Header />
-
       <Routes>
         <Route path='/' element={<HomePage />}></Route>
         <Route path='/matches' element={<Matches />}></Route>
