@@ -28,4 +28,10 @@
         background: linear-gradient(90deg, #000000, #000000); 
     } 
 
+    .about-bg {
+        background: radial-gradient(circle at 600px 350px, #FFEEE6 355px, transparent 10%),
+        linear-gradient(90deg, #fa5000 36%, transparent 36%);
+    }
+    
+  
 }

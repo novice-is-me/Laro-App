@@ -25,8 +25,8 @@ const Footer = () => {
       </div>
       <div className='flex justify-center gap-[5rem] mt-8 xsm:flex-col xsm:gap-4'>
       {links[3].policies.map((policy, i)=>{
-            return <p className='font-poppins'>{policy}</p>
-          })}
+            return <p className='font-poppins' key={i}>{policy}</p>
+          })} 
       </div>
     </div>
     
