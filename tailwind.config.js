@@ -9,9 +9,10 @@ export default {
     fontFamily: {
       'Poppins': ['Poppins', 'sans-serif'],
     },
-    colors:{
+    colors:{ 
       'orange' : '#FA5000',
-      'bgColor': '#FFF6F2' 
+      'bgColor': '#FFF6F2',
+      'gray' : '#A5A5A5'
     },
     dropShadow:{
       shadowBtn : '0px 5px 1px rgba(0,0,0,0.16 )',

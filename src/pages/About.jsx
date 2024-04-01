@@ -2,7 +2,7 @@ import React from 'react'
 import { aboutImg } from '../assets'
 
 const About = () => {
-  return (
+  return ( 
     <div className='bg-bgColor w-full px-9 py-3 relative'>
       <div className=' flex w-full about-bg px-[4rem] xsm:p-[3rem] rounded-[20px] 
       pb-0  items-center gap-[10rem] mb-12'>  
