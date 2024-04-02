@@ -14,7 +14,7 @@ const PlayersCard = ({ player }) => {
                 </div>
             </div>
         </div>
-    )
+    ) 
 }
 
 export default PlayersCard

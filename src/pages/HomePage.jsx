@@ -6,6 +6,7 @@ import Court from './Court'
 import Join from './Join' 
 import Gameplay from './Gameplay'
 import Advertisments from './Advertisments'
+import About from './About'
 
 const HomePage = () => {
   return (
@@ -16,6 +17,7 @@ const HomePage = () => {
       <Join/>
       <Gameplay/>
       <Advertisments/>
+      <About/>
       <Footer />
     </div>
   )

@@ -9,7 +9,7 @@ export default {
     fontFamily: {
       'Poppins': ['Poppins', 'sans-serif'],
     },
-    colors:{
+    colors:{ 
       'orange' : '#FA5000',
       'bgColor': '#FFF6F2',
       'gray' : '#A5A5A5'
@@ -17,7 +17,7 @@ export default {
     dropShadow:{
       shadowBtn : '0px 5px 1px rgba(0,0,0,0.16 )',
       shadowCard: '0px 4px 0px #000000'
-    },
+    }, 
     screens: {
       '2xl': { 'max': '1535px' },
       // => @media (max-width: 1535px) { ... }
