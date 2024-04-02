@@ -17,7 +17,7 @@ const HeroSection = () => {
               return (
                   <div key={i} 
                   className='flex'>
-                      <Options {...choice}/>
+                      <Options {...choice} key={i}/>
                   </div>    
               )
           })} 

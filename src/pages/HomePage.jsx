@@ -7,17 +7,19 @@ import Join from './Join'
 import Gameplay from './Gameplay'
 import Advertisments from './Advertisments'
 import About from './About'
+import CourtOwner from './CourtOwner'
 
 const HomePage = () => {
   return (
     <div>
-      <HeroSection/> 
+      <HeroSection/>  
       <Matches/>
       <Court/> 
-      <Join/>
+      <Join/> 
       <Gameplay/>
       <Advertisments/>
       <About/>
+      <CourtOwner/> 
       <Footer />
     </div>
   )

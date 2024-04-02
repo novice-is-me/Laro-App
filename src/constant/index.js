@@ -85,16 +85,19 @@ export const links = [
 
 export const choices = [
     {
+        id: 1,
         icon: faCompass,  
         text: 'Joined a game near you?',
         choice: 'Find',
         placeholder: "Enter Matches (ex) Shooting"
     },{
+        id: 2,
         icon: faSquarePen,
         text: 'Organize a game',
         choice: 'Setup',
         placeholder: "Create Event"
     },{
+        id: 3, 
         icon: faStar,
         text: 'Find Courts near you?',
         choice: 'Find',

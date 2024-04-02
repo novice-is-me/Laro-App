@@ -34,7 +34,7 @@ const About = () => {
               approach to basketball scheduling, providing a seamless experience for 
               enthusiasts and organizers alike</p> 
           </div>
-          <div className='flex flex-col gap-6 xsm:items-center'>   
+          <div className='flex flex-col gap-6 xsm:items-center'>    
             <p>Follow our Social Media Page</p>
             <div className='flex gap-8'>  
               <svg xmlns="http://www.w3.org/2000/svg" width="38.474" height="38.474"><path d="M38.474 19.355C38.474 8.665 29.862 0 19.24 0 8.612.002 0 8.665 0 19.357c0 9.659 7.035 17.665 16.23 19.117V24.95h-4.881v-5.593h4.885V15.09c0-4.85 2.873-7.528 7.266-7.528 2.106 0 4.306.377 4.306.377v4.76H25.38c-2.387 0-3.133 1.494-3.133 3.025v3.631h5.333l-.85 5.593h-4.485v13.524c9.194-1.452 16.23-9.459 16.23-19.117Z" fill={xl ? '#ffffff' : '#FA5000'}  fill-rule="evenodd" data-name="Path 6"/></svg> 
@@ -42,7 +42,7 @@ const About = () => {
               <svg xmlns="http://www.w3.org/2000/svg" width="38.034" height="38.023" viewBox="1215 2459.647 38.034 38.023"><g data-name="instagram-filled"><path d="M1237.96 2479.072c0-2.058-1.682-3.732-3.748-3.732-2.067 0-3.748 1.674-3.748 3.732 0 2.058 1.681 3.731 3.748 3.731 2.066 0 3.748-1.673 3.748-3.731Zm5.569-19.425h-19.024c-5.24 0-9.505 4.245-9.505 9.464v2.637h13.987a9.002 9.002 0 0 1 5.225-1.665c1.946 0 3.749.618 5.225 1.665h13.597v-2.637c0-5.219-4.264-9.464-9.505-9.464Zm3.85 9c0 .58-.476 1.052-1.057 1.052h-3.263a1.057 1.057 0 0 1-1.056-1.051v-3.25c0-.578.475-1.051 1.056-1.051h3.263c.581 0 1.056.473 1.056 1.052v3.249Zm-4.138 10.425c0 4.957-4.051 8.989-9.03 8.989-4.978 0-9.028-4.032-9.028-8.99 0-1.364.309-2.658.858-3.818H1215v12.953c0 5.219 4.264 9.464 9.505 9.464h19.024c5.241 0 9.505-4.245 9.505-9.464v-12.953h-10.651a8.904 8.904 0 0 1 .858 3.819Z" fill={xl ? '#ffffff' : '#FA5000'} fill-rule="evenodd" data-name="Path 8"/></g></svg>
             </div>    
           </div>  
-        </div>
+        </div> 
       </div>
     </div>
   ) 
