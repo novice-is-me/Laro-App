@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import LoginForm from '../components/LoginForm'
-import PictureComponent from '../components/PictureComponent'
-import { Link } from 'react-router-dom'
 import { CourtImg, CourtImg2, CourtOwnerImg } from '../assets'
 import CourtOwnerForm from '../components/CourtOwnerForm'
-import Calendar from '../components/CalendarComponent'
-import CalendarComponent from '../components/CalendarComponent'
-import Publish from '../components/Publish'
 import CourtImgComponent from '../components/CourtImgComponent'
 import Setup from '../components/Setup'
+import {Link} from 'react-router-dom'
 
 const CourtOwner = () => { 
     const [activeOwner, setActiveOwner] = useState(false)
@@ -69,10 +64,10 @@ const CourtOwner = () => {
                         </p>
                     </div>
                     <div className='flex gap-8'>
-                        <button className='bg-[#FA5000] text-white py-4 px-12 text-[12px] rounded-[7px]'>
-                            Home</button>
-                        <button className='bg-[#101010] text-white py-4 px-10 text-12px rounded-[7px]'>
-                            Go to my Dashboard</button>
+                        <Link to='/' className='bg-[#FA5000] text-white py-4 px-12 text-[12px] rounded-[7px]'>
+                            Home</Link> 
+                        <Link to='/dashboard' className='bg-[#101010] text-white py-4 px-10 text-12px rounded-[7px]'>
+                            Go to my Dashboard</Link>
                     </div>
             </div>
         }

@@ -50,7 +50,7 @@ export const links = [
             },{
                 id: 2,
                 name: "Play Now",
-                path: "/play-now" 
+                path: "/matches" 
             }
         ]
     },{
