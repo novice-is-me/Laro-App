@@ -1,10 +1,17 @@
 import React from 'react'
 
+<<<<<<< HEAD
 const PictureComponent = ({img}) => {
     return (
         <div className='w-[100%] flex items-center justify-center relative'>
             <div className='bg-[#fa5000] w-[290px] h-[350px] relative rounded-lg'>
 
+=======
+const PictureComponent = ({img,value}) => {
+    return ( 
+        <div className='w-[100%] flex items-center justify-center relative'>
+            <div className='bg-[#fa5000] w-[290px] h-[350px] relative rounded-lg'>
+>>>>>>> 0e561d518b8bbdae7a7daa481b5e2e2d2e70e1e9
                 <img src={img} alt="" className={`absolute bottom-0 max-w-none ${value === 'create' ? 'left-7 w-[350px]': "left-0 w-[330px]"}`}/>
 
                 <div className='bg-black w-fit h-[55px] rounded-[40px] flex items-center pl-[10px] absolute top-[40px] left-[-80px]'  >
@@ -22,7 +29,8 @@ const PictureComponent = ({img}) => {
                     <h1 className='text-[#ffffff] mx-[12px] font-Poppins text-xl'>Organize</h1>
                 </div>  
 
-                <div className='bg-[#fa5000] w-fit h-[55px] rounded-[40px] flex items-center pl-[10px] absolute bottom-[120px] right-[5px]'  >
+                <div className={`bg-[#fa5000] w-fit h-[55px] rounded-[40px] flex items-center 
+                pl-[10px] absolute bottom-[120px] border-2 border-white ${value === 'login' || value === 'create' ? 'right-[5px]' : 'right-[-100px]' }`}  >
                     <div className='w-[40px] h-[40px] bg-[#ffffff] rounded-[50%] flex self-center justify-center'>
 
                         <img src="" alt="" className='w-25px' />
