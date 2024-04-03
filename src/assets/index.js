@@ -6,6 +6,8 @@ import players from './image/players.png'
 import Ads from './image/Ad.png'
 import aboutImg from './image/aboutImg.png'
 import CourtOwnerImg from './image/CourtOwner.png'
+import CourtImg from './image/CourtImg.png'
+import CourtImg2 from './image/CourtImg2.png'
 
 export{
     Logo,
@@ -15,5 +17,7 @@ export{
     players,
     Ads,
     aboutImg,
-    CourtOwnerImg
+    CourtOwnerImg,
+    CourtImg,
+    CourtImg2
 }

@@ -8,6 +8,7 @@ import Matches from './pages/Matches'
 import Court from './pages/Court'
 import About from './pages/About'
 import Login from './pages/Login'
+import CourtOwner from './pages/CourtOwner'
 
 function App() {
 
@@ -20,10 +21,11 @@ function App() {
         <Route path='/court' element={<Court />}></Route>
         <Route path='/about' element={<About />}></Route>
         <Route path='/login' element={<Login />}></Route>
-        <Route path='/create' element={''}></Route>
+        <Route path='/play-now' element={<Matches/>}></Route>
+        <Route path='/register' element={<CreateAccount/>}></Route>
+        <Route path='/court-owner' element={<CourtOwner/>}/>
       </Routes>
-
-    </>
+    </> 
   )
 }
 

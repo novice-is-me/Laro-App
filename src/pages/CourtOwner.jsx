@@ -1,21 +1,43 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import LoginForm from '../components/LoginForm'
 import PictureComponent from '../components/PictureComponent'
 import { Link } from 'react-router-dom'
-import { CourtOwnerImg } from '../assets'
+import { CourtImg, CourtImg2, CourtOwnerImg } from '../assets'
 import CourtOwnerForm from '../components/CourtOwnerForm'
 import Calendar from '../components/CalendarComponent'
 import CalendarComponent from '../components/CalendarComponent'
+import Publish from '../components/Publish'
+import CourtImgComponent from '../components/CourtImgComponent'
+import Setup from '../components/Setup'
 
-const CourtOwner = () => {
-    const [isActive, setIsActive] = useState(false)
+const CourtOwner = () => { 
+    const [activeOwner, setActiveOwner] = useState(false)
+    const [activeSetup, setActiveSetup] = useState(false)
     const [isShow, setIsShow] = useState('default')
-    const [isClickedCalendar, setIsClickedCalendar] = useState(false) 
+    const [main, setMain] = useState('default') 
+    const [img, setImg] = useState(CourtOwnerImg)
+
+    
+    useEffect(() =>{
+        if (isShow === 'default'){
+            setActiveOwner(true)
+        }if (isShow === 'calendar'){
+            setActiveSetup(true)
+            setActiveOwner(false)
+            setImg(CourtImg)  
+        }if (isShow === 'publish'){
+            setImg(CourtImg2)
+        }
+    })
+
 
   return (
-    <div> 
+    <div>
         <div className='bg-bgColor flex justify-between'> 
-            <div className='mx-auto relative flex flex-col justify-center items-start gap-3  w-[50%] pl-[15%] sm:w-[100%] sm:items-center sm:pl-0 sm:scale-[0.9] sm:text-center'>
+        {main === 'default' && 
+            <div className='mx-auto pl-[5rem] relative flex flex-col justify-center items-start gap-3  
+                w-[50%] sm:w-[100%] sm:items-center sm:pl-0 sm:scale-[0.9] 
+                sm:text-center'>
                 <div className='mb-8'> 
                     <h1 className='text-start sm:text-center font-Poppins font-black text-[40px] my-4 '>
                         Apply as Court Owner</h1>
@@ -23,17 +45,40 @@ const CourtOwner = () => {
                         the information you provide is accurate.</p>
                 </div>
                 <div className='flex gap-10 mb-4'>
-                    <p className='font-poppins text-[#A5A5A5]'>Owner Info </p>
-                    <p className='font-poppins text-[#A5A5A5]'>Schedule Setup </p>
-                    <p className='font-poppins text-[#A5A5A5]'>Publish </p>
+                    <p className={`font-poppins ${activeOwner ? 'text-[#101010]': 'text-[#A5A5A5]' }`}> Owner Info</p> 
+                    {activeOwner && <p>&#10095;</p>}
+                    <p className={`font-poppins ${activeSetup ? 'text-[#101010]': 'text-[#A5A5A5]' }`}>Schedule Setup</p>
+                    {activeSetup && <p>&#10095;</p>}
+                    <p className={`font-poppins text-[#A5A5A5]`}>Publish </p>
                 </div> 
-                <div className='flex w-[60%]'>    
+                <div className='flex w-full'>    
                     {isShow === 'default' && <CourtOwnerForm setIsShow={setIsShow} />}
-                    {isShow === 'calendar' && <CalendarComponent/>}  
-                </div>     
+                    {isShow === 'calendar' && <Setup setMain={setMain} setIsShow={setIsShow}/>}  
+                </div>      
+            </div>  
+        }
+        {main === 'second' && 
+            <div className='mx-auto pl-[5rem] relative flex flex-col justify-center items-start gap-3  
+            w-[50%] sm:w-[100%] sm:items-center sm:pl-0 sm:scale-[0.9] 
+            sm:text-center pr-12'>
+                    <div className='mb-8'>
+                        <h1 className='text-start sm:text-center font-Poppins font-black text-[40px] my-4'>
+                            Success!</h1>
+                        <p className='font-poppins text-[#A5A5A5] text-[17px]'>Wait confirmation from the admin, and you will receive the confirmation
+                            on your LARO account or via email. Thank you.
+                        </p>
+                    </div>
+                    <div className='flex gap-8'>
+                        <button className='bg-[#FA5000] text-white py-4 px-12 text-[12px] rounded-[7px]'>
+                            Home</button>
+                        <button className='bg-[#101010] text-white py-4 px-10 text-12px rounded-[7px]'>
+                            Go to my Dashboard</button>
+                    </div>
             </div>
-            <div className='w-[50%] flex items-center justify-center sm:hidden 832px:scale-[0.8] 770px:scale-[0.7]'>
-                    <PictureComponent img={CourtOwnerImg} value={'owner'} />
+        }
+            <div className='w-[50%] flex items-center justify-center sm:hidden 
+            832px:scale-[0.8] 770px:scale-[0.7] '>
+                    <CourtImgComponent img={img} />
             </div>  
         </div> 
     </div>

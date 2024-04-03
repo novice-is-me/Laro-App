@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PictureComponent = ({img, value}) => {
+const PictureComponent = ({img, value}) => { 
     return (
         <div className='w-[100%] flex items-center justify-center relative'>
             <div className='bg-[#fa5000] w-[290px] h-[350px] relative rounded-lg'>

@@ -1,5 +1,5 @@
 import { faCompass, faSquarePen, faStar } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
 
 export const links = [
     {
@@ -50,7 +50,7 @@ export const links = [
             },{
                 id: 2,
                 name: "Play Now",
-                path: "/play" 
+                path: "/play-now" 
             }
         ]
     },{
