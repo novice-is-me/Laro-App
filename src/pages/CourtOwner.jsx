@@ -65,7 +65,7 @@ const CourtOwner = () => {
                     </div>
                     <div className='flex gap-8'>
                         <Link to='/' className='bg-[#FA5000] text-white py-4 px-12 text-[12px] rounded-[7px]'>
-                            Home</Link> 
+                            Home</Link>  
                         <Link to='/dashboard' className='bg-[#101010] text-white py-4 px-10 text-12px rounded-[7px]'>
                             Go to my Dashboard</Link>
                     </div>
