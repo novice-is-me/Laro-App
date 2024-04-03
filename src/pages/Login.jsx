@@ -15,11 +15,10 @@ const Login = () => {
                     <p className='font-poppins text-[#A5A5A5] text-[17px]'>We've forwarded a code to your email. 
                     <br /> Kindly confirm to continue with the registration process.</p>
                 </div>
-                <div> 
+                <div>  
                     <LoginForm/>
-                    <p className='mt-12 font-poppins'>You don't have account?
-                        {/* make this a link react router   */}  
-                        <Link to='/create' className='underline'>Create Account</Link>
+                    <p className='mt-12 font-poppins'>You don't have account? 
+                        <Link to='/register' className='underline'> Create Account</Link>
                     </p>   
                 </div>  
             </div>
