@@ -4,6 +4,7 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { CardData } from '../constant/ActiveMatchData'
 import ActiveMatchesCard from '../card/ActiveMatchesCard'
 import CourtsCard from '../card/CourtsCard'
+import BookCourt from './BookCourt'
 
 CardData
 
@@ -27,28 +28,18 @@ const Court = () => {
             <FontAwesomeIcon icon={faMagnifyingGlass} className='absolute right-5 top-3' />
 
           </div>
-
-
-
-
         </div>
 
         <div className='flex gap-2 flex-wrap scale-[1] mt-5 justify-center'>
-          {/* {ActiveMatch.map(card => (
-            <ActiveMatchesCard key={card.id} card={card} />
-          ))} */}
-
           {CardData.map(card => (
             <CourtsCard key={card.id} card={card} />
           ))}
-
-
         </div>
-
-
-
-
       </div>
+
+      <BookCourt/>
+
+      
 
 
     </div>
