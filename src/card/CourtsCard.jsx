@@ -2,7 +2,7 @@ import React from 'react'
 import img4 from '../assets/Active Match/activematch4.jpg'
 import img from '../assets/Active Match/activematch4.jpg'
 
-const CourtsCard = ({ card }) => {
+const CourtsCard = ({ card, setMain }) => {
     return (
         <div>
             <div className='bg-[#ffffff] rounded-[14px] w-[273px] p-5 h-[300px]'>
@@ -22,8 +22,18 @@ const CourtsCard = ({ card }) => {
                     <div className='flex items-center justify-between mt-3'>
                         <h1 className='font-Poppins text-[12px] font-black inline ml-1 uppercase break-words'>{card.location}</h1>
                         <div className='flex items-center gap-2'>
-                            <div className='font-Poppins text-[10px] bg-[#fa5000] text-[#ffffff] w-[60px] h-[40px] rounded-[20px] flex items-center justify-center'>Reserve</div>
-                            <div className='font-Poppins text-[10px] border-2 border-[#fa5000] border-solid text-black w-[60px] h-[40px] rounded-[20px] flex items-center justify-center '>View</div>
+                            <div
+                                className='font-Poppins text-[10px] bg-[#fa5000] text-[#ffffff] w-[60px] h-[40px] rounded-[20px] flex items-center justify-center cursor-pointer'
+                                onClick={() => setMain('bookcourt')}
+
+                            >
+                                Reserve
+                            </div>
+                            <div
+                                className='font-Poppins text-[10px] border-2 border-[#fa5000] border-solid text-black w-[60px] h-[40px] rounded-[20px] flex items-center justify-center '>
+                                View
+
+                            </div>
                         </div>
                     </div>
                 </div>
