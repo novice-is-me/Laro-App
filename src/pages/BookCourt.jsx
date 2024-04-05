@@ -3,8 +3,10 @@ import ActiveMatchesCard from '../card/ActiveMatchesCard'
 import bookcourt from '../assets/image/bookcourt.jpeg'
 import PictureComponent from '../components/PictureComponent'
 import CreateAccount from './CreateAccount'
-const BookCourt = () => {
+import Calendar from 'react-calendar'
+const BookCourt = ({ setMain }) => {
 
+    const weeks = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
     const [time, setTime] = useState(true)
     const [parking, setParking] = useState(true)
     const [buzzertimer, setBuzzerTimer] = useState(true)
@@ -13,13 +15,13 @@ const BookCourt = () => {
 
     return (
         <div className='mt-10 border-2 border-orange flex box-border px-20 '>
-            <div className='border-2 border-yellow-300 w-[50%] font-Poppins'>
+            <div className='w-[60%] font-Poppins'>
                 <h1 className='text-4xl font-semibold mb-2'>Book a Court</h1>
                 <p className='text-gray text-sm max-w-[400px]'>You can now create your own account, just make sure that the information you provided is accurate.</p>
 
                 <div className='flex mt-5'>
                     <div className='flex-[60%]'>
-                        CALENDAR
+                        <Calendar className='font-Poppins' formatShortWeekday={(locale, date) => weeks[date.getDay()]} />
                     </div>
 
                     <div className='flex-[40%] '>
@@ -28,7 +30,7 @@ const BookCourt = () => {
                             <div className='bg-white rounded-md p-3'>Time</div>
                             <div className='bg-white rounded-md p-3 flex'>
                                 <p className='px-2'>00:00</p>
-                                <div className='border-l-[1px] border-gray px-3' onClick={() => setTime(!time)}>{time ? "AM" : "PM"}</div>
+                                <div className='border-l-[1px] border-gray px-3 cursor-pointer' onClick={() => setTime(!time)}>{time ? "AM" : "PM"}</div>
                             </div>
                         </div>
 
@@ -37,7 +39,7 @@ const BookCourt = () => {
                             <p className='text-[12px] font-semibold mb-2'>Parking Slot</p>
 
                             <div className='flex gap-1 mb-2'>
-                                <div className='w-[50px] text-[12px] bg-white rounded-md p-1 text-center'
+                                <div className='w-[50px] text-[12px] bg-white rounded-md p-1 text-center cursor-pointer'
                                     onClick={() => setParking(!parking)}>
                                     <p>{parking ? "YES" : "NO"}</p>
                                 </div>
@@ -47,7 +49,7 @@ const BookCourt = () => {
                             <p className='text-[12px] font-semibold mb-2'>Buzzer and Timer</p>
 
 
-                            <div className='w-[50px] text-[12px] bg-white rounded-md p-1 text-center mb-2'
+                            <div className='w-[50px] text-[12px] bg-white rounded-md p-1 text-center mb-2 cursor-pointer'
                                 onClick={() => setBuzzerTimer(!buzzertimer)}>
                                 <p>{buzzertimer ? "YES" : "NO"}</p>
                             </div>
@@ -55,7 +57,7 @@ const BookCourt = () => {
                             <p className='text-[12px] font-semibold mb-2'>Number of Seats</p>
 
                             <div className='flex gap-1 mb-3'>
-                                <div className='w-[50px] text-[12px] bg-white rounded-md p-1 text-center'
+                                <div className='w-[50px] text-[12px] bg-white rounded-md p-1 text-center cursor-pointer'
                                     onClick={() => setSeats(!seats)}>
                                     <p>{seats ? "YES" : "NO"}</p>
                                 </div>
@@ -65,7 +67,13 @@ const BookCourt = () => {
                         </div>
 
 
-                        <button className='w-[200px] bg-orange rounded-sm text-[11px] p-3 text-[#ffffff]'>Next</button>
+                        <button
+                            className='w-[200px] bg-orange rounded-md text-[11px] p-3 text-[#ffffff]'
+                            onClick={() => setMain('success')}
+
+                        >Next
+
+                        </button>
 
 
 
@@ -84,7 +92,7 @@ const BookCourt = () => {
 
             <div className='border-2 border-blue-300 w-[50%] flex items-center justify-center'>
                 <div className='w-[100%]  flex items-center justify-center relative'>
-                    <div className='w-[290px] h-[350px] relative'>
+                    <div className='w-[320px] h-[400px] relative'>
                         <img src={bookcourt} alt="" className='absolute bottom-0 w-[100%] h-[100%] rounded-lg' />
 
                         <div className='bg-black min-w-[175px] h-[55px] rounded-[40px] flex items-center pl-[10px] absolute top-[50px] left-[-80px]'  >
