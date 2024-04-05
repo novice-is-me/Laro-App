@@ -8,6 +8,7 @@ export default {
     extend: {
     fontFamily: {
       'Poppins': ['Poppins', 'sans-serif'],
+      'Inter': ['Inter', 'sans-serif']
     },
     colors:{ 
       'orange' : '#FA5000',
