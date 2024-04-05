@@ -8,6 +8,11 @@ import aboutImg from './image/aboutImg.png'
 import CourtOwnerImg from './image/CourtOwner.png'
 import CourtImg from './image/CourtImg.png'
 import CourtImg2 from './image/CourtImg2.png'
+import ownerImg from './image/ownerImg.png'
+import emojiShock from './image/EmojiShock.png'
+import emojiCool from './image/emojiCool.png'
+import emojiSmirk from './image/emojiSmirk.png'
+import emojiSad from './image/emojiSad.png'
 
 export{
     Logo,
@@ -19,5 +24,10 @@ export{
     aboutImg,
     CourtOwnerImg,
     CourtImg,
-    CourtImg2
+    CourtImg2,
+    ownerImg,
+    emojiShock,
+    emojiCool,
+    emojiSmirk,
+    emojiSad
 }

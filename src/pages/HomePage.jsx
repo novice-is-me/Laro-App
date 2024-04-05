@@ -9,6 +9,7 @@ import Advertisments from './Advertisments'
 import About from './About'
 import CourtOwner from './CourtOwner'
 import CreateAccount from './CreateAccount'
+import DashboardCourtOwner from './DashboardCourtOwner'
 
 const HomePage = () => {
   return (
