@@ -1,17 +1,9 @@
 import React from 'react'
 
-<<<<<<< HEAD
-const PictureComponent = ({img}) => {
-    return (
-        <div className='w-[100%] flex items-center justify-center relative'>
-            <div className='bg-[#fa5000] w-[290px] h-[350px] relative rounded-lg'>
-
-=======
 const PictureComponent = ({img,value}) => {
     return ( 
         <div className='w-[100%] flex items-center justify-center relative'>
             <div className='bg-[#fa5000] w-[290px] h-[350px] relative rounded-lg'>
->>>>>>> 0e561d518b8bbdae7a7daa481b5e2e2d2e70e1e9
                 <img src={img} alt="" className={`absolute bottom-0 max-w-none ${value === 'create' ? 'left-7 w-[350px]': "left-0 w-[330px]"}`}/>
 
                 <div className='bg-black w-fit h-[55px] rounded-[40px] flex items-center pl-[10px] absolute top-[40px] left-[-80px]'  >

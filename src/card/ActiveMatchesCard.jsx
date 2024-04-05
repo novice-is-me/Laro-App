@@ -1,12 +1,13 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import { Link } from 'react-router-dom'
 
 
 FontAwesomeIcon
-const ActiveMatchesCard = ({ card }) => {
+const ActiveMatchesCard = ({ card, setMain }) => {
     return (
         <div className='bg-[#ffffff] rounded-[14px] w-[273px] p-5 h-[400px]'>
+            
             <div className='relative'>
                 <img
                     src={card.imagecard}
@@ -30,8 +31,8 @@ const ActiveMatchesCard = ({ card }) => {
                         <p className='font-Poppins text-[9px] m-0'>Organizer</p>
                     </div>
 
-                    <div className='font-Poppins text-[11px] bg-[#fa5000] text-[#ffffff] w-[60px] h-[40px] rounded-[20px] flex items-center justify-center'>Join</div>
-                    <div className='font-Poppins text-[11px] border-2 border-[#fa5000] border-solid text-black w-[60px] h-[40px] rounded-[20px] flex items-center justify-center '>View</div>
+                    <div onClick={() => setMain('join')} className='font-Poppins text-[11px] bg-[#fa5000] text-[#ffffff] w-[60px] h-[40px] rounded-[20px] flex items-center justify-center cursor-pointer'>Join</div>
+                    <div onClick={() => setMain('view')} className='font-Poppins text-[11px] border-2 border-[#fa5000] border-solid text-black w-[60px] h-[40px] rounded-[20px] flex items-center justify-center cursor-pointer '>View</div>
 
                 </div>
 

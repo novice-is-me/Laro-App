@@ -25,6 +25,12 @@ export default {
       'xl': { 'max': '1279px' },
       // => @media (max-width: 1279px) { ... }
 
+      '1209': { 'max': '1209px' },
+      // => @media (max-width: 1139px) { ... }
+
+      '1139': { 'max': '1139px' },
+      // => @media (max-width: 1139px) { ... }
+
       'lg': { 'max': '1023px' },
       // => @media (max-width: 1023px) { ... }
 

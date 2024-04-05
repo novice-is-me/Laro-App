@@ -25,12 +25,13 @@ const CourtsCard = ({ card, setMain }) => {
                             <div
                                 className='font-Poppins text-[10px] bg-[#fa5000] text-[#ffffff] w-[60px] h-[40px] rounded-[20px] flex items-center justify-center cursor-pointer'
                                 onClick={() => setMain('bookcourt')}
-
                             >
                                 Reserve
                             </div>
                             <div
-                                className='font-Poppins text-[10px] border-2 border-[#fa5000] border-solid text-black w-[60px] h-[40px] rounded-[20px] flex items-center justify-center '>
+                                className='font-Poppins text-[10px] border-2 border-[#fa5000] border-solid text-black w-[60px] h-[40px] rounded-[20px] flex items-center justify-center cursor-pointer'
+                                onClick={() => setMain('viewcourt')}
+                            >
                                 View
 
                             </div>
