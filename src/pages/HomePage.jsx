@@ -21,7 +21,6 @@ const HomePage = () => {
       <Gameplay/> 
       <Advertisments/>
       <About/>
-      <DashboardCourtOwner/>
       <Footer />
     </div>
   )

@@ -9,6 +9,7 @@ import Court from './pages/Court'
 import About from './pages/About'
 import Login from './pages/Login'
 import CourtOwner from './pages/CourtOwner'
+import DashboardCourtOwner from './pages/DashboardCourtOwner'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Route path='/login' element={<Login />}></Route> 
         <Route path='/register' element={<CreateAccount/>}></Route>
         <Route path='/court-owner' element={<CourtOwner/>}/>
+        <Route path='/dashboard' element={<DashboardCourtOwner/>}/>
       </Routes>
 
     </>
