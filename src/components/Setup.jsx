@@ -11,58 +11,53 @@ const Setup = ({setMain, setIsShow}) => {
     const [timer, setTimer] = useState(true)
     const [seats, setSeats] = useState(true)
 
-    const time = () =>{
-        return (
-          <TimeField value={time} onChange={(e) => console.log(e.target.value)} />
-        )
-      }
+    // const time = () =>{
+    //     return (
+    //       <TimeField value={time} onChange={(e) => console.log(e.target.value)} />
+    //     )
+    //   }
 
   return (
-    <div className='flex gap-8 items-center w-full mr-12'>   
-      <div className=''> 
-        <Calendar formatShortWeekday={(locale, date) => weeks[date.getDay()]}/>  
-      </div> 
-      <div className=''>
-       <div className='flex space-x-3 items-center '>
-          <p className='p-3 bg-white font-Poppins rounded-[5px] text-sm'>
-            Time</p>
-          <div className='flex text-center'>
-            <TimeField value='00:00' style={{padding: '.75rem', width: '40%', outline: 'none', fontSize: '14px'}} />
-            <div className='bg-white rounded-[5px]'> 
-              <p onClick={() => setIsTime(!isTime)} 
-              className='font-poppins text-sm p-3 border-l border-[#e7e7e7] hover:cursor-pointer'>
-                {isTime ? 'AM' : 'PM'}</p>
-            </div> 
+    <div className='flex gap-8 items-center w-full mr-12 832px:flex-col 832px:mr-0'>   
+      <div className='flex mt-5 gap-6  sm:flex-col'>
+        <div className=''>
+          <Calendar className='font-Poppins xsm:scale-[0.8]' formatShortWeekday={(locale, date) => weeks[date.getDay()]} />
+        </div>
+        <div className=' sm:flex sm:flex-col sm:items-center'>
+            <div className='flex gap-1 mb-2'>
+                <div className='bg-white rounded-md p-3'>Time</div>
+                  <div className='bg-white rounded-md p-3 flex'>
+                      <p className='px-2'>00:00</p>
+                  <div className='border-l-[1px] border-gray px-3 cursor-pointer' onClick={() => setIsTime(!isTime)}>{isTime ? "AM" : "PM"}</div>
+                </div>
+            </div>
+          <div>
+            <h1 className='font-semibold mb-2 sm:text-center'>Court Details</h1>
+              <p className='text-[12px] font-semibold mb-2'>Parking Slot</p>
+              <div className='flex gap-1 mb-2'>
+                <div className='w-[50px] text-[12px] bg-white rounded-md p-1 text-center cursor-pointer'
+                  onClick={() => setPark(!park)}>
+                  <p>{park ? "YES" : "NO"}</p>
+                </div>
+              <div className='w-[100px] text-[12px] bg-white rounded-md p-1 text-center'>{`(e.x 20 Slots)`}</div></div>
+              <p className='text-[12px] font-semibold mb-2'>Buzzer and Timer</p>
+              <div className='w-[50px] text-[12px] bg-white rounded-md p-1 text-center mb-2 cursor-pointer'
+                onClick={() => setTimer(!timer)}>
+                <p>{timer ? "YES" : "NO"}</p>
+              </div>
+              <p className='text-[12px] font-semibold mb-2'>Number of Seats</p>
+              <div className='flex gap-1 mb-3'>
+                <div className='w-[50px] text-[12px] bg-white rounded-md p-1 text-center cursor-pointer'
+                  onClick={() => setSeats(!seats)}>
+                  <p>{seats ? "YES" : "NO"}</p>
+                </div>
+              <div className='w-[100px] text-[12px] bg-white rounded-md p-1 text-center'>{`(e.x 20 Slots)`}</div></div>
           </div>
-       </div>
-       <div className='mt-2 space-y-1'>
-        <p className='font-poppins text-[15px] font-semibold'>Court Details</p>
-        <p className='font-poppins text-[10px] font-semibold'>Parking Slot</p>
-        <div className='flex space-x-4 items-center'>
-          <p className='font-poppins text-[10px] bg-white py-2 px-4 font-semibold'
-           onClick={() => setPark(!park)}>{park  ? 'Yes':'No'}</p>
-          <p className='font-poppins text-[10px] bg-white py-2 px-4 font-semibold'>(e.x 20 Slots)</p>
+          <button className='w-[200px] bg-orange rounded-md text-[11px] p-3 text-[#ffffff] xsm:mt-4'
+            onClick={() => {setMain('second'); setIsShow('publish') }}>Next
+          </button>
         </div>
-        <p className='font-poppins text-[10px] font-semibold'>Buzzer and timer</p>
-        <div>
-          <p className='font-poppins text-[10px] bg-white py-2 px-4 w-[20%] font-semibold'
-            onClick={() => setTimer(!timer)}>{timer ? 'Yes': 'No'}</p>
-        </div>
-        <p className='font-poppins text-[10px] font-semibold'>Number of Seats</p>
-        <div className='flex space-x-4'>
-          <p className='font-poppins text-[10px] bg-white py-2 px-4 font-semibold'
-            onClick={() => setSeats(!seats)}>{seats ? 'Yes': 'No'}</p>
-          <p className='font-poppins text-[10px] bg-white py-2 px-4 font-semibold'>(e.x 20 Slots)</p>
-        </div>
-       </div>
-       <div className='mt-4 w-[80%]'>
-          <button className=' bg-orange p-3 w-full rounded-[5px] font-semibold text-white font-Poppins'
-           onClick={() => {
-            setMain('second'); 
-            setIsShow('publish') }}>
-            Next</button>  
-       </div>
-      </div>
+      </div>  
     </div> 
   )
 }

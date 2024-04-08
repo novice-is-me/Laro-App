@@ -14,17 +14,17 @@ const BookCourt = ({ setMain }) => {
 
 
     return (
-        <div className='mt-10 border-2 border-orange flex box-border px-20 '>
-            <div className='w-[60%] font-Poppins'>
+        <div className='w-full mt-10 flex box-border px-20 1139:justify-center 1139:px-0'>
+            <div className='w-[60%] font-Poppins  xl:w-[80%] xl:flex xl:flex-col xl:items-center md:w-[100%]'>
                 <h1 className='text-4xl font-semibold mb-2'>Book a Court</h1>
-                <p className='text-gray text-sm max-w-[400px]'>You can now create your own account, just make sure that the information you provided is accurate.</p>
+                <p className='text-gray text-sm max-w-[400px] xl:text-center'>You can now create your own account, just make sure that the information you provided is accurate.</p>
 
-                <div className='flex mt-5'>
-                    <div className='flex-[60%]'>
-                        <Calendar className='font-Poppins' formatShortWeekday={(locale, date) => weeks[date.getDay()]} />
+                <div className='flex mt-5 gap-6  sm:flex-col'>
+                    <div className=''>
+                        <Calendar className='font-Poppins xsm:scale-[0.8]' formatShortWeekday={(locale, date) => weeks[date.getDay()]} />
                     </div>
 
-                    <div className='flex-[40%] '>
+                    <div className=' sm:flex sm:flex-col sm:items-center'>
 
                         <div className='flex gap-1 mb-2'>
                             <div className='bg-white rounded-md p-3'>Time</div>
@@ -35,7 +35,7 @@ const BookCourt = ({ setMain }) => {
                         </div>
 
                         <div>
-                            <h1 className='font-semibold mb-2'>Court Details</h1>
+                            <h1 className='font-semibold mb-2 sm:text-center'>Court Details</h1>
                             <p className='text-[12px] font-semibold mb-2'>Parking Slot</p>
 
                             <div className='flex gap-1 mb-2'>
@@ -74,15 +74,6 @@ const BookCourt = ({ setMain }) => {
                         >Next
 
                         </button>
-
-
-
-
-
-
-
-
-
                     </div>
                 </div>
 
@@ -90,7 +81,7 @@ const BookCourt = ({ setMain }) => {
 
             </div>
 
-            <div className='border-2 border-blue-300 w-[50%] flex items-center justify-center'>
+            <div className='w-[50%] flex items-center justify-center xl:w-[30%] xl:scale-[0.9] 1139:hidden'>
                 <div className='w-[100%]  flex items-center justify-center relative'>
                     <div className='w-[320px] h-[400px] relative'>
                         <img src={bookcourt} alt="" className='absolute bottom-0 w-[100%] h-[100%] rounded-lg' />
