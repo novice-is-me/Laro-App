@@ -9,7 +9,7 @@ const About = () => {
   return ( 
     <div className='bg-bgColor w-full px-9 py-3 relative'>
       <div className=' flex w-full about-bg px-[4rem] xsm:p-[3rem] rounded-[20px] 
-      pb-0  items-center gap-[10rem] mb-12  xl:about-bg2 xl:gap-1 xl:pb-8 xsm:text-center'>  
+      pb-0  items-center gap-[10rem] mb-12  xl:about-bg2 xl:gap-1 xl:pb-8 sm:text-center'>  
         <div className=' z-[1] h-[700px] xl:h-full 950px:hidden'> 
           <img src={aboutImg} alt="" 
           className=' max-w-none h-full xl:w-full '/>     
@@ -34,7 +34,7 @@ const About = () => {
               approach to basketball scheduling, providing a seamless experience for 
               enthusiasts and organizers alike</p> 
           </div>
-          <div className='flex flex-col gap-6 xsm:items-center'>    
+          <div className='flex flex-col gap-6 sm:items-center'>    
             <p>Follow our Social Media Page</p>
             <div className='flex gap-8'>  
               <svg xmlns="http://www.w3.org/2000/svg" width="38.474" height="38.474"><path d="M38.474 19.355C38.474 8.665 29.862 0 19.24 0 8.612.002 0 8.665 0 19.357c0 9.659 7.035 17.665 16.23 19.117V24.95h-4.881v-5.593h4.885V15.09c0-4.85 2.873-7.528 7.266-7.528 2.106 0 4.306.377 4.306.377v4.76H25.38c-2.387 0-3.133 1.494-3.133 3.025v3.631h5.333l-.85 5.593h-4.485v13.524c9.194-1.452 16.23-9.459 16.23-19.117Z" fill={xl ? '#ffffff' : '#FA5000'}  fill-rule="evenodd" data-name="Path 6"/></svg> 
