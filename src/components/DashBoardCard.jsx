@@ -19,7 +19,7 @@ const DashBoardCard = ({title, points, emoji, value }) => {
             <img src={emoji} alt="" 
              className='ml-auto'/>
             <p className=' font-Inter font-light text-[8px]'>The organizer who manipulated the situation placed and updated points.</p>
-        </div>
+        </div> 
     </div>
   )
 }

@@ -6,10 +6,10 @@ import NavLinks from '../components/NavLinks'
 import LoginSignUpButton from '../components/LoginSignUpButton'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   const [isClicked, setIsClicked] = useState(false)
-
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
@@ -52,10 +52,13 @@ const Header = () => {
               className=' fa-2xl hidden lg:block hover:cursor-pointer'
               onClick={() => setIsClicked(!isClicked)}/> 
               {/* make this component with navlinks when almost done w/ proj */}
-              {isClicked && <div className='absolute bg-white right-0 bottom-[-3] mt-5 py-6 px-10 z-10'>
+              {isClicked && <div className='absolute  bg-bgColor right-0 bottom-[-3] mt-5 py-6 px-10 z-10 
+               border border-orange rounded-[10px]'>
                 {links[0].navigationBar.map((link, i) =>{
-                  return <div className='py-2'>
-                    <a href="" className='font-poppins'>{link.name}</a>
+                  return <div className='py-2 '>
+                    <Link to={link.path} className='font-poppins hover:text-orange'
+                    onClick={() => setIsClicked(false)}
+                    >{link.name}</Link>
                   </div>   
                 })} 
               </div>

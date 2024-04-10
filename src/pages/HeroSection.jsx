@@ -9,7 +9,7 @@ const HeroSection = () => {
     <div className=' bg-bgColor flex gap-8 justify-between py-[3rem] px-[5rem]'>
       <div className=' flex flex-col 950px:items-center 950px:text-center'>  
         <div className='flex flex-col gap-y-8 mb-8'>
-          <h1 className='uppercase font-Poppins text-[50px] font-bold leading-[60px] xsm:text-[20px] xsm:leading-normal'>
+          <h1 className='uppercase font-Poppins text-[50px] font-bold leading-[60px] xsm:text-[30px] xsm:leading-normal'>
               Revolutionizing the Courts</h1>
           <p className='font-Poppins text-[#A5A5A5] text-xl xsm:text-sm'>Book, Organize, Manage with Ease</p>
         </div>
