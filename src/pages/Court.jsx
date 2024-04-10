@@ -8,15 +8,16 @@ import BookCourt from './BookCourt'
 import Sucess from './Sucess'
 import ViewCourt from '../components/ViewCourt'
 
-CardData
 
 const Court = () => {
 
   const [main, setMain] = useState('default')
+  const [filteredData, setFilteredData] = useState(CardData)
 
-
-
-
+  function handleChange(e) {
+    const filtered = CardData.filter(card => card.location.toLowerCase().includes(e.target.value.toLowerCase()));
+    setFilteredData(filtered);
+  }
 
 
   return (
@@ -33,7 +34,10 @@ const Court = () => {
                   name=""
                   id=""
                   placeholder='Join a game near you?'
-                  className='py-3 text-sm font-Poppins rounded-[30px] pl-5 pr-20 outline-none' />
+                  className='py-3 text-sm font-Poppins rounded-[30px] pl-5 pr-20 outline-none'
+                  onChange={handleChange}
+                  
+                />
                 <FontAwesomeIcon icon={faMagnifyingGlass} className='absolute right-5 top-3' />
               </div>
             </div>
@@ -43,7 +47,7 @@ const Court = () => {
           </div>
 
           <div className='flex gap-2 flex-wrap scale-[1] mt-5 justify-center'>
-            {CardData.map(card => (
+            {filteredData.map(card => (
               <CourtsCard key={card.id} card={card} setMain={setMain} />
             ))}
           </div>

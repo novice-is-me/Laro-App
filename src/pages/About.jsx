@@ -9,7 +9,7 @@ const About = () => {
 
   return (
     <div>
-    <div className='bg-bgColor w-full px-9 py-3 relative'>
+    <div className='bg-bgColor w-full px-9 py-3 relative font-Poppins'>
       <div className=' flex w-full about-bg px-[4rem] xsm:p-[3rem] rounded-[20px] 
       pb-0  items-center gap-[10rem] mb-12  xl:about-bg2 xl:gap-1 xl:pb-8 xsm:text-center'>
         <div className=' z-[1] h-[700px] xl:h-full 950px:hidden'>
@@ -62,7 +62,7 @@ const About = () => {
 
     </div>
     
-    <ViewCourt />
+  
 
     </div>
   )

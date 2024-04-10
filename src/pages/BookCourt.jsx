@@ -4,7 +4,7 @@ import bookcourt from '../assets/image/bookcourt.jpeg'
 import PictureComponent from '../components/PictureComponent'
 import CreateAccount from './CreateAccount'
 import Calendar from 'react-calendar'
-const BookCourt = ({ setMain }) => {
+const   BookCourt = ({ setMain }) => {
 
     const weeks = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
     const [time, setTime] = useState(true)
