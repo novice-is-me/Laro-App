@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import Calendar from "react-calendar";
 import BackButton from "../assets/image/BackButton.png"
 import CreateScheduleComponent from "../components/CreateScheduleComponent";
+import { ScheduleComponent, ViewDirective } from "@syncfusion/ej2-react-schedule";
+import EventList from "../components/EventList";
+import Event from "../components/Event";
 
 function UserCalendar(){
     const weeks = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
@@ -11,6 +14,30 @@ function UserCalendar(){
         const ampm = index < 12 ? 'AM' : 'PM';
         return `${hour} ${ampm}`;
       });
+
+      const [events, setEvents] = useState([]);
+
+      const handleDateChange = (newDate) => {
+        // For demo purposes, generate some dummy events
+        const dummyEvents = [
+          { title: 'Meeting', time: '10:00 AM' },
+          { title: 'Lunch', time: '1:00 PM' },
+          { title: 'Workshop', time: '3:00 PM' },
+        ];
+    
+        // Set the dummy events based on the selected date
+        setEvents(dummyEvents);
+      };
+
+      const data = [
+        {
+            Id: 1,
+            Subject: "Reservation",
+            StartTime: new Date(2024, 4, 13, 12, 0),
+            EndTime: new Date(2024, 4, 13, 14, 0),
+            isAllDay: false
+        }
+      ]
 
     return(
         <div className="w-full h-screen  flex flex-col">
@@ -56,7 +83,23 @@ function UserCalendar(){
 
                     {/* Time Table */}
                     <div className="w-full h-full flex py-6 px-4  border border-gray rounded-lg">
-                        <ul className="w-full px-5 flex flex-col gap-3">
+                        <div>
+                            <h1>Scheduler Calendar App</h1>
+                            <Calendar onClickDay={handleDateChange} />
+                            <EventList events={events} />
+                        </div>
+                       
+                        {/* <ScheduleComponent eventSettings={{
+                            dataSource: data,
+                        }}>
+                            <ViewDirective>
+                                <ViewDirective option="Day" />
+                                <ViewDirective option="Week" />
+                                <ViewDirective option="Month" />
+                            </ViewDirective>
+                        </ScheduleComponent> */}
+
+                        {/* <ul className="w-full px-5 flex flex-col gap-3">
                             {times.map((time, index) => (
                             <li className="w-full flex justify-between gap-5 text-gray font-Poppins text-base" key={index}>
                                 {time} 
@@ -64,7 +107,7 @@ function UserCalendar(){
                                 </div>
                             </li>
                             ))}
-                        </ul>
+                        </ul> */}
                     </div>
                 </div>
             </div>
