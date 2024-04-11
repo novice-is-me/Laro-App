@@ -13,6 +13,11 @@ import emojiShock from './image/EmojiShock.png'
 import emojiCool from './image/emojiCool.png'
 import emojiSmirk from './image/emojiSmirk.png'
 import emojiSad from './image/emojiSad.png'
+import emojiHeartEyes from './image/emojiHeartEyes.png'
+import ImageHighlights1 from './image/ImageHighlights1.png'
+import ImageHighlights2 from './image/ImageHighlights2.png'
+import emojiGem from './image/emojiGem.png'
+import userImg from './image/userImg.png'
 
 export{
     Logo,
@@ -29,5 +34,9 @@ export{
     emojiShock,
     emojiCool,
     emojiSmirk,
-    emojiSad
+    emojiSad,
+    emojiHeartEyes,
+    ImageHighlights1,
+    ImageHighlights2,
+    emojiGem,userImg
 }
