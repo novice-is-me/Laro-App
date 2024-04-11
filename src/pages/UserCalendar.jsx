@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import Calendar from "react-calendar";
 import BackButton from "../assets/image/BackButton.png"
 import CreateScheduleComponent from "../components/CreateScheduleComponent";
-import { ScheduleComponent, ViewDirective } from "@syncfusion/ej2-react-schedule";
-import EventList from "../components/EventList";
-import Event from "../components/Event";
+import EventCalendar from "../components/EventCalendar";
+import moment from "moment"
 
 function UserCalendar(){
     const weeks = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
@@ -15,29 +14,18 @@ function UserCalendar(){
         return `${hour} ${ampm}`;
       });
 
-      const [events, setEvents] = useState([]);
-
-      const handleDateChange = (newDate) => {
-        // For demo purposes, generate some dummy events
-        const dummyEvents = [
-          { title: 'Meeting', time: '10:00 AM' },
-          { title: 'Lunch', time: '1:00 PM' },
-          { title: 'Workshop', time: '3:00 PM' },
-        ];
-    
-        // Set the dummy events based on the selected date
-        setEvents(dummyEvents);
-      };
-
-      const data = [
+      const events = [
         {
-            Id: 1,
-            Subject: "Reservation",
-            StartTime: new Date(2024, 4, 13, 12, 0),
-            EndTime: new Date(2024, 4, 13, 14, 0),
-            isAllDay: false
-        }
-      ]
+          start: moment("2024-04-11T10:00:00").toDate(),
+          end: moment("2024-04-11T11:00:00").toDate(),
+          title: "MRI Registration",
+        },
+        {
+          start: moment("2024-04-18T14:00:00").toDate(),
+          end: moment("2024-04-18T15:30:00").toDate(),
+          title: "ENT Appointment",
+        },
+      ];
 
     return(
         <div className="w-full h-screen  flex flex-col">
@@ -83,11 +71,7 @@ function UserCalendar(){
 
                     {/* Time Table */}
                     <div className="w-full h-full flex py-6 px-4  border border-gray rounded-lg">
-                        <div>
-                            <h1>Scheduler Calendar App</h1>
-                            <Calendar onClickDay={handleDateChange} />
-                            <EventList events={events} />
-                        </div>
+                            <EventCalendar events={events} />
                        
                         {/* <ScheduleComponent eventSettings={{
                             dataSource: data,
