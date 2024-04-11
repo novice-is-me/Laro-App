@@ -14,6 +14,7 @@ import UserOverview from "./pages/UserOverview";
 import UserStats from "./pages/UserStats";
 import UserMatch from "./pages/UserMatch";
 import UserAchievements from "./pages/UserAchievements";
+import UserCalendar from './pages/UserCalendar'
 
 function App() {
   const location = useLocation();
@@ -42,6 +43,7 @@ function App() {
         <Route path="/user/statistics" element={<UserStats />} />
         <Route path="/user/matches" element={<UserMatch />} />
         <Route path="/user/achievements" element={<UserAchievements />} />
+        <Route path='/user/calendar' element={<UserCalendar/>}/>
       </Routes>
     </>
   );

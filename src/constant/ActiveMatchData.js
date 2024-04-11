@@ -51,24 +51,24 @@ export const ActiveMatch = [
         profilephoto: player4,
         organizer: "Kenneth Quinto"
     },
-    {
-        id: 5,
-        imagecard: img4,
-        type: "Expert",
-        title: "Slam Dunk Contest",
-        icon: faTrophy,
-        profilephoto: player4,
-        organizer: "Kenneth Quinto"
-    },
-    {
-        id: 6,
-        imagecard: img4,
-        type: "Expert",
-        title: "Slam Dunk Contest",
-        icon: faTrophy,
-        profilephoto: player4,
-        organizer: "Kenneth Quinto"
-    },
+    // {
+    //     id: 5,
+    //     imagecard: img4,
+    //     type: "Expert",
+    //     title: "Slam Dunk Contest",
+    //     icon: faTrophy,
+    //     profilephoto: player4,
+    //     organizer: "Kenneth Quinto"
+    // },
+    // {
+    //     id: 6,
+    //     imagecard: img4,
+    //     type: "Expert",
+    //     title: "Slam Dunk Contest",
+    //     icon: faTrophy,
+    //     profilephoto: player4,
+    //     organizer: "Kenneth Quinto"
+    // },
 ]
 
 export const CardData = [
