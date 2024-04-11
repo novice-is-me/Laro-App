@@ -22,6 +22,7 @@ function App() {
     "/user/statistics",
     "/user/matches",
     "/user/achievements",
+    '/dashboard'
   ];
 
   const shouldShowHeader = !hideHeaderRoutes.includes(location.pathname);
