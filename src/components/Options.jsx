@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
-const Options = ({icon, text, choice, placeholder}) => {
+const Options = ({icon, text, choice, placeholder, path}) => {
   const [isHovered, setIsHovered] = useState(false)  
 
   return ( 
@@ -15,12 +16,12 @@ const Options = ({icon, text, choice, placeholder}) => {
             <input className='font-poppins text-[#818181] text-sm border-transparent outline-none' 
             placeholder={(isHovered === true ? placeholder : text)}/>
         </div>  
-      </div>   
+      </div>    
       {/* add navlink for path in future */}
       {isHovered  &&  
         <div className=' bg-[#FA5000] p-4 rounded-[40px] text-white w-[100px] 
         flex items-center justify-center hover:cursor-pointer xsm:p-2 xsm:mt-3'>   
-          <p>{choice}</p>
+          <Link to={path}>{choice}</Link>
         </div> 
       }  
     </div>

@@ -15,6 +15,7 @@ import UserStats from "./pages/UserStats";
 import UserMatch from "./pages/UserMatch";
 import UserAchievements from "./pages/UserAchievements";
 import UserCalendar from './pages/UserCalendar'
+import ViewCourt from "./components/ViewCourt";
 
 function App() {
   const location = useLocation();
@@ -24,6 +25,7 @@ function App() {
     "/user/matches",
     "/user/achievements",
     "/user/calendar",
+    '/dashboard'
   ];
 
   const shouldShowHeader = !hideHeaderRoutes.includes(location.pathname);
@@ -35,6 +37,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/matches" element={<Matches />} />
         <Route path="/court" element={<Court />} />
+        <Route path="/court/view" element={<ViewCourt/>}/>
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<CreateAccount />} />
