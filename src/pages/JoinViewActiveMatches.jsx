@@ -14,7 +14,7 @@ const JoinViewActiveMatches = ({ setMain }) => {
                 <KeyboardArrowLeft />
                 <p>Back</p>
             </Link>
-            <div className='bg-bgColor border-2 w-full box-border flex font-Poppins px-9 gap-6 py-4 lg:flex-col lg:px-20 xsm:px-4'>
+            <div className='bg-bgColor w-full box-border flex font-Poppins px-9 gap-6 py-4 lg:flex-col lg:px-20 xsm:px-4'>
 
                 <div className='flex-[40%] sm:pl-0 sm:pr-0 pl-20 lg:pl-0 '>
                     {/* left */}
@@ -50,7 +50,7 @@ const JoinViewActiveMatches = ({ setMain }) => {
 
                     <p className='mb-2 font-bold pl-4 md:pl-0 xsm:text-center'>Court Details</p>
 
-                    <div className=' border-2 mx-auto w-full flex justify-between mb-2 md:flex-col md:items-center'>
+                    <div className='mx-auto w-full flex justify-between mb-2 md:flex-col md:items-center'>
                         <div className='w-[350px] bg-[#ffffff] rounded-lg border-orange border-[1px] px-4 py-3 mb-3 text-sm xsm:w-full xsm:mx-auto'>
                             <div className='flex gap-1 mb-2 items-center'
                             >

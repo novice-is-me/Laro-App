@@ -4,7 +4,7 @@ import success from '../assets/image/success.jpeg'
 import { ContentCopy } from '@mui/icons-material';
 import { Link } from 'react-router-dom'
 
-const Sucess = () => {
+const Sucess = ({setMain}) => {
     return (
         <div className='flex px-20 font-Poppins lg:flex-col lg:gap-10 sm:p-0'>
             <div className=' flex-[50%] flex flex-col justify-center lg:items-center'>
@@ -14,7 +14,12 @@ const Sucess = () => {
 
                 <div className='text-[#ffffff] text-sm'>
                     <Link to='/' className='bg-orange px-5 py-3 rounded-md'>Home</Link>
-                    <Link to='/court' className='bg-black px-5 py-3 rounded-md ml-2'>Browse more Events</Link>
+                    <button 
+                        className='bg-black px-5 py-3 rounded-md ml-2'
+                        onClick={() => setMain('default')}
+                    
+                    > Browse more Events
+                    </button>
                 </div>
             </div>
 

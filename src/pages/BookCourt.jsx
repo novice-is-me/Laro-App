@@ -43,7 +43,11 @@ const   BookCourt = ({ setMain }) => {
                                     onClick={() => setParking(!parking)}>
                                     <p>{parking ? "YES" : "NO"}</p>
                                 </div>
-                                <div className='w-[100px] text-[12px] bg-white rounded-md p-1 text-center'>{`(e.x 20 Slots)`}</div>
+                                <input 
+                                    type="text" 
+                                    placeholder='(e.x 20 Slots)' 
+                                    className='w-[100px] text-[12px] bg-white rounded-md p-1 text-center outline-none'
+                                />
                             </div>
 
                             <p className='text-[12px] font-semibold mb-2'>Buzzer and Timer</p>
@@ -61,7 +65,12 @@ const   BookCourt = ({ setMain }) => {
                                     onClick={() => setSeats(!seats)}>
                                     <p>{seats ? "YES" : "NO"}</p>
                                 </div>
-                                <div className='w-[100px] text-[12px] bg-white rounded-md p-1 text-center'>{`(e.x 20 Slots)`}</div>
+                                
+                                <input 
+                                    type="text" 
+                                    placeholder='(e.x 20 Slots)' 
+                                    className='w-[100px] text-[12px] bg-white rounded-md p-1 text-center outline-none'
+                                />
                             </div>
 
                         </div>
