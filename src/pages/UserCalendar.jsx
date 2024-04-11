@@ -3,10 +3,10 @@ import Calendar from "react-calendar";
 import BackButton from "../assets/image/BackButton.png"
 import CreateScheduleComponent from "../components/CreateScheduleComponent";
 import { ScheduleComponent, ViewDirective } from "@syncfusion/ej2-react-schedule";
-import EventList from "../components/EventList";
-import Event from "../components/Event";
+// import EventList from "../components/EventList";
+// import Event from "../components/Event";
 
-function UserCalendar(){ 
+function UserCalendar(){
     const weeks = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
     const times = Array.from({ length: 17 }, (_, index) => {
