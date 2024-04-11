@@ -62,11 +62,11 @@ const Court = () => {
       }
 
       {main === 'success' &&
-        <Sucess />
+        <Sucess setMain={setMain} />
       }
 
       {main === 'viewcourt' &&
-        <ViewCourt/>
+        <ViewCourt setMain={setMain}/>
         
       }
 
