@@ -8,6 +8,15 @@ import {
   ImageHighlights2,
   emojiGem,
   userImg,
+  people1,
+  people2,
+  people3,
+  people4,
+  people5,
+  people6,
+  people7,
+  people8,
+  people9,
 } from "../assets";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronCircleLeft } from "@fortawesome/free-solid-svg-icons";
@@ -460,10 +469,107 @@ const UserOverview = () => {
                     </div>
                   </div>
 
+                  {/* Player Information*/}
+
                   <div className="bg-black p-4 text-white w-full h-full rounded-[10px]">
-                    <p className=" font-Inter font-semibold text-[20px]">
-                      Player Information
-                    </p>
+                    <div className="w-full flex flex-col gap-5">
+                      <p className="font-Inter font-semibold text-[24px]">
+                        Player Information
+                      </p>
+                      <div className="flex justify-between">
+                        <svg
+                          width="21"
+                          height="21"
+                          viewBox="0 0 21 21"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="ml-2"
+                        >
+                          <path
+                            d="M10.5 10.5C12.4338 10.5 14 8.93375 14 7C14 5.06625 12.4338 3.5 10.5 3.5C8.56625 3.5 7 5.06625 7 7C7 8.93375 8.56625 10.5 10.5 10.5ZM10.5 12.25C8.16375 12.25 3.5 13.4225 3.5 15.75V17.5H17.5V15.75C17.5 13.4225 12.8363 12.25 10.5 12.25Z"
+                            fill="#F8F8F8"
+                          />
+                        </svg>
+                        <div className="ml-2">
+                          <p className="font-Inter font-semibold text-[15px]">
+                            Juan Dela Cruz
+                          </p>
+                        </div>
+                        <div className="flex items-center ml-auto">
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M9.99935 9.58317C9.44682 9.58317 8.91691 9.36368 8.52621 8.97298C8.13551 8.58228 7.91602 8.05237 7.91602 7.49984C7.91602 6.9473 8.13551 6.4174 8.52621 6.0267C8.91691 5.636 9.44682 5.4165 9.99935 5.4165C10.5519 5.4165 11.0818 5.636 11.4725 6.0267C11.8632 6.4174 12.0827 6.9473 12.0827 7.49984C12.0827 7.77342 12.0288 8.04433 11.9241 8.29709C11.8194 8.54986 11.6659 8.77952 11.4725 8.97298C11.279 9.16643 11.0494 9.31989 10.7966 9.42459C10.5438 9.52928 10.2729 9.58317 9.99935 9.58317ZM9.99935 1.6665C8.45225 1.6665 6.96852 2.28109 5.87456 3.37505C4.7806 4.46901 4.16602 5.95274 4.16602 7.49984C4.16602 11.8748 9.99935 18.3332 9.99935 18.3332C9.99935 18.3332 15.8327 11.8748 15.8327 7.49984C15.8327 5.95274 15.2181 4.46901 14.1241 3.37505C13.0302 2.28109 11.5464 1.6665 9.99935 1.6665Z"
+                              fill="#F8F8F8"
+                            />
+                          </svg>
+                          <div className="flex items-center ml-auto">
+                            <p className="font-Inter font-semibold text-[15px]">
+                              Pasig City, Philippines
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex items-center mt-12">
+                      <div className="flex gap-2">
+                        <p className="font-Inter font-semibold text-[15px]">
+                          Team
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-center">
+                      <img
+                        src={people1}
+                        alt=""
+                        className=" h-[39px] w-[39px] object-cover"
+                      />
+                      <img
+                        src={people2}
+                        alt=""
+                        className=" h-[39px] w-[39px] object-cover"
+                      />
+                      <img
+                        src={people3}
+                        alt=""
+                        className=" h-[39px] w-[39px] object-cover"
+                      />
+                      <img
+                        src={people4}
+                        alt=""
+                        className=" h-[39px] w-[39px] object-cover"
+                      />
+                      <img
+                        src={people5}
+                        alt=""
+                        className=" h-[39px] w-[39px] object-cover"
+                      />
+                      <img
+                        src={people6}
+                        alt=""
+                        className=" h-[39px] w-[39px] object-cover"
+                      />
+                      <img
+                        src={people7}
+                        alt=""
+                        className=" h-[39px] w-[39px] object-cover"
+                      />
+                      <img
+                        src={people8}
+                        alt=""
+                        className=" h-[39px] w-[39px] object-cover"
+                      />
+                      <img
+                        src={people9}
+                        alt=""
+                        className=" h-[39px] w-[39px] object-cover"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>

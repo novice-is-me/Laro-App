@@ -306,7 +306,7 @@ const UserMatch = () => {
           </p>
           <div className="flex gap-4 border-0 border-orange">
             {/* New Matches */}
-            <div className="bg-orange text-white p-4 rounded-[10px] w-[182.89px] h-[309px] mb-4">
+            <div className="bg-orange text-white p-4 rounded-[10px] w-[270.97px] h-[309.31px] mb-4">
               <p className="font-Inter font-semibold text-[20px]">Total Play</p>
               <p className="font-Inter font-semibold text-[10px]">0</p>
             </div>
@@ -335,7 +335,7 @@ const UserMatch = () => {
                 emoji={emojiSad}
                 value={"loss"}
               />
-              <div className="bg-black text-white p-4 rounded-[10px] w-[210px] h-[214px]">
+              <div className="bg-black text-white p-4 rounded-[10px] w-[280px] h-[214px]">
                 <p className="font-Inter font-semibold text-[20px]">New</p>
                 <p className="font-Inter font-semibold text-gray text-[10px]">
                   Rank
