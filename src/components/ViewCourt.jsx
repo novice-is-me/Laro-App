@@ -6,7 +6,7 @@ import success from '../assets/image/success.jpeg'
 import Sucess from '../pages/Sucess'
 import { KeyboardArrowLeft } from '@mui/icons-material/'
 
-const ViewCourt = () => {
+const ViewCourt = ({setMain}) => {
     return (
         <div className='font-Poppins px-20 bg-bgColor lg:p-0 h-fit'>
             <div className=' flex w-full items-center md:flex-col'>
@@ -27,10 +27,17 @@ const ViewCourt = () => {
             </div>
 
          
-            <Link to='/' className='flex items-center w-fit'>
+            <div 
+                className='flex items-center w-fit cursor-pointer'
+                onClick={() => setMain('default')}
+            
+            >
                 <KeyboardArrowLeft style={{ fontSize: '80px' }} />
-                <p  className='text-5xl font-bold ml-9 md:text-2xl md:m-0'>Mandaluyong City</p>
-            </Link>
+                <p  
+                    className='text-5xl font-bold ml-9 md:text-2xl md:m-0'
+                    
+                >Mandaluyong City</p>
+            </div>
 
 
 
