@@ -13,6 +13,8 @@ import emojiShock from './image/EmojiShock.png'
 import emojiCool from './image/emojiCool.png'
 import emojiSmirk from './image/emojiSmirk.png'
 import emojiSad from './image/emojiSad.png'
+import ownerImg1 from './image/ownerImg1.png'
+import girlsBasket from './image/girlsBasket.png'
 
 export{
     Logo,
@@ -29,5 +31,7 @@ export{
     emojiShock,
     emojiCool,
     emojiSmirk,
-    emojiSad
+    emojiSad,
+    ownerImg1,
+    girlsBasket,
 }
