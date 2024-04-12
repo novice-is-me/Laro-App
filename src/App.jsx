@@ -15,13 +15,18 @@ import OrganizerProfile from './pages/OrganizerProfile'
 
 function App() {
   const location = useLocation();
+  const hideHeaderRoutes = [
+    "/dashboard",
+    "/organizer",
+    "/organizerProfile"
+  ];
 
 
-  const isOrganizerProfilePage = location.pathname === '/organizer';
+  const shouldShowHeader = !hideHeaderRoutes.includes(location.pathname);
 
   return ( 
     <>
-      {!isOrganizerProfilePage && <Header />} 
+      {shouldShowHeader && <Header />}
       <Routes>
         <Route path='/' element={<HomePage />}></Route>
         <Route path='/matches' element={<Matches />}></Route>
