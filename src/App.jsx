@@ -14,7 +14,7 @@ import UserOverview from "./pages/UserOverview";
 import UserStats from "./pages/UserStats";
 import UserMatch from "./pages/UserMatch";
 import UserAchievements from "./pages/UserAchievements";
-import UserCalendar from './pages/UserCalendar'
+import CalendarCourtOwner from './pages/CalendarCourtOwner'
 import ViewCourt from "./components/ViewCourt";
 
 function App() {
@@ -24,9 +24,9 @@ function App() {
     "/user/statistics",
     "/user/matches",
     "/user/achievements",
-    "/user/calendar",
-    '/dashboard'
-  ];
+    '/dashboard',
+    '/dashboard/calendar',
+    ];
 
   const shouldShowHeader = !hideHeaderRoutes.includes(location.pathname);
 
@@ -43,11 +43,11 @@ function App() {
         <Route path="/register" element={<CreateAccount />} />
         <Route path="/court-owner" element={<CourtOwner />} />
         <Route path="/dashboard" element={<DashboardCourtOwner />} />
+        <Route path='/dashboard/calendar' element={<CalendarCourtOwner/>}/>
         <Route path="/user" element={<UserOverview />} />
         <Route path="/user/statistics" element={<UserStats />} />
         <Route path="/user/matches" element={<UserMatch />} />
         <Route path="/user/achievements" element={<UserAchievements />} />
-        <Route path='/user/calendar' element={<UserCalendar/>}/>
       </Routes>
     </>
   );

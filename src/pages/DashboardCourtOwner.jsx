@@ -227,7 +227,7 @@ const DashboardCourtOwner = () => {
                         </div>
                         <div className='bg-orange flex justify-between p-4 w-[50%]
                             rounded-[10px] h-[50%] cursor-pointer'>
-                                <Link to="/user/calendar"> 
+                                <Link to="/dashboard/calendar"> 
                                     <p className=' font-Inter font-semibold text-[16px] text-white'>
                                         Calendar</p>
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

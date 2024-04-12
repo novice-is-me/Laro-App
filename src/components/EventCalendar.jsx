@@ -44,6 +44,8 @@ function EventCalendar(props){
     return(
         <div className="w-full h-full font-Poppins text-base">
             <Calendar
+              defaultView={'week'}
+              toolbar={false}
                 {...props}
                 localizer={localizer}
              

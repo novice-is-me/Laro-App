@@ -4,8 +4,9 @@ import BackButton from "../assets/image/BackButton.png"
 import CreateScheduleComponent from "../components/CreateScheduleComponent";
 import EventCalendar from "../components/EventCalendar";
 import moment from "moment"
+import { Link } from "react-router-dom";
 
-function UserCalendar(){
+function CalendarCourtOwner(){
     const weeks = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
     const times = Array.from({ length: 17 }, (_, index) => {
@@ -18,12 +19,12 @@ function UserCalendar(){
         {
           start: moment("2024-04-11T10:00:00").toDate(),
           end: moment("2024-04-11T11:00:00").toDate(),
-          title: "MRI Registration",
+          title: "Bini Gwen's Basketball Game",
         },
         {
           start: moment("2024-04-18T14:00:00").toDate(),
           end: moment("2024-04-18T15:30:00").toDate(),
-          title: "ENT Appointment",
+          title: "Bini Colet's Practice Game",
         },
       ];
 
@@ -31,7 +32,7 @@ function UserCalendar(){
         <div className="w-full h-screen  flex flex-col">
             {/* Header of the Calendar */}
             <div className="w-full flex items-center p-5 gap-[26px] font-Poppins font-semibold text-xl ">
-                <img src={BackButton} alt="Back" />
+                <Link to="/user"><img src={BackButton} alt="Back" /></Link>
                 <p>Calendar Set-Up</p>
             </div>
 
@@ -100,4 +101,4 @@ function UserCalendar(){
     )
 }
 
-export default UserCalendar;
+export default CalendarCourtOwner;
