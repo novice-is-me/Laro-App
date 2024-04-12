@@ -4,13 +4,52 @@ import bookcourt from '../assets/image/bookcourt.jpeg'
 import PictureComponent from '../components/PictureComponent'
 import CreateAccount from './CreateAccount'
 import Calendar from 'react-calendar'
+import TimeField from 'react-simple-timefield';
+
+
+
+
 const   BookCourt = ({ setMain }) => {
 
     const weeks = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
-    const [time, setTime] = useState(true)
+
+    const [selectedDate, setSelectedDate] = useState(null)
+
+    const [time, setTime] = useState('AM')
+    const [timeSlot, setTimeSlot] = useState('00:00')
+
     const [parking, setParking] = useState(true)
+    const [parkingSlot, setParkingSlot] = useState('')
+
     const [buzzertimer, setBuzzerTimer] = useState(true)
+
     const [seats, setSeats] = useState(true)
+    const [seatsSlot, setSeatSlot] = useState('')
+
+    const handleDateSelect = (date) => {
+        // Extract only the date part
+        const selectedDateFormat = date.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+        });
+        // Update the selected date state
+        setSelectedDate(selectedDateFormat);
+    }
+
+    const handleTime = () => {
+        if (time === 'AM'){
+            setTime('PM')
+        } else{
+            setTime('AM')
+        }
+    }
+
+
+    const handleSubmit = () => {
+        setMain('success')
+        console.log(selectedDate, timeSlot, time, parkingSlot, buzzertimer, seatsSlot);
+    }
 
 
     return (
@@ -21,16 +60,26 @@ const   BookCourt = ({ setMain }) => {
 
                 <div className='flex mt-5 gap-6  sm:flex-col'>
                     <div className=''>
-                        <Calendar className='font-Poppins xsm:scale-[0.8]' formatShortWeekday={(locale, date) => weeks[date.getDay()]} />
+                        <Calendar 
+                            className='font-Poppins xsm:scale-[0.8]' 
+                            formatShortWeekday={(locale, date) => weeks[date.getDay()]} 
+                            value={selectedDate}
+                            onChange={handleDateSelect}
+                        />
+                            
                     </div>
 
                     <div className=' sm:flex sm:flex-col sm:items-center'>
 
                         <div className='flex gap-1 mb-2'>
                             <div className='bg-white rounded-md p-3'>Time</div>
-                            <div className='bg-white rounded-md p-3 flex'>
-                                <p className='px-2'>00:00</p>
-                                <div className='border-l-[1px] border-gray px-3 cursor-pointer' onClick={() => setTime(!time)}>{time ? "AM" : "PM"}</div>
+                            <div className='bg-white rounded-md p-3 flex w-32'>
+                                {/* <p className='px-2'>00:00</p> */}
+                                <TimeField 
+                                    className='flex-1' 
+                                    value={timeSlot} 
+                                    onChange={(e) => setTimeSlot(e.target.value)}/>
+                                <div className='border-l-[1px] border-gray px-3 cursor-pointer' onClick={handleTime}>{time}</div>
                             </div>
                         </div>
 
@@ -44,9 +93,12 @@ const   BookCourt = ({ setMain }) => {
                                     <p>{parking ? "YES" : "NO"}</p>
                                 </div>
                                 <input 
-                                    type="text" 
+                                    value={parking? parkingSlot : ''}
+                                    type="text"
+                                    disabled={parking? false: true}
                                     placeholder='(e.x 20 Slots)' 
-                                    className='w-[100px] text-[12px] bg-white rounded-md p-1 text-center outline-none'
+                                    className={`w-[100px] text-[12px] bg-white rounded-md p-1 text-center outline-none ${!parking? 'cursor-not-allowed' : '' }`}
+                                    onChange={(e) => setParkingSlot(e.target.value)}
                                 />
                             </div>
 
@@ -68,8 +120,11 @@ const   BookCourt = ({ setMain }) => {
                                 
                                 <input 
                                     type="text" 
+                                    value={seats? seatsSlot : ''}
                                     placeholder='(e.x 20 Slots)' 
-                                    className='w-[100px] text-[12px] bg-white rounded-md p-1 text-center outline-none'
+                                    disabled={seats? false: true}
+                                    className={`w-[100px] text-[12px] bg-white rounded-md p-1 text-center outline-none ${!seats? 'cursor-not-allowed' : '' }`}
+                                    onChange={(e) => setSeatSlot(e.target.value)}
                                 />
                             </div>
 
@@ -78,7 +133,8 @@ const   BookCourt = ({ setMain }) => {
 
                         <button
                             className='w-[200px] bg-orange rounded-md text-[11px] p-3 text-[#ffffff]'
-                            onClick={() => setMain('success')}
+                            // onClick={() => setMain('success')}
+                            onClick={handleSubmit}
 
                         >Next
 

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Calendar from "react-calendar";
 import BackButton from "../assets/image/BackButton.png"
 import CreateScheduleComponent from "../components/CreateScheduleComponent";
+import EventCalendar from "../components/EventCalendar";
+import moment from "moment"
 
 function UserCalendar(){
     const weeks = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
@@ -11,6 +13,19 @@ function UserCalendar(){
         const ampm = index < 12 ? 'AM' : 'PM';
         return `${hour} ${ampm}`;
       });
+
+      const events = [
+        {
+          start: moment("2024-04-11T10:00:00").toDate(),
+          end: moment("2024-04-11T11:00:00").toDate(),
+          title: "MRI Registration",
+        },
+        {
+          start: moment("2024-04-18T14:00:00").toDate(),
+          end: moment("2024-04-18T15:30:00").toDate(),
+          title: "ENT Appointment",
+        },
+      ];
 
     return(
         <div className="w-full h-screen  flex flex-col">
@@ -56,7 +71,19 @@ function UserCalendar(){
 
                     {/* Time Table */}
                     <div className="w-full h-full flex py-6 px-4  border border-gray rounded-lg">
-                        <ul className="w-full px-5 flex flex-col gap-3">
+                            <EventCalendar events={events} />
+                       
+                        {/* <ScheduleComponent eventSettings={{
+                            dataSource: data,
+                        }}>
+                            <ViewDirective>
+                                <ViewDirective option="Day" />
+                                <ViewDirective option="Week" />
+                                <ViewDirective option="Month" />
+                            </ViewDirective>
+                        </ScheduleComponent> */}
+
+                        {/* <ul className="w-full px-5 flex flex-col gap-3">
                             {times.map((time, index) => (
                             <li className="w-full flex justify-between gap-5 text-gray font-Poppins text-base" key={index}>
                                 {time} 
@@ -64,7 +91,7 @@ function UserCalendar(){
                                 </div>
                             </li>
                             ))}
-                        </ul>
+                        </ul> */}
                     </div>
                 </div>
             </div>

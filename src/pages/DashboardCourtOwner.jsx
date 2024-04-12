@@ -12,25 +12,25 @@ const DashboardCourtOwner = () => {
     const navigate = useNavigate()
 
   return ( 
-     <div className='flex border border-yellow-950 w-full p-4 gap-4'>
+     <div className='flex  w-full p-4 gap-4'>
         {/* for profile */}
-        <div className=' flex border border-yellow-500 flex-[1.1] gap-4 xl:flex-[.5]'>
+        <div className=' flex flex-[1.1] gap-4 xl:flex-[.5]'>
             <div className=' mt-4 hover:cursor-pointer'
              onClick={() => navigate('/')}>
                 <svg width="22" height="35" viewBox="0 0 22 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M1.85827 20.0176C1.19113 19.3497 0.816406 18.4442 0.816406 17.5001C0.816406 16.5561 1.19113 15.6506 1.85827 14.9826L15.2913 1.54488C15.9596 0.876882 16.8659 0.501731 17.8108 0.501953C18.2787 0.502063 18.7419 0.594327 19.1742 0.773476C19.6064 0.952626 19.9991 1.21515 20.3298 1.54607C20.6606 1.87698 20.9229 2.2698 21.1019 2.70211C21.2808 3.13441 21.3729 3.59772 21.3728 4.06559C21.3727 4.53347 21.2804 4.99674 21.1012 5.42896C20.9221 5.86117 20.6596 6.25387 20.3286 6.58463L9.41552 17.5001L20.331 28.4156C20.6714 28.7441 20.943 29.1371 21.1299 29.5716C21.3168 30.0062 21.4153 30.4736 21.4197 30.9466C21.424 31.4196 21.3341 31.8888 21.1551 32.3267C20.9762 32.7646 20.7119 33.1625 20.3776 33.4971C20.0432 33.8318 19.6456 34.0965 19.2079 34.2758C18.7701 34.4552 18.3011 34.5455 17.828 34.5416C17.355 34.5377 16.8875 34.4397 16.4528 34.2532C16.018 34.0667 15.6248 33.7955 15.296 33.4554L1.85352 20.0176H1.85827Z" fill="#545454"/>
                 </svg>
             </div>
-            <div className='flex flex-col gap-8 justify-between border w-full'>
+            <div className='flex flex-col gap-8 justify-between w-full'>
                 <div className='flex flex-col gap-8'>
-                    <div className='flex gap-2 border border-red-600 w-full'>
+                    <div className='flex gap-2 w-full'>
                         <div className='h-[130px] w-full rounded-[10px] overflow-hidden
                          xl:hidden'>
                             <img src={ownerImg} alt=""
                             className=' h-full w-full object-cover' />
                         </div>
-                        <div className='flex flex-col justify-between w-full m-2 border border-green-500'>
-                            <div className='border w-full'>
+                        <div className='flex flex-col justify-between w-full m-2 '>
+                            <div className=' w-full'>
                                 <div className='flex gap-8 items-center justify-between'>
                                     <p className='font-poppins text-[20px] font-semibold'>
                                         Benedict C.</p>
@@ -80,8 +80,8 @@ const DashboardCourtOwner = () => {
         </div>
 
         {/* for contents */}
-        <div className='flex flex-col border border-red-500 flex-[3] h-full gap-8'>
-            <div className='flex gap-4 border border-orange '>
+        <div className='flex flex-col flex-[3] h-full gap-8'>
+            <div className='flex gap-4 '>
                 <div className=' bg-orange text-white p-4 rounded-[10px] w-[20%]'>
                     <p className='font-Inter font-semibold text-[20px]'>
                         Active Sched</p>
@@ -89,7 +89,7 @@ const DashboardCourtOwner = () => {
                 </div>
                 {/* Upcmongs ched */}
                 <div className='flex flex-col w-full gap-4'>
-                    <div className='flex border w-full'>
+                    <div className='flex w-full'>
                         <div className='flex gap-8 w-full'>
                             <div className='flex  flex-col gap-4 justify-between bg-black p-4 text-white w-[50%] rounded-[10px]'>
                                 <div className='flex justify-between'>
@@ -147,7 +147,7 @@ const DashboardCourtOwner = () => {
                     </div>
                 </div> 
             </div>
-            <div className=' flex gap-8 border border-green-700 w-full'>
+            <div className=' flex gap-8 w-full'>
                 {/* for first col */}
                 <div className=' w-[58%]'>
                     {/* upcoming events */}
@@ -189,7 +189,7 @@ const DashboardCourtOwner = () => {
                         </div>
                     </div>
                     {/* images */}
-                    <div className='flex gap-4 w-full border border-green-500'>
+                    <div className='flex gap-4 w-full'>
                         <div className='w-[50%] text-center mt-3'>
                             <p className='font-Poppins font-semibold text-[16px] mb-2'>Image</p>
                             <div className='bg-orange h-[150px] w-full rounded-[10px]'></div>
@@ -199,7 +199,7 @@ const DashboardCourtOwner = () => {
                             </div>
                         </div>
                         {/* for earnings */}
-                        <div className='flex flex-col border border-yellow-300 w-[50%] mt-3'>
+                        <div className='flex flex-col w-[50%] mt-3'>
                             <p className=' font-Poppins font-semibold text-[16px] mb-2 text-center'>Earnings</p>
                             <div className='h-full flex flex-col p-4 justify-between text-white bg-black 
                             rounded-[10px] text-start'>
@@ -227,7 +227,7 @@ const DashboardCourtOwner = () => {
                         </div>
                         <div className='bg-orange flex justify-between p-4 w-[50%]
                             rounded-[10px] h-[50%] cursor-pointer'>
-                                <Link to="/user/calendar">
+                                <Link to="/user/calendar"> 
                                     <p className=' font-Inter font-semibold text-[16px] text-white'>
                                         Calendar</p>
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

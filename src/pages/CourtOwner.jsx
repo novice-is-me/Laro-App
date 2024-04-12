@@ -53,7 +53,7 @@ const CourtOwner = () => {
             </div>  
         }
         {main === 'second' && 
-            <div className='mx-[5rem] xsm:p-3 xsm:mx-0'>
+            <div className='mx-[5rem] xsm:p-3 xsm:mx-0 flex-1 h-svh'>
                     <div className='mb-8 '>
                         <h1 className='text-start 1139:text-center font-Poppins font-black text-[40px] my-4'>
                             Success!</h1>
@@ -70,7 +70,7 @@ const CourtOwner = () => {
                     </div>
             </div>
         }
-            <div className='w-[50%] flex items-center justify-center 1139:hidden 
+            <div className='w-[50%] flex items-center justify-center 1139:hidden h-full
             832px:scale-[0.8] 770px:scale-[0.7] '>
                     <CourtImgComponent img={img} />
             </div>  

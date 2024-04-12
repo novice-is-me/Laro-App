@@ -13,6 +13,7 @@ const Court = () => {
 
   const [main, setMain] = useState('default')
   const [filteredData, setFilteredData] = useState(CardData)
+  const [clickedCard, setClickedCard] = useState(null)
 
   function handleChange(e) {
     const filtered = CardData.filter(card => card.location.toLowerCase().includes(e.target.value.toLowerCase()));
@@ -48,7 +49,7 @@ const Court = () => {
 
           <div className='flex gap-2 flex-wrap scale-[1] mt-5 justify-center'>
             {filteredData.map(card => (
-              <CourtsCard key={card.id} card={card} setMain={setMain} />
+              <CourtsCard key={card.id} card={card} setMain={setMain} setClickedCard={setClickedCard} />
             ))}
           </div>
         </div>
@@ -66,7 +67,7 @@ const Court = () => {
       }
 
       {main === 'viewcourt' &&
-        <ViewCourt setMain={setMain}/>
+        <ViewCourt setMain={setMain} clickedCard={clickedCard}/>
         
       }
 

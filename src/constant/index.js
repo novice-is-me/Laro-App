@@ -96,6 +96,7 @@ export const choices = [
     text: "Joined a game near you?",
     choice: "Find",
     placeholder: "Enter Matches (ex) Shooting",
+    path: '/matches'
   },
   {
     id: 2,
@@ -103,6 +104,7 @@ export const choices = [
     text: "Organize a game",
     choice: "Setup",
     placeholder: "Create Event",
+    path: '/'
   },
   {
     id: 3,
@@ -110,6 +112,7 @@ export const choices = [
     text: "Find Courts near you?",
     choice: "Find",
     placeholder: "Enter Location",
+    path: '/court'
   },
 ];
 

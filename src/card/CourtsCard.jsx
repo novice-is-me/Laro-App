@@ -2,8 +2,17 @@ import React from 'react'
 import img4 from '../assets/Active Match/activematch4.jpg'
 import img from '../assets/Active Match/activematch4.jpg'
 import { Link } from 'react-router-dom'
-const CourtsCard = ({ card, setMain }) => {
+const CourtsCard = ({ card, setMain ,setClickedCard}) => {
+
+
+    const handleViewClick = () => {
+        setMain('viewcourt')
+        setClickedCard(card.id);
+    }
+
+
     return (
+
         <div>
             <div className='bg-[#ffffff] rounded-[14px] w-[273px] p-5 h-[300px]'>
                 <div className='relative'>
@@ -32,7 +41,7 @@ const CourtsCard = ({ card, setMain }) => {
                             </Link>
                             <Link
                                 className='font-Poppins text-[10px] border-2 border-[#fa5000] border-solid text-black w-[60px] h-[40px] rounded-[20px] flex items-center justify-center cursor-pointer'
-                                onClick={() => setMain('viewcourt')}
+                                onClick={handleViewClick}
                                 to='/court'
                             >
                                 View

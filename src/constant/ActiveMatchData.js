@@ -73,25 +73,25 @@ export const ActiveMatch = [
 
 export const CardData = [
     {
-        id: 1,
+        id: 0,
         isAvailable: false,
         imagecard: court1,
         location: "Pasig city",
     },
     {
-        id: 2,
+        id: 1,
         isAvailable: true,
         imagecard: court2,
         location: "Mandaluyong",
     },
     {
-        id: 3,
+        id: 2,
         isAvailable: false,
         imagecard: court3,
         location: "Marikina City",
     },
     {
-        id: 4,
+        id: 3,
         isAvailable: true,
         imagecard: court4,
         location: "Antipolo city",

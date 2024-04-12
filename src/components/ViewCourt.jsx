@@ -5,14 +5,16 @@ import { Link } from 'react-router-dom'
 import success from '../assets/image/success.jpeg'
 import Sucess from '../pages/Sucess'
 import { KeyboardArrowLeft } from '@mui/icons-material/'
+import { CardData } from '../constant/ActiveMatchData'
 
-const ViewCourt = ({setMain}) => {
+
+const ViewCourt = ({setMain , clickedCard}) => {
     return (
         <div className='font-Poppins px-20 bg-bgColor lg:p-0 h-fit'>
             <div className=' flex w-full items-center md:flex-col'>
                 <div className='w-full md:text-center md:mb-2'>
                     <p className='text-gray mb-2 '>Result</p>
-                    <h1 className='text-3xl font-medium'>Mandaluyong City</h1>
+                    <h1 className='text-3xl font-medium'>{CardData[clickedCard].location}</h1>
                 </div>
 
                 <div className='relative'>
@@ -36,7 +38,7 @@ const ViewCourt = ({setMain}) => {
                 <p  
                     className='text-5xl font-bold ml-9 md:text-2xl md:m-0'
                     
-                >Mandaluyong City</p>
+                >{CardData[clickedCard].location.toUpperCase()}</p>
             </div>
 
 

@@ -18,7 +18,7 @@ const Setup = ({setMain, setIsShow}) => {
     //   }
 
   return (
-    <div className='flex gap-8 items-center w-full mr-12 832px:flex-col 832px:mr-0'>   
+    <div className='flex gap-8 items-center w-full mr-12 832px:flex-col 832px:mr-0 pb-10'>   
       <div className='flex mt-5 gap-6  sm:flex-col'>
         <div className=''>
           <Calendar className='font-Poppins xsm:scale-[0.8]' formatShortWeekday={(locale, date) => weeks[date.getDay()]} />
