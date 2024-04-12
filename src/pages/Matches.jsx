@@ -11,6 +11,12 @@ import JoinViewActiveMatches from './JoinViewActiveMatches'
 const Matches = () => {
 
   const [main, setMain] = useState('default')
+  const [filteredData, setFilteredData] = useState(ActiveMatch)
+
+  const handleChange = (e) => {
+    const filtered = ActiveMatch.filter(card => card.title.toLowerCase().includes(e.target.value.toLowerCase()));
+    setFilteredData(filtered);
+  }
 
   return (
     <div className='bg-[#fff6f2] w-full px-9 py-7'>
@@ -26,7 +32,11 @@ const Matches = () => {
                   name=""
                   id=""
                   placeholder='Join a game near you?'
-                  className='py-3 text-sm font-Poppins rounded-[30px] pl-5 pr-20 outline-none' />
+                  className='py-3 text-sm font-Poppins rounded-[30px] pl-5 pr-20 outline-none' 
+                  onChange={handleChange}
+                
+                />
+                
 
                 <FontAwesomeIcon icon={faMagnifyingGlass} className='absolute right-5 top-3' />
               </div>
@@ -44,7 +54,7 @@ const Matches = () => {
 
           </div>
           <div className='flex gap-2 flex-wrap scale-[1] mt-5 justify-center'>
-            {ActiveMatch.map(card => (
+            {filteredData.map(card => (
               <ActiveMatchesCard key={card.id} card={card} setMain={setMain} />
             ))}
           </div>

@@ -102,6 +102,17 @@ const CreateAccount = () => {
 
     const handelSubmit = async (e) => {
         e.preventDefault();
+        const v1 = PHONE_EMAIL_REGEX.test(email);
+        const v2 = USER_REGEX.test(user);
+        const v3 = PWD_REGEX.test(pass);
+        const v4 = PHONE_REGEX.test(contactNum);
+        if (!v1 || !v2 || !v3 || !v4){
+            setErrMsg('Invalid Entry')
+            return;
+        }
+
+        console.log(email, user, pass, contactNum, profilePic);
+        setSuccess(true)
 
     }
 
@@ -119,7 +130,7 @@ const CreateAccount = () => {
                                 ref={userRef} 
                                 type="text" 
                                 placeholder="Email Address or Mobile Number" 
-                                required 
+                                required
                                 onChange={(e) => setEmail(e.target.value)}
                                 className={`bg-[#FFEEE6] outline-none w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins
                                           ${emailFocus && validEmail ? 'outline-green-600' : 'outline-none'} ${email && !validEmail? 'outline-red-600' : 'outline-none'} `}
@@ -139,7 +150,7 @@ const CreateAccount = () => {
                                 required 
                                 className={`bg-[#FFEEE6] w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins
                                 ${userFocus && validName ? 'outline-green-600' : 'outline-none'} ${user && !validName? 'outline-red-600' : 'outline-none'}`}
-                                ref={userRef}
+                                
                                 autoComplete='off'
                                 onChange={(e) => setUser(e.target.value)}
                                 onFocus={() => setUserFocus(true)}

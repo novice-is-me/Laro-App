@@ -31,8 +31,8 @@ const ActiveMatchesCard = ({ card, setMain }) => {
                         <p className='font-Poppins text-[9px] m-0'>Organizer</p>
                     </div>
 
-                    <div onClick={() => setMain('join')} className='font-Poppins text-[11px] bg-[#fa5000] text-[#ffffff] w-[60px] h-[40px] rounded-[20px] flex items-center justify-center cursor-pointer'>Join</div>
-                    <div onClick={() => setMain('view')} className='font-Poppins text-[11px] border-2 border-[#fa5000] border-solid text-black w-[60px] h-[40px] rounded-[20px] flex items-center justify-center cursor-pointer '>View</div>
+                    <Link to='/matches' onClick={() => setMain('join')} className='font-Poppins text-[11px] bg-[#fa5000] text-[#ffffff] w-[60px] h-[40px] rounded-[20px] flex items-center justify-center cursor-pointer'>Join</Link>
+                    <Link to='/matches' onClick={() => setMain('view')} className='font-Poppins text-[11px] border-2 border-[#fa5000] border-solid text-black w-[60px] h-[40px] rounded-[20px] flex items-center justify-center cursor-pointer '>View</Link>
 
                 </div>
 
