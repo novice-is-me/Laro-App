@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { InfoRounded } from '@mui/icons-material';
+import { InfoRounded, VisibilityOff, Visibility } from '@mui/icons-material';
 
  const EMAIL_REGEX = /^[a-zA-Z0-9]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
  const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/; 
@@ -23,6 +23,8 @@ const CourtOwnerForm = ({setIsShow}) => {
   const [contact, setContact] = useState('')
   const [validContact, setValidContact] = useState('')
   const [contactFocus, setContactFocus] = useState('')
+
+  const [showPass, setShowPass] = useState('')
 
   const userRef = useRef();
 
@@ -100,15 +102,21 @@ const CourtOwnerForm = ({setIsShow}) => {
                   Letters, numbers, underscores, hypens allowed<br />
           </p>
           
-        <input type='password'
-          value={pwd}
-          required
-          aria-describedby='pwdnote'
-          placeholder='Password'
-          className={`font-poppins p-4 bg-[#FFEEE6] ${pwdFocus && !validPwd ? 'outline-red-500' : ''}`}
-          onChange={(e) => setPwd(e.target.value)}
-          onFocus={() => setPwdFocus(true)}
-          onBlur={() => setPwdFocus(false)}/>
+        <div className='w-full relative'>
+          <input type='password'
+            value={pwd}
+            required
+            aria-describedby='pwdnote'
+            placeholder='Password'
+            className={`w-full font-poppins p-4 bg-[#FFEEE6] relative ${pwdFocus && !validPwd ? 'outline-red-500' : ''}`}
+            onChange={(e) => setPwd(e.target.value)}
+            onFocus={() => setPwdFocus(true)}
+            onBlur={() => setPwdFocus(false)}/>
+            <span> {showPass ?  
+              <Visibility className='absolute right-4 top-5' style={{fontSize:'15px', color: 'gray'}} onClick={() => setShowPass(!showPass)}/> 
+                :
+              <VisibilityOff className='absolute right-4 top-5' style={{fontSize:'15px',  color: 'gray'}} onClick={() => setShowPass(!showPass)}/>}</span>
+        </div>
           <p id='pwdnote' className={` text-red-600 font-Poppins text-[12px]
            ${pwdFocus && !validPwd ? 'block' : 'hidden'}`}>
            <InfoRounded style={{fontSize:'20px'}}/> 8 to 24 characters.
