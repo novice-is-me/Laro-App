@@ -3,7 +3,6 @@ import LoginForm from '../components/LoginForm'
 import { Link } from 'react-router-dom'
 import PictureComponent from '../components/PictureComponent' 
 import { loginImg } from '../assets'
-import Footer from './Footer'
 
 const Login = () => {
   return (
