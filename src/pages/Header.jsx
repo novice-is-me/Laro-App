@@ -31,9 +31,8 @@ const Header = () => {
   
   return (  
       <div className={`py-8 px-[5rem] sticky top-0 flex justify-between bg-bgColor
-      items-center w-full z-[99]  
-      ${isScrolled ? 'backdrop-filter backdrop-blur-lg bg-opacity-30' : 'bg-bgColor'}`}
-      >      
+      items-center w-full z-[99] xsm:px-5  
+      ${isScrolled ? 'backdrop-filter backdrop-blur-lg bg-opacity-30' : 'bg-bgColor'}`}>      
         <div> 
           <img src={Logo} alt="logo"/>
         </div>
@@ -55,7 +54,7 @@ const Header = () => {
               {isClicked && <div className='absolute  bg-bgColor right-0 bottom-[-3] mt-5 py-6 px-10 z-10 
                border border-orange rounded-[10px]'>
                 {links[0].navigationBar.map((link, i) =>{
-                  return <div className='py-2 '>
+                  return <div className='py-2 xsm:text-center'>
                     <Link to={link.path} className='font-poppins hover:text-orange'
                     onClick={() => setIsClicked(false)}
                     >{link.name}</Link>

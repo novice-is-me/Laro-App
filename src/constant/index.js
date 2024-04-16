@@ -57,7 +57,7 @@ export const links = [
   },
   {
     policies: [
-      "Privay and Cookies",
+      "Privacy and Cookies",
       "Content Policy",
       "Terms of Use",
       "Feedback",

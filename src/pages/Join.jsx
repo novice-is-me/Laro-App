@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Join = () => {  
   return (    
-    <div className='bg-bgColor  w-full px-9 py-4'>
+    <div className='bg-bgColor  w-full px-9 py-4 xsm:px-3'>
       <div className='flex justify-between rounded-[20px] px-[5rem] pt-[5rem] bg-join lg:pr-[3rem] 950px:pt-[3rem]
       md:flex-col md:bg-join2 md:gap-y-8 xsm:bg-join3 xsm:p-[3rem]'>                 
         <div className='flex flex-col pt-[5rem] gap-28 xl:gap-10 xl:pt-0 md:items-center'>
