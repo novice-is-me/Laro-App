@@ -3,8 +3,10 @@ import Logo from '../assets/Logo.png'
 import success from '../assets/image/success.jpeg'
 import { ContentCopy } from '@mui/icons-material';
 import { Link } from 'react-router-dom'
+import { CardData } from '../constant/ActiveMatchData';
 
-const Sucess = ({setMain}) => {
+
+const Sucess = ({setMain,  clickedCard}) => {
     return (
         <div className='flex px-20 font-Poppins lg:flex-col lg:gap-10 sm:p-0'>
             <div className=' flex-[50%] flex flex-col justify-center lg:items-center'>
@@ -32,7 +34,7 @@ const Sucess = ({setMain}) => {
                 <div className='flex flex-col'>
                     <p className='text-[13px] text-gray'>Court Area</p>
                     <div className='flex justify-between items-center'>
-                        <h1 className='font-semibold text-4xl mb-2'>Mandaluyong City</h1>
+                        <h1 className='font-semibold text-4xl mb-2'>{CardData[clickedCard].location}</h1>
                         <div className='bg-orange text-[9px] px-3 py-1 rounded-2xl text-[#ffffff]'>Reserved</div>
                     </div>
 

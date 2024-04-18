@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { choices } from '../constant'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Options from '../components/Options'
 import { image1, image2 } from '../assets'
 
+
 const HeroSection = () => {
+
+  
+
+
+
   return (
     <div className=' bg-bgColor flex gap-8 justify-between py-[3rem] px-[5rem]'>
       <div className=' flex flex-col 950px:items-center 950px:text-center'>  
@@ -17,7 +23,7 @@ const HeroSection = () => {
               return (
                   <div key={i} 
                   className='flex'>
-                      <Options {...choice} key={i}/>
+                      <Options {...choice} key={i} />
                   </div>    
               )
           })} 

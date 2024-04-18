@@ -58,12 +58,12 @@ const Court = () => {
       }
 
       {main === 'bookcourt' &&
-        <BookCourt setMain={setMain} />
+        <BookCourt setMain={setMain}  />
 
       }
 
       {main === 'success' &&
-        <Sucess setMain={setMain} />
+        <Sucess setMain={setMain}  clickedCard={clickedCard}  />
       }
 
       {main === 'viewcourt' &&

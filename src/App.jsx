@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import "./App.css";
 import Header from "./pages/Header";
@@ -17,6 +17,10 @@ import UserAchievements from "./pages/UserAchievements";
 import CalendarCourtOwner from './pages/CalendarCourtOwner'
 import ViewCourt from "./components/ViewCourt";
 
+
+export const joinGameContext = createContext();
+
+
 function App() {
   const location = useLocation();
   const hideHeaderRoutes = [
@@ -30,10 +34,19 @@ function App() {
 
   const shouldShowHeader = !hideHeaderRoutes.includes(location.pathname);
 
+  const [joinGame, setJoinGame] = useState('');
+  const [findCourt, setFindCourt] = useState('');
+  
+  useEffect(() => {
+    console.log("findcourt: " , findCourt);
+  }, [findCourt])
+
   return (
     <>
       {shouldShowHeader && <Header />}
-      <Routes>
+
+      <joinGameContext.Provider value={{setJoinGame, joinGame}}> 
+        <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/matches" element={<Matches />} />
         <Route path="/court" element={<Court />} />
@@ -48,7 +61,10 @@ function App() {
         <Route path="/user/statistics" element={<UserStats />} />
         <Route path="/user/matches" element={<UserMatch />} />
         <Route path="/user/achievements" element={<UserAchievements />} />
-      </Routes>
+        </Routes>
+        </joinGameContext.Provider>
+
+
     </>
   );
 }

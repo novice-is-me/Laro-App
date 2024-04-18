@@ -1,32 +1,234 @@
-import React, { useState } from 'react'
-import Header from './Header'
-import Footer from './Footer'
+import React, { useContext, useEffect, useState } from 'react'
 import ActiveMatchesCard from '../card/ActiveMatchesCard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-import { ActiveMatch } from '../constant/ActiveMatchData'
+import { faMagnifyingGlass, faSliders, } from '@fortawesome/free-solid-svg-icons'
+import { ActiveMatch, CardData } from '../constant/ActiveMatchData'
 import JoinViewActiveMatches from './JoinViewActiveMatches'
+import { joinGameContext } from '../App'
+import { RestartAlt } from '@mui/icons-material';
+
+
+
 
 
 const Matches = () => {
 
-  const [main, setMain] = useState('default')
-  const [filteredData, setFilteredData] = useState(ActiveMatch)
+  const {joinGame} = useContext(joinGameContext);
+  const [main, setMain] = useState('default');
+  const [selectedFilters, setSelectedFilters] = useState([]);
+  const [filteredData, setFilteredData] = useState(ActiveMatch);
+  let filters = ["Shooting", "Slam Dunk", "Veteran", "Championship"]
+  let filters2 = ["5mins. / 4h", "10mins. / 4h"]
+  const [sliders, setSliders] = useState(false);
+  
+  
+  useEffect(() => {
+    console.log("joinGame input : " , joinGame);
+  }, [joinGame]) 
 
   const handleChange = (e) => {
-    const filtered = ActiveMatch.filter(card => card.title.toLowerCase().includes(e.target.value.toLowerCase()));
+    const inputFilter = e.target.value.toLowerCase();
+    const filtered = ActiveMatch.filter(card => 
+                  card.title.toLowerCase().includes(inputFilter) 
+                  );
     setFilteredData(filtered);
   }
+
+
+
+
+
+
+  const handleFilterTypeofGame = (selectedCategory) => {
+    if (selectedFilters.includes(selectedCategory)) { //if pressed again
+      let filters = selectedFilters.filter((el) => el !== selectedCategory); //removing same category
+      setSelectedFilters(filters);
+    }else{ // nilalagy sa array
+      setSelectedFilters([...selectedFilters, selectedCategory])
+
+    }
+  }
+
+  const handleFilterMinsandQuarter = (selectedCategory) => {
+    if (selectedFilters.includes(selectedCategory)) { //if pressed again
+      let filters = selectedFilters.filter((el) => el !== selectedCategory); //removing same category
+      setSelectedFilters(filters);
+    }
+    else{ // nilalagy sa array
+      setSelectedFilters([...selectedFilters, selectedCategory])
+
+    }
+  }
+
+  
+
+
+
+  useEffect(() => {
+    filterItems();
+    
+  }, [selectedFilters]);
+
+  // const filterItems = () => {
+  //   if (selectedFilters.length > 0) { // kapag may laman
+  //     let tempItems = selectedFilters.map((selectedCategory) => {
+  //       let temp = ActiveMatch.filter((item) => item.category === selectedCategory || item.minsquarter === selectedCategory);
+  //       return temp;
+  //     });
+  //     setFilteredData(tempItems.flat());
+  //   }else{
+  //     setFilteredData([...ActiveMatch])
+
+  //   }
+  // }
+
+  // const filterItems = () => {
+  //   if (selectedFilters.length > 0) {
+  //     let filteredItems = [];
+  //     selectedFilters.forEach((selectedCategory) => {
+  //       const categoryFilteredItems = ActiveMatch.filter((item) => item.category === selectedCategory);
+  //       const minsquarterFilteredItems = ActiveMatch.filter((item) => item.minsquarter === selectedCategory);
+  //       filteredItems = filteredItems.concat(categoryFilteredItems, minsquarterFilteredItems);
+  //     });
+  //     // Remove duplicates by converting the array to a Set and back to an array
+  //     const uniqueFilteredItems = Array.from(new Set(filteredItems));
+  //     setFilteredData(uniqueFilteredItems);
+  //   } else {
+  //     setFilteredData([...ActiveMatch]);
+  //   }
+  // }
+
+  const filterItems = () => {
+    if (selectedFilters.length > 0) {
+      let filteredItems = [];
+      selectedFilters.forEach((selectedCategory) => {
+        const categoryFilteredItems = ActiveMatch.filter((item) => item.category === selectedCategory);
+        const minsquarterFilteredItems = ActiveMatch.filter((item) => item.minsquarter === selectedCategory);
+        filteredItems = [...filteredItems, ...categoryFilteredItems, ...minsquarterFilteredItems];
+      });
+      // Remove duplicates based on ID
+      const uniqueFilteredItems = filteredItems.filter((item, index) => {
+        return filteredItems.findIndex(obj => obj.id === item.id) === index;
+      });
+      setFilteredData(uniqueFilteredItems);
+    } else {
+      setFilteredData([...ActiveMatch]);
+    }
+  }
+  
+  
+
+  
+  
+
+
+
 
   return (
     <div className='bg-[#fff6f2] w-full px-9 py-7'>
 
       {main === 'default' &&
-        <div className='bg-[#ffeee6] p-[20px] rounded-[14px] px-20 xsm:px-0'>
-          <div className=' mt-10'>
-            <div className='flex justify-between items-center sm:flex-col xsm:text-center'>
-              <h1 className='font-Poppins font-bold text-3xl uppercase mb-4'>Active Matches</h1>
-              <div className='relative'>
+        <div className='bg-[#ffeee6] p-[20px] rounded-[14px] px-20 xsm:px-0 '>
+          <div className=' mt-10 flex'>
+            
+            <div className='flex-1 justify-between flex-col sm:flex-col xsm:text-center'>
+
+              {joinGame &&
+                <div>
+                  <p className='text font-Poppins mb-2 text-[#bbbbbb]'>Result</p>
+                  <h1 className='text-3xl font-bold font-Poppins uppercase mb-3'>{joinGame}</h1>
+                  <p className='text-[#bbbbbb] font-Poppins mb-3'>Suggested Most Search</p>
+                  <div className='mb-10 flex items-center'>
+
+                  
+
+                    {ActiveMatch.map((card) => (
+                      <button 
+                        key={card.id} 
+                        card={card}
+                        className='w-fit bg-[#D1CECE] rounded-full py-3 font-Poppins text-[12px] text-[#666666] ml-2 px-7'
+                      >
+                        {card.location}
+                      </button>
+
+                    ))}
+
+                    <FontAwesomeIcon 
+                      icon={faSliders} 
+                      className='ml-5 text-[#545454] cursor-pointer'
+                      onClick={() => setSliders(!sliders)}
+                      
+                    />
+                    <RestartAlt className='ml-5 text-[#545454]'/>
+                  </div>
+
+                  {sliders &&
+
+                    <div className=' flex'>
+                      <div className=' w-1/2'>
+                        <p className='font-Poppins'>Type of Game</p>
+
+                        <div className='  grid grid-cols-2 justify-center items-center gap-3 mt-3 '>
+                          {filters.map((category, idx) => (
+                            <button
+                              onClick={() => handleFilterTypeofGame(category)}
+                              key={idx}
+                              className={`w-[150px] bg-none border-orange border rounded-full py-3 font-Poppins text-[12px] text-[#666666] px-7 ${selectedFilters?.includes(category) ? 'bg-orange text-[#ffffff]' : ''}`}
+                            
+                            >
+                              {category}
+                            </button>
+                          ))}
+                        </div>
+
+                      </div>
+                      <div className='w-1/2'>
+                        <p className='font-Poppins'>Mins. and Quarter</p>
+
+                        <div className=' flex flex-col gap-3 mt-3 '>
+                          {filters2.map((category, idx) => (
+                            <button
+                              onClick={() => handleFilterMinsandQuarter(category)}
+                              key={idx}
+                              className={`w-[150px] bg-none border-orange border rounded-full py-3 font-Poppins text-[12px] text-[#666666] px-7 ${selectedFilters?.includes(category) ? 'bg-orange text-[#ffffff]' : ''}`}
+                            
+                            >
+                              {category}
+                            </button>
+                          ))}
+                        </div>
+
+
+
+
+
+                      </div>
+
+
+                    </div>
+
+
+
+
+                  }
+
+
+
+                </div>
+
+              
+              
+              
+              }
+              
+              <h1 className='font-Poppins font-bold text-3xl uppercase mb-2 mt-4'>Active Matches</h1>
+              <p className='font-Poppins text-sm mb-4 text-[#bbbbbb] sm:text-center mt-2'>Discover the most recent active leagues and sporting events available <br /> for participation, and feel free to share them with your basketball-playing friends.</p>
+             
+              
+            </div>
+
+            
+            <div className='relative'>
                 <input
                   type="text"
                   name=""
@@ -34,25 +236,13 @@ const Matches = () => {
                   placeholder='Join a game near you?'
                   className='py-3 text-sm font-Poppins rounded-[30px] pl-5 pr-20 outline-none' 
                   onChange={handleChange}
-                
                 />
-                
-
                 <FontAwesomeIcon icon={faMagnifyingGlass} className='absolute right-5 top-3' />
-              </div>
             </div>
-
-            <p className='font-Poppins text-sm mb-4 text-[#bbbbbb] sm:text-center mt-5'>Discover the most recent active leagues and sporting events available <br /> for participation, and feel free to share them with your basketball-playing friends.</p>
-
-
-
-
-
-
-
-
-
           </div>
+
+
+
           <div className='flex gap-2 flex-wrap scale-[1] mt-5 justify-center'>
             {filteredData.map(card => (
               <ActiveMatchesCard key={card.id} card={card} setMain={setMain} />
