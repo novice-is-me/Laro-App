@@ -129,16 +129,16 @@ const Matches = () => {
 
       {main === 'default' &&
         <div className='bg-[#ffeee6] p-[20px] rounded-[14px] px-20 xsm:px-0 '>
-          <div className=' mt-10 flex'>
+          <div className=' mt-10 flex 950px:flex-col-reverse 950px:justify-center 950px:items-center'>
             
             <div className='flex-1 justify-between flex-col sm:flex-col xsm:text-center'>
 
               {joinGame &&
                 <div>
-                  <p className='text font-Poppins mb-2 text-[#bbbbbb]'>Result</p>
-                  <h1 className='text-3xl font-bold font-Poppins uppercase mb-3'>{joinGame}</h1>
-                  <p className='text-[#bbbbbb] font-Poppins mb-3'>Suggested Most Search</p>
-                  <div className='mb-10 flex items-center'>
+                  <p className='text font-Poppins mb-2 text-[#bbbbbb] 950px:text-center'>Result</p>
+                  <h1 className='text-3xl font-bold font-Poppins uppercase mb-3 950px:text-center'>{joinGame}</h1>
+                  <p className='text-[#bbbbbb] font-Poppins mb-3 950px:text-center'>Suggested Most Search</p>
+                  <div className='mb-10 flex items-center flex-wrap md:gap-2 md:text-center'>
 
                   
 
@@ -164,16 +164,16 @@ const Matches = () => {
 
                   {sliders &&
 
-                    <div className=' flex'>
-                      <div className=' w-1/2'>
+                    <div className=' flex  md:flex md:flex-col '>
+                      <div className=' w-1/2  1110:w-[90%] md:w-full'>
                         <p className='font-Poppins'>Type of Game</p>
 
-                        <div className='  grid grid-cols-2 justify-center items-center gap-3 mt-3 '>
+                        <div className='  grid grid-cols-2 justify-center items-center gap-3 mt-3 404px:grid-cols-1'>
                           {filters.map((category, idx) => (
                             <button
                               onClick={() => handleFilterTypeofGame(category)}
                               key={idx}
-                              className={`w-[150px] bg-none border-orange border rounded-full py-3 font-Poppins text-[12px] text-[#666666] px-7 ${selectedFilters?.includes(category) ? 'bg-orange text-[#ffffff]' : ''}`}
+                              className={`w-[150px] bg-none border-orange border rounded-full py-3 font-Poppins text-[12px] text-[#666666] px-7 md:mx-auto ${selectedFilters?.includes(category) ? 'bg-orange text-[#ffffff]' : ''} `}
                             
                             >
                               {category}
@@ -182,7 +182,7 @@ const Matches = () => {
                         </div>
 
                       </div>
-                      <div className='w-1/2'>
+                      <div className='w-1/2 1139:flex 1139:justify-center 1139:flex-col 1139:items-center md:w-full'>
                         <p className='font-Poppins'>Mins. and Quarter</p>
 
                         <div className=' flex flex-col gap-3 mt-3 '>
@@ -190,7 +190,7 @@ const Matches = () => {
                             <button
                               onClick={() => handleFilterMinsandQuarter(category)}
                               key={idx}
-                              className={`w-[150px] bg-none border-orange border rounded-full py-3 font-Poppins text-[12px] text-[#666666] px-7 ${selectedFilters?.includes(category) ? 'bg-orange text-[#ffffff]' : ''}`}
+                              className={`w-[150px] bg-none border-orange border rounded-full py-3 font-Poppins text-[12px] text-[#666666] px-7 md:mx-auto ${selectedFilters?.includes(category) ? 'bg-orange text-[#ffffff]' : ''}`}
                             
                             >
                               {category}
@@ -221,20 +221,20 @@ const Matches = () => {
               
               }
               
-              <h1 className='font-Poppins font-bold text-3xl uppercase mb-2 mt-4'>Active Matches</h1>
+              <h1 className='font-Poppins font-bold text-3xl uppercase mb-2 mt-4 md:mx-auto'>Active Matches</h1>
               <p className='font-Poppins text-sm mb-4 text-[#bbbbbb] sm:text-center mt-2'>Discover the most recent active leagues and sporting events available <br /> for participation, and feel free to share them with your basketball-playing friends.</p>
              
               
             </div>
 
             
-            <div className='relative'>
+            <div className='relative w-fit 404px:w-[250px]'>
                 <input
                   type="text"
                   name=""
                   id=""
                   placeholder='Join a game near you?'
-                  className='py-3 text-sm font-Poppins rounded-[30px] pl-5 pr-20 outline-none' 
+                  className='py-3 text-sm font-Poppins rounded-[30px] pl-5 pr-20 outline-none mb-4 404px:w-full ' 
                   onChange={handleChange}
                 />
                 <FontAwesomeIcon icon={faMagnifyingGlass} className='absolute right-5 top-3' />

@@ -29,6 +29,9 @@ export default {
         1139: { max: "1139px" },
         // => @media (max-width: 1139px) { ... }
 
+        1110: { max: "1110px" },
+        // => @media (max-width: 1139px) { ... }
+
         lg: { max: "1023px" },
         // => @media (max-width: 1023px) { ... }
 
@@ -44,6 +47,9 @@ export default {
 
         xsm: { max: "539px" },
         // => @media (max-width: 479px) { ... }
+
+        "404px": { max: "404px" },
+        // => @media (max-width: 350px)
 
         "350px": { max: "350px" },
         // => @media (max-width: 350px)
