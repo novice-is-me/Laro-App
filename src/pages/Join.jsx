@@ -1,9 +1,10 @@
 import React from 'react'
 import { players } from '../assets'
+import { Link } from 'react-router-dom'
 
 const Join = () => {  
   return (    
-    <div className='bg-bgColor  w-full px-9 py-4'>
+    <div className='bg-bgColor  w-full px-9 py-4 xsm:px-3'>
       <div className='flex justify-between rounded-[20px] px-[5rem] pt-[5rem] bg-join lg:pr-[3rem] 950px:pt-[3rem]
       md:flex-col md:bg-join2 md:gap-y-8 xsm:bg-join3 xsm:p-[3rem]'>                 
         <div className='flex flex-col pt-[5rem] gap-28 xl:gap-10 xl:pt-0 md:items-center'>
@@ -16,12 +17,12 @@ const Join = () => {
                       You could be the standout player we're seeking.</p>
               </div> 
               <div className='flex gap-4'>  
-                  <button className=' bg-orange px-8 py-3 text-white rounded-[27px] font-bold
+                  <Link to={'/login'} className=' bg-orange px-8 py-3 text-white rounded-[27px] font-bold
                   950px:px-4 950px:text-sm'>
-                      Login</button>  
-                  <button className=' bg-black px-[5rem] py-3 rounded-[27px] text-white border
+                      Login</Link>   
+                  <Link to={'/matches'} className=' bg-black px-[5rem] py-3 rounded-[27px] text-white border
                   border-[#FA5000] font-bold 950px:px-4 950px:text-sm'>
-                      Play Now</button>
+                      Play Now</Link>
               </div>  
         </div>
         <div className=' xsm:hidden'>

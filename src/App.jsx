@@ -16,6 +16,8 @@ import UserMatch from "./pages/UserMatch";
 import UserAchievements from "./pages/UserAchievements";
 import CalendarCourtOwner from './pages/CalendarCourtOwner'
 import ViewCourt from "./components/ViewCourt";
+import OrganizerDashboard from './pages/OrganizerDashboard'
+import OrganizerProfile from './pages/OrganizerProfile'
 
 
 export const joinGameContext = createContext();
@@ -30,6 +32,8 @@ function App() {
     "/user/achievements",
     '/dashboard',
     '/dashboard/calendar',
+    '/organizer',
+    '/organizerProfile'
     ];
 
   const shouldShowHeader = !hideHeaderRoutes.includes(location.pathname);
@@ -57,6 +61,8 @@ function App() {
         <Route path="/court-owner" element={<CourtOwner />} />
         <Route path="/dashboard" element={<DashboardCourtOwner />} />
         <Route path='/dashboard/calendar' element={<CalendarCourtOwner/>}/>
+        <Route path='/organizer' element={<OrganizerDashboard/>}/>
+        <Route path='/organizerProfile' element={<OrganizerProfile/>}/>
         <Route path="/user" element={<UserOverview />} />
         <Route path="/user/statistics" element={<UserStats />} />
         <Route path="/user/matches" element={<UserMatch />} />

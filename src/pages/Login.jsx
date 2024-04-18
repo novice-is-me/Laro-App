@@ -3,12 +3,11 @@ import LoginForm from '../components/LoginForm'
 import { Link } from 'react-router-dom'
 import PictureComponent from '../components/PictureComponent' 
 import { loginImg } from '../assets'
-import Footer from './Footer'
 
 const Login = () => {
   return (
-    <div> 
-        <div className='bg-bgColor flex justify-between'> 
+    <div className='h-svh'> 
+        <div className='bg-bgColor flex justify-between h-full pb-[5rem]'> 
             <div className='mx-auto relative flex flex-col justify-center items-start gap-3  w-[50%] pl-[15%] sm:w-[100%] sm:items-center sm:pl-0 sm:scale-[0.9] sm:text-center'>
                 <div className='mb-8'> 
                     <h1 className='text-start sm:text-center font-Poppins font-black text-[40px] my-4 '>Welcome Back!</h1>
@@ -26,7 +25,6 @@ const Login = () => {
                     <PictureComponent img={loginImg} value={'login'} />
             </div>
         </div> 
-        <Footer/>
     </div>
     
   )
