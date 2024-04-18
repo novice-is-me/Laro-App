@@ -29,7 +29,7 @@ const Options = ({id, icon, text, choice, placeholder, path}) => {
             <FontAwesomeIcon icon={icon}  
             className='icon fa-2x'/>    
             <input 
-              className='font-poppins text-[#818181] text-[11px] flex-1 outline-none' 
+              className='font-Poppins text-[#818181] text-[11px] flex-1 outline-none' 
               placeholder={(isHovered === true ? placeholder : text)}
               onChange={handleChange}
               
