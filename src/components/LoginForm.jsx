@@ -46,6 +46,26 @@ const LoginForm = () => {
     }
   };
 
+  const handleForgotPassword = async () => {
+    try {
+      // Assuming you have an API endpoint for initiating password reset
+      await axios.post(
+        "https://api.laro.com.ph/api/v1/account/forgot-password",
+        {
+          email_address: user,
+        }
+      );
+
+      // Assuming the password reset request is successful
+      alert("Password reset instructions sent to your email.");
+      navigate("/forgot-password");
+    } catch (error) {
+      // Handle errors, such as displaying an error message to the user
+      console.error("Password reset failed:", error);
+      alert("Password reset failed. Please try again later.");
+    }
+  };
+
   return (
     <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
       <input
@@ -91,6 +111,13 @@ const LoginForm = () => {
           disabled={loading}
         >
           {loading ? "Logging in..." : "Login"}
+        </button>
+        <button
+          type="button"
+          className="ml-4 bg-gray-200 px-6 py-4 rounded-[7px] text-gray-700 underline"
+          onClick={handleForgotPassword}
+        >
+          Forgot Password
         </button>
       </div>
     </form>

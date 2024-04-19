@@ -14,14 +14,13 @@ import UserOverview from "./pages/UserOverview";
 import UserStats from "./pages/UserStats";
 import UserMatch from "./pages/UserMatch";
 import UserAchievements from "./pages/UserAchievements";
-import CalendarCourtOwner from './pages/CalendarCourtOwner'
+import CalendarCourtOwner from "./pages/CalendarCourtOwner";
 import ViewCourt from "./components/ViewCourt";
-import OrganizerDashboard from './pages/OrganizerDashboard'
-import OrganizerProfile from './pages/OrganizerProfile'
-
+import OrganizerDashboard from "./pages/OrganizerDashboard";
+import OrganizerProfile from "./pages/OrganizerProfile";
+import ForgotPassword from "./pages/ForgotPassword";
 
 export const joinGameContext = createContext();
-
 
 function App() {
   const location = useLocation();
@@ -30,47 +29,46 @@ function App() {
     "/user/statistics",
     "/user/matches",
     "/user/achievements",
-    '/dashboard',
-    '/dashboard/calendar',
-    '/organizer',
-    '/organizerProfile'
-    ];
+    "/dashboard",
+    "/dashboard/calendar",
+    "/organizer",
+    "/organizerProfile",
+  ];
 
   const shouldShowHeader = !hideHeaderRoutes.includes(location.pathname);
 
-  const [joinGame, setJoinGame] = useState('');
-  const [findCourt, setFindCourt] = useState('');
-  
+  const [joinGame, setJoinGame] = useState("");
+  const [findCourt, setFindCourt] = useState("");
+
   useEffect(() => {
-    console.log("findcourt: " , findCourt);
-  }, [findCourt])
+    console.log("findcourt: ", findCourt);
+  }, [findCourt]);
 
   return (
     <>
       {shouldShowHeader && <Header />}
 
-      <joinGameContext.Provider value={{setJoinGame, joinGame}}> 
+      <joinGameContext.Provider value={{ setJoinGame, joinGame }}>
         <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/matches" element={<Matches />} />
-        <Route path="/court" element={<Court />} />
-        <Route path="/court/view" element={<ViewCourt/>}/>
-        <Route path="/about" element={<About />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<CreateAccount />} />
-        <Route path="/court-owner" element={<CourtOwner />} />
-        <Route path="/dashboard" element={<DashboardCourtOwner />} />
-        <Route path='/dashboard/calendar' element={<CalendarCourtOwner/>}/>
-        <Route path='/organizer' element={<OrganizerDashboard/>}/>
-        <Route path='/organizerProfile' element={<OrganizerProfile/>}/>
-        <Route path="/user" element={<UserOverview />} />
-        <Route path="/user/statistics" element={<UserStats />} />
-        <Route path="/user/matches" element={<UserMatch />} />
-        <Route path="/user/achievements" element={<UserAchievements />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/matches" element={<Matches />} />
+          <Route path="/court" element={<Court />} />
+          <Route path="/court/view" element={<ViewCourt />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<CreateAccount />} />
+          <Route path="/court-owner" element={<CourtOwner />} />
+          <Route path="/dashboard" element={<DashboardCourtOwner />} />
+          <Route path="/dashboard/calendar" element={<CalendarCourtOwner />} />
+          <Route path="/organizer" element={<OrganizerDashboard />} />
+          <Route path="/organizerProfile" element={<OrganizerProfile />} />
+          <Route path="/user" element={<UserOverview />} />
+          <Route path="/user/statistics" element={<UserStats />} />
+          <Route path="/user/matches" element={<UserMatch />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/user/achievements" element={<UserAchievements />} />
         </Routes>
-        </joinGameContext.Provider>
-
-
+      </joinGameContext.Provider>
     </>
   );
 }
