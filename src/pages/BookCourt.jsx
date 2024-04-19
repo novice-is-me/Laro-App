@@ -13,10 +13,12 @@ const   BookCourt = ({ setMain }) => {
 
     const weeks = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
+    const [errorMesg, setErrorMsg] = useState('')
+
     const [selectedDate, setSelectedDate] = useState(null)
 
     const [time, setTime] = useState('AM')
-    const [timeSlot, setTimeSlot] = useState('00:00')
+    const [timeSlot, setTimeSlot] = useState('')
 
     const [parking, setParking] = useState(true)
     const [parkingSlot, setParkingSlot] = useState('')
@@ -46,9 +48,12 @@ const   BookCourt = ({ setMain }) => {
     }
 
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
         setMain('success')
         console.log(selectedDate, timeSlot, time, parkingSlot, buzzertimer, seatsSlot);
+        
+        
     }
 
 
@@ -65,6 +70,8 @@ const   BookCourt = ({ setMain }) => {
                             formatShortWeekday={(locale, date) => weeks[date.getDay()]} 
                             value={selectedDate}
                             onChange={handleDateSelect}
+                            minDate={new Date()}
+                            
                         />
                             
                     </div>
@@ -78,7 +85,9 @@ const   BookCourt = ({ setMain }) => {
                                 <TimeField 
                                     className='flex-1' 
                                     value={timeSlot} 
-                                    onChange={(e) => setTimeSlot(e.target.value)}/>
+                                    onChange={(e) => setTimeSlot(e.target.value)}
+                                    
+                                />
                                 <div className='border-l-[1px] border-gray px-3 cursor-pointer' onClick={handleTime}>{time}</div>
                             </div>
                         </div>
@@ -99,6 +108,7 @@ const   BookCourt = ({ setMain }) => {
                                     placeholder='(e.x 20 Slots)' 
                                     className={`w-[100px] text-[12px] bg-white rounded-md p-1 text-center outline-none ${!parking? 'cursor-not-allowed' : '' }`}
                                     onChange={(e) => setParkingSlot(e.target.value)}
+
                                 />
                             </div>
 
@@ -125,6 +135,7 @@ const   BookCourt = ({ setMain }) => {
                                     disabled={seats? false: true}
                                     className={`w-[100px] text-[12px] bg-white rounded-md p-1 text-center outline-none ${!seats? 'cursor-not-allowed' : '' }`}
                                     onChange={(e) => setSeatSlot(e.target.value)}
+                                
                                 />
                             </div>
 
@@ -132,9 +143,11 @@ const   BookCourt = ({ setMain }) => {
 
 
                         <button
-                            className='w-[200px] bg-orange rounded-md text-[11px] p-3 text-[#ffffff]'
+                            className={`w-[200px] bg-orange rounded-md text-[11px] p-3 text-[#ffffff] ${!selectedDate || !timeSlot? 'cursor-not-allowed' : 'cursor-pointer'}`}
                             // onClick={() => setMain('success')}
                             onClick={handleSubmit}
+                            
+                            disabled={!selectedDate || !timeSlot? true : false}
 
                         >Next
 

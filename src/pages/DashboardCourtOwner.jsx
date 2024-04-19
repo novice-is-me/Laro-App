@@ -58,7 +58,7 @@ const DashboardCourtOwner = () => {
                 <div className='flex flex-col'>
                     <label htmlFor="" className='font-Poppins font-semibold 450:text-[12px]'>Name:</label>
                     <input type="text" 
-                    required
+                    required 
                     value={changeOwner} 
                     onChange={(e) => setChangeOwner(e.target.value)}
                     className='text-xl font-poppins p-4 bg-[#FFEEE6] outline-none 450:text-[12px]' />

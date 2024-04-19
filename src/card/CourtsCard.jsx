@@ -6,7 +6,11 @@ const CourtsCard = ({ card, setMain ,setClickedCard}) => {
 
 
     const handleViewClick = () => {
-        setMain('viewcourt')
+        setMain('viewcourt');
+        setClickedCard(card.id);
+    }
+    const handleReserveClick = () => {
+        setMain('bookcourt');
         setClickedCard(card.id);
     }
 
@@ -33,11 +37,12 @@ const CourtsCard = ({ card, setMain ,setClickedCard}) => {
                         <div className='flex items-center gap-2'>
                             
                             <Link
+                            
                                 className='font-Poppins text-[10px] bg-[#fa5000] text-[#ffffff] w-[60px] h-[40px] rounded-[20px] flex items-center justify-center cursor-pointer'
-                                onClick={() => setMain('bookcourt')}
+                                onClick={handleReserveClick}
                                 to='/court'
                             >
-                                Reserve
+                                <button disabled={card.isAvailable? false : true} className={`w-full h-full ${card.isAvailable? '' : 'cursor-not-allowed'}`} >Reserve</button>
                             </Link>
                             <Link
                                 className='font-Poppins text-[10px] border-2 border-[#fa5000] border-solid text-black w-[60px] h-[40px] rounded-[20px] flex items-center justify-center cursor-pointer'

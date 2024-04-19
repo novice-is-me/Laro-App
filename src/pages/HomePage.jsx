@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import Footer from './Footer' 
 import HeroSection from './HeroSection'
 import Matches from './Matches'
@@ -11,12 +11,17 @@ import CourtOwner from './CourtOwner'
 import CreateAccount from './CreateAccount'
 import DashboardCourtOwner from './DashboardCourtOwner'
 
+
+
 const HomePage = () => {
+  
+
+
   return (
     <div>
       <HeroSection/>
-      <Matches/>
-      <Court/>
+      <Matches />
+      <Court />
       <Join/>
       <Gameplay/> 
       <Advertisments/>

@@ -12,6 +12,7 @@ import court1 from '../assets/Active Match/court1.jpg'
 import court2 from '../assets/Active Match/court2.jpeg'
 import court3 from '../assets/Active Match/court3.jpeg'
 import court4 from '../assets/Active Match/court4.jpg'
+import { Category } from '@mui/icons-material'
 
 
 export const ActiveMatch = [
@@ -22,7 +23,10 @@ export const ActiveMatch = [
         title: "Championship",
         icon: faTrophy,
         profilephoto: player1,
-        organizer: "Juan Dela Cruz"
+        organizer: "Juan Dela Cruz",
+        location: "Ortigas",
+        category: "Shooting",
+        minsquarter: "5mins. / 4h"
     },
     {
         id: 2,
@@ -31,7 +35,10 @@ export const ActiveMatch = [
         title: "Kids Exhibition Match",
         icon: faBasketball,
         profilephoto: player2,
-        organizer: "Desiree Cabales"
+        organizer: "Desiree Cabales",
+        location: "Manila",
+        category: "Shooting",
+        minsquarter: "5mins. / 4h"
     },
     {
         id: 3,
@@ -40,7 +47,10 @@ export const ActiveMatch = [
         title: "Teenage Dry Run",
         icon: faMedal,
         profilephoto: player3,
-        organizer: "Mhel De Torres"
+        organizer: "Mhel De Torres",
+        location: "Batangas",
+        category: "Slam Dunk",
+        minsquarter: "10mins. / 4h"
     },
     {
         id: 4,
@@ -49,7 +59,10 @@ export const ActiveMatch = [
         title: "Slam Dunk Contest",
         icon: faTrophy,
         profilephoto: player4,
-        organizer: "Kenneth Quinto"
+        organizer: "Kenneth Quinto",
+        location: "Cavite",
+        category: "Veteran",
+        minsquarter: "10mins. / 4h"
     },
     // {
     //     id: 5,
