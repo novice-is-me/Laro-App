@@ -18,6 +18,9 @@ import CalendarCourtOwner from './pages/CalendarCourtOwner'
 import ViewCourt from "./components/ViewCourt";
 import OrganizerDashboard from './pages/OrganizerDashboard'
 import OrganizerProfile from './pages/OrganizerProfile'
+import EventDetails from './pages/EventDetails'
+import PlayerDetails from './pages/PlayerDetails'
+import Payment from './pages/Payment'
 
 
 export const joinGameContext = createContext();
@@ -32,8 +35,11 @@ function App() {
     "/user/achievements",
     '/dashboard',
     '/dashboard/calendar',
-    '/organizer',
-    '/organizerProfile'
+    "/organizer",
+    "/OrganizerDashboard",
+    "/eventDetails",
+    "/playerDetails",
+    "/payment",
     ];
 
   const shouldShowHeader = !hideHeaderRoutes.includes(location.pathname);
@@ -61,12 +67,16 @@ function App() {
         <Route path="/court-owner" element={<CourtOwner />} />
         <Route path="/dashboard" element={<DashboardCourtOwner />} />
         <Route path='/dashboard/calendar' element={<CalendarCourtOwner/>}/>
-        <Route path='/organizer' element={<OrganizerDashboard/>}/>
-        <Route path='/organizerProfile' element={<OrganizerProfile/>}/>
+        <Route path='/organizer' element={<OrganizerProfile/>}/>
+        <Route path='/organizerDashboard' element={<OrganizerDashboard/>}/>
+        <Route path='/eventDetails' element={<EventDetails/>}/>
+        <Route path='/playerDetails' element={<PlayerDetails/>}/>
+        <Route path='/payment' element={<Payment/>}/>
         <Route path="/user" element={<UserOverview />} />
         <Route path="/user/statistics" element={<UserStats />} />
         <Route path="/user/matches" element={<UserMatch />} />
         <Route path="/user/achievements" element={<UserAchievements />} />
+        
         </Routes>
         </joinGameContext.Provider>
 
