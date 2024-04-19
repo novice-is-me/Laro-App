@@ -10,7 +10,7 @@ const UserMatch = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex border border-0 w-full p-4 gap-4">
+    <div className="mb-[106px] mt-[10px] flex w-full items-center justify-between gap-5 md:flex-col">
       {/* for profile */}
       <div className=" flex border border-0 flex-[1.1] gap-4">
         <div
