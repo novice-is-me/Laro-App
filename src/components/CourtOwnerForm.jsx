@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { InfoRounded, VisibilityOff, Visibility } from '@mui/icons-material';
+import axios from 'axios';
 
  const EMAIL_REGEX = /^[a-zA-Z0-9]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
  const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/; 
@@ -67,6 +68,23 @@ const CourtOwnerForm = ({setIsShow}) => {
     setValidContact(result)
   }, [contact])
 
+  // const handleSubmit = async (e) =>{
+  //   e.preventDefault();
+
+  //   try{
+  //     const response = await axios.post('http://localhost:3002/api/v1/court-owner/create',
+  //     {
+  //       username: user,
+  //       password: pwd,
+  //       email_address: email,
+  //       contact_number: contact
+  //     });
+  //     console.log("Success", response.data)
+  //   } catch(e){
+  //     console.log(e)
+  //   }
+  // }
+  
   return (
     <div className='w-full flex 1139:justify-center pb-5'>
       <form className='flex flex-col gap-6 w-[55%]' onSubmit={handleSubmit}>

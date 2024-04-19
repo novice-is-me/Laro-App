@@ -48,12 +48,14 @@ export default {
         xsm: { max: "539px" },
         // => @media (max-width: 479px) { ... }
 
+        450: {max: "450px"},
+        "350px": { max: "350px" },
         "404px": { max: "404px" },
         // => @media (max-width: 350px)
 
         "350px": { max: "350px" },
         // => @media (max-width: 350px)
-      },
+      }, 
     },
   },
   plugins: [],
