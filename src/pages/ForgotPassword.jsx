@@ -9,9 +9,11 @@ const ForgotPassword = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
+
+  const [showNewPassword, setShowNewPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -58,53 +60,49 @@ const ForgotPassword = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <h2 className="text-2xl font-bold mb-4">Forgot Password</h2>
-      <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+      <form className="flex flex-col gap-4 w-64" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="PIN"
           value={pin}
           onChange={(e) => setPin(e.target.value)}
           required
-          className="p-2 border border-gray-300 rounded-md"
+          className="input-style"
         />
-        <div className="relative">
+        <div className="relative input-group">
           <input
-            type={showPassword ? "text" : "password"}
+            type={showNewPassword ? "text" : "password"}
             placeholder="New Password"
             value={newPassword}
             onChange={(e) => setNewPassword(e.target.value)}
             required
-            className="p-2 border border-gray-300 rounded-md"
+            className="input-style"
           />
           <span
-            onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-4 top-4 cursor-pointer"
+            onClick={() => setShowNewPassword(!showNewPassword)}
+            className="absolute right-2 top-2 cursor-pointer"
           >
-            {showPassword ? <VisibilityOff /> : <Visibility />}
+            {showNewPassword ? <VisibilityOff /> : <Visibility />}
           </span>
         </div>
-        <div className="relative">
+        <div className="relative input-group">
           <input
-            type={showPassword ? "text" : "password"}
+            type={showConfirmPassword ? "text" : "password"}
             placeholder="Confirm Password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
-            className="p-2 border border-gray-300 rounded-md"
+            className="input-style"
           />
           <span
-            onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-4 top-4 cursor-pointer"
+            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+            className="absolute right-2 top-2 cursor-pointer"
           >
-            {showPassword ? <VisibilityOff /> : <Visibility />}
+            {showConfirmPassword ? <VisibilityOff /> : <Visibility />}
           </span>
         </div>
         {error && <p className="text-red-500">{error}</p>}
-        <button
-          type="submit"
-          className="bg-orange text-white px-4 py-2 rounded-md"
-          disabled={loading}
-        >
+        <button type="submit" className="btn-style " disabled={loading}>
           {loading ? "Resetting..." : "Reset Password"}
         </button>
       </form>

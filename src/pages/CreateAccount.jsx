@@ -17,11 +17,15 @@ const CreateAccount = () => {
   const errRef = useRef();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const [pin, setPin] = useState("");
 
   const [email, setEmail] = useState("");
   const [validEmail, setValidEmail] = useState(false);
   const [emailFocus, setEmailFocus] = useState(false);
-
+  const [firstName, setFirstName] = useState("");
+  const [middleName, setMiddleName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [address, setAddress] = useState("");
   const [user, setUser] = useState("");
   const [validName, setValidName] = useState(false);
   const [userFocus, setUserFocus] = useState(false);
@@ -37,6 +41,8 @@ const CreateAccount = () => {
   const [contactNum, setContactNum] = useState("");
   const [validContact, setValidContact] = useState(false);
   const [contactFocus, setContactFocus] = useState(false);
+  const [validFirstName, setValidFirstName] = useState(false);
+  const [validLastName, setValidLastName] = useState(false);
 
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
@@ -47,6 +53,20 @@ const CreateAccount = () => {
   useEffect(() => {
     userRef.current.focus();
   }, []);
+
+  useEffect(() => {
+    // Validation for first name (You can customize the regex pattern)
+    const result = /^[a-zA-Z\s]*$/.test(firstName);
+    // Update the state for first name validity
+    setValidFirstName(result);
+  }, [firstName]);
+
+  useEffect(() => {
+    // Validation for last name (You can customize the regex pattern)
+    const result = /^[a-zA-Z\s]*$/.test(lastName);
+    // Update the state for last name validity
+    setValidLastName(result);
+  }, [lastName]);
 
   useEffect(() => {
     const result = PHONE_EMAIL_REGEX.test(email);
@@ -101,15 +121,18 @@ const CreateAccount = () => {
       !validName ||
       !validPass ||
       !validMatch ||
-      !validContact
+      !validContact ||
+      !pin // Check if PIN is entered
     ) {
       setErrMsg("Invalid Entry");
+      setLoading(false); // Stop loading
       return;
     }
 
     // Check if a profile picture is selected
     if (!profilePic) {
       setErrMsg("No Image Selected"); // Set an error message if no image is selected
+      setLoading(false); // Stop loading
       return;
     }
 
@@ -122,28 +145,31 @@ const CreateAccount = () => {
         username: user,
         password: pass,
         contact_number: contactNum,
+        first_name: firstName,
+        middle_name: middleName,
+        last_name: lastName,
+        address: address,
+        pin: pin, // Include PIN in the request
       })
     );
-    formData.append("userImage", profilePic); // Append the file directly
+    formData.append("userImage", profilePic);
 
     try {
-      // Send the POST request
+      // Send the POST request to sign-up-verify-email endpoint
       const response = await fetch(
-        "https://api.laro.com.ph/api/v1/account/sign-up",
+        "https://api.laro.com.ph/api/v1/account/sign-up-verify-email",
         {
           method: "POST",
           body: formData,
         }
       );
 
-      // Check if the request was successful
       if (response.ok) {
         const data = await response.json();
-        console.log(data); // Log the response data
+        console.log(data);
         setSuccess(true);
         navigate("/login");
       } else {
-        // Handle error response
         const errorData = await response.json();
         console.error("Error:", errorData);
         setErrMsg("Failed to create account");
@@ -168,6 +194,58 @@ const CreateAccount = () => {
         </p>
         <form className="sm:text-center" onSubmit={handelSubmit}>
           <ol className="m-0 p-0 list-none  relative mx-auto">
+            <li className="mb-5">
+              <input
+                type="text"
+                placeholder="First Name"
+                required
+                onChange={(e) => setFirstName(e.target.value)}
+                className={`bg-[#FFEEE6] w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins
+              ${
+                firstName && validFirstName
+                  ? "outline-green-600"
+                  : "outline-none"
+              }
+              ${
+                firstName && !validFirstName
+                  ? "outline-red-600"
+                  : "outline-none"
+              }`}
+              />
+              {/* Error message for first name validation */}
+            </li>
+            <li className="mb-5">
+              <input
+                type="text"
+                placeholder="Middle Name"
+                onChange={(e) => setMiddleName(e.target.value)}
+                className="bg-[#FFEEE6] w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins"
+              />
+            </li>
+            <li className="mb-5">
+              <input
+                type="text"
+                placeholder="Last Name"
+                required
+                onChange={(e) => setLastName(e.target.value)}
+                className={`bg-[#FFEEE6] w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins
+              ${
+                lastName && validLastName ? "outline-green-600" : "outline-none"
+              }
+              ${
+                lastName && !validLastName ? "outline-red-600" : "outline-none"
+              }`}
+              />
+              {/* Error message for last name validation */}
+            </li>
+            <li className="mb-5">
+              <textarea
+                placeholder="Address"
+                required
+                onChange={(e) => setAddress(e.target.value)}
+                className="bg-[#FFEEE6] w-[298px] rounded-[7px] border-none pl-[20px] pr-[20px] pt-[10px] pb-[20px] text-[12px] font-Poppins"
+              ></textarea>
+            </li>
             <li className="mb-5 ">
               <input
                 ref={userRef}
@@ -338,6 +416,16 @@ const CreateAccount = () => {
                 <br />
               </p>
             </li>
+            <li className="mb-5">
+              <input
+                type="text"
+                placeholder="PIN (Check Email Inbox)"
+                required
+                onChange={(e) => setPin(e.target.value)}
+                className="bg-[#FFEEE6] w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins"
+              />
+            </li>
+
             <li className="mb-5">
               <div className="flex items-center justify-end w-[298px]">
                 <div className="w-16 h-16 rounded-full overflow-hidden bg-white">

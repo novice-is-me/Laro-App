@@ -19,7 +19,8 @@ import ViewCourt from "./components/ViewCourt";
 import OrganizerDashboard from "./pages/OrganizerDashboard";
 import OrganizerProfile from "./pages/OrganizerProfile";
 import ForgotPassword from "./pages/ForgotPassword";
-
+import EmailVerification from "./pages/EmailVerification";
+import OTPVerification from "./pages/OTPVerification";
 export const joinGameContext = createContext();
 
 function App() {
@@ -51,6 +52,9 @@ function App() {
       <joinGameContext.Provider value={{ setJoinGame, joinGame }}>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/matches" element={<Matches />} />
+          <Route path="/email-verification" element={<EmailVerification />} />
+          <Route path="/otp-verification" element={<OTPVerification />} />
           <Route path="/matches" element={<Matches />} />
           <Route path="/court" element={<Court />} />
           <Route path="/court/view" element={<ViewCourt />} />

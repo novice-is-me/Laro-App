@@ -17,6 +17,8 @@ const LoginForm = () => {
     userRef.current.focus();
   }, []);
 
+  // Access the login function from the AuthContext
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
