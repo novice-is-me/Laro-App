@@ -22,7 +22,7 @@ const Login = () => {
             <LoginForm />
             <p className="mt-12 font-poppins">
               You don't have account?
-              <Link to="/email-verification" className="underline">
+              <Link to="/register" className="underline">
                 {" "}
                 Create Account
               </Link>

@@ -121,8 +121,7 @@ const CreateAccount = () => {
       !validName ||
       !validPass ||
       !validMatch ||
-      !validContact ||
-      !pin // Check if PIN is entered
+      !validContact
     ) {
       setErrMsg("Invalid Entry");
       setLoading(false); // Stop loading
@@ -149,7 +148,6 @@ const CreateAccount = () => {
         middle_name: middleName,
         last_name: lastName,
         address: address,
-        pin: pin, // Include PIN in the request
       })
     );
     formData.append("userImage", profilePic);
@@ -157,7 +155,7 @@ const CreateAccount = () => {
     try {
       // Send the POST request to sign-up-verify-email endpoint
       const response = await fetch(
-        "https://api.laro.com.ph/api/v1/account/sign-up-verify-email",
+        "https://api.laro.com.ph/api/v1/account/sign-up-send-otp",
         {
           method: "POST",
           body: formData,
@@ -168,7 +166,7 @@ const CreateAccount = () => {
         const data = await response.json();
         console.log(data);
         setSuccess(true);
-        navigate("/login");
+        navigate("/email-verification");
       } else {
         const errorData = await response.json();
         console.error("Error:", errorData);
@@ -415,15 +413,6 @@ const CreateAccount = () => {
                 Please enter a valid phone number.
                 <br />
               </p>
-            </li>
-            <li className="mb-5">
-              <input
-                type="text"
-                placeholder="PIN (Check Email Inbox)"
-                required
-                onChange={(e) => setPin(e.target.value)}
-                className="bg-[#FFEEE6] w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins"
-              />
             </li>
 
             <li className="mb-5">

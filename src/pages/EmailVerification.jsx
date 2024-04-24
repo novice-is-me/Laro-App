@@ -1,63 +1,41 @@
 import React, { useState } from "react";
-import { InfoRounded } from "@mui/icons-material";
 import { useNavigate } from "react-router";
 
 const EmailVerification = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [validEmail, setValidEmail] = useState(false);
+  const [pin, setPin] = useState("");
   const [loading, setLoading] = useState(false);
+  const [errMsg, setErrMsg] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    // Validate email
-    if (!validEmail) {
-      // Handle invalid email
-      setLoading(false);
-      return;
-    }
-
     try {
-      // Send request to API to send OTP pin
       const response = await fetch(
-        "https://api.laro.com.ph/api/v1/account/sign-up-send-otp",
+        "https://api.laro.com.ph/api/v1/account/sign-up-verify-otp",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ email_address: email }),
+          body: JSON.stringify({ pin }),
         }
       );
 
       if (response.ok) {
-        // If OTP sent successfully, navigate to OTP verification page
-        navigate("/register", { state: { email } });
+        navigate("/login"); // Navigate to success page if PIN verification is successful
       } else {
-        // Handle error response
-        console.error("Failed to send OTP pin");
-        // Display error message to user
-        // You can implement this according to your UI/UX design
+        const errorData = await response.json();
+        console.error("Error:", errorData);
+        setErrMsg("Invalid PIN"); // Set error message if PIN verification fails
       }
     } catch (error) {
-      console.error("Error sending OTP pin:", error);
-      // Display error message to user
-      // You can implement this according to your UI/UX design
+      console.error("Error:", error);
+      setErrMsg("Failed to verify PIN");
     } finally {
       setLoading(false);
     }
-  };
-
-  const handleInputChange = (e) => {
-    const inputEmail = e.target.value;
-    setEmail(inputEmail);
-    // Validate email format
-    const isValid = /^[\w-]+(\.[\w-]+)*@((?:[\w-]+\.)+\w{2,})$/.test(
-      inputEmail
-    );
-    setValidEmail(isValid);
   };
 
   return (
@@ -67,33 +45,30 @@ const EmailVerification = () => {
           EMAIL VERIFICATION
         </h1>
         <p className="font-Poppins text-sm text-[#A5A5A5] max-w-[400px]">
-          Please enter the email address associated with your account. The PIN
-          sent to email will be used to verify your account as you sign up.
+          Enter the PIN you received from your Email Inbox to verify your
+          account.
         </p>
         <form className="sm:text-center" onSubmit={handleSubmit}>
           <input
             type="text"
-            placeholder="Email Address"
-            required
-            onChange={handleInputChange}
-            className={`bg-[#FFEEE6] w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins
-              ${validEmail ? "outline-green-600" : ""}
-              ${!validEmail && email ? "outline-red-600" : ""}`}
+            placeholder="Enter PIN"
+            value={pin}
+            onChange={(e) => setPin(e.target.value)}
+            className="bg-[#FFEEE6] w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins"
           />
-          {!validEmail && email && (
-            <p className="mt-2 text-red-600 font-Poppins text-[12px]">
-              <InfoRounded style={{ fontSize: "20px" }} />
-              Please enter a valid email address.
-            </p>
-          )}
           <button
             type="submit"
-            className={`mt-5 h-[45px] outline-none bg-orange px-10 py-4 rounded-[7px] text-white font-Poppins text-[13px] w-fit
-              ${loading ? "cursor-not-allowed opacity-50" : ""}`}
-            disabled={!validEmail || loading}
+            className={`h-[45px] outline-none bg-orange px-10 py-4 rounded-[7px] text-white font-Poppins text-[13px] w-fit
+            ${loading ? "cursor-not-allowed opacity-50" : ""}`}
+            disabled={loading}
           >
-            {loading ? "Sending OTP..." : "Send OTP"}
+            {loading ? "Verifying..." : "Verify"}
           </button>
+          {errMsg && (
+            <p className="text-red-600 mt-2 font-Poppins text-[12px]">
+              {errMsg}
+            </p>
+          )}
         </form>
       </div>
     </div>
