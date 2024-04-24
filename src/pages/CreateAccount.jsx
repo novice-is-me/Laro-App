@@ -417,17 +417,19 @@ const CreateAccount = () => {
 
             <li className="mb-5">
               <div className="flex items-center justify-end w-[298px]">
-                <div className="w-16 h-16 rounded-full overflow-hidden bg-white">
-                  <img
-                    src={
-                      profilePic
-                        ? URL.createObjectURL(profilePic)
-                        : "/assets/image/noimg.png"
-                    }
-                    alt=""
-                    className="object-cover w-full h-full"
-                  />
-                </div>
+                {profilePic ? (
+                  <div className="w-16 h-16 rounded-full overflow-hidden bg-white">
+                    <img
+                      src={URL.createObjectURL(profilePic)}
+                      alt=""
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                ) : (
+                  <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center">
+                    <span className="text-gray-600 text-sm">No Image</span>
+                  </div>
+                )}
                 <label
                   htmlFor="file-upload"
                   className="bg-[#FFEEE6] outline-none w-[160px] h-[45px] rounded-[7px] border-none flex justify-center items-center font-Poppins text-[#A5A5A5] ml-4 text-[12px]"
