@@ -5,7 +5,7 @@ import NavLinks from "../components/NavLinks";
 import LoginSignUpButton from "../components/LoginSignUpButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { Link, useHistory, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isClicked, setIsClicked] = useState(false);
@@ -13,7 +13,7 @@ const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
   const profileImage = userInfo ? userInfo.profile_image : null;
-  const history = useHistory();
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -94,10 +94,7 @@ const Header = () => {
                     Profile
                   </Link>
                   <button
-                    onClick={() => {
-                      handleLogout(); // Call handleLogout function
-                      history.push("/login"); // Navigate to /login
-                    }}
+                    onClick={handleLogout}
                     className="block py-2 font-poppins hover:text-orange"
                   >
                     Logout
