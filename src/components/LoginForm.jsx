@@ -84,7 +84,7 @@ const LoginForm = () => {
         ref={userRef}
         value={user}
         required
-        placeholder="Email Address or Mobile Number"
+        placeholder="Email Address"
         className="font-poppins p-4 bg-[#FFEEE6]"
         onChange={(e) => setUser(e.target.value)}
       />
