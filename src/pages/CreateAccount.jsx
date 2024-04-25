@@ -242,13 +242,17 @@ const CreateAccount = () => {
               {/* Error message for last name validation */}
             </li>
             <li className="mb-5">
-              <textarea
+              <input
+                type="text"
                 placeholder="Address"
                 required
                 onChange={(e) => setAddress(e.target.value)}
-                className="bg-[#FFEEE6] w-[298px] rounded-[7px] border-none pl-[20px] pr-[20px] pt-[10px] pb-[20px] text-[12px] font-Poppins"
-              ></textarea>
+                className={`bg-[#FFEEE6] w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins
+              ${address ? "outline-green-600" : "outline-none"}`}
+              />
+              {/* Error message for address validation */}
             </li>
+
             <li className="mb-5 ">
               <input
                 ref={userRef}

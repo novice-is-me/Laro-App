@@ -58,54 +58,67 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <h2 className="text-2xl font-bold mb-4">Forgot Password</h2>
-      <form className="flex flex-col gap-4 w-64" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="PIN"
-          value={pin}
-          onChange={(e) => setPin(e.target.value)}
-          required
-          className="input-style"
-        />
-        <div className="relative input-group">
+    <div className="bg-[#FFF6F2] flex w-full overflow-x-hidden box-border px-20 lg:px-14 sm:p-0">
+      <div className="box-border mx-auto relative flex flex-col justify-center items-start gap-3 w-[50%] sm:w-[100%] pl-24 lg:pl-0 sm:items-center sm:scale-[0.9] sm:text-center">
+        <h2 className="mt-[20px] text-[40px] font-Poppins font-black">
+          Forgot Password
+        </h2>
+        <form className="sm:text-center" onSubmit={handleSubmit}>
           <input
-            type={showNewPassword ? "text" : "password"}
-            placeholder="New Password"
-            value={newPassword}
-            onChange={(e) => setNewPassword(e.target.value)}
+            type="text"
+            placeholder="PIN"
+            value={pin}
+            onChange={(e) => setPin(e.target.value)}
             required
-            className="input-style"
+            className="bg-[#FFEEE6] w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins mb-4"
           />
-          <span
-            onClick={() => setShowNewPassword(!showNewPassword)}
-            className="absolute right-2 top-2 cursor-pointer"
+          <div className="relative input-group">
+            <input
+              type={showNewPassword ? "text" : "password"}
+              placeholder="New Password"
+              value={newPassword}
+              onChange={(e) => setNewPassword(e.target.value)}
+              required
+              className="bg-[#FFEEE6] w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins mb-4"
+            />
+            <span
+              onClick={() => setShowNewPassword(!showNewPassword)}
+              className="absolute right-[15px] top-[15px] cursor-pointer"
+            >
+              {showNewPassword ? <VisibilityOff /> : <Visibility />}
+            </span>
+          </div>
+          <div className="relative input-group">
+            <input
+              type={showConfirmPassword ? "text" : "password"}
+              placeholder="Confirm Password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+              className="bg-[#FFEEE6] w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins mb-4"
+            />
+            <span
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+              className="absolute right-[15px] top-[15px] cursor-pointer"
+            >
+              {showConfirmPassword ? <VisibilityOff /> : <Visibility />}
+            </span>
+          </div>
+          {error && (
+            <p className="text-red-600 mt-2 font-Poppins text-[12px]">
+              {error}
+            </p>
+          )}
+          <button
+            type="submit"
+            className={`h-[45px] outline-none bg-orange px-10 py-4 rounded-[7px] text-white font-Poppins text-[13px] w-fit
+    ${loading ? "cursor-not-allowed opacity-50" : ""}`}
+            disabled={loading}
           >
-            {showNewPassword ? <VisibilityOff /> : <Visibility />}
-          </span>
-        </div>
-        <div className="relative input-group">
-          <input
-            type={showConfirmPassword ? "text" : "password"}
-            placeholder="Confirm Password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-            className="input-style"
-          />
-          <span
-            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-            className="absolute right-2 top-2 cursor-pointer"
-          >
-            {showConfirmPassword ? <VisibilityOff /> : <Visibility />}
-          </span>
-        </div>
-        {error && <p className="text-red-500">{error}</p>}
-        <button type="submit" className="btn-style " disabled={loading}>
-          {loading ? "Resetting..." : "Reset Password"}
-        </button>
-      </form>
+            {loading ? "Resetting..." : "Reset Password"}
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
