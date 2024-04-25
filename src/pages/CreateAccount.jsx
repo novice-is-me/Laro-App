@@ -480,8 +480,8 @@ const CreateAccount = () => {
       </div>
 
       {showNotification && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center border-4 border-orange rounded-lg">
-          <div className="bg-white p-8 rounded-lg shadow-lg">
+        <div className="fixed inset-0 z-50 flex items-center justify-center border-4 rounded-lg">
+          <div className="bg-white border-2 border-orange p-8 rounded-lg shadow-lg">
             <p className="text-lg font-bold mb-4">{notificationContent}</p>
             <button
               onClick={() => {
