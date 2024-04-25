@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import LoginForm from "../components/LoginForm";
-import { Link } from "react-router-dom";
 import PictureComponent from "../components/PictureComponent";
 import { loginImg } from "../assets";
 
 const Login = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Check if the user is already logged in
+    const token = localStorage.getItem("token");
+    if (token) {
+      // If logged in, redirect to the user page
+      navigate("/user");
+    }
+  }, [navigate]);
+
   return (
     <div className="h-svh">
       <div className="bg-bgColor flex justify-between h-full pb-[5rem]">

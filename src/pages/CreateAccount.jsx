@@ -57,6 +57,15 @@ const CreateAccount = () => {
   }, []);
 
   useEffect(() => {
+    // Check if the user is already logged in
+    const token = localStorage.getItem("token");
+    if (token) {
+      // If logged in, redirect to the user page
+      navigate("/user");
+    }
+  }, [navigate]);
+
+  useEffect(() => {
     // Validation for first name (You can customize the regex pattern)
     const result = /^[a-zA-Z\s]*$/.test(firstName);
     // Update the state for first name validity
