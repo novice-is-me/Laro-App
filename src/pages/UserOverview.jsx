@@ -219,7 +219,7 @@ const UserOverview = () => {
                         <div className="flex items-center gap-2">
                           <FontAwesomeIcon icon={faLocationDot} />
                           <p className="font-Inter text-[15px]">
-                            Pasig City, Philippines
+                            {userInfo.address}
                           </p>
                         </div>
                       </div>

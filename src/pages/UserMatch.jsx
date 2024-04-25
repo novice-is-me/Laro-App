@@ -277,12 +277,12 @@ const UserMatch = () => {
                     <div className=" flex justify-between border-b-2 border-white m-4 pb-4">
                       <div>
                         <p className="font-Inter text-[#7B7B7B] text-[12px]">
-                          {userFullName.full_name}
+                          Name
                         </p>
                         <div className="flex items-center gap-2">
                           <FontAwesomeIcon icon={faUser} />
                           <p className="font-Inter text-[15px]">
-                            Juan Dela Cruz
+                            {userFullName.full_name}{" "}
                           </p>
                         </div>
                       </div>
@@ -293,7 +293,7 @@ const UserMatch = () => {
                         <div className="flex items-center gap-2">
                           <FontAwesomeIcon icon={faLocationDot} />
                           <p className="font-Inter text-[15px]">
-                            Pasig City, Philippines
+                            {userInfo.address}
                           </p>
                         </div>
                       </div>
