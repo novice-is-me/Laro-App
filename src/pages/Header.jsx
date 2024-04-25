@@ -93,7 +93,7 @@ const Header = () => {
                         ? `${userInfo.first_name} ${userInfo.last_name}`
                         : ""}
                     </p>
-                    <p className="text-gray-500 text-sm">
+                    <p className="text-gray text-sm">
                       {userInfo ? userInfo.username : ""}
                     </p>
                   </div>
