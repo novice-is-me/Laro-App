@@ -13,6 +13,7 @@ const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
   const profileImage = userInfo ? userInfo.profile_image : null;
+  const userFullName = JSON.parse(localStorage.getItem("userFullName"));
 
   const navigate = useNavigate();
 
@@ -74,7 +75,10 @@ const Header = () => {
         <div className="flex gap-4 items-center">
           {isLoggedIn ? (
             <div className="relative">
-              <button onClick={handleDropdownToggle}>
+              <button
+                onClick={handleDropdownToggle}
+                className="focus:outline-none"
+              >
                 <img
                   src={`https://api.laro.com.ph/public/assets/user-upload/${profileImage}`}
                   alt="User"
@@ -82,20 +86,27 @@ const Header = () => {
                 />
               </button>
               {isClicked && (
-                <div
-                  className="absolute bg-bgColor right-0 mt-5 py-2 px-4 z-10 
-                border border-orange rounded-[10px]"
-                >
+                <div className="absolute right-0 mt-4 py-2 px-4 z-10 bg-white border border-gray-200 rounded shadow-md">
+                  <div className="border-2 border-orange mb-2">
+                    <p className="font-semibold  text-gray-800">
+                      {userInfo
+                        ? `${userInfo.first_name} ${userInfo.last_name}`
+                        : ""}
+                    </p>
+                    <p className="text-gray-500 text-sm">
+                      {userInfo ? userInfo.username : ""}
+                    </p>
+                  </div>
                   <Link
                     to="/user"
-                    className="block py-2 font-poppins hover:text-orange"
+                    className="block py-2 font-poppins text-sm text-gray-800 hover:text-orange"
                     onClick={() => setIsClicked(false)}
                   >
                     Profile
                   </Link>
                   <button
                     onClick={handleLogout}
-                    className="block py-2 font-poppins hover:text-orange"
+                    className="block py-2 font-poppins text-sm text-gray-800 hover:text-orange"
                   >
                     Logout
                   </button>
