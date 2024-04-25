@@ -76,7 +76,7 @@ const EventSuccess = () => {
     <Link to="/" className='border border-[#FA5000] border-2 flex justify-center items-center text-[15px] bg-[#FA5000] font-Poppins text-white p-4 rounded-[10px] w-1/2 lg:w-full'>
       Home 
     </Link>
-    <Link to="/organizerDashboard" className='flex justify-center items-center text-[15px] bg-[#FFE4D9] font-Poppins border p-4 border-2 text-[#FA5000] rounded-[10px] w-1/2 lg:w-full'>
+    <Link to="/OrganizerDashboard" className='flex justify-center items-center text-[15px] bg-[#FFE4D9] font-Poppins border p-4 border-2 text-[#FA5000] rounded-[10px] w-1/2 lg:w-full'>
       Dashboard 
     </Link>
   </div>
