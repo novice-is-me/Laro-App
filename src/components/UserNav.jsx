@@ -34,6 +34,24 @@ const UserNav = () => {
   const userFullName = JSON.parse(localStorage.getItem("userFullName"));
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
   const profileImage = userInfo ? userInfo.profile_image : null;
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const userLoggedIn = localStorage.getItem("token") !== null;
+    setIsLoggedIn(userLoggedIn);
+  }, []);
+
+  const handleLogout = () => {
+    navigate("/login");
+    console.log("Logging out...");
+    // Clear user data from localStorage and log out
+    localStorage.removeItem("token");
+    localStorage.removeItem("userFullName");
+    localStorage.removeItem("userInfo");
+    setIsLoggedIn(false);
+    // Redirect to the login page
+    console.log("Navigating to login page...");
+  };
 
   return (
     <div className=" flex flex-[1.1] gap-4 xl:flex-[.5]">
@@ -272,7 +290,7 @@ const UserNav = () => {
         <div className="flex flex-col gap-7 justify-between border-0 w-full">
           <div
             className="flex items-center justify-between hover:cursor-pointer"
-            onClick={() => navigate("/")}
+            onClick={handleLogout}
           >
             <svg
               width="35"
