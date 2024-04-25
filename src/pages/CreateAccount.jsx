@@ -266,7 +266,7 @@ const CreateAccount = () => {
               <input
                 ref={userRef}
                 type="text"
-                placeholder="Email Address or Mobile Number"
+                placeholder="Email Address"
                 required
                 onChange={(e) => setEmail(e.target.value)}
                 className={`bg-[#FFEEE6] outline-none w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins
