@@ -18,6 +18,8 @@ const CreateAccount = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [pin, setPin] = useState("");
+  const [showNotification, setShowNotification] = useState(false);
+  const [notificationContent, setNotificationContent] = useState("");
 
   const [email, setEmail] = useState("");
   const [validEmail, setValidEmail] = useState(false);
@@ -165,8 +167,11 @@ const CreateAccount = () => {
       if (response.ok) {
         const data = await response.json();
         console.log(data);
+        setShowNotification(true);
+        setNotificationContent(
+          "A verification email has been sent to your inbox. Please enter the PIN to continue."
+        );
         setSuccess(true);
-        navigate("/email-verification");
       } else {
         const errorData = await response.json();
         console.error("Error:", errorData);
@@ -473,6 +478,23 @@ const CreateAccount = () => {
           </button>
         </form>
       </div>
+
+      {showNotification && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center border-4 border-orange rounded-lg">
+          <div className="bg-white p-8 rounded-lg shadow-lg">
+            <p className="text-lg font-bold mb-4">{notificationContent}</p>
+            <button
+              onClick={() => {
+                setShowNotification(false);
+                navigate("/email-verification");
+              }}
+              className="bg-orange text-white py-2 px-4 rounded-md hover:bg-orange-dark transition duration-300 ease-in-out"
+            >
+              Proceed
+            </button>
+          </div>
+        </div>
+      )}
 
       <div className="w-[50%] flex items-center justify-center sm:hidden 832px:scale-[0.8] 770px:scale-[0.7]">
         <PictureComponent img={player} value={"create"} />
