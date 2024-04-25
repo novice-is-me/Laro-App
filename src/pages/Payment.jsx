@@ -52,7 +52,7 @@ const Payment = () => {
         </div>
 
         <div className="  absolute flex flex-col gap-2 mt-4 bottom-8 right-14 lg:static lg:mt-1 lg:bottom-auto lg:flex-row lg:mb-6 lg:mr-12 lg:gap-4 lg:flex lg:justify-end">
-          <Link to="/" className='text-[15px] bg-[#FA5000] font-Poppins border text-white py-4 px-10 rounded-[10px] lg:w-auto '>
+          <Link to="/eventSuccess" className='text-[15px] bg-[#FA5000] font-Poppins border text-white py-4 px-10 rounded-[10px] lg:w-auto '>
             Pay
           </Link>
         </div>

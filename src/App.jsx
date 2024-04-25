@@ -17,10 +17,13 @@ import UserAchievements from "./pages/UserAchievements";
 import CalendarCourtOwner from './pages/CalendarCourtOwner'
 import ViewCourt from "./components/ViewCourt";
 import OrganizerDashboard from './pages/OrganizerDashboard'
+import OrganizerDashHeader from './pages/OrganizerDashHeader'
 import OrganizerProfile from './pages/OrganizerProfile'
 import EventDetails from './pages/EventDetails'
 import PlayerDetails from './pages/PlayerDetails'
 import Payment from './pages/Payment'
+import OrganizerLogin from './pages/OrganizerLogin'
+import EventSuccess from './pages/EventSuccess'
 
 
 export const joinGameContext = createContext();
@@ -37,9 +40,13 @@ function App() {
     '/dashboard/calendar',
     "/organizer",
     "/OrganizerDashboard",
+    "/organizerLogin",
+    "/organizerProfile",
     "/eventDetails",
+    "/eventSuccess",
     "/playerDetails",
     "/payment",
+    "/organizerDashHeader",
     ];
 
   const shouldShowHeader = !hideHeaderRoutes.includes(location.pathname);
@@ -67,11 +74,14 @@ function App() {
         <Route path="/court-owner" element={<CourtOwner />} />
         <Route path="/dashboard" element={<DashboardCourtOwner />} />
         <Route path='/dashboard/calendar' element={<CalendarCourtOwner/>}/>
-        <Route path='/organizer' element={<OrganizerProfile/>}/>
-        <Route path='/organizerDashboard' element={<OrganizerDashboard/>}/>
+        <Route path='/organizer' element={<OrganizerLogin/>}/>
+        <Route path='/OrganizerDashboard' element={<OrganizerDashboard/>}/>
+        <Route path='/organizerDashHeader' element={<OrganizerDashHeader/>}/>
         <Route path='/eventDetails' element={<EventDetails/>}/>
+        <Route path='/eventSuccess' element={<EventSuccess/>}/>
         <Route path='/playerDetails' element={<PlayerDetails/>}/>
         <Route path='/payment' element={<Payment/>}/>
+        <Route path='/organizerProfile' element={<OrganizerProfile/>}/>
         <Route path="/user" element={<UserOverview />} />
         <Route path="/user/statistics" element={<UserStats />} />
         <Route path="/user/matches" element={<UserMatch />} />

@@ -29,12 +29,12 @@ const EventDetails = () => {
           <p className="font-Poppins text-[#717171] text-[15px]">You are now able to initiate an event, just ensure the accuracy of the information you provide.</p>
         </div>
 
-        <div className=" w-[75%] lg:pb-[160px]">
+        <div className=" w-[75%] h-[55%] lg:pb-[160px] overflow-y-auto">
           <EventDetailsForm />
         </div>
         <div className="absolute flex flex-row  gap-2 mt-4 bottom-8 right-14">
         <div className="flex flex-row lg:flex-col gap-2">
-          <Link to="/organizer" className='text-[15px] bg-black font-Poppins border text-white py-4 px-8 rounded-[10px] w-full'>
+          <Link to="/organizerProfile" className='text-[15px] bg-black font-Poppins border text-white py-4 px-8 rounded-[10px] w-full'>
             Cancel
           </Link>
           <Link to="/playerDetails" className='text-[15px] bg-[#FA5000] font-Poppins border text-white py-4 px-10 rounded-[10px] w-full'>
