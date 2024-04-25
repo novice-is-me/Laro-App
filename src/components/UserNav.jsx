@@ -283,6 +283,53 @@ const UserNav = () => {
                 <path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
               </svg>
             </div>
+
+            <div
+              className="flex items-center justify-between hover:cursor-pointer"
+              onClick={() => navigate("/user/shop")}
+            >
+              <svg
+                width="45"
+                height="45"
+                viewBox="0 0 45 45"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.69922 11.0947H40.6826V18.4914L39.39 19.268C38.3841 19.8716 37.2331 20.1904 36.0601 20.1904C34.8871 20.1904 33.7361 19.8716 32.7302 19.268L31.4367 18.4914L30.1442 19.268C29.1383 19.8716 27.9873 20.1904 26.8143 20.1904C25.6412 20.1904 24.4902 19.8716 23.4844 19.268L22.1909 18.4914L20.8983 19.268C19.8924 19.8716 18.7415 20.1904 17.5684 20.1904C16.3954 20.1904 15.2444 19.8716 14.2385 19.268L12.9451 18.4914L11.6516 19.268C10.6458 19.8714 9.49499 20.1901 8.32214 20.1901C7.14928 20.1901 5.99847 19.8714 4.99271 19.268L3.69922 18.4914V11.0947Z"
+                  fill="black"
+                  stroke="black"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M7.39844 20.7929V40.6816H36.9851V20.3407M7.39844 10.9303V3.69824H36.9851V11.0949"
+                  stroke="black"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M17.5684 29.5869H26.8142V40.6819H17.5684V29.5869Z"
+                  fill="black"
+                  stroke="black"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+
+              <p className=" font-Inter text-2xl">Shops</p>
+              <svg
+                width="35"
+                height="35"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 320 512"
+              >
+                <path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+              </svg>
+            </div>
           </div>
         </div>
 

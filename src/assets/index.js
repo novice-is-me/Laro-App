@@ -29,6 +29,7 @@ import people8 from './image/people8.png'
 import people9 from './image/people9.png'
 import ownerImg1 from './image/ownerImg1.png'
 import girlsBasket from './image/girlsBasket.png'
+import shoppingBag  from './image/shoppingBag.png'
 
 export{
     Logo,
@@ -50,6 +51,6 @@ export{
     ImageHighlights1,
     ImageHighlights2,
     emojiGem,userImg,people1,people2,people3,people4,people5,people6,people7,people8,people9,
-    ownerImg1,
+    ownerImg1,shoppingBag,
     girlsBasket,
 }

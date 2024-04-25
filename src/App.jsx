@@ -20,6 +20,7 @@ import OrganizerDashboard from "./pages/OrganizerDashboard";
 import OrganizerProfile from "./pages/OrganizerProfile";
 import ForgotPassword from "./pages/ForgotPassword";
 import EmailVerification from "./pages/EmailVerification";
+import UserShop from "./pages/UserShop";
 
 export const joinGameContext = createContext();
 
@@ -34,6 +35,7 @@ function App() {
     "/dashboard/calendar",
     "/organizer",
     "/organizerProfile",
+    "/user/shop",
   ];
 
   const shouldShowHeader = !hideHeaderRoutes.includes(location.pathname);
@@ -53,6 +55,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/matches" element={<Matches />} />
+          <Route path="/user/shop" element={<UserShop />} />
+
           <Route path="/email-verification" element={<EmailVerification />} />
           <Route path="/matches" element={<Matches />} />
           <Route path="/court" element={<Court />} />
