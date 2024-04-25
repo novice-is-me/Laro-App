@@ -8,6 +8,7 @@ const LoginForm = () => {
   const [pwd, setPwd] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [showSuccessModal, setShowSuccessModal] = useState(false); // State for success modal
 
   const [showPass, setShowPass] = useState(false);
   const userRef = useRef();
@@ -61,13 +62,18 @@ const LoginForm = () => {
       );
 
       // Assuming the password reset request is successful
-      alert("Password reset instructions sent to your email.");
-      navigate("/forgot-password");
+      setShowSuccessModal(true); // Show success modal
     } catch (error) {
       // Handle errors, such as displaying an error message to the user
       console.error("Password reset failed:", error);
       alert("Password reset failed. Please try again later.");
     }
+  };
+
+  const handleModalClose = () => {
+    setShowSuccessModal(false);
+    // Navigate to forgot password page
+    navigate("/forgot-password");
   };
 
   return (
@@ -124,8 +130,24 @@ const LoginForm = () => {
           Forgot Password
         </button>
       </div>
+
+      {/* Modal for password reset success */}
+      {showSuccessModal && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          <div className="bg-white p-8 rounded-lg shadow-lg">
+            <p className="text-lg font-bold mb-4">
+              PIN for reset password has been sent to your email.
+            </p>
+            <button
+              className="bg-orange text-white py-2 px-4 rounded-md hover:bg-orange-dark"
+              onClick={handleModalClose}
+            >
+              Proceed
+            </button>
+          </div>
+        </div>
+      )}
     </form>
   );
 };
-
 export default LoginForm;

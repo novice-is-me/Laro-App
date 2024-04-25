@@ -9,6 +9,7 @@ const ForgotPassword = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [showModal, setShowModal] = useState(false); // State for success modal
 
   const navigate = useNavigate();
 
@@ -46,8 +47,7 @@ const ForgotPassword = () => {
       );
 
       // Assuming the password reset request is successful
-      alert("Password reset successfully.");
-      navigate("/login"); // Redirect to the login page after password reset
+      setShowModal(true); // Show success modal
     } catch (error) {
       // Handle errors, such as displaying an error message to the user
       setError("Password reset failed. Please try again later.");
@@ -57,12 +57,21 @@ const ForgotPassword = () => {
     }
   };
 
+  const handleModalClose = () => {
+    setShowModal(false);
+    navigate("/login"); // Redirect to the login page after password reset
+  };
+
   return (
     <div className="bg-[#FFF6F2] flex w-full overflow-x-hidden box-border px-20 lg:px-14 sm:p-0">
       <div className="box-border mx-auto relative flex flex-col justify-center items-start gap-3 w-[50%] sm:w-[100%] pl-24 lg:pl-0 sm:items-center sm:scale-[0.9] sm:text-center">
         <h2 className="mt-[20px] text-[40px] font-Poppins font-black">
           Forgot Password
         </h2>
+        <p className="font-Poppins text-sm text-[#A5A5A5] max-w-[400px]">
+          Enter the PIN you received from your Email Inbox to reset your
+          password.
+        </p>
         <form className="sm:text-center" onSubmit={handleSubmit}>
           <input
             type="text"
@@ -118,6 +127,22 @@ const ForgotPassword = () => {
             {loading ? "Resetting..." : "Reset Password"}
           </button>
         </form>
+        {showModal && (
+          <div className="fixed inset-0 flex items-center justify-center z-50">
+            <div className="bg-white p-8 rounded-lg shadow-lg">
+              <p className="text-lg font-bold mb-4">
+                Password reset successfully. Please login with your new
+                password.
+              </p>
+              <button
+                className="bg-orange text-white py-2 px-4 rounded-md hover:bg-orange-dark"
+                onClick={handleModalClose}
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
