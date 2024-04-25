@@ -33,14 +33,16 @@ const LoginForm = () => {
         }
       );
 
-      // Assuming the response contains a token or some indication of successful login
-      // You can handle the response accordingly
-      console.log("Login successful:", response.data);
+      const { token, userFullName, userInfo } = response.data;
 
-      // Redirect to the user page or perform any other action upon successful login
+      // Store token and user data in localStorage
+      localStorage.setItem("token", token);
+      localStorage.setItem("userFullName", JSON.stringify(userFullName));
+      localStorage.setItem("userInfo", JSON.stringify(userInfo));
+
+      // Redirect to the user page
       navigate("/user");
     } catch (error) {
-      // Handle errors, such as displaying an error message to the user
       setError("Login failed. Please check your credentials.");
       console.error("Login failed:", error);
     } finally {
