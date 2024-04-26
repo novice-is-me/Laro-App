@@ -26,6 +26,9 @@ const Matches = () => {
     console.log("joinGame input : " , joinGame);
   }, [joinGame]) 
 
+
+
+
   const handleChange = (e) => {
     const inputFilter = e.target.value.toLowerCase();
     const filtered = ActiveMatch.filter(card => 
@@ -33,10 +36,6 @@ const Matches = () => {
                   );
     setFilteredData(filtered);
   }
-
-
-
-
 
 
   const handleFilterTypeofGame = (selectedCategory) => {
@@ -61,8 +60,6 @@ const Matches = () => {
   }
 
   
-
-
 
   useEffect(() => {
     filterItems();
@@ -141,7 +138,6 @@ const Matches = () => {
                   <div className='mb-10 flex items-center flex-wrap md:gap-2 md:text-center'>
 
                   
-
                     {ActiveMatch.map((card) => (
                       <button 
                         key={card.id} 

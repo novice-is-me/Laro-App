@@ -6,9 +6,9 @@ import { joinGameContext } from '../App'
 
 const Options = ({id, icon, text, choice, placeholder, path}) => {
 
-  const {setJoinGame} = useContext(joinGameContext)
+  const {setJoinGame, setFindCourt} = useContext(joinGameContext)
   
-  const [isHovered, setIsHovered] = useState(false)  
+  const [isHovered, setIsHovered] = useState(false)   
 
   const handleChange= (e) => {
     if (id === 1){
@@ -40,7 +40,7 @@ const Options = ({id, icon, text, choice, placeholder, path}) => {
       {/* add link for path in future */}
       {isHovered  &&  
         <div className=' bg-[#FA5000] p-4 rounded-[40px] text-white w-[100px] 
-        flex items-center justify-center hover:cursor-pointer xsm:p-2 xsm:mt-3'>   
+        flex items-center justify-center hover:cursor-pointer xsm:p-2 xsm:mt-3 font-Poppins'>   
           <Link to={path}>{choice}</Link>
         </div> 
       }  

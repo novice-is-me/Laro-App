@@ -41,15 +41,12 @@ function App() {
   const [joinGame, setJoinGame] = useState('');
   const [findCourt, setFindCourt] = useState('');
   
-  useEffect(() => {
-    console.log("findcourt: " , findCourt);
-  }, [findCourt])
 
   return (
     <>
       {shouldShowHeader && <Header />}
 
-      <joinGameContext.Provider value={{setJoinGame, joinGame}}> 
+      <joinGameContext.Provider value={{setJoinGame, joinGame, findCourt, setFindCourt}}> 
         <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/matches" element={<Matches />} />
