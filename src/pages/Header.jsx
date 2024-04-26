@@ -1,18 +1,26 @@
-import React, { useState } from 'react'
-import { useEffect } from 'react'
-import { Logo } from '../assets'
-import { links } from '../constant/index'
-import NavLinks from '../components/NavLinks' 
-import LoginSignUpButton from '../components/LoginSignUpButton'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from "react";
+import { Logo } from "../assets";
+import { links } from "../constant/index";
+import NavLinks from "../components/NavLinks";
+import LoginSignUpButton from "../components/LoginSignUpButton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
-  const [isClicked, setIsClicked] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [isClicked, setIsClicked] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+  const profileImage = userInfo ? userInfo.profile_image : null;
+  const userFullName = JSON.parse(localStorage.getItem("userFullName"));
+
+  const navigate = useNavigate();
 
   useEffect(() => {
+    const userLoggedIn = localStorage.getItem("token") !== null;
+    setIsLoggedIn(userLoggedIn);
+
     const handleScroll = () => {
       const scrollTop = window.scrollY;
 
@@ -21,52 +29,114 @@ const Header = () => {
       } else {
         setIsScrolled(false);
       }
-    };  
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
     };
-  }, []); 
-  
-  return (  
-      <div className={`py-8 px-[5rem] sticky top-0 flex justify-between bg-bgColor
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleDropdownToggle = () => {
+    setIsClicked(!isClicked);
+  };
+
+  const handleLogout = () => {
+    navigate("/login");
+    console.log("Logging out...");
+    // Clear user data from localStorage and log out
+    localStorage.removeItem("token");
+    localStorage.removeItem("userFullName");
+    localStorage.removeItem("userInfo");
+    setIsLoggedIn(false);
+    // Redirect to the login page
+    console.log("Navigating to login page...");
+  };
+
+  return (
+    <div
+      className={`py-8 px-[5rem] sticky top-0 flex justify-between bg-bgColor
       items-center w-full z-[99] xsm:px-5  
-      ${isScrolled ? 'backdrop-filter backdrop-blur-lg bg-opacity-30' : 'bg-bgColor'}`}>      
-        <div> 
-          <img src={Logo} alt="logo"/>
+      ${
+        isScrolled
+          ? "backdrop-filter backdrop-blur-lg bg-opacity-30"
+          : "bg-bgColor"
+      }`}
+    >
+      <div>
+        <img src={Logo} alt="logo" />
+      </div>
+      <div className="flex gap-[100px] items-center relative">
+        <div className="flex gap-[100px] lg:hidden">
+          {links[0].navigationBar.map((link, i) => {
+            return <NavLinks text={link.name} path={link.path} key={i} />;
+          })}
         </div>
-        <div className='flex gap-[100px] items-center relative'>
-          <div className='flex gap-[100px] lg:hidden'>
-            {links[0].navigationBar.map((link, i) =>{
-              return <NavLinks text={link.name} path={link.path} key={i} /> 
-            })}
-          </div>
-          <div className='flex gap-4 items-center'>
-            {links[2].headerBtn.map((link, i)=>{
-              return <LoginSignUpButton text={link.name} path={link.path} value={link.id} key={i}/>
-            })} 
-            <div className='relative'>
-              <FontAwesomeIcon icon={faBars} 
-              className=' fa-2xl hidden lg:block hover:cursor-pointer'
-              onClick={() => setIsClicked(!isClicked)}/> 
-              {/* make this component with navlinks when almost done w/ proj */}
-              {isClicked && <div className='absolute  bg-bgColor right-0 bottom-[-3] mt-5 py-6 px-10 z-10 
-               border border-orange rounded-[10px]'>
-                {links[0].navigationBar.map((link, i) =>{
-                  return <div className='py-2 xsm:text-center'>
-                    <Link to={link.path} className='font-poppins hover:text-orange'
+        <div className="flex gap-4 items-center">
+          {isLoggedIn ? (
+            <div className="relative ">
+              <button
+                onClick={handleDropdownToggle}
+                className="focus:outline-none"
+              >
+                <img
+                  src={`https://api.laro.com.ph/public/assets/user-upload/${profileImage}`}
+                  alt="User"
+                  className="rounded-full w-10 h-10 cursor-pointer"
+                />
+              </button>
+              {isClicked && (
+                <div className="absolute right-0 mt-4 py-2 z-10 bg-white border border-gray-200 rounded shadow-md max-w-[250px]">
+                  <Link
+                    to="/user"
+                    className="block px-4 py-2 font-poppins text-sm text-gray-800 hover:text-orange"
                     onClick={() => setIsClicked(false)}
-                    >{link.name}</Link>
-                  </div>   
-                })} 
-              </div>
-              }
+                  >
+                    Profile
+                  </Link>
+                  <button
+                    onClick={handleLogout}
+                    className="block px-4 py-2 font-poppins text-sm text-gray-800 hover:text-orange"
+                  >
+                    Logout
+                  </button>
+                </div>
+              )}
             </div>
-          </div>
+          ) : (
+            links[2].headerBtn.map((link, i) => (
+              <LoginSignUpButton
+                text={link.name}
+                path={link.path}
+                value={link.id}
+                key={i}
+              />
+            ))
+          )}
+          {isLoggedIn && (
+            <div className="relative">
+              <FontAwesomeIcon
+                icon={faBars}
+                className="fa-2xl hidden lg:block hover:cursor-pointer"
+                onClick={() => setIsClicked(!isClicked)}
+              />
+            </div>
+          )}
+          {/* Play Now Button */}
+          {isLoggedIn && (
+            <div className="relative">
+              <Link
+                to="/matches"
+                className="bg-orange text-white px-4 py-2 rounded hover:bg-orange-600"
+              >
+                Play Now
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

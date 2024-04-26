@@ -7,12 +7,12 @@ const DashBoardCard = ({title, points, emoji, value }) => {
      ${value === 'games' ? 'bg-orange' : 'bg-black'} h-full`}>
         <div>
             <div className=' flex justify-between'>
-                <p className=' font-Inter font-semibold text-[16px]'>{title}</p>
+                <p className=' font-Inter font-semibold text-[16px] 450:text-[15px]'>{title}</p>
                 <RefreshIcon className=' bg-white rounded-full text-black'/>
             </div>
             <div className=' flex gap-2'>
                 <p className=' font-Inter font-semibold text-[30px]'>{points}</p>
-                <p className=' mt-auto'>PT</p>
+                <p className=' mt-auto'>{value === 'games' ? 'PT' : ''}</p>
             </div>
         </div>
         <div className=''>

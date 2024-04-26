@@ -25,7 +25,7 @@ const Options = ({id, icon, text, choice, placeholder, path}) => {
     onMouseEnter={() => setIsHovered(true)} 
     onMouseLeave={() => setIsHovered(false)}>  
       <div className='bg-white rounded-[40px] p-4 w-[250px] hover:cursor-pointer xsm:p-2 xsm:w-[230px]'>  
-        <div className='flex gap-8 items-center'>
+        <div className='flex gap-8 items-center xsm:gap-4'>
             <FontAwesomeIcon icon={icon}  
             className='icon fa-2x'/>    
             <input 
