@@ -35,7 +35,7 @@ export const ActiveMatch = [
         title: "Kids Exhibition Match",
         icon: faBasketball,
         profilephoto: player2,
-        organizer: "Desiree Cabales",
+        organizer: "Juan Dela Cruz",
         location: "Manila",
         category: "Shooting",
         minsquarter: "5mins. / 4h"
@@ -47,7 +47,7 @@ export const ActiveMatch = [
         title: "Teenage Dry Run",
         icon: faMedal,
         profilephoto: player3,
-        organizer: "Mhel De Torres",
+        organizer: "Juan Dela Cruz",
         location: "Batangas",
         category: "Slam Dunk",
         minsquarter: "10mins. / 4h"
@@ -59,7 +59,7 @@ export const ActiveMatch = [
         title: "Slam Dunk Contest",
         icon: faTrophy,
         profilephoto: player4,
-        organizer: "Kenneth Quinto",
+        organizer: "Juan Dela Cruz",
         location: "Cavite",
         category: "Veteran",
         minsquarter: "10mins. / 4h"
@@ -114,41 +114,41 @@ export const CardData = [
 export const PlayersData = [
     {
         id: 1,
-        name: "Bryan Angelo Aguillera",
+        name: "Juan Dela Cruz",
         status: "Veteran"
     },
 
     {
         id: 2,
-        name: "Mhel Yrvin De Torres",
+        name: "Juan Dela Cruz",
         status: "Veteran"
     },
 
     {
         id: 3,
-        name: "Desiree Diane Cabales",
+        name: "Juan Dela Cruz",
         status: "Veteran"
     },
 
     {
         id: 4,
-        name: "Paul Kenneth Quinto",
+        name: "Juan Dela Cruz",
         status: "Veteran"
     },
     {
         id: 5,
-        name: "Rhezel Landicho",
+        name: "Juan Dela Cruz",
         status: "Veteran"
     },
 
     {
         id: 6,
-        name: "Dixie Mae Endozo",
+        name: "Juan Dela Cruz",
         status: "Veteran"
     },
     {
         id: 7,
-        name: "Angelo Burog",
+        name: "Juan Dela Cruz",
         status: "Veteran"
     },
     // {
@@ -171,10 +171,10 @@ export const PlayersData = [
 export const RefereesData = [
     {
         id: 1,
-        name: "Bini Maloi",
+        name: "Juan Dela Cruz",
     },
     {
         id: 2,
-        name: "Bini Jhoanna"
+        name: "Juan Dela Cruz"
     }
 ]
