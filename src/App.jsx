@@ -37,7 +37,7 @@ function App() {
     "/user/matches",
     "/user/achievements",
     "/dashboard",
-    "/dashboard/calendar",
+    "/calendar",
     "/organizer",
     "/user/shop",
     "/organizerLogin",
@@ -80,7 +80,7 @@ function App() {
           <Route path="/register" element={<CreateAccount />} />
           <Route path="/court-owner" element={<CourtOwner />} />
           <Route path="/dashboard" element={<DashboardCourtOwner />} />
-          <Route path="/dashboard/calendar" element={<CalendarCourtOwner />} />
+          <Route path="/calendar" element={<CalendarCourtOwner />} />
           <Route path="/organizer" element={<OrganizerDashboard />} />
           <Route
             path="/organizerDashHeader"

@@ -5,7 +5,9 @@ import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const OrganizerDashContent = ({ activeTab }) => {
   const navigate = useNavigate(); // Get the navigation function
-
+  const handleCalendarClick = () => {
+    navigate("/calendar");
+  };
   const weeks = ["S", "M", "T", "W", "T", "F", "S"];
 
   const times = Array.from({ length: 17 }, (_, index) => {
@@ -56,7 +58,12 @@ const OrganizerDashContent = ({ activeTab }) => {
             <div className="flex flex-col justify-between px-10 py-5 w-1/2 h-[537px] rounded-[10px] gap-5 text-white font-Inter bg-orange">
               <div className="flex justify-between items-center w-full h-fit ">
                 <p className="text-[30px] font-semibold">Calendar</p>
-                <p className="px-3 text-[40px] font-bold">&#62;</p>
+                <p
+                  className="px-3 text-[40px] font-bold"
+                  onClick={handleCalendarClick}
+                >
+                  &#62;
+                </p>
               </div>
 
               <div className="flex justify-center text-black w-full h-full">
