@@ -24,7 +24,7 @@ const OrganizerLoginForm = () => {
 
     try {
       // Directly navigate to organizerProfile without verification
-      navigate("/organizerProfile");
+      navigate("/organizerDashboard");
     } catch (error) {
       // Handle errors, such as displaying an error message to the user
       setError("Login failed. Please check your credentials.");
