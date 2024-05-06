@@ -221,11 +221,11 @@ const JoinViewActiveMatches = ({ setMain }) => {
                   className="w-[225px] min-h-[40px] text-[10px] text-[#ffffff] bg-orange rounded-lg flex justify-center items-center mb-2"
                   onClick={handleJoinGame}
                 >
-                  Joined a Game
+                  Join Pick-up Game
                 </button>
 
                 <div className="w-[225px] min-h-[40px] text-[10px] text-gray bg-[#ffffff] border-[1px] border-orange rounded-lg flex justify-center items-center mb-2 ">
-                  Invite a friend
+                  Get Shareable Link
                 </div>
               </div>
             </div>
