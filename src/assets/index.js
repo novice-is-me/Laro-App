@@ -67,9 +67,8 @@ export{
     girlsBasket,
     twoDudes,
     ballMan,
-    team,StatsSoon, userIcon, logoutImg, historyIcon, arrowActivity
-    team,
-    StatsSoon,
+    team,StatsSoon, userIcon, logoutImg, historyIcon, arrowActivity,
+
     gcash,
     others,
     paypal,
