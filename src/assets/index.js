@@ -33,6 +33,7 @@ import twoDudes from './image/twoDudes.png'
 import ballMan from './image/ballMan.png'
 import team from './image/team.png'
 import shoppingBag  from './image/shoppingBag.png'
+import StatsSoon from './image/StatsSoon.png'
 
 export{
     Logo,
@@ -58,5 +59,5 @@ export{
     girlsBasket,
     twoDudes,
     ballMan,
-    team,
+    team,StatsSoon
 }
