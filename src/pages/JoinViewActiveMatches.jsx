@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import activematchjoin from "../assets/Active Match/activematchjoin.jpg";
 import PlayersCard from "../card/PlayersCard";
 import RefereeCard from "../card/RefereeCard";
+import { eagleIcon } from "../assets";
 import { PlayersData, RefereesData } from "../constant/ActiveMatchData";
 import { KeyboardArrowLeft, StarBorder, Star } from "@mui/icons-material/";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
 import axios from "axios";
 
 const JoinViewActiveMatches = ({ setMain }) => {
   const [activeGames, setActiveGames] = useState(null);
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleJoinGame = () => {
     let config = {
@@ -23,6 +25,7 @@ const JoinViewActiveMatches = ({ setMain }) => {
       .then((response) => {
         setActiveGames(response.data);
         console.log(JSON.stringify(response.data));
+        navigate("/payment");
       })
       .catch((error) => {
         console.log(error);
@@ -63,7 +66,7 @@ const JoinViewActiveMatches = ({ setMain }) => {
                   <h1 className="font font-bold lg:text-[17px] mr-2">
                     Mandaluyong Eagle
                   </h1>
-                  <p>*Image*</p>
+                  <img src={eagleIcon} alt="Eagle Icon" className="w-6 h-6" />
                 </div>
                 <p className="text-gray text-sm">Community name</p>
               </div>

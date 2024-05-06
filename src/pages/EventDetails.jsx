@@ -41,7 +41,7 @@ const EventDetails = () => {
         <div className="absolute flex flex-row  gap-2 mt-4 bottom-8 right-14">
           <div className="flex flex-row lg:flex-col gap-2">
             <Link
-              to="/organizerProfile"
+              to="/organizer"
               className="text-[15px] bg-black font-Poppins border text-white py-4 px-8 rounded-[10px] w-full"
             >
               Cancel

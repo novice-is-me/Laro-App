@@ -42,6 +42,7 @@ import gcash from './image/gcash.png'
 import paypal from './image/paypal.png'
 import credits from './image/credits.png'
 import others from './image/others.png'
+import eagleIcon from './image/eagleIcon.png'
 
 export{
     Logo,
@@ -67,8 +68,7 @@ export{
     girlsBasket,
     twoDudes,
     ballMan,
-    team,StatsSoon, userIcon, logoutImg, historyIcon, arrowActivity,
-
+    team,StatsSoon, userIcon, logoutImg, historyIcon, arrowActivity,eagleIcon,
     gcash,
     others,
     paypal,
