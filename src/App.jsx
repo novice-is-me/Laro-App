@@ -87,6 +87,7 @@ function App() {
             element={<OrganizerDashHeader />}
           />
           <Route path="/eventDetails" element={<EventDetails />} />
+
           <Route path="/eventSuccess" element={<EventSuccess />} />
           <Route path="/playerDetails" element={<PlayerDetails />} />
           <Route path="/payment" element={<Payment />} />

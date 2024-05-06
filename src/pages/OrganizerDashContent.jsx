@@ -1,8 +1,11 @@
 import React from "react";
 import Calendar from "react-calendar";
 import { userIcon, logoutImg, historyIcon, arrowActivity } from "../assets";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const OrganizerDashContent = ({ activeTab }) => {
+  const navigate = useNavigate(); // Get the navigation function
+
   const weeks = ["S", "M", "T", "W", "T", "F", "S"];
 
   const times = Array.from({ length: 17 }, (_, index) => {
@@ -72,10 +75,14 @@ const OrganizerDashContent = ({ activeTab }) => {
             </div>
           </div>
           <div className="flex justify-center items-center w-full h-fit font-Inter p-5">
-            <div className="flex justify-evenly items-center w-[295px] h-[70px] text-white text-[20px] font-semibold bg-orange rounded-[50px]">
+            {/* Change the onClick event to navigate to "/eventdetails" */}
+            <button
+              onClick={() => navigate("/eventDetails")}
+              className="flex justify-evenly items-center w-[295px] h-[70px] text-white text-[20px] font-semibold bg-orange rounded-[50px]"
+            >
               <p className="flex items-center h-full text-[40px]">+</p>
               <p className="flex items-center h-full">Create New Event</p>
-            </div>
+            </button>
           </div>
         </div>
       )}
@@ -178,10 +185,14 @@ const OrganizerDashContent = ({ activeTab }) => {
 
           {/* Create New Event Button */}
           <div className="flex justify-center items-center w-full h-fit font-Inter p-5">
-            <div className="flex justify-evenly items-center w-[295px] h-[70px] text-white text-[20px] font-semibold bg-orange rounded-[50px]">
+            {/* Change the onClick event to navigate to "/eventdetails" */}
+            <button
+              onClick={() => navigate("/eventDetails")}
+              className="flex justify-evenly items-center w-[295px] h-[70px] text-white text-[20px] font-semibold bg-orange rounded-[50px]"
+            >
               <p className="flex items-center h-full text-[40px]">+</p>
               <p className="flex items-center h-full">Create New Event</p>
-            </div>
+            </button>
           </div>
         </div>
       )}
