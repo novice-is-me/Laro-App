@@ -36,7 +36,8 @@ import shoppingBag  from './image/shoppingBag.png'
 import StatsSoon from './image/StatsSoon.png'
 import userIcon from './image/userIcon.png'
 import logoutImg from './image/logoutImg.png'
-
+import historyIcon from './image/historyIcon.png'
+import arrowActivity from './image/arrowActivity.png'
 export{
     Logo,
     loginImg,
@@ -61,5 +62,5 @@ export{
     girlsBasket,
     twoDudes,
     ballMan,
-    team,StatsSoon, userIcon, logoutImg
+    team,StatsSoon, userIcon, logoutImg, historyIcon, arrowActivity
 }
