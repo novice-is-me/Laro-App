@@ -17,11 +17,17 @@ const CreateAccount = () => {
   const errRef = useRef();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const [pin, setPin] = useState("");
+  const [showNotification, setShowNotification] = useState(false);
+  const [notificationContent, setNotificationContent] = useState("");
 
   const [email, setEmail] = useState("");
   const [validEmail, setValidEmail] = useState(false);
   const [emailFocus, setEmailFocus] = useState(false);
-
+  const [firstName, setFirstName] = useState("");
+  const [middleName, setMiddleName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [address, setAddress] = useState("");
   const [user, setUser] = useState("");
   const [validName, setValidName] = useState(false);
   const [userFocus, setUserFocus] = useState(false);
@@ -37,6 +43,8 @@ const CreateAccount = () => {
   const [contactNum, setContactNum] = useState("");
   const [validContact, setValidContact] = useState(false);
   const [contactFocus, setContactFocus] = useState(false);
+  const [validFirstName, setValidFirstName] = useState(false);
+  const [validLastName, setValidLastName] = useState(false);
 
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
@@ -47,6 +55,29 @@ const CreateAccount = () => {
   useEffect(() => {
     userRef.current.focus();
   }, []);
+
+  useEffect(() => {
+    // Check if the user is already logged in
+    const token = localStorage.getItem("token");
+    if (token) {
+      // If logged in, redirect to the user page
+      navigate("/user");
+    }
+  }, [navigate]);
+
+  useEffect(() => {
+    // Validation for first name (You can customize the regex pattern)
+    const result = /^[a-zA-Z\s]*$/.test(firstName);
+    // Update the state for first name validity
+    setValidFirstName(result);
+  }, [firstName]);
+
+  useEffect(() => {
+    // Validation for last name (You can customize the regex pattern)
+    const result = /^[a-zA-Z\s]*$/.test(lastName);
+    // Update the state for last name validity
+    setValidLastName(result);
+  }, [lastName]);
 
   useEffect(() => {
     const result = PHONE_EMAIL_REGEX.test(email);
@@ -104,12 +135,14 @@ const CreateAccount = () => {
       !validContact
     ) {
       setErrMsg("Invalid Entry");
+      setLoading(false); // Stop loading
       return;
     }
 
     // Check if a profile picture is selected
     if (!profilePic) {
       setErrMsg("No Image Selected"); // Set an error message if no image is selected
+      setLoading(false); // Stop loading
       return;
     }
 
@@ -122,28 +155,33 @@ const CreateAccount = () => {
         username: user,
         password: pass,
         contact_number: contactNum,
+        first_name: firstName,
+        middle_name: middleName,
+        last_name: lastName,
+        address: address,
       })
     );
-    formData.append("userImage", profilePic); // Append the file directly
+    formData.append("userImage", profilePic);
 
     try {
-      // Send the POST request
+      // Send the POST request to sign-up-verify-email endpoint
       const response = await fetch(
-        "https://api.laro.com.ph/api/v1/account/sign-up",
+        "https://api.laro.com.ph/api/v1/account/sign-up-send-otp",
         {
           method: "POST",
           body: formData,
         }
       );
 
-      // Check if the request was successful
       if (response.ok) {
         const data = await response.json();
-        console.log(data); // Log the response data
+        console.log(data);
+        setShowNotification(true);
+        setNotificationContent(
+          "A verification email has been sent to your inbox. Please enter the PIN to continue."
+        );
         setSuccess(true);
-        navigate("/login");
       } else {
-        // Handle error response
         const errorData = await response.json();
         console.error("Error:", errorData);
         setErrMsg("Failed to create account");
@@ -168,11 +206,67 @@ const CreateAccount = () => {
         </p>
         <form className="sm:text-center" onSubmit={handelSubmit}>
           <ol className="m-0 p-0 list-none  relative mx-auto">
+            <li className="mb-5">
+              <input
+                type="text"
+                placeholder="First Name"
+                required
+                onChange={(e) => setFirstName(e.target.value)}
+                className={`bg-[#FFEEE6] w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins
+              ${
+                firstName && validFirstName
+                  ? "outline-green-600"
+                  : "outline-none"
+              }
+              ${
+                firstName && !validFirstName
+                  ? "outline-red-600"
+                  : "outline-none"
+              }`}
+              />
+              {/* Error message for first name validation */}
+            </li>
+            <li className="mb-5">
+              <input
+                type="text"
+                placeholder="Middle Name"
+                onChange={(e) => setMiddleName(e.target.value)}
+                className="bg-[#FFEEE6] w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins"
+              />
+            </li>
+            <li className="mb-5">
+              <input
+                type="text"
+                placeholder="Last Name"
+                required
+                onChange={(e) => setLastName(e.target.value)}
+                className={`bg-[#FFEEE6] w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins
+              ${
+                lastName && validLastName ? "outline-green-600" : "outline-none"
+              }
+              ${
+                lastName && !validLastName ? "outline-red-600" : "outline-none"
+              }`}
+              />
+              {/* Error message for last name validation */}
+            </li>
+            <li className="mb-5">
+              <input
+                type="text"
+                placeholder="Address"
+                required
+                onChange={(e) => setAddress(e.target.value)}
+                className={`bg-[#FFEEE6] w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins
+              ${address ? "outline-green-600" : "outline-none"}`}
+              />
+              {/* Error message for address validation */}
+            </li>
+
             <li className="mb-5 ">
               <input
                 ref={userRef}
                 type="text"
-                placeholder="Email Address or Mobile Number"
+                placeholder="Email Address"
                 required
                 onChange={(e) => setEmail(e.target.value)}
                 className={`bg-[#FFEEE6] outline-none w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins
@@ -338,19 +432,22 @@ const CreateAccount = () => {
                 <br />
               </p>
             </li>
+
             <li className="mb-5">
               <div className="flex items-center justify-end w-[298px]">
-                <div className="w-16 h-16 rounded-full overflow-hidden bg-white">
-                  <img
-                    src={
-                      profilePic
-                        ? URL.createObjectURL(profilePic)
-                        : "/assets/image/noimg.png"
-                    }
-                    alt=""
-                    className="object-cover w-full h-full"
-                  />
-                </div>
+                {profilePic ? (
+                  <div className="w-16 h-16 rounded-full overflow-hidden bg-white">
+                    <img
+                      src={URL.createObjectURL(profilePic)}
+                      alt=""
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                ) : (
+                  <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center">
+                    <span className="text-gray-600 text-sm">No Image</span>
+                  </div>
+                )}
                 <label
                   htmlFor="file-upload"
                   className="bg-[#FFEEE6] outline-none w-[160px] h-[45px] rounded-[7px] border-none flex justify-center items-center font-Poppins text-[#A5A5A5] ml-4 text-[12px]"
@@ -394,6 +491,23 @@ const CreateAccount = () => {
           </button>
         </form>
       </div>
+
+      {showNotification && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center border-4 rounded-lg">
+          <div className="bg-white border-2 border-orange p-8 rounded-lg shadow-lg">
+            <p className="text-lg font-bold mb-4">{notificationContent}</p>
+            <button
+              onClick={() => {
+                setShowNotification(false);
+                navigate("/email-verification");
+              }}
+              className="bg-orange text-white py-2 px-4 rounded-md hover:bg-orange-dark transition duration-300 ease-in-out"
+            >
+              Proceed
+            </button>
+          </div>
+        </div>
+      )}
 
       <div className="w-[50%] flex items-center justify-center sm:hidden 832px:scale-[0.8] 770px:scale-[0.7]">
         <PictureComponent img={player} value={"create"} />

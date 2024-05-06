@@ -32,6 +32,7 @@ import girlsBasket from './image/girlsBasket.png'
 import twoDudes from './image/twoDudes.png'
 import ballMan from './image/ballMan.png'
 import team from './image/team.png'
+import shoppingBag  from './image/shoppingBag.png'
 
 export{
     Logo,
@@ -53,7 +54,7 @@ export{
     ImageHighlights1,
     ImageHighlights2,
     emojiGem,userImg,people1,people2,people3,people4,people5,people6,people7,people8,people9,
-    ownerImg1,
+    ownerImg1,shoppingBag,
     girlsBasket,
     twoDudes,
     ballMan,

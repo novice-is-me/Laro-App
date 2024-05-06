@@ -8,6 +8,7 @@ const LoginForm = () => {
   const [pwd, setPwd] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [showSuccessModal, setShowSuccessModal] = useState(false); // State for success modal
 
   const [showPass, setShowPass] = useState(false);
   const userRef = useRef();
@@ -16,6 +17,8 @@ const LoginForm = () => {
   useEffect(() => {
     userRef.current.focus();
   }, []);
+
+  // Access the login function from the AuthContext
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,19 +34,46 @@ const LoginForm = () => {
         }
       );
 
-      // Assuming the response contains a token or some indication of successful login
-      // You can handle the response accordingly
-      console.log("Login successful:", response.data);
+      const { token, userFullName, userInfo } = response.data;
 
-      // Redirect to the user page or perform any other action upon successful login
+      // Store token and user data in localStorage
+      localStorage.setItem("token", token);
+      localStorage.setItem("userFullName", JSON.stringify(userFullName));
+      localStorage.setItem("userInfo", JSON.stringify(userInfo));
+
+      // Redirect to the user page
       navigate("/user");
     } catch (error) {
-      // Handle errors, such as displaying an error message to the user
       setError("Login failed. Please check your credentials.");
       console.error("Login failed:", error);
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleForgotPassword = async () => {
+    try {
+      // Assuming you have an API endpoint for initiating password reset
+      await axios.post(
+        "https://api.laro.com.ph/api/v1/account/forgot-password",
+        {
+          email_address: user,
+        }
+      );
+
+      // Assuming the password reset request is successful
+      setShowSuccessModal(true); // Show success modal
+    } catch (error) {
+      // Handle errors, such as displaying an error message to the user
+      console.error("Password reset failed:", error);
+      alert("Password reset failed. Please try again later.");
+    }
+  };
+
+  const handleModalClose = () => {
+    setShowSuccessModal(false);
+    // Navigate to forgot password page
+    navigate("/forgot-password");
   };
 
   return (
@@ -54,7 +84,7 @@ const LoginForm = () => {
         ref={userRef}
         value={user}
         required
-        placeholder="Email Address or Mobile Number"
+        placeholder="Email Address"
         className="font-poppins p-4 bg-[#FFEEE6]"
         onChange={(e) => setUser(e.target.value)}
       />
@@ -92,9 +122,32 @@ const LoginForm = () => {
         >
           {loading ? "Logging in..." : "Login"}
         </button>
+        <button
+          type="button"
+          className="ml-4 bg-gray-200 px-6 py-4 rounded-[7px] text-gray-700 underline"
+          onClick={handleForgotPassword}
+        >
+          Forgot Password
+        </button>
       </div>
+
+      {/* Modal for password reset success */}
+      {showSuccessModal && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          <div className="bg-white p-8 rounded-lg shadow-lg">
+            <p className="text-lg font-bold mb-4">
+              PIN for reset password has been sent to your email.
+            </p>
+            <button
+              className="bg-orange text-white py-2 px-4 rounded-md hover:bg-orange-dark"
+              onClick={handleModalClose}
+            >
+              Proceed
+            </button>
+          </div>
+        </div>
+      )}
     </form>
   );
 };
-
 export default LoginForm;
