@@ -21,12 +21,12 @@ import OrganizerProfile from "./pages/OrganizerProfile";
 import ForgotPassword from "./pages/ForgotPassword";
 import EmailVerification from "./pages/EmailVerification";
 import UserShop from "./pages/UserShop";
-import OrganizerDashHeader from './pages/OrganizerDashHeader'
-import EventDetails from './pages/EventDetails'
-import PlayerDetails from './pages/PlayerDetails'
-import Payment from './pages/Payment'
-import OrganizerLogin from './pages/OrganizerLogin'
-import EventSuccess from './pages/EventSuccess'
+import OrganizerDashHeader from './pages/OrganizerDashHeader';
+import EventDetails from './pages/EventDetails';
+import PlayerDetails from './pages/PlayerDetails';
+import Payment from './pages/Payment';
+import OrganizerLogin from './pages/OrganizerLogin';
+import EventSuccess from './pages/EventSuccess';
 
 
 export const joinGameContext = createContext();
