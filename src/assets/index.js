@@ -34,6 +34,10 @@ import ballMan from './image/ballMan.png'
 import team from './image/team.png'
 import shoppingBag  from './image/shoppingBag.png'
 import StatsSoon from './image/StatsSoon.png'
+import userIcon from './image/userIcon.png'
+import logoutImg from './image/logoutImg.png'
+import historyIcon from './image/historyIcon.png'
+import arrowActivity from './image/arrowActivity.png'
 import gcash from './image/gcash.png'
 import paypal from './image/paypal.png'
 import credits from './image/credits.png'
@@ -63,6 +67,7 @@ export{
     girlsBasket,
     twoDudes,
     ballMan,
+    team,StatsSoon, userIcon, logoutImg, historyIcon, arrowActivity
     team,
     StatsSoon,
     gcash,

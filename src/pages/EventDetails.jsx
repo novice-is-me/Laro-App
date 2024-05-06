@@ -1,7 +1,7 @@
-import React from 'react';
-import { ballMan, Logo } from '../assets';
-import { Link } from 'react-router-dom';
-import EventDetailsForm from '../components/EventDetailsForm';
+import React from "react";
+import { ballMan, Logo } from "../assets";
+import { Link } from "react-router-dom";
+import EventDetailsForm from "../components/EventDetailsForm";
 
 const EventDetails = () => {
   return (
@@ -23,26 +23,37 @@ const EventDetails = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="pl-6 pt-2 w-[65%] lg:pl-3">
-          <p className=" font-Poppins text-black font-semibold text-2xl text-[40px]">Event Details</p><br />
-          <p className="font-Poppins text-[#717171] text-[15px]">You are now able to initiate an event, just ensure the accuracy of the information you provide.</p>
+          <p className=" font-Poppins text-black font-semibold text-2xl text-[40px]">
+            Event Details
+          </p>
+          <br />
+          <p className="font-Poppins text-[#717171] text-[15px]">
+            You are now able to initiate an event, just ensure the accuracy of
+            the information you provide.
+          </p>
         </div>
 
         <div className=" w-[75%] h-[55%] lg:pb-[160px] overflow-y-auto">
           <EventDetailsForm />
         </div>
         <div className="absolute flex flex-row  gap-2 mt-4 bottom-8 right-14">
-        <div className="flex flex-row lg:flex-col gap-2">
-          <Link to="/organizerProfile" className='text-[15px] bg-black font-Poppins border text-white py-4 px-8 rounded-[10px] w-full'>
-            Cancel
-          </Link>
-          <Link to="/playerDetails" className='text-[15px] bg-[#FA5000] font-Poppins border text-white py-4 px-10 rounded-[10px] w-full'>
-            Next
-          </Link>
+          <div className="flex flex-row lg:flex-col gap-2">
+            <Link
+              to="/organizerProfile"
+              className="text-[15px] bg-black font-Poppins border text-white py-4 px-8 rounded-[10px] w-full"
+            >
+              Cancel
+            </Link>
+            <Link
+              to="/eventSuccess"
+              className="text-[15px] bg-[#FA5000] font-Poppins border text-white py-4 px-10 rounded-[10px] w-full"
+            >
+              Next
+            </Link>
           </div>
         </div>
-        
       </div>
 
       {/* Second screen */}
@@ -53,11 +64,11 @@ const EventDetails = () => {
           className="w-full h-full object-cover rounded-[30px]"
         />
         <div className="absolute bottom-0 left-0 text-white bg-orange-500 rounded p-2 lg:p-4 m-6 flex flex-col gap-4">
-          <p className='  text-white font-Poppins font-semibold text-[16px] '>
+          <p className="  text-white font-Poppins font-semibold text-[16px] ">
             Be part of our organizer <br /> team and earn money.
           </p>
-          <div className=''>
-            <button className='bg-orange p-4 w-full text-white font-Poppins rounded-[10px]'>
+          <div className="">
+            <button className="bg-orange p-4 w-full text-white font-Poppins rounded-[10px]">
               Apply Now
             </button>
           </div>

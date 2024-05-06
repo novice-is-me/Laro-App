@@ -31,10 +31,7 @@ const UserStats = () => {
           {/* Display text and shopping bag image */}
           <img src={StatsSoon} alt="Shopping Bag" className="mx-auto" />
           <p className="text-lg font-bold text-center text-gray-700 mt-2">
-            COMING SOON!!!
-          </p>
-          <p className="text-lg font-bold text-center text-gray-700 mt-2">
-            DISCOVER YOUR PROGRESS HERE
+            COMING SOON!!! GET REWARDS OUT OF YOUR POINTS
           </p>
         </div>
       </div>

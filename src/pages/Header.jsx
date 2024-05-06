@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Logo } from "../assets";
 import { links } from "../constant/index";
 import NavLinks from "../components/NavLinks";
+import { userIcon, logoutImg } from "../assets";
 import LoginSignUpButton from "../components/LoginSignUpButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -72,7 +73,7 @@ const Header = () => {
             return <NavLinks text={link.name} path={link.path} key={i} />;
           })}
         </div>
-        <div className="flex gap-4 items-center">
+        <div className="relative flex gap-4 items-center">
           {isLoggedIn ? (
             <div className="relative ">
               <button
@@ -89,15 +90,40 @@ const Header = () => {
                 <div className="absolute right-0 mt-4 py-2 z-10 bg-white border border-gray-200 rounded shadow-md max-w-[250px]">
                   <Link
                     to="/user"
-                    className="block px-4 py-2 font-poppins text-sm text-gray-800 hover:text-orange"
+                    className="border-b border-gray-200 block px-4 py-2 font-poppins text-sm text-gray-800 hover:text-orange"
                     onClick={() => setIsClicked(false)}
                   >
+                    <img
+                      src={userIcon}
+                      alt="Profile Icon"
+                      className="w-4 h-4 mr-2"
+                    />
                     Profile
+                  </Link>
+
+                  <Link
+                    to="/organizer"
+                    className="block px-4 py-2 font-poppins text-sm text-gray-800 hover:text-orange border-b border-gray-200"
+                    onClick={() => setIsClicked(false)}
+                  >
+                    Organizer
+                  </Link>
+                  <Link
+                    to="/court-owner"
+                    className="block px-4 py-2 font-poppins text-sm text-gray-800 hover:text-orange border-b border-gray-200"
+                    onClick={() => setIsClicked(false)}
+                  >
+                    Court Owner
                   </Link>
                   <button
                     onClick={handleLogout}
-                    className="block px-4 py-2 font-poppins text-sm text-gray-800 hover:text-orange"
+                    className="block px-4 py-2 font-poppins text-sm text-red-800 hover:text-orange"
                   >
+                    <img
+                      src={logoutImg}
+                      alt="Logout Icon"
+                      className="w-4 h-4"
+                    />
                     Logout
                   </button>
                 </div>

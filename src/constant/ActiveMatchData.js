@@ -93,7 +93,7 @@ export const CardData = [
     },
     {
         id: 1,
-        isAvailable: true,
+        isAvailable: false,
         imagecard: court2,
         location: "Mandaluyong",
     },
@@ -105,7 +105,7 @@ export const CardData = [
     },
     {
         id: 3,
-        isAvailable: true,
+        isAvailable: false,
         imagecard: court4,
         location: "Antipolo city",
     },
