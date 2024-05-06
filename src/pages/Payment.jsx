@@ -25,14 +25,7 @@ const Payment = () => {
               <img src={Logo} alt="Logo" />
             </div>
           </Link>
-          <div className="flex flex-row items-center gap-3 ">
-            <div className="text-[#000000] font-Poppins text-[14px] lg:hidden">
-              Available Credits
-            </div>
-            <div className="bg-black rounded-[10px] pl-12 pr-12 pt-4 pb-4 text-white font-Poppins lg:p-4">
-              7,000
-            </div>
-          </div>
+
         </div>
 
         <div className="pl-6 lg:pl-3 pt-2 pb-4 w-[65%]">
@@ -41,7 +34,9 @@ const Payment = () => {
         </div>
 
         {/* Render form fields based on formData state */}
-        <div ref={formContainerRef} className=" w-[80%] h-auto mb-2 ">
+        
+        <div ref={formContainerRef} className=" w-[80%] h-auto ">
+        <p className="font-Poppins text-black font-semibold text-2xl text-[40px] pb-2">Voucher</p>
           {formData.map((data, index) => (
             <PaymentForm key={index} data={data} setData={(newData) => {
               const updatedFormData = [...formData];
@@ -49,6 +44,7 @@ const Payment = () => {
               setFormData(updatedFormData);
             }} />
           ))}
+          
         </div>
 
         <div className="  absolute flex flex-col gap-2 mt-4 bottom-8 right-14 lg:static lg:mt-1 lg:bottom-auto lg:flex-row lg:mb-6 lg:mr-12 lg:gap-4 lg:flex lg:justify-end">

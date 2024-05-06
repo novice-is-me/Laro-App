@@ -4,15 +4,20 @@ import Calendar from 'react-calendar';
 
 const OrganizerDashContent = () => {
     const [date, setDate] = useState(new Date());
+    const [showOptions, setShowOptions] = useState(false);
+
+    const toggleOptions = () => {
+        setShowOptions(!showOptions);
+    }
 
     return (
-        <div className='flex flex-col px-4 py-2   w-full lg:w-[1000px] ' style={{ height:  '100vh'}}>
+        <div className='flex flex-col px-4 py-2 w-full lg:w-[1000px] ' style={{ height:  '100vh'}}>
             {/* Create Button */}
-            <div className='flex flex-col justify-end  h-[100%]  w-full'>
+            <div className='flex flex-col justify-end   w-full'>
                     {/* Third & Fourth columns */}
-                    <div className='flex justify-between pb-4 pl-2 gap-4 w-full h-[100%]'>
+                    <div className='flex justify-between  pl-2 gap-4 w-full h-[90%]'>
                         {/* Third column */}
-                        <div className='flex flex-col gap-6 w-full '>
+                        <div className='flex flex-col gap-5 w-full'>
                         <div className='bg-black rounded-[10px] flex flex-col justify-between px-4 py-2 gap-4 h-[35%] '>
                             <div>
         <p className='font-Poppins font-semibold text-[30px] text-white'>
@@ -33,7 +38,7 @@ const OrganizerDashContent = () => {
 </div>
 
 <div className='flex flex-col bg-orange text-white rounded-[10px] gap-2'>
-      <div className='justify-between items-start pt-4 pl-4 pr-4   h-[65%]'>
+      <div className='justify-between items-start pt-4 pl-4 pr-4 '>
         <button className="flex justify-between  w-[100%]">
           <p className='font-Inter font-semibold text-[30px]'>Calendar</p>
           <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 512" className="pt-2">
@@ -41,7 +46,7 @@ const OrganizerDashContent = () => {
           </svg>
         </button>
       </div>
-      <div className="flex justify-center items-center pt-2 pb-5">
+      <div className="flex justify-center items-center pb-4">
         <Calendar
           onChange={setDate}
           value={date}
@@ -71,12 +76,22 @@ const OrganizerDashContent = () => {
 
                         </div>
                         </div>
+                        
                     </div>
-                    <div className='flex justify-center '>
-                        <button className="bg-orange  text-white font-Poppins p-4 rounded-[30px] ">
-                            + Create New Event
-                        </button>
-                    </div>
+                   
+            {/* Create New Event Button */}
+            <div className='flex justify-center gap-4 border border-orange pt-4'>
+                {showOptions && (
+                    <button className="bg-orange text-white font-Poppins p-4 rounded-[30px]" onClick={toggleOptions}>
+                        x Create New Event
+                    </button>
+                )}
+                {!showOptions && (
+                    <button className="bg-orange text-white font-Poppins p-4 rounded-[30px]" onClick={toggleOptions}>
+                        + Create New Event
+                    </button>
+                )}
+                </div>
                 </div>
             </div>
 

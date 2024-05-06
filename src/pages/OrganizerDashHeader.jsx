@@ -91,13 +91,12 @@ const OrganizerDashHeader = ({ activeTab, onTabChange }) => {
                     
                 </div>
             </div>
-            {/*without create*/}
-            <div className='border w-[100%]'>
+
             {/*with create*/}
-            <div className='border border-orange  w-[100%] '>
+            <div className='border w-[100%] '>
                 <OrganizerDashContent activeTab={activeTab} /> {/* Render OrganizerDashContent */}
             </div>
-</div>
+
         </div>
     );
 }
