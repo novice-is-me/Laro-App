@@ -13,7 +13,7 @@ const OrganizerDashboard = () => {
 
     if (userInfo && userInfo.is_event_organizer === false) {
       setShowModal(true);
-      document.body.style.filter = "blur(1px)"; // Apply blur effect
+      document.body.style.filter = ""; // Remove blur effect
     }
   }, []);
 
