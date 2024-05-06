@@ -1,108 +1,136 @@
-import React from 'react'
-import activematchjoin from '../assets/Active Match/activematchjoin.jpg'
-import PlayersCard from '../card/PlayersCard'
-import RefereeCard from '../card/RefereeCard'
-import { PlayersData, RefereesData } from '../constant/ActiveMatchData'
-import { KeyboardArrowLeft, StarBorder, Star } from '@mui/icons-material/'
-import { Link } from 'react-router-dom'
+import React, { useState } from "react";
+import activematchjoin from "../assets/Active Match/activematchjoin.jpg";
+import PlayersCard from "../card/PlayersCard";
+import RefereeCard from "../card/RefereeCard";
+import { PlayersData, RefereesData } from "../constant/ActiveMatchData";
+import { KeyboardArrowLeft, StarBorder, Star } from "@mui/icons-material/";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 const JoinViewActiveMatches = ({ setMain }) => {
-    return (
-        <div className='font-Poppins'>
-            <Link to='/matches' className='font-bold flex px-20' onClick={() => setMain('default')}>
-                <KeyboardArrowLeft />
-                <p>Back</p>
-            </Link>
-            <div className='bg-bgColor w-full box-border flex font-Poppins px-4 gap-6 py-4 lg:flex-col lg:px-20 xsm:px-4'>
+  const [activeGames, setActiveGames] = useState(null);
 
-                <div className='flex-[40%] sm:pl-0 sm:pr-0 pl-20 lg:pl-0'>
-                    {/* left */}
-                    <div className='w-full'>
-                        <div className='max-w-full border-orange border-[1px] rounded-lg bg-[#ffffff] flex items-center  mb-3 xsm:justify-center'>
-                            <div className='font w-full px-8 py-2  xl:text-[10px] xl:ml-3 '>
-                                <h1 className='font font-bold lg:text-[17px]'>Maria Santiago</h1>
-                                <div className='flex justify-between w-full'>
-                                    <p className='text-gray text-sm'>Organizer</p>
-                                    <a href="#" className='underline'>Reviews</a>
-                                </div>
-                            </div>
-                        </div>
+  const handleJoinGame = () => {
+    let config = {
+      method: "get",
+      maxBodyLength: Infinity,
+      url: "https://api.laro.com.ph/api/v1/event/find-active-games",
+      headers: {},
+    };
 
-                        <div className='max-w-full border-orange border-[1px] rounded-lg bg-[#ffffff] flex items-center  mb-3 xsm:justify-center'>
-                            <div className='font w-full px-8 py-2  xl:text-[10px] xl:ml-3 '>
-                                <div className='flex'>
-                                    <h1 className='font font-bold lg:text-[17px] mr-2'>Mandaluyong Eagle</h1>
-                                    <p>*Image*</p>
-                                </div>
-                                <p className='text-gray text-sm'>Community name</p>
+    axios
+      .request(config)
+      .then((response) => {
+        setActiveGames(response.data);
+        console.log(JSON.stringify(response.data));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
-                            </div>
-                        </div>
-
-                        <div className='max-w-full border-orange border-[1px] rounded-lg bg-[#ffffff] flex items-center  mb-3 xsm:justify-center'>
-                            <div className='font w-full px-8 py-2  xl:text-[10px] xl:ml-3 '>
-                                <h1 className='font font-bold lg:text-[17px]'>Mandaluyong City Court</h1>
-                                <p className='text-gray text-sm'>Court Name and Address</p>
-                            </div>
-                        </div>
-
-                        <div className='max-w-full border-orange border-[1px] rounded-lg bg-[#ffffff] flex items-center  mb-3 xsm:justify-center'>
-                            <div className='font w-full px-8 py-2 flex justify-between  xl:text-[10px] xl:ml-3 '>
-                                <div>
-                                    <h1 className='font font-bold lg:text-[17px]'>4.0 Ratings</h1>
-                                    <p className='text-gray text-sm'>Reviews</p> 
-                                </div>
-
-                                <div>
-                                    <Star className='text-[#ffc700]'/>
-                                    <Star  className='text-[#ffc700]'/>
-                                    <StarBorder/>
-                                    <StarBorder/>
-                                    <StarBorder/>
-
-                                </div>
-                                
-            
-                            </div>
-                        </div>
-
-                        
-                        <img src={activematchjoin} alt="" className='w-full h-[300px] object-cover rounded-lg mx-auto' />
-
-                    </div>
-
+  return (
+    <div className="font-Poppins">
+      <Link
+        to="/matches"
+        className="font-bold flex px-20"
+        onClick={() => setMain("default")}
+      >
+        <KeyboardArrowLeft />
+        <p>Back</p>
+      </Link>
+      <div className="bg-bgColor w-full box-border flex font-Poppins px-4 gap-6 py-4 lg:flex-col lg:px-20 xsm:px-4">
+        <div className="flex-[40%] sm:pl-0 sm:pr-0 pl-20 lg:pl-0">
+          {/* left */}
+          <div className="w-full">
+            <div className="max-w-full border-orange border-[1px] rounded-lg bg-[#ffffff] flex items-center  mb-3 xsm:justify-center">
+              <div className="font w-full px-8 py-2  xl:text-[10px] xl:ml-3 ">
+                <h1 className="font font-bold lg:text-[17px]">
+                  Maria Santiago
+                </h1>
+                <div className="flex justify-between w-full">
+                  <p className="text-gray text-sm">Organizer</p>
+                  <a href="#" className="underline">
+                    Reviews
+                  </a>
                 </div>
-                <div className='flex-[60%] sm:p-0 lg:pr-0'>
-                    {/* right */}
-                    <div className='flex w-full justify-around items-center  mb-2 md:flex-col'>
+              </div>
+            </div>
 
-                        <div className='w-[300px]  bg-[#ffffff] rounded-lg border-orange border-[1px] pl-4 py-3 lg:mx-auto mb-3 xsm:w-full'>
-                            <h1 className='font-bold text-[17px]'>March 16, 2024</h1>
-                            <p className=' text-gray text-sm'>Organizer</p>
-                        </div>
+            <div className="max-w-full border-orange border-[1px] rounded-lg bg-[#ffffff] flex items-center  mb-3 xsm:justify-center">
+              <div className="font w-full px-8 py-2  xl:text-[10px] xl:ml-3 ">
+                <div className="flex">
+                  <h1 className="font font-bold lg:text-[17px] mr-2">
+                    Mandaluyong Eagle
+                  </h1>
+                  <p>*Image*</p>
+                </div>
+                <p className="text-gray text-sm">Community name</p>
+              </div>
+            </div>
 
-                        <div className='w-[300px] bg-[#ffffff] rounded-lg border-orange border-[1px] px-4 py-3 lg:mx-auto mb-3 xsm:w-full'>
-                            <h1 className='font-bold text-[17px]'>8:00PM to 00:00PM</h1>
-                            <p className=' text-gray text-sm'>Time</p>
-                        </div>
-                    </div>
+            <div className="max-w-full border-orange border-[1px] rounded-lg bg-[#ffffff] flex items-center  mb-3 xsm:justify-center">
+              <div className="font w-full px-8 py-2  xl:text-[10px] xl:ml-3 ">
+                <h1 className="font font-bold lg:text-[17px]">
+                  Mandaluyong City Court
+                </h1>
+                <p className="text-gray text-sm">Court Name and Address</p>
+              </div>
+            </div>
 
-                     <div className='flex w-full justify-around items-center  mb-2 md:flex-col'>
+            <div className="max-w-full border-orange border-[1px] rounded-lg bg-[#ffffff] flex items-center  mb-3 xsm:justify-center">
+              <div className="font w-full px-8 py-2 flex justify-between  xl:text-[10px] xl:ml-3 ">
+                <div>
+                  <h1 className="font font-bold lg:text-[17px]">4.0 Ratings</h1>
+                  <p className="text-gray text-sm">Reviews</p>
+                </div>
 
-                        <div className='w-[300px] bg-[#ffffff] rounded-lg border-orange border-[1px] pl-4 py-3 lg:mx-auto mb-3 xsm:w-full'>
-                            <h1 className='font-bold text-[17px]'>Hardcore</h1>
-                            <p className=' text-gray text-sm'>Difficulty</p>
-                        </div>
+                <div>
+                  <Star className="text-[#ffc700]" />
+                  <Star className="text-[#ffc700]" />
+                  <StarBorder />
+                  <StarBorder />
+                  <StarBorder />
+                </div>
+              </div>
+            </div>
 
-                        <div className='w-[300px] bg-[#ffffff] rounded-lg border-orange border-[1px] px-4 py-3 lg:mx-auto mb-3 xsm:w-full'>
-                            <h1 className='font-bold text-[17px]'>₱ 200.00</h1>
-                            <p className=' text-gray text-sm'>Fee per head</p>
-                        </div>
-                    </div>
+            <img
+              src={activematchjoin}
+              alt=""
+              className="w-full h-[300px] object-cover rounded-lg mx-auto"
+            />
+          </div>
+        </div>
+        <div className="flex-[60%] sm:p-0 lg:pr-0">
+          {/* right */}
+          <div className="flex w-full justify-around items-center  mb-2 md:flex-col">
+            <div className="w-[300px]  bg-[#ffffff] rounded-lg border-orange border-[1px] pl-4 py-3 lg:mx-auto mb-3 xsm:w-full">
+              <h1 className="font-bold text-[17px]">March 16, 2024</h1>
+              <p className=" text-gray text-sm">Organizer</p>
+            </div>
 
-                    {/* <p className='mb-2 font-bold pl-4 md:pl-0 xsm:text-center'>Court Details</p> */}
+            <div className="w-[300px] bg-[#ffffff] rounded-lg border-orange border-[1px] px-4 py-3 lg:mx-auto mb-3 xsm:w-full">
+              <h1 className="font-bold text-[17px]">8:00PM to 00:00PM</h1>
+              <p className=" text-gray text-sm">Time</p>
+            </div>
+          </div>
 
-                    {/* <div className='mx-auto w-full flex justify-between mb-2 md:flex-col md:items-center'>
+          <div className="flex w-full justify-around items-center  mb-2 md:flex-col">
+            <div className="w-[300px] bg-[#ffffff] rounded-lg border-orange border-[1px] pl-4 py-3 lg:mx-auto mb-3 xsm:w-full">
+              <h1 className="font-bold text-[17px]">Hardcore</h1>
+              <p className=" text-gray text-sm">Difficulty</p>
+            </div>
+
+            <div className="w-[300px] bg-[#ffffff] rounded-lg border-orange border-[1px] px-4 py-3 lg:mx-auto mb-3 xsm:w-full">
+              <h1 className="font-bold text-[17px]">₱ 200.00</h1>
+              <p className=" text-gray text-sm">Fee per head</p>
+            </div>
+          </div>
+
+          {/* <p className='mb-2 font-bold pl-4 md:pl-0 xsm:text-center'>Court Details</p> */}
+
+          {/* <div className='mx-auto w-full flex justify-between mb-2 md:flex-col md:items-center'>
                         <div className='w-[350px] bg-[#ffffff] rounded-lg border-orange border-[1px] px-4 py-3 mb-3 text-sm xsm:w-full xsm:mx-auto'>
                             <div className='flex gap-1 mb-2 items-center'
                             >
@@ -158,52 +186,51 @@ const JoinViewActiveMatches = ({ setMain }) => {
                         </div>
                     </div> */}
 
-                    <div className='border-orange bg-[#ffffff] border mb-3 mx-auto px-5 py-2 rounded-lg min-h-[200px] w-[89%]'>
-                        <div>
-                            <h1 className='text-xl font-bold'>Additional Details</h1>
-                            <p className='mt-2'>Parking spaces available. Free Refilable watee, just bring your own bottle. Have referees.</p>
-                        </div>
-
-                    </div>
-
-                  
-
-                    <p className='mb-2 font-bold pl-4 md:pl-0 xsm:text-center'>Players</p>
-                    <div className='flex gap-1 lg:flex-col'>
-                        <div className='w-[66%]  flex flex-row flex-wrap gap-x-2 items-center justify-center lg:w-[100%] lg:justify-center'>
-                            {PlayersData.map(player => (
-                                <div className='mb-2'>
-                                    <PlayersCard key={player.id} player={player} />
-                                </div>
-                            ))}
-                        </div>
-                        <div className='w-[33%]  flex justify-between flex-col lg:w-[100%]'>
-                            <div>
-                                {RefereesData.map(referee => (
-                                    <div className='mb-3'>
-                                        <RefereeCard key={referee.id} referee={referee} />
-                                    </div>
-                                ))}
-                            </div>
-                            <div className='mx-auto'>
-                                <div className='w-[225px] min-h-[40px] text-[10px] text-[#ffffff] bg-orange rounded-lg flex justify-center items-center mb-2'>
-                                    Joined a Game
-                                </div>
-
-                                <div className='w-[225px] min-h-[40px] text-[10px] text-gray bg-[#ffffff] border-[1px] border-orange rounded-lg flex justify-center items-center mb-2 '>
-                                    Invite a friend
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
+          <div className="border-orange bg-[#ffffff] border mb-3 mx-auto px-5 py-2 rounded-lg min-h-[200px] w-[89%]">
+            <div>
+              <h1 className="text-xl font-bold">Additional Details</h1>
+              <p className="mt-2">
+                Parking spaces available. Free Refilable watee, just bring your
+                own bottle. Have referees.
+              </p>
             </div>
-        </div>
-    )
-}
+          </div>
 
-export default JoinViewActiveMatches
+          <p className="mb-2 font-bold pl-4 md:pl-0 xsm:text-center">Players</p>
+          <div className="flex gap-1 lg:flex-col">
+            <div className="w-[66%]  flex flex-row flex-wrap gap-x-2 items-center justify-center lg:w-[100%] lg:justify-center">
+              {PlayersData.map((player) => (
+                <div className="mb-2">
+                  <PlayersCard key={player.id} player={player} />
+                </div>
+              ))}
+            </div>
+            <div className="w-[33%]  flex justify-between flex-col lg:w-[100%]">
+              <div>
+                {RefereesData.map((referee) => (
+                  <div className="mb-3">
+                    <RefereeCard key={referee.id} referee={referee} />
+                  </div>
+                ))}
+              </div>
+              <div className="mx-auto">
+                <button
+                  className="w-[225px] min-h-[40px] text-[10px] text-[#ffffff] bg-orange rounded-lg flex justify-center items-center mb-2"
+                  onClick={handleJoinGame}
+                >
+                  Joined a Game
+                </button>
+
+                <div className="w-[225px] min-h-[40px] text-[10px] text-gray bg-[#ffffff] border-[1px] border-orange rounded-lg flex justify-center items-center mb-2 ">
+                  Invite a friend
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default JoinViewActiveMatches;

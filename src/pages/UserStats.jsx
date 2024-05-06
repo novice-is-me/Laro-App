@@ -7,6 +7,7 @@ import {
   ImageHighlights1,
   ImageHighlights2,
   userImg,
+  StatsSoon,
 } from "../assets";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronCircleLeft } from "@fortawesome/free-solid-svg-icons";
@@ -26,41 +27,15 @@ const UserStats = () => {
       <UserNav />
 
       <div className="flex flex-col border-0 border-red-500 flex-[3] h-full gap-8">
-        <div className="flex gap-4 border-0 border-orange ">
-          <div className="w-full h-full flex flex-col gap-2">
-            <p className="font-Inter font-semibold text-[24px]">Statistics</p>
-
-            <div className="flex gap-2">
-              <DashBoardCard
-                title={"Total Points"}
-                points={"0"}
-                emoji={emojiCool}
-                value={"games"}
-              />
-              <DashBoardCard
-                title={"Total Wins"}
-                points={"0"}
-                emoji={emojiHeartEyes}
-                value={"accomplishment"}
-              />
-            </div>
-            <div className="w-full h-full flex flex-col gap-2">
-              <div className="flex gap-2">
-                <DashBoardCard
-                  title={"Total Loss"}
-                  points={"0"}
-                  emoji={emojiSad}
-                  value={"loss"}
-                />
-                <DashBoardCard
-                  title={"Total Awards"}
-                  points={"0"}
-                  emoji={emojiShock}
-                  value={"games"}
-                />
-              </div>
-            </div>
-          </div>
+        <div className="w-full h-full flex flex-col gap-2">
+          {/* Display text and shopping bag image */}
+          <img src={StatsSoon} alt="Shopping Bag" className="mx-auto" />
+          <p className="text-lg font-bold text-center text-gray-700 mt-2">
+            COMING SOON!!!
+          </p>
+          <p className="text-lg font-bold text-center text-gray-700 mt-2">
+            DISCOVER YOUR PROGRESS HERE
+          </p>
         </div>
       </div>
     </div>
