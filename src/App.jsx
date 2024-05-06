@@ -21,9 +21,7 @@ import OrganizerProfile from "./pages/OrganizerProfile";
 import ForgotPassword from "./pages/ForgotPassword";
 import EmailVerification from "./pages/EmailVerification";
 import UserShop from "./pages/UserShop";
-import OrganizerDashboard from './pages/OrganizerDashboard'
 import OrganizerDashHeader from './pages/OrganizerDashHeader'
-import OrganizerProfile from './pages/OrganizerProfile'
 import EventDetails from './pages/EventDetails'
 import PlayerDetails from './pages/PlayerDetails'
 import Payment from './pages/Payment'
@@ -45,7 +43,6 @@ function App() {
     "/organizer",
     "/organizerProfile",
     "/user/shop",
-  ];
     "/OrganizerDashboard",
     "/organizerLogin",
     "/organizerProfile",
