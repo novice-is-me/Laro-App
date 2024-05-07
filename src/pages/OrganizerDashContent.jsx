@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Calendar from "react-calendar";
+import OrganizerDashboardModal from '../components/OrganizerDashboardModal';
 import { userIcon, logoutImg, historyIcon, arrowActivity } from "../assets";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 
@@ -15,6 +16,20 @@ const OrganizerDashContent = ({ activeTab }) => {
     const ampm = index < 12 ? "AM" : "PM";
     return `${hour} ${ampm}`;
   });
+
+    const [ openmodal, setOpenModal ] = useState(false);
+
+    const isOpen = () => {
+        setOpenModal(true)
+        console.log("Clicked!")
+        console.log(openmodal)
+    }
+
+    const CloseModal = () => {
+        setOpenModal(false)
+        console.log("Closed");
+        console.log(openmodal)
+    }
 
   return (
     <div className="content">
@@ -74,36 +89,33 @@ const OrganizerDashContent = ({ activeTab }) => {
               </div>
             </div>
 
-            {/* Fourth Box */}
-            <div className="flex flex-col justify-between px-10 py-5 w-1/2 h-[537px] rounded-[10px] text-white font-Inter bg-black">
-              <div className="flex flex-col w-full h-full">
-                <p className="text-[30px] font-semibold">Match History</p>
-              </div>
-            </div>
-          </div>
-          <div className="flex justify-center items-center w-full h-fit font-Inter p-5">
-            {/* Change the onClick event to navigate to "/eventdetails" */}
-            <button
-              onClick={() => navigate("/eventDetails")}
-              className="flex justify-evenly items-center w-[295px] h-[70px] text-white text-[20px] font-semibold bg-orange rounded-[50px]"
-            >
-              <p className="flex items-center h-full text-[40px]">+</p>
-              <p className="flex items-center h-full">Create New Event</p>
-            </button>
-          </div>
-        </div>
-      )}
-      {activeTab === "Activities" && (
-        <div className="flex flex-col items-center w-full h-screen px-5 gap-5">
-          {/* Header */}
-          <div className="flex justify-between items-center p-5 w-full h-fit font-Inter">
-            <p className="text-[40px] font-semibold">My Activity</p>
-            <div className="flex items-center gap-5">
-              {/* Replace "Image" with the history icon */}
-              <img src={historyIcon} alt="History Icon" />
-              <p className="text-[25px] font-semibold">History</p>
-            </div>
-          </div>
+                        {/* Fourth Box */}
+                        <div className='flex flex-col justify-between px-10 py-5 w-1/2 h-[537px] rounded-[10px] text-white font-Inter bg-black'>
+                            <div className='flex flex-col w-full h-full'>
+                                <p className='text-[30px] font-semibold'>Match History</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Create Event Button */}
+                    <div className='flex justify-center items-center w-full h-fit font-Inter p-5'>
+                        <div onClick={() => isOpen()} className='flex justify-evenly items-center w-[295px] h-[70px] text-white text-[20px] font-semibold bg-orange rounded-[50px] cursor-pointer'>
+                            <p className='flex items-center h-full text-[40px]'>+</p>
+                            <p className='flex items-center h-full'>Create New Event</p>
+                        </div>
+                    </div>
+                </div>
+            )}
+            {activeTab === 'Activities' && (
+                <div className='flex flex-col items-center w-full h-screen px-5 gap-5'>
+                    {/* Header */}
+                    <div className='flex justify-between items-center p-5 w-full h-fit font-Inter'>
+                        <p className='text-[40px] font-semibold'>My Activity</p>
+                        <div className='flex items-center gap-5'>
+                            <p>Image</p>
+                            <p className='text-[25px] font-semibold'>History</p>
+                        </div>
+                    </div>
 
           {/* Buttons */}
           <div className="flex justify-between w-full p-5 text-[25px] font-Inter shadow-lg">
@@ -195,7 +207,7 @@ const OrganizerDashContent = ({ activeTab }) => {
             {/* Change the onClick event to navigate to "/eventdetails" */}
             <button
               onClick={() => navigate("/eventDetails")}
-              className="flex justify-evenly items-center w-[295px] h-[70px] text-white text-[20px] font-semibold bg-orange rounded-[50px]"
+              onClick={() => isOpen()} className="flex justify-evenly items-center w-[295px] h-[70px] text-white text-[20px] font-semibold bg-orange rounded-[50px] cursor-pointer"
             >
               <p className="flex items-center h-full text-[40px]">+</p>
               <p className="flex items-center h-full">Create New Event</p>
@@ -203,6 +215,13 @@ const OrganizerDashContent = ({ activeTab }) => {
           </div>
         </div>
       )}
+
+            {openmodal && 
+                <OrganizerDashboardModal 
+                    isOpen={openmodal}
+                    onClose={CloseModal}
+                />
+            }
     </div>
   );
 };
