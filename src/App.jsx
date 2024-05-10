@@ -26,6 +26,7 @@ import PlayerDetails from "./pages/PlayerDetails";
 import Payment from "./pages/Payment";
 import OrganizerLogin from "./pages/OrganizerLogin";
 import EventSuccess from "./pages/EventSuccess";
+import CalendarOrganizer from "./pages/CalendarOrganizer";
 
 export const joinGameContext = createContext();
 
@@ -48,6 +49,7 @@ function App() {
     "/organizerDashHeader",
     "/organizerDashboard",
     "/organizerDashContent",
+    "/organizerCalendar",
   ];
 
   const shouldShowHeader = !hideHeaderRoutes.includes(location.pathname);
@@ -82,12 +84,9 @@ function App() {
           <Route path="/dashboard" element={<DashboardCourtOwner />} />
           <Route path="/calendar" element={<CalendarCourtOwner />} />
           <Route path="/organizer" element={<OrganizerDashboard />} />
-          <Route
-            path="/organizerDashHeader"
-            element={<OrganizerDashHeader />}
-          />
+          <Route path="/organizerDashHeader" element={<OrganizerDashHeader />}/>
+          <Route path="/organizerCalendar" element={<CalendarOrganizer />} />
           <Route path="/eventDetails" element={<EventDetails />} />
-
           <Route path="/eventSuccess" element={<EventSuccess />} />
           <Route path="/playerDetails" element={<PlayerDetails />} />
           <Route path="/payment" element={<Payment />} />
