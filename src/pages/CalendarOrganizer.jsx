@@ -44,7 +44,7 @@ function CalendarOrganizer (){
     return(
         <div className="w-auto h-auto font-Poppins">
             {/* Header of the Calendar */}
-            <div className="flex items-end w-full h-fit p-10 pb-5 border">
+            <div className="flex items-end w-full h-fit p-10 pb-5">
                 <div className="flex items-center w-full">
                     <img className="cursor-pointer" onClick={() => navigate("/organizer")} src={backbtn} alt="Back" />
                     <p className="text-[20px]">Calendar Set-Up</p>
@@ -52,7 +52,7 @@ function CalendarOrganizer (){
             </div>
 
             {/* Main Body Calendar */}
-            <div className="flex w-full bg-green-200 py-5 h-5/6">
+            <div className="flex w-full y-5 h-5/6">
                 {/* Left side of the body */}
                 <div className="flex flex-col items-center gap-10 w-fit ">
                     <div className="flex justify-center">
