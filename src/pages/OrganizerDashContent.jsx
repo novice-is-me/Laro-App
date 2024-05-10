@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom"; // Import useNavigate
 const OrganizerDashContent = ({ activeTab }) => {
   const navigate = useNavigate(); // Get the navigation function
   const handleCalendarClick = () => {
-    navigate("/calendar");
+    navigate("/organizerCalendar");
   };
   const weeks = ["S", "M", "T", "W", "T", "F", "S"];
 
@@ -74,7 +74,7 @@ const OrganizerDashContent = ({ activeTab }) => {
               <div className="flex justify-between items-center w-full h-fit ">
                 <p className="text-[30px] font-semibold">Calendar</p>
                 <p
-                  className="px-3 text-[40px] font-bold"
+                  className="px-3 text-[40px] font-bold cursor-pointer"
                   onClick={handleCalendarClick}
                 >
                   &#62;
@@ -207,7 +207,7 @@ const OrganizerDashContent = ({ activeTab }) => {
             {/* Change the onClick event to navigate to "/eventdetails" */}
             <button
               onClick={() => navigate("/eventDetails")}
-              onClick={() => isOpen()} className="flex justify-evenly items-center w-[295px] h-[70px] text-white text-[20px] font-semibold bg-orange rounded-[50px] cursor-pointer"
+              // onClick={() => isOpen()} className="flex justify-evenly items-center w-[295px] h-[70px] text-white text-[20px] font-semibold bg-orange rounded-[50px] cursor-pointer"
             >
               <p className="flex items-center h-full text-[40px]">+</p>
               <p className="flex items-center h-full">Create New Event</p>
