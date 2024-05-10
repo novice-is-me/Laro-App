@@ -233,8 +233,8 @@ const OrganizerDashHeader = ({ activeTab, onTabChange }) => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
+
+
 
       {/*with create*/}
       <div className="border-0 w-[100%] ">

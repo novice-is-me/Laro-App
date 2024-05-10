@@ -15,6 +15,7 @@ const OrganizerLogin = () => {
             </div>
           </Link>
 
+
         </div>
         <div className="p-4  w-[80%]">
 

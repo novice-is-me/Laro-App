@@ -43,6 +43,7 @@ import paypal from './image/paypal.png'
 import credits from './image/credits.png'
 import others from './image/others.png'
 import eagleIcon from './image/eagleIcon.png'
+import success from './image/success.jpeg'
 
 export{
     Logo,
@@ -73,4 +74,5 @@ export{
     others,
     paypal,
     credits,
+    success,
 }
