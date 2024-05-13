@@ -44,13 +44,14 @@ function OrganizerEventCalendar () {
     // Render time slots
     const renderTimeSlots = () => {
         const slots = generateTimeSlots();
-        return slots.map((slot, index) => (
-        <div key={index} className={`flex items-center py-1.5 px-5 gap-5 cursor-pointer${selectedSlots.includes(slot) ? 'bg-blue-200' : ''}`}onClick={() => handleSlotClick(slot)}>
+        console.log(slots)
+        return slots.map((slot, index) => ( 
+        <div key={index} className={`flex items-center py-1.5 px-5 gap-5 ${selectedSlots.includes(slot) ? 'bg-blue-200' : ''}`}onClick={() => handleSlotClick(slot)}>
             <div className="w-[75px] text-center text-[#C1C1C1] flex-grow">{slot}</div>
-            <div className="flex-grow w-full rounded-lg cursor-pointer bg-[#FFEEE7] text-[#FFEEE7] text-center hover:bg-gray" onClick={() => handleNotesClick(slot)}>
-                {eventNotes[slot] || 'Click to Add Event'}
+            <div className="flex-grow w-full rounded-lg bg-[#FFEEE7] text-[#FFEEE7] text-center" onClick={() => handleNotesClick(slot)}>
+                {eventNotes[slot] || 'i'}
             </div>
-            <div className="absolute top-full left-0 w-full bg-orange border border-gray-200 rounded-lg p-2 shadow-md invisible group-hover:visible">
+            <div className="absolute top-full left-0 w-full bg-orange border border-gray-200 rounded-lg p-2 group-hover:visible">
             {/* Sticky note content */}
                 <button onClick={() => handleOptionsClick(slot)} className="block mb-1 text-gray-800 hover:text-blue-600">Edit Notes</button>
                 <button className="block text-gray-800 hover:text-blue-600">Delete</button>
