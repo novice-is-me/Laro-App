@@ -15,6 +15,7 @@ import RefreshIcon from "@mui/icons-material/Refresh";
 import DashBoardCard from "../components/DashBoardCard";
 import { useNavigate } from "react-router";
 import UserNav from "../components/UserNav";
+import HamburgerMenu from "../components/HamburgerMenu";
 
 const UserStats = () => {
   const navigate = useNavigate();
@@ -22,16 +23,22 @@ const UserStats = () => {
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
   const profileImage = userInfo ? userInfo.profile_image : null;
   return (
-    <div className="mb-[106px] mt-[10px] flex w-full justify-between gap-5 md:flex-col">
+    <div className="flex items-center h-screen 1110:flex-col">
       {/* for profile */}
-      <UserNav />
+        <div className="w-auto 1110:w-full 1110:shadow-xl">
+          <UserNav />
+        </div>
 
-      <div className="flex flex-col border-0 border-red-500 flex-[3] h-full gap-8">
-        <div className="w-full h-full flex flex-col gap-2">
+        <div className="hidden w-full 1110:flex 1110:sticky 1110:top-0">
+          <HamburgerMenu />
+        </div>
+
+      <div className="flex justify-center items-center w-full h-full p-5">
+        <div className="flex flex-col gap-5">
           {/* Display text and shopping bag image */}
           <img src={StatsSoon} alt="Shopping Bag" className="mx-auto" />
-          <p className="text-lg font-bold text-center text-gray-700 mt-2">
-            COMING SOON!!! GET REWARDS OUT OF YOUR POINTS
+          <p className="text-[50px] border font-bold text-center text-gray-700">
+            COMING SOON!!!GET REWARDS OUT OF YOUR POINTS
           </p>
         </div>
       </div>

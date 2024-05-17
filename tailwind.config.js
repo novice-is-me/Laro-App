@@ -11,6 +11,7 @@ export default {
         orange: "#FA5000",
         bgColor: "#FFF6F2",
         gray: "#A5A5A5",
+        lightgray: "#7B7B7B",
       },
       dropShadow: {
         shadowBtn: "0px 5px 1px rgba(0,0,0,0.16 )",
@@ -48,14 +49,14 @@ export default {
         xsm: { max: "539px" },
         // => @media (max-width: 479px) { ... }
 
-        450: {max: "450px"},
+        450: { max: "450px" },
         "350px": { max: "350px" },
         "404px": { max: "404px" },
         // => @media (max-width: 350px)
 
         "350px": { max: "350px" },
         // => @media (max-width: 350px)
-      }, 
+      },
     },
   },
   plugins: [],
