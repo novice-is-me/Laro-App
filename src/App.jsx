@@ -18,7 +18,7 @@ import CalendarCourtOwner from "./pages/CalendarCourtOwner";
 import ViewCourt from "./components/ViewCourt";
 import OrganizerDashboard from "./pages/OrganizerDashboard";
 import ForgotPassword from "./pages/ForgotPassword";
-import EmailVerification from "./pages/EmailVerification";
+import AccountVerification from "./pages/AccountVerification";
 import UserShop from "./pages/UserShop";
 import OrganizerDashHeader from "./pages/OrganizerDashHeader";
 import EventDetails from "./pages/EventDetails";
@@ -72,7 +72,10 @@ function App() {
       >
         <Routes>
           <Route path="/user/shop" element={<UserShop />} />
-          <Route path="/email-verification" element={<EmailVerification />} />
+          <Route
+            path="/account-verification"
+            element={<AccountVerification />}
+          />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/user/achievements" element={<UserAchievements />} />
           <Route path="/" element={<HomePage />} />
@@ -86,7 +89,10 @@ function App() {
           <Route path="/dashboard" element={<DashboardCourtOwner />} />
           <Route path="/calendar" element={<CalendarCourtOwner />} />
           <Route path="/organizer" element={<OrganizerDashboard />} />
-          <Route path="/organizerDashHeader" element={<OrganizerDashHeader />}/>
+          <Route
+            path="/organizerDashHeader"
+            element={<OrganizerDashHeader />}
+          />
           <Route path="/organizerCalendar" element={<CalendarOrganizer />} />
           <Route path="/eventDetails" element={<EventDetails />} />
           <Route path="/OrganizerMatches" element={<OrganizerMatches />} />
