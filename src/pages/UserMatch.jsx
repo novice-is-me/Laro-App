@@ -138,7 +138,7 @@ const UserMatch = () => {
                   <FontAwesomeIcon className="max-w-[50px] min-h-[20px] " icon={faUser} />
                   <div className="flex flex-col w-full">
                     <p className="text-sm text-lightgray">Name</p>
-                    <p className="text-xl 2xl:text-base">Juan Dela Cruz</p>
+                    <p className="text-xl 2xl:text-base">{userInfo.first_name} {userInfo.last_name}</p>
                   </div>
                 </div>
 
@@ -146,7 +146,7 @@ const UserMatch = () => {
                   <FontAwesomeIcon className="max-w-[50px] min-h-[20px] " icon={faLocationDot} />
                   <div className="flex flex-col w-full">
                     <p className="text-sm text-lightgray">Location</p>
-                    <p className="text-xl 2xl:text-base">Pasig City, Philippines</p>
+                    <p className="text-xl 2xl:text-base">{userInfo.address}</p>
                   </div>
                 </div>
               </div>

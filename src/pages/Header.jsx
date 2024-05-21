@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Logo } from "../assets";
+import { LogoHeader } from "../assets";
 import { links } from "../constant/index";
 import NavLinks from "../components/NavLinks";
 import { userIcon, logoutImg } from "../assets";
@@ -65,7 +65,7 @@ const Header = () => {
       }`}
     >
       <div>
-        <img src={Logo} alt="logo" />
+        <img src={LogoHeader} alt="logo" />
       </div>
       <div className="flex gap-[100px] items-center relative">
         <div className="flex gap-[100px] lg:hidden">

@@ -51,7 +51,7 @@ const HeroSection = () => {
                 </div>
 
 
-<div className='bg-[#FA5000] w-[50%] h-[55px] border border-white border-2 rounded-[40px] flex items-center pl-[10px] absolute bottom-[60px] right-[-90px]'  >
+<div className='bg-[#FA5000] w-[50%] h-[55px] border-white border-2 rounded-[40px] flex items-center pl-[10px] absolute bottom-[60px] right-[-90px]'  >
     <div className='w-[40px] h-[40px] bg-[#ffffff] rounded-[50%] flex self-center justify-center items-center'>
     <LocalActivityRoundedIcon style={{ color: '#fa5000' }} fontSize="medium" />
     </div>

@@ -42,6 +42,7 @@ const UserNav = ({ isOpen, setIsOpen, toggleOff }) => {
     const userLoggedIn = localStorage.getItem("token") !== null;
     setIsLoggedIn(userLoggedIn);
     console.log(isOpen)
+    console.log(userInfo.profile_image)
   }, []);
 
   const handleLogout = () => {
@@ -83,8 +84,8 @@ const UserNav = ({ isOpen, setIsOpen, toggleOff }) => {
             <div className="flex gap-2 w-full 2xl:flex-col">
               <div className="h-[128px] w-full rounded-[10px] overflow-hidden">
                 <img
-                  src={Dp}
-                  alt=""
+                  src={profileImage}
+                  alt={userInfo.first_name}
                   className="h-full w-full object-cover 2xl:object-top"
                 />
               </div>
@@ -92,7 +93,7 @@ const UserNav = ({ isOpen, setIsOpen, toggleOff }) => {
                 <div className="flex flex-col gap-1 2xl:gap-2 w-full">
                   <div className="flex gap-25 items-center justify-between">
                     <p className="font-poppins text-[20px] font-semibold">
-                      Mike Tyson
+                      {userFullName.full_name}
                     </p>
                     <svg
                       width="17"
@@ -107,7 +108,7 @@ const UserNav = ({ isOpen, setIsOpen, toggleOff }) => {
                     </svg>{" "}
                   </div>
                   <p className="font-poppins text-[#787878] text-sm">
-                    Pasig City, Philippines
+                    {userInfo.address}
                   </p>
                 </div>
                 <div className="flex flex-col 2xl:flex-row 2xl:justify-between 2xl:items-center gap-2-0 w-full">

@@ -67,21 +67,6 @@ export const links = [
     footerBtn: [
       {
         id: 1,
-        name: "Login",
-        path: "/login",
-      },
-      {
-        id: 2,
-        name: "Apply as Organizer",
-        path: "/organizer",
-      },
-      {
-        id: 3,
-        name: "Create Account",
-        path: "/register",
-      },
-      {
-        id: 4,
         name: "Apply as Court Owner",
         path: "/court-owner",
       },
@@ -96,7 +81,7 @@ export const choices = [
     text: "Join a game",
     choice: "Find",
     placeholder: "Enter Matches (ex) Shooting",
-    path: '/matches'
+    path: "/matches",
   },
   {
     id: 2,
@@ -104,7 +89,7 @@ export const choices = [
     text: "Organize a game",
     choice: "Setup",
     placeholder: "Create Event",
-    path: '/'
+    path: "/",
   },
   {
     id: 3,
@@ -112,7 +97,7 @@ export const choices = [
     text: "Find Courts nearby",
     choice: "Find",
     placeholder: "Enter Location",
-    path: '/court'
+    path: "/court",
   },
 ];
 

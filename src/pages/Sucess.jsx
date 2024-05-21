@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../assets/Logo.png'
+import {Logo} from '../assets/index'
 import success from '../assets/image/success.jpeg'
 import { ContentCopy } from '@mui/icons-material';
 import { Link } from 'react-router-dom'

@@ -40,7 +40,6 @@ const LoginForm = () => {
       localStorage.setItem("token", token);
       localStorage.setItem("userFullName", JSON.stringify(userFullName));
       localStorage.setItem("userInfo", JSON.stringify(userInfo));
-
       // Redirect to the user page
       navigate("/user");
     } catch (error) {

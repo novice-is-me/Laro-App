@@ -1,4 +1,5 @@
-import Logo from "./Logo.png";
+import LogoHeader from "./LogoHeader.png";
+import Logo from "./LogoFooter.png";
 import loginImg from "./image/loginImg.png";
 import image1 from "./image/imgHome1.png";
 import image2 from "./image/imgHome2.png";
@@ -59,6 +60,7 @@ import partner2 from "./image/partner2.png";
 import about from "./image/about.png";
 
 export {
+  LogoHeader,
   Logo,
   loginImg,
   image1,
