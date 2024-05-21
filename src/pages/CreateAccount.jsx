@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import PictureComponent from "../components/PictureComponent";
-import player from "../assets/image/player.png";
+import hero3 from "../assets/image/hero3.png";
 import { InfoRounded, Visibility, VisibilityOff } from "@mui/icons-material";
 import { useNavigate } from "react-router";
 
@@ -513,7 +513,7 @@ const CreateAccount = () => {
       )}
 
       <div className=" w-[50%] flex items-center justify-center sm:hidden 832px:scale-[0.8] 770px:scale-[0.7]">
-        <PictureComponent img={player} value={"create"} />
+        <PictureComponent img={hero3} value={"create"} />
       </div>
     </div>
   );

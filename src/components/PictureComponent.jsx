@@ -4,7 +4,7 @@ const PictureComponent = ({img,value}) => {
     return ( 
         <div className='w-[100%] flex items-between justify-start relative ml-40'>
             <div className='bg-[#fa5000] w-[400px] h-[450px] relative rounded-lg '>
-                <img src={img} alt="" className={`absolute bottom-0 max-w-none ${value === 'create' ? ' w-[500px]': "right-0 w-[375px]"}`}/>
+                <img src={img} alt="" className={`absolute bottom-0 max-w-none ${value === 'create' ? 'right-0 w-[375px]': "right-0 w-[375px]"}`}/>
 
                 <div className='bg-black w-fit h-[55px] rounded-[40px] flex items-center pl-[10px] absolute top-[40px] left-[-80px]'  >
                     <div className='w-[40px] h-[40px] bg-[#ffffff] rounded-[50%] flex self-center justify-center'>
