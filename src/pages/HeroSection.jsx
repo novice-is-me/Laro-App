@@ -14,8 +14,8 @@ const HeroSection = () => {
 
 
   return (
-    <div className=' bg-bgColor flex gap-8 justify-between py-[3rem] px-[5rem] h-screen 950px:h-fit'>
-      <div className=' flex flex-col 950px:items-center 950px:text-center'>  
+    <div className=' bg-bgColor flex gap-8 justify-between py-[3rem] px-[5rem] h-screen 950px:h-fit xl:h-fit'>
+      <div className=' flex flex-col 950px:items-center 950px:text-center '>  
         <div className='flex flex-col gap-y-8 mb-8'>
           <h1 className='uppercase font-Poppins text-[50px] font-bold leading-[60px] xsm:text-[30px] xsm:leading-normal'>
               your partner in sports</h1>
@@ -32,9 +32,9 @@ const HeroSection = () => {
           })} 
           </div>
       </div>
-      <div className='flex flex-col mr-[5rem] xl:flex-row 950px:hidden '> 
-        <div className='w-[090%] flex items-center justify-center relative mr-[21rem] xl:justify-center '>
-          <div className=' w-[330px] h-[350px] relative rounded-lg z-10'>
+      <div className='flex flex-col mr-[5rem] xl:flex-row 950px:hidden xl:hidden '> 
+        <div className='w-[090%] flex items-center justify-center relative mr-[8rem] xl:justify-center '>
+          <div className=' w-[330px] h-[350px] relative rounded-lg z-10 lg:hidden'>
             <img src={hero4} alt="" className='' />
               <div className='bg-black w-fit h-[55px] rounded-[40px] flex items-center pl-[10px] absolute top-[40px] left-[-50px]'  >
                 <div className='w-[40px] h-[40px] bg-[#ffffff] rounded-[50%] flex self-center justify-center'>

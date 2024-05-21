@@ -10,11 +10,13 @@ const About = () => {
   return (
     <div className=''>
     <div className='bg-bgColor w-full px-9 py-3 relative font-Poppins xsm:px-3'>
-      <div className=' flex w-full about-bg px-[4rem] xsm:p-[3rem] rounded-[20px] 
-      pb-0  items-center gap-[4rem] mb-12  xl:about-bg2 xl:gap-1 xl:pb-8 sm:text-center  '>  
-        <div className=' z-[1] h-[500px] xl:h-full 950px:hidden '> 
-          <img src={about} alt="" 
-          className=' max-w-none h-full xl:w-full ml-20 '/>     
+      <div className=' flex w-full about-bg xsm:p-[3rem] rounded-[20px] 
+      pb-0  items-center gap-[4rem] mb-12  xl:about-bg2 xl:gap-1 xl:pb-8 sm:text-center '> 
+      <div className='xl:hidden md:hidden '>
+      <img src={about} alt="" className=' max-w-none h-full xl:w-[400px]  ml-20 pr-4'/> 
+      </div>
+        <div className=' z-[1] h-[500px] xl:h-full 950px:hidden lg:hidden '> 
+              
           <div className='bg-black w-fit h-[55px] rounded-[40px] flex items-center pl-[10px] 
           absolute bottom-[40px] left-[400px] xl:hidden'>
             <div className='w-[40px] h-[40px] bg-[#ffffff] rounded-[50%] flex self-center justify-center'>
@@ -23,7 +25,7 @@ const About = () => {
             <h1 className='text-[#ffffff] mx-[12px] font-Poppins text-xl'>Organize</h1>
           </div>
         </div>
-        <div className=' mt-20 pt-2'>
+        <div className=' mt-20 pt-2 xl:pl-8'>
         <div className='z-[1] flex flex-col mt-auto gap-[8rem] xl:pt-8 xl:gap-4 xl:mt-0 ' >
           <div className='w-[90%]'>
             <h1 className='font-poppins uppercase text-[40px] font-bold mb-8 '>
