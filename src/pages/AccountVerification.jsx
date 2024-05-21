@@ -7,6 +7,10 @@ const AccountVerification = () => {
   const [loading, setLoading] = useState(false);
   const [errMsg, setErrMsg] = useState("");
 
+  const [success, setSuccess] = useState(false)
+  const [regconfirmation, setRegConfirmation] = useState(false)
+  const [regconfirmationcontent, setRegConfirmationContent] = useState("")
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -24,7 +28,11 @@ const AccountVerification = () => {
       );
 
       if (response.ok) {
-        navigate("/login"); // Navigate to success page if PIN verification is successful
+        const data = await response.json();
+        console.log(data)
+        setRegConfirmation(true)
+        setRegConfirmationContent("Account verified successfully")
+        setSuccess(true)
       } else {
         const errorData = await response.json();
         console.error("Error:", errorData);
@@ -116,6 +124,23 @@ const AccountVerification = () => {
           Resend OTP
         </button>
       </div>
+
+      {regconfirmation && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center border-4 rounded-lg">
+          <div className="bg-white border-2 border-orange p-8 rounded-lg shadow-lg">
+            <p className="text-lg font-bold mb-4">{regconfirmationcontent}</p>
+            <button
+              onClick={() => {
+                setShowNotification(false);
+                navigate("/login");
+              }}
+              className="bg-orange text-white py-2 px-4 rounded-md hover:bg-orange-dark transition duration-300 ease-in-out"
+            >
+              Proceed
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

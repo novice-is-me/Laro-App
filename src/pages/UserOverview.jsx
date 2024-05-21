@@ -4,8 +4,8 @@ import {
   emojiSad,
   emojiShock,
   emojiHeartEyes,
-  ImageHighlights1,
-  ImageHighlights2,
+  Highlights1,
+  Highlights2,
   emojiGem,
   userImg,
   people1,
@@ -61,9 +61,9 @@ const UserOverview = () => {
       {/* Right Side */}
       <div className="flex justify-center gap-5 w-full h-screen 1110:flex-col 1110:justify-start 1110:gap-0 px-5 font-Inter">
         {/* Left Side of the Overview Dashboard */}
-        <div className="flex flex-col flex-shrink py-5 gap-5 w-full sm:h-fit 1110:flex-row sm:flex-col">
+        <div className="flex flex-col flex-shrink py-5 gap-5 w-full sm:h-fit 1110:flex-row 950px:flex-col">
           {/* Upper Side */}
-          <div className="flex justify-around gap-3 w-full h-full 1110:flex-col">
+          <div className="flex justify-around gap-3 w-full h-full 1110:flex-col 1110:h-[65 0px]">
             <div className="flex flex-col flex-shrink-0 justify-between 1110:justify-normal 1110:flex-row gap-3 rounded-xl w-auto h-auto">
               {/* Gem Box */}
               <div className="flex flex-col justify-between flex-shrink w-[160px] h-full 1110:w-full p-5 bg-black rounded-2xl">
@@ -79,274 +79,68 @@ const UserOverview = () => {
               {/* Total Play */}
               <div className="flex flex-col gap-5 h-full 1110:h-auto 1110:w-full rounded-xl p-5 text-white font-semibold bg-orange">
                 <p className="text-xl">Total Plays</p>
-                <p className="text-[64px]">0</p>
+                <p className="text-[64px] 1110:text-3xl">0</p>
               </div>
             </div>
 
             {/* Previous Matches */}
-            <div className="w-full h-auto overflow-hidden">
-              <div className="flex flex-col justify-around w-full h-full p-5 gap-2 bg-black rounded-2xl 1110:gap-5 ">
+            <div className="w-full h-auto overflow-hidden 1110:h-full">
+              <div className="flex flex-col justify-around w-full h-full p-5 gap-3 bg-black rounded-2xl 1110:gap-5 1110:justify-start">
                 <p className="font-semibold text-white text-xl">Previous Matches</p>
-
-                {/* Recent Matches */}
-                <div className="flex flex-col flex-shrink-0 gap-5 max-h-[400px] h-full overflow-y-hidden hover:overflow-y-auto sm:h-[200px]">
-                  {/* Recent Match No. 1  */}
-                  <div className="flex flex-col justify-between items-center gap-1 w-full text-white">
-                    <div className="flex items-center gap-3 w-full">
-                      {/* Team No. 1 */}
-                      <div className="flex gap-1 h-full w-full">
-                        <div className="flex flex-col w-full h-full flex-shrink-1">
-                          <p className=" text-[10px] text-lightgray">Team</p>
-                          <div className="w-full h-full max-h-[68px] flex items-center justify-center rounded-md border-2 border-orange">
-                            <p className="text-center p-2 max-h-[68px] overflow-hidden xl:text-sm">Team Name</p>
-                          </div>
-                        </div>
-
-                        <div className="flex flex-col w-auto">
-                          <p className=" text-[10px] text-lightgray">Score</p>
-                          <div className="w-full h-full max-h-[68px] p-5 rounded-md border-2 border-orange">96</div>
-                        </div>
-                      </div>
-
-                      <p className="text-xl font-semibold">vs</p>
-
-                      {/* Team No. 1 */}
-                      <div className="flex gap-1 w-full">
-                        <div className="flex flex-col w-full">
-                          <p className=" text-[10px] text-lightgray">Team</p>
-                          <div className="w-full h-full max-h-[68px] flex items-center justify-center rounded-md border-2 border-orange">
-                            <p className="text-center p-2 max-h-[68px] overflow-hidden xl:text-sm">Team Name</p>
-                          </div>
-                        </div>
-
-                        <div className="flex flex-col w-auto">
-                          <p className=" text-[10px] text-lightgray">Score</p>
-                          <div className="w-full h-full max-h-[68px] p-5 rounded-md border-2 border-orange">96</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Match Date */}
-                    <div className="w-full">
-                      <p className=" text-[10px] text-lightgray">Date 1-1-2024</p>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col justify-between items-center gap-1 w-full text-white">
-                    <div className="flex items-center gap-3 w-full">
-                      {/* Team No. 1 */}
-                      <div className="flex gap-1 h-full w-full">
-                        <div className="flex flex-col w-full h-full flex-shrink-1">
-                          <p className=" text-[10px] text-lightgray">Team</p>
-                          <div className="w-full h-full max-h-[68px] flex items-center justify-center rounded-md border-2 border-orange">
-                            <p className="text-center p-2 max-h-[68px] overflow-hidden xl:text-sm">Team Name</p>
-                          </div>
-                        </div>
-
-                        <div className="flex flex-col w-auto">
-                          <p className=" text-[10px] text-lightgray">Score</p>
-                          <div className="w-full h-full max-h-[68px] p-5 rounded-md border-2 border-orange">96</div>
-                        </div>
-                      </div>
-
-                      <p className="text-xl font-semibold">vs</p>
-
-                      {/* Team No. 1 */}
-                      <div className="flex gap-1 w-full">
-                        <div className="flex flex-col w-full">
-                          <p className=" text-[10px] text-lightgray">Team</p>
-                          <div className="w-full h-full max-h-[68px] flex items-center justify-center rounded-md border-2 border-orange">
-                            <p className="text-center p-2 max-h-[68px] overflow-hidden xl:text-sm">Team Name</p>
-                          </div>
-                        </div>
-
-                        <div className="flex flex-col w-auto">
-                          <p className=" text-[10px] text-lightgray">Score</p>
-                          <div className="w-full h-full max-h-[68px] p-5 rounded-md border-2 border-orange">96</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Match Date */}
-                    <div className="w-full">
-                      <p className=" text-[10px] text-lightgray">Date 1-1-2024</p>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col justify-between items-center gap-1 w-full text-white">
-                    <div className="flex items-center gap-3 w-full">
-                      {/* Team No. 1 */}
-                      <div className="flex gap-1 h-full w-full">
-                        <div className="flex flex-col w-full h-full flex-shrink-1">
-                          <p className=" text-[10px] text-lightgray">Team</p>
-                          <div className="w-full h-full max-h-[68px] flex items-center justify-center rounded-md border-2 border-orange">
-                            <p className="text-center p-2 max-h-[68px] overflow-hidden xl:text-sm">Team Name</p>
-                          </div>
-                        </div>
-
-                        <div className="flex flex-col w-auto">
-                          <p className=" text-[10px] text-lightgray">Score</p>
-                          <div className="w-full h-full max-h-[68px] p-5 rounded-md border-2 border-orange">96</div>
-                        </div>
-                      </div>
-
-                      <p className="text-xl font-semibold">vs</p>
-
-                      {/* Team No. 1 */}
-                      <div className="flex gap-1 w-full">
-                        <div className="flex flex-col w-full">
-                          <p className=" text-[10px] text-lightgray">Team</p>
-                          <div className="w-full h-full max-h-[68px] flex items-center justify-center rounded-md border-2 border-orange">
-                            <p className="text-center p-2 max-h-[68px] overflow-hidden xl:text-sm">Team Name</p>
-                          </div>
-                        </div>
-
-                        <div className="flex flex-col w-auto">
-                          <p className=" text-[10px] text-lightgray">Score</p>
-                          <div className="w-full h-full max-h-[68px] p-5 rounded-md border-2 border-orange">96</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Match Date */}
-                    <div className="w-full">
-                      <p className=" text-[10px] text-lightgray">Date 1-1-2024</p>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col justify-between items-center gap-1 w-full text-white">
-                    <div className="flex items-center gap-3 w-full">
-                      {/* Team No. 1 */}
-                      <div className="flex gap-1 h-full w-full">
-                        <div className="flex flex-col w-full h-full flex-shrink-1">
-                          <p className=" text-[10px] text-lightgray">Team</p>
-                          <div className="w-full h-full max-h-[68px] flex items-center justify-center rounded-md border-2 border-orange">
-                            <p className="text-center p-2 max-h-[68px] overflow-hidden xl:text-sm">Team Name</p>
-                          </div>
-                        </div>
-
-                        <div className="flex flex-col w-auto">
-                          <p className=" text-[10px] text-lightgray">Score</p>
-                          <div className="w-full h-full max-h-[68px] p-5 rounded-md border-2 border-orange">96</div>
-                        </div>
-                      </div>
-
-                      <p className="text-xl font-semibold">vs</p>
-
-                      {/* Team No. 1 */}
-                      <div className="flex gap-1 w-full">
-                        <div className="flex flex-col w-full">
-                          <p className=" text-[10px] text-lightgray">Team</p>
-                          <div className="w-full h-full max-h-[68px] flex items-center justify-center rounded-md border-2 border-orange">
-                            <p className="text-center p-2 max-h-[68px] overflow-hidden xl:text-sm">Team Name</p>
-                          </div>
-                        </div>
-
-                        <div className="flex flex-col w-auto">
-                          <p className=" text-[10px] text-lightgray">Score</p>
-                          <div className="w-full h-full max-h-[68px] p-5 rounded-md border-2 border-orange">96</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Match Date */}
-                    <div className="w-full">
-                      <p className=" text-[10px] text-lightgray">Date 1-1-2024</p>
-                    </div>
-                  </div>
-
-                  {/* Recent Match No. 2 */}
-                  <div className="flex flex-col justify-between items-center gap-1 w-full text-white">
-                    <div className="flex items-center gap-3 w-full">
-                      {/* Team No. 1 */}
-                      <div className="flex gap-1 w-full">
-                        <div className="flex flex-col w-full">
-                          <p className=" text-[10px] text-lightgray">Team</p>
-                          <div className="w-full h-full max-h-[68px] flex items-center justify-center rounded-md border-2 border-orange">
-                            <p className="text-center p-2 max-h-[68px] overflow-hidden xl:text-sm">Team Name</p>
-                          </div>
-                        </div>
-
-                        <div className="flex flex-col w-auto">
-                          <p className=" text-[10px] text-lightgray">Score</p>
-                          <div className="w-full h-full max-h-[68px] p-5 rounded-md border-2 border-orange">96</div>
-                        </div>
-                      </div>
-
-                      <p className="text-xl font-semibold">vs</p>
-
-                      {/* Team No. 1 */}
-                      <div className="flex gap-1 w-full">
-                        <div className="flex flex-col w-full">
-                          <p className=" text-[10px] text-lightgray">Team</p>
-                          <div className="w-full h-full max-h-[68px] flex items-center justify-center rounded-md border-2 border-orange">
-                            <p className="text-center p-2 max-h-[68px] overflow-hidden xl:text-sm">Team Name</p>
-                          </div>
-                        </div>
-
-                        <div className="flex flex-col w-auto">
-                          <p className=" text-[10px] text-lightgray">Score</p>
-                          <div className="w-full h-full max-h-[68px] p-5 rounded-md border-2 border-orange">96</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Match Date */}
-                    <div className="w-full">
-                      <p className=" text-[10px] text-lightgray">Date 1-1-2024</p>
-                    </div>
-                  </div>
-
-                  {/* Recent Match No. 3  */}
-                  <div className="flex flex-col justify-between items-center gap-1 w-full text-white">
-                    <div className="flex items-center gap-3 w-full">
-                      {/* Team No. 1 */}
-                      <div className="flex gap-1 w-full">
-                        <div className="flex flex-col w-full">
-                          <p className=" text-[10px] text-lightgray">Team</p>
-                          <div className="w-full h-full max-h-[68px] flex items-center justify-center rounded-md border-2 border-orange">
-                            <p className="text-center p-2 max-h-[68px] overflow-hidden xl:text-sm">Team Name</p>
-                          </div>
-                        </div>
-
-                        <div className="flex flex-col w-auto">
-                          <p className=" text-[10px] text-lightgray">Score</p>
-                          <div className="w-full h-full max-h-[68px] p-5 rounded-md border-2 border-orange">96</div>
-                        </div>
-                      </div>
-
-                      <p className="text-xl font-semibold">vs</p>
-
-                      {/* Team No. 1 */}
-                      <div className="flex gap-1 w-full">
-                        <div className="flex flex-col w-full">
-                          <p className=" text-[10px] text-lightgray">Team</p>
-                          <div className="w-full h-full max-h-[68px] flex items-center justify-center rounded-md border-2 border-orange">
-                            <p className="text-center p-2 max-h-[68px] overflow-hidden xl:text-sm">Team Name</p>
-                          </div>
-                        </div>
-
-                        <div className="flex flex-col w-auto">
-                          <p className=" text-[10px] text-lightgray">Score</p>
-                          <div className="w-full h-full max-h-[68px] p-5 rounded-md border-2 border-orange">96</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Match Date */}
-                    <div className="w-full">
-                      <p className=" text-[10px] text-lightgray">Date 1-1-2024</p>
-                    </div>
-                  </div>
+                
+                <div className="flex justify-evenly w-full text-white text-base font-Inter">
+                  <button className="bg-orange rounded-[20px] w-[120px] max-w-[120px] py-2 font-bold">This week</button>
+                  <button className="rounded-[20px] w-[120px] max-w-[120px] py-2">This Month</button>
+                  <button className="rounded-[20px] w-[120px] max-w-[120px] py-2">Later</button>
                 </div>
 
-                {/* Refresh Button */}
-                <div className="flex flex-shrink-0 items-center gap-2 w-full h-auto">
-                  <RefreshIcon
-                    fontSize="small"
-                    className="bg-white text-black rounded-full"
-                  />
-                  <p className="text-[12px] text-lightgray">Refresh</p>
+                {/* Recent Matches */}
+                <div className="flex flex-col flex-shrink-0 gap-5 max-h-[300px] h-full overflow-y-hidden hover:overflow-y-auto 1110:max-h-[300px] sm:h-[300px]">
+                  <div className="flex flex-col gap-2 px-5 py-2 bg-[#D7D7D7] rounded-xl">
+                    <p className="text-base text-orange font-semibold">Game Event</p>
+                    <p className="text-[10px] text-[#717171]">Saturday, March 23, 2024</p>
+                  </div>
+
+                  <div className="flex flex-col gap-2 px-5 py-2 bg-[#D7D7D7] rounded-xl">
+                    <p className="text-base text-orange font-semibold">Game Event</p>
+                    <p className="text-[10px] text-[#717171]">Saturday, March 23, 2024</p>
+                  </div>
+
+                  <div className="flex flex-col gap-2 px-5 py-2 bg-[#D7D7D7] rounded-xl">
+                    <p className="text-base text-orange font-semibold">Game Event</p>
+                    <p className="text-[10px] text-[#717171]">Saturday, March 23, 2024</p>
+                  </div>
+
+                  <div className="flex flex-col gap-2 px-5 py-2 bg-[#D7D7D7] rounded-xl">
+                    <p className="text-base text-orange font-semibold">Game Event</p>
+                    <p className="text-[10px] text-[#717171]">Saturday, March 23, 2024</p>
+                  </div>
+
+                  <div className="flex flex-col gap-2 px-5 py-2 bg-[#D7D7D7] rounded-xl">
+                    <p className="text-base text-orange font-semibold">Game Event</p>
+                    <p className="text-[10px] text-[#717171]">Saturday, March 23, 2024</p>
+                  </div>
+
+                  <div className="flex flex-col gap-2 px-5 py-2 bg-[#D7D7D7] rounded-xl">
+                    <p className="text-base text-orange font-semibold">Game Event</p>
+                    <p className="text-[10px] text-[#717171]">Saturday, March 23, 2024</p>
+                  </div>
+
+                  <div className="flex flex-col gap-2 px-5 py-2 bg-[#D7D7D7] rounded-xl">
+                    <p className="text-base text-orange font-semibold">Game Event</p>
+                    <p className="text-[10px] text-[#717171]">Saturday, March 23, 2024</p>
+                  </div>
+
+                  <div className="flex flex-col gap-2 px-5 py-2 bg-[#D7D7D7] rounded-xl">
+                    <p className="text-base text-orange font-semibold">Game Event</p>
+                    <p className="text-[10px] text-[#717171]">Saturday, March 23, 2024</p>
+                  </div>
+
+                  <div className="flex flex-col gap-2 px-5 py-2 bg-[#D7D7D7] rounded-xl">
+                    <p className="text-base text-orange font-semibold">Game Event</p>
+                    <p className="text-[10px] text-[#717171]">Saturday, March 23, 2024</p>
+                  </div>
+                  
                 </div>
               </div>
             </div>
@@ -354,24 +148,24 @@ const UserOverview = () => {
           </div>
 
           {/* Lower Side */}
-          <div className="w-full h-full flex flex-col justify-between 1110:w-auto 1110:justify-normal gap-5 sm:h-[400px]">
+          <div className="w-full h-full flex flex-col 1110:w-auto 1110:justify-normal gap-5 sm:h-[400px]">
             <div className="h-auto flex items-center text-center">
               <p className="text-lg 1110:text-base font-semibold w-full h-fit px-5">Image Highlights</p>              
             </div>
             
             {/* Image Highlights */}
-            <div className="flex justify-center 1110:flex-col 1110:h-full gap-5 h-full sm:flex-wrap overflow-x-auto sm:px-5">
-              <div className="flex justify-center rounded-xl w-full bg-red-100 h-full sm:w-[300px]">
-                <img className="" src={ImageHighlights1} alt="" />
+            <div className="flex items-center gap-5 max-w-[750px] w-full overflow-x-hidden hover:overflow-x-auto h-full flex-nowrap 1110:flex-col 1110:max-h-[600px] 1110:w-[500px] 950px:flex-row 950px:max-w-full 950px:w-full">
+              <div className="h-full flex-none">
+                <img className="h-full w-[250px] 1110:w-full" src={Highlights1} alt="" />
               </div>
-              <div className="flex justify-center rounded-xl w-full bg-red-100 h-full sm:w-[300px]">
-                <img src={ImageHighlights2} alt="" />
+              <div className="h-full flex-none">
+                <img className="h-full w-[250px] 1110:w-full" src={Highlights2} alt="" />
               </div>
-              <div className="flex justify-center rounded-xl w-full bg-red-100 h-full sm:w-[300px]">
-                <img className="" src={ImageHighlights1} alt="" />
+              <div className="h-full flex-none">
+                <img className="h-full w-[250px] 1110:w-full" src={Highlights1} alt="" />
               </div>
-              <div className="flex justify-center rounded-xl w-full bg-red-100 h-full sm:w-[300px]">
-                <img src={ImageHighlights2} alt="" />
+              <div className="h-full flex-none">
+                <img className="h-full w-[250px] 1110:w-full" src={Highlights2} alt="" />
               </div>
             </div>
           </div>

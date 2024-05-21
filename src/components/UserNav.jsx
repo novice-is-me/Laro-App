@@ -4,8 +4,7 @@ import {
   emojiSad,
   emojiShock,
   emojiHeartEyes,
-  ImageHighlights1,
-  ImageHighlights2,
+  Highlights1,
   emojiGem,
   userImg,
   people1,
@@ -59,7 +58,7 @@ const UserNav = ({ isOpen, setIsOpen, toggleOff }) => {
 
 
   return (
-    <div className="w-full h-screen flex flex-grow flex-col py-5 2xl:justify-between items-center lg:gap-2 1110:h-fit 1110:py-0">
+    <div className="w-[450px] h-screen flex flex-grow flex-col py-5 2xl:justify-between items-center lg:gap-2 1110:h-fit 1110:py-0">
       {/* Upper part */}
       <div className={`h-full flex flex-col bg-white ${isOpen ? '1110:flex 1110:fixed 1110:z-10 1110:left-0 1110:top-0' : '1110:hidden'}`}>
         <div className="hidden 1110:flex h-fit 1110:fixed w-fit p-5 z-10 justify-center">

@@ -20,8 +20,8 @@ const Advertisments = () => {
     // Add event listener to handle transition end
     document.addEventListener('transitionend', handleTransitionEnd);
 
-    // Interval to automatically switch ads every 2 seconds
-    const interval = setInterval(switchAd, 2000);
+    // Interval to automatically switch ads every 5 seconds
+    const interval = setInterval(switchAd, 5000);
 
     // Clear interval and remove event listener on component unmount
     return () => {
@@ -35,9 +35,9 @@ const Advertisments = () => {
       <div className='bg-black px-[4rem] py-[3rem] pb-[5rem] xsm:p-[3rem]
          rounded-[20px] flex items-center gap-8 832px:flex-col justify-between'>
         <div className=' 832px:text-center 832px:pr-0 pr-[10rem]'>  
-          <h1 className='font-poppins text-[#FFEEE6] text-[40px] font-bold 
+          <h1 className='font-poppins text-[#FFEEE6] text-[40px] font-bold text-center
              xsm:text-[20px] uppercase'>
-            Advertisements Placements
+            PROMOTE YOUR <br/>BRAND HERE
           </h1> 
         </div>    
         <div> 
