@@ -193,14 +193,14 @@ const Court = () => {
           </div>
           */}
 
-<div className="flex flex-col items-center justify-center w-full mt-10 mb-10">
-  <div className="bg-white rounded-[20px] flex flex-col items-center relative mix-blend-lighten">
+<div className="flex flex-col items-center justify-center w-full mt-10 mb-10 ">
+  <div className="bg-white rounded-[20px] flex flex-col items-center relative mix-blend-lighten ">
     <div
       style={{ backgroundImage: `url(${soonBg})` }}
-      className="rounded-[20px] mt-8 mb-8 ml-5 mr-5 h-[250px] w-[350px] flex flex-col items-center justify-center"
+      className="rounded-[20px] mt-8 mb-8 ml-5 mr-5 h-[250px] w-[350px] flex flex-col items-center justify-center lg:w-fit"
     >
       
-      <img src={StatsSoon} alt="Stats" className="h-[120px] w-[120px]" />
+      <img src={StatsSoon} alt="Stats" className="h-[120px] w-[120px] " />
       <p className="text-black font-poppins font-bold  uppercase mt-4 text-3xl">Coming Soon!!</p>
     </div>
     <p className="text-black font-poppins font-bold  uppercase text-xl mb-4">Pasig City</p>
