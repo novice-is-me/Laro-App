@@ -7,10 +7,10 @@ import FooterBtn from '../components/FooterBtn'
 const Footer = () => {
   return (
     <div className='flex flex-col bg-bgColor p-[3rem]'>
-      <div className='flex flex-wrap justify-between gap-4 xl:gap-y-8 xsm:justify-center'> 
-        <div className='flex xl:items-center'>
+      <div className='flex flex-wrap justify-between xl:gap-y-8 xsm:justify-center'> 
+        <div className='flex xl:items-center  p-2'>
             <img src={Logo} alt=""
-            className='h-[60px]' />
+            className='h-[60px]  ' />
         </div>
         <div className='flex gap-[5rem] flex-wrap xsm:justify-between xsm:gap-y-4'>
           {links[1].footerLink.map((links, i)=>{
@@ -23,11 +23,13 @@ const Footer = () => {
           })} 
         </div>
       </div>
+      {/*
       <div className='flex justify-center gap-[5rem] mt-8 xsm:flex-col xsm:gap-4'>
       {links[3].policies.map((policy, i)=>{
             return <p className='font-poppins' key={i}>{policy}</p>
           })}  
       </div>
+        */}
     </div> 
     
   )

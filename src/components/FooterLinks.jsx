@@ -1,17 +1,20 @@
-import React from 'react'
+import React from 'react';
 
-const FooterLinks = ({title, links}) => {
+const FooterLinks = ({ title, links }) => {
   return (
     <div className='font-poppins'>
-      <h6 className='font-semibold mb-4'>{title}</h6>
-      <ul className=''>
-        {links.map((link, i) =>{
-            return <li key={i}
-            className='text-[#BBBBBB] mb-4'><a href="">{link}</a></li>
-        })} 
+      <h6 className={`mb-4 ${title === "FAQs", "Contact Us:", "Navigate:" ? 'font-bold' : ''}`}>{title}</h6>
+      <ul>
+        {links.map((link, i) => (
+          <li key={i} className={`text-[#3E3E3E] mb-4 ${title === "FAQs" ? 'font-semibold' : ''}`}>
+            <a href="#" className={link === "sales@laro-inc.com.ph" ? 'underline' : ''}>
+              {link}
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default FooterLinks
+export default FooterLinks;

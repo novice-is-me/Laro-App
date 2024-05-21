@@ -8,6 +8,10 @@ import img1 from '../assets/Active Match/activematch1.jpg'
 import img2 from '../assets/Active Match/activematch2.jpeg'
 import img3 from '../assets/Active Match/activematch3.jpg'
 import img4 from '../assets/Active Match/activematch4.jpg'
+import game1 from '../assets/Active Match/game1.png'
+import game2 from '../assets/Active Match/game2.png'
+import game3 from '../assets/Active Match/game3.png'
+import game4 from '../assets/Active Match/game4.png'
 import court1 from '../assets/Active Match/court1.jpg'
 import court2 from '../assets/Active Match/court2.jpeg'
 import court3 from '../assets/Active Match/court3.jpeg'
@@ -18,7 +22,7 @@ import { Category } from '@mui/icons-material'
 export const ActiveMatch = [
     {
         id: 1,
-        imagecard: img1,
+        imagecard: game1,
         type: "Veteran",
         title: "Championship",
         icon: faTrophy,
@@ -30,7 +34,7 @@ export const ActiveMatch = [
     },
     {
         id: 2,
-        imagecard: img2,
+        imagecard: game2,
         type: "Kids",
         title: "Kids Exhibition Match",
         icon: faBasketball,
@@ -42,7 +46,7 @@ export const ActiveMatch = [
     },
     {
         id: 3,
-        imagecard: img3,
+        imagecard: game3,
         type: "Teen",
         title: "Teenage Dry Run",
         icon: faMedal,
@@ -54,7 +58,7 @@ export const ActiveMatch = [
     },
     {
         id: 4,
-        imagecard: img4,
+        imagecard: game4,
         type: "Expert",
         title: "Slam Dunk Contest",
         icon: faTrophy,

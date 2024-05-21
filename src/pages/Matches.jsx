@@ -120,9 +120,9 @@ const Matches = () => {
   return (
     <div className="bg-[#fff6f2] w-full px-9 py-7">
       {main === "default" && (
-        <div className="bg-[#ffeee6] p-[20px] rounded-[14px] px-20 xsm:px-0 ">
+        <div className="bg-[#ffeee6] p-[20px] rounded-[14px] px-20 xsm:px-0">
           <div className=" mt-10 flex 950px:flex-col-reverse 950px:justify-center 950px:items-center">
-            <div className="flex-1 justify-between flex-col sm:flex-col xsm:text-center">
+            <div className="flex-1 justify-between flex-col sm:flex-col xsm:text-center lg:flex lg:justify-center lg:items-center">
               {joinGame && (
                 <div>
                   <p className='text font-Poppins mb-2 text-[#bbbbbb] 950px:text-center'>Result</p>
@@ -194,13 +194,11 @@ const Matches = () => {
                 </div>
               )}
 
-              <h1 className="font-Poppins font-bold text-3xl uppercase mb-2 mt-4 md:mx-auto">
-                Active Matches
+              <h1 className="font-Poppins font-bold text-3xl uppercase mb-2 mt-4 md:mx-auto xsm:text-[30px] xsm:leading-normal">
+                Games and Plays
               </h1>
-              <p className="font-Poppins text-sm mb-4 text-[#bbbbbb] sm:text-center mt-2">
-                Discover the most recent active leagues and sporting events
-                available <br /> for participation, and feel free to share them
-                with your basketball-playing friends.
+              <p className="w-[70%] font-Poppins text-sm mb-4 text-[#bbbbbb] r mt-2 ">
+                Find and join active games, leagues, and events that you like. Share them with your friends so they can join too.
               </p>
             </div>
 
@@ -219,12 +217,17 @@ const Matches = () => {
               />
             </div>
           </div>
-
+{/*
           <div className="flex gap-2 flex-wrap scale-[1] mt-5 justify-center">
             {filteredData.map((card) => (
               <ActiveMatchesCard key={card.id} card={card} setMain={setMain} />
             ))}
           </div>
+          */}
+<div className="flex justify-center items-center text-center p-2">
+<h1 className="flex justify-center items-center font-Poppins font-bold text-3xl uppercase mb-2 mt-4 md:mx-auto pb-20 ">
+                no games and plays today!
+              </h1></div>
         </div>
       )}
 

@@ -9,6 +9,7 @@ import Sucess from './Sucess'
 import ViewCourt from '../components/ViewCourt'
 import { joinGameContext } from '../App'
 import { RestartAlt } from '@mui/icons-material';
+import { soonBg, StatsSoon } from '../assets'
 
 const Court = () => {
 
@@ -82,7 +83,7 @@ const Court = () => {
 
       {main === 'default' &&
         <div className='bg-black p-[20px] rounded-[14px] px-20 xsm:px-0 '>
-          <div className=' mt-10 flex 950px:flex-col-reverse 950px:justify-center 950px:items-center'>
+          <div className=' mt-10 flex 950px:flex-col-reverse 950px:justify-center 950px:items-center '>
             <div className='flex-1 justify-between flex-col sm:flex-col xsm:text-center'>
               {findCourt &&
                 <div>
@@ -162,8 +163,10 @@ const Court = () => {
               
               }
               
-              <h1 className='font-Poppins font-bold text-3xl uppercase mb-2 mt-4 md:mx-auto text-[#ffffff]'>Basketball court nearby</h1>
-              <p className='font-Poppins text-sm mb-4 text-[#ffffff] sm:text-center mt-2'>Discover the most recent active leagues and sporting events available <br /> for participation, and feel free to share them with your basketball-playing friends.</p>
+              <h1 className='font-Poppins font-bold text-3xl uppercase mb-2 mt-4 md:mx-auto text-[#ffffff]'>Nearby basketball courts</h1>
+              <p className='font-Poppins text-sm mb-4 text-[#ffffff] sm:text-center mt-2'>
+                Check Basketball Court Availability, Court Details, and book them right away!
+              </p>
              
               
             </div>
@@ -182,15 +185,35 @@ const Court = () => {
             </div>
           </div>
 
-
+      {/*
           <div className='flex gap-2 flex-wrap scale-[1] mt-5 justify-center'>
             {filteredData.map(card => (
               <CourtsCard key={card.id} card={card} setMain={setMain} setClickedCard={setClickedCard} />
             ))}
           </div>
-        </div>
-      }
+          */}
 
+<div className="flex flex-col items-center justify-center w-full mt-10 mb-10">
+  <div className="bg-white rounded-[20px] flex flex-col items-center relative mix-blend-lighten">
+    <div
+      style={{ backgroundImage: `url(${soonBg})` }}
+      className="rounded-[20px] mt-8 mb-8 ml-5 mr-5 h-[250px] w-[350px] flex flex-col items-center justify-center"
+    >
+      
+      <img src={StatsSoon} alt="Stats" className="h-[120px] w-[120px]" />
+      <p className="text-black font-poppins font-bold  uppercase mt-4 text-3xl">Coming Soon!!</p>
+    </div>
+    <p className="text-black font-poppins font-bold  uppercase text-xl mb-4">Pasig City</p>
+  </div>
+</div>
+
+
+        
+        </div>
+      
+      
+      }
+  
       {main === 'bookcourt' &&
         <BookCourt setMain={setMain}  />
 

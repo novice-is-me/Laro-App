@@ -7,6 +7,7 @@ import Join from './Join'
 import Gameplay from './Gameplay'
 import Advertisments from './Advertisments'
 import About from './About'
+import Partnerships from './Partnerships'
 import CourtOwner from './CourtOwner'
 import CreateAccount from './CreateAccount'
 import DashboardCourtOwner from './DashboardCourtOwner'
@@ -20,12 +21,13 @@ const HomePage = () => {
   return (
     <div>
       <HeroSection/>
+      <Advertisments/>
       <Matches />
       <Court />
       <Join/>
       <Gameplay/> 
-      <Advertisments/>
       <About/>
+      <Partnerships/>
       <Footer />
     </div>
   )

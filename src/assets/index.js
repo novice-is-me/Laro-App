@@ -44,6 +44,20 @@ import credits from './image/credits.png'
 import others from './image/others.png'
 import eagleIcon from './image/eagleIcon.png'
 import success from './image/success.jpeg'
+import hero1 from './image/hero1.png'
+import hero2 from './image/hero2.png'
+import hero3 from './image/hero3.png'
+import hero4 from './image/hero4.png'
+import Ad1 from './image/Ad1.png'
+import Ad2 from './image/Ad2.png'
+import soonBg from './image/soonBg.png'
+import Org1 from './image/Org1.png'
+import Org2 from './image/Org2.png'
+import Org3 from './image/Org3.png'
+import partner1 from './image/partner1.png'
+import partner2 from './image/partner2.png'
+import about from './image/about.png'
+
 
 export{
     Logo,
@@ -75,4 +89,8 @@ export{
     paypal,
     credits,
     success,
+    hero1, hero2, hero3, hero4,
+    Ad1, Ad2,
+    soonBg,
+    Org1, Org2, Org3, partner1, partner2, about,
 }

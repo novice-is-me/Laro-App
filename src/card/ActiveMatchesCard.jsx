@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 FontAwesomeIcon
 const ActiveMatchesCard = ({ card, setMain }) => {
     return (
-        <div className='bg-[#ffffff] rounded-[14px] w-[273px] p-5 h-[400px]'>
+        <div className='bg-[#ffffff] rounded-[14px] w-[300px] p-5 h-[400px]'>
             
             <div className='relative'>
                 <img

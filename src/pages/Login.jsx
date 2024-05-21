@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import LoginForm from "../components/LoginForm";
 import PictureComponent from "../components/PictureComponent";
-import { loginImg } from "../assets";
+import { hero3 } from "../assets";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -41,7 +41,7 @@ const Login = () => {
           </div>
         </div>
         <div className="w-[50%] flex items-center justify-center sm:hidden 832px:scale-[0.8] 770px:scale-[0.7]">
-          <PictureComponent img={loginImg} value={"login"} />
+          <PictureComponent img={hero3} value={"login"}  />
         </div>
       </div>
     </div>

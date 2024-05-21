@@ -28,16 +28,16 @@ export const links = [
   {
     footerLink: [
       {
-        title: "Contact Us",
-        links: ["hello@laroph.com", "(+63)00-00-000-00"],
+        title: "Contact Us:",
+        links: ["sales@laro-inc.com.ph", "(+63) 917 656 9215"],
       },
       {
-        title: "Navigate",
+        title: "Navigate:",
         links: ["Home", "About", "Play Now"],
       },
       {
         title: "FAQs",
-        links: ["Earn Money", "Referral Program"],
+        links: ["Privacy And Cookies", "Terms Of Use", "Feedback"],
       },
     ],
   },
@@ -72,13 +72,13 @@ export const links = [
       },
       {
         id: 2,
-        name: "Create Account",
-        path: "/register",
+        name: "Apply as Organizer",
+        path: "/organizer",
       },
       {
         id: 3,
-        name: "Apply as Organizer",
-        path: "/organizer",
+        name: "Create Account",
+        path: "/register",
       },
       {
         id: 4,
@@ -93,7 +93,7 @@ export const choices = [
   {
     id: 1,
     icon: faCompass,
-    text: "Joined a game near you?",
+    text: "Join a game",
     choice: "Find",
     placeholder: "Enter Matches (ex) Shooting",
     path: '/matches'
@@ -109,7 +109,7 @@ export const choices = [
   {
     id: 3,
     icon: faStar,
-    text: "Find Courts near you?",
+    text: "Find Courts nearby",
     choice: "Find",
     placeholder: "Enter Location",
     path: '/court'
@@ -123,7 +123,7 @@ export const gameplayData = [
     width: "20.39",
     height: "14.829",
     title: "5v5 Match",
-    text: "You can play with friends in a 5 vs. 5 player game mode setup",
+    text: "You can play with friends in a 5 vs 5 player game mode setup.",
   },
   {
     path: "M5.487 10.63a2.356 2.356 0 0 1 2.354 2.374v3.16a2.361 2.361 0 0 1-2.354 2.372H2.354A2.367 2.367 0 0 1 0 16.164v-3.16a2.362 2.362 0 0 1 2.354-2.374h3.133Zm10.696 0a2.362 2.362 0 0 1 2.354 2.374v3.16a2.367 2.367 0 0 1-2.354 2.372H13.05a2.361 2.361 0 0 1-2.354-2.372v-3.16a2.356 2.356 0 0 1 2.354-2.374h3.133ZM5.487 0A2.362 2.362 0 0 1 7.84 2.374v3.16a2.356 2.356 0 0 1-2.354 2.372H2.354A2.361 2.361 0 0 1 0 5.533v-3.16C0 1.067 1.057 0 2.354 0h3.133Zm10.696 0c1.297 0 2.354 1.066 2.354 2.374v3.16a2.361 2.361 0 0 1-2.354 2.372H13.05a2.356 2.356 0 0 1-2.354-2.373v-3.16A2.362 2.362 0 0 1 13.05 0h3.133Z",
