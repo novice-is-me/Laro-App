@@ -166,7 +166,7 @@ const CreateAccount = () => {
     try {
       // Send the POST request to sign-up-verify-email endpoint
       const response = await fetch(
-        "https://api.laro.com.ph/api/v1/account/sign-up-send-otp",
+        "https://api.laro.com.ph/api/v1.1/accounts/sign-up-send-otp",
         {
           method: "POST",
           body: formData,
@@ -175,10 +175,13 @@ const CreateAccount = () => {
 
       if (response.ok) {
         const data = await response.json();
+        localStorage.setItem("user", JSON.stringify(data.user));
+
+        // Store the user ID in local storage
         console.log(data);
         setShowNotification(true);
         setNotificationContent(
-          "A verification email has been sent to your inbox. Please enter the PIN to continue."
+          "A verification has been sent to your SMS. Please enter the PIN to continue."
         );
         setSuccess(true);
       } else {
@@ -499,7 +502,7 @@ const CreateAccount = () => {
             <button
               onClick={() => {
                 setShowNotification(false);
-                navigate("/email-verification");
+                navigate("/account-verification");
               }}
               className="bg-orange text-white py-2 px-4 rounded-md hover:bg-orange-dark transition duration-300 ease-in-out"
             >
