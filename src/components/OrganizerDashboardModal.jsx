@@ -3,6 +3,7 @@ import no1 from "../assets/Organizer/CPG.png"
 import no2 from "../assets/Organizer/COBL.png"
 import no3 from "../assets/Organizer/C3x3E.png"
 import no4 from "../assets/Organizer/C3PSE.png"
+import AddPhotoAlternateOutlinedIcon from '@mui/icons-material/AddPhotoAlternateOutlined';
 
 
 function OrganizerDashboardModal({ isOpen, onClose }) {
@@ -20,10 +21,17 @@ function OrganizerDashboardModal({ isOpen, onClose }) {
                     <p className="w-full text-left">Create Pickup Game</p>
                 </div>
 
+                <div className="flex justify-center items-center gap-[14px] bg-orange rounded-[50px] max-w-[295px] h-[70px] px-5 text-[20px] font-semibold cursor-pointer">
+                <AddPhotoAlternateOutlinedIcon fontSize="large" />
+                    <p className="w-full text-left">Upload Image for Games and Plays</p>
+                </div>
+
                 <div className="flex justify-center items-center gap-[14px] bg-[#3F3F3F] rounded-[50px] w-[295px] h-[70px] px-5 text-[20px] font-semibold cursor-not-allowed">
                     <img src={no2} alt="Game Logo" />
                     <p className="w-full text-left">Create Organized Basketball League</p>
                 </div>
+
+                
 
                 <div className="flex justify-center items-center gap-[14px] bg-[#3F3F3F] rounded-[50px] w-[295px] h-[70px] px-5 text-[20px] font-semibold cursor-not-allowed">
                     <img src={no3} alt="Game Logo" />

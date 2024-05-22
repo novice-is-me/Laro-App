@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import Calendar from "react-calendar";
-import OrganizerDashboardModal from '../components/OrganizerDashboardModal';
 import { userIcon, logoutImg, historyIcon, arrowActivity } from "../assets";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
+import KeyboardArrowRightRoundedIcon from '@mui/icons-material/KeyboardArrowRightRounded';
 
 const OrganizerDashContent = ({ activeTab }) => {
   const navigate = useNavigate(); // Get the navigation function
+  
   const handleCalendarClick = () => {
     navigate("/organizerCalendar");
   };
@@ -17,19 +18,6 @@ const OrganizerDashContent = ({ activeTab }) => {
     return `${hour} ${ampm}`;
   });
 
-    const [ openmodal, setOpenModal ] = useState(false);
-
-    const isOpen = () => {
-        setOpenModal(true)
-        console.log("Clicked!")
-        console.log(openmodal)
-    }
-
-    const CloseModal = () => {
-        setOpenModal(false)
-        console.log("Closed");
-        console.log(openmodal)
-    }
 
   return (
     <div className="content">
@@ -42,7 +30,7 @@ const OrganizerDashContent = ({ activeTab }) => {
           {/* Upper Boxes */}
           <div className="flex justify-center items-end gap-5 w-full h-fit px-10 py-2.5">
             {/* First Box */}
-            <div className="flex flex-col justify-between px-10 py-5 w-1/2 h-[265px] rounded-[10px] text-white font-Inter bg-black">
+            <div className="flex flex-col justify-between px-10 py-5 w-1/2 h-[200px] rounded-[10px] text-white font-Inter bg-black">
               <div className="flex flex-col w-full h-full">
                 <p className="text-[30px] font-semibold">Credits</p>
                 <p className="text-gray">PHP</p>
@@ -58,7 +46,7 @@ const OrganizerDashContent = ({ activeTab }) => {
             </div>
 
             {/* Second Box */}
-            <div className="flex flex-col justify-between px-10 py-5 w-1/2 h-[265px] rounded-[10px] text-white font-Inter bg-orange">
+            <div className="flex flex-col justify-between px-10 py-5 w-1/2 h-[200px] rounded-[10px] text-white font-Inter bg-orange">
               <div className="flex flex-col w-full h-1/3 ">
                 <p className="text-[30px] font-semibold">Earnings History</p>
               </div>
@@ -70,15 +58,16 @@ const OrganizerDashContent = ({ activeTab }) => {
           {/* Lower Boxes */}
           <div className="flex justify-center items-center gap-5 w-full h-fit px-10 py-2.5">
             {/* Third Box */}
-            <div className="flex flex-col justify-between px-10 py-5 w-1/2 h-[537px] rounded-[10px] gap-5 text-white font-Inter bg-orange">
-              <div className="flex justify-between items-center w-full h-fit ">
+            <div className="flex flex-col justify-between px-10 w-1/2 h-[537px] rounded-[10px] gap-5 text-white font-Inter bg-orange">
+              <div className=" flex justify-between flex-col">
+              <div className="flex justify-between items-center w-full h-fit  ">
                 <p className="text-[30px] font-semibold">Calendar</p>
-                <p
+                <div
                   className="px-3 text-[40px] font-bold cursor-pointer"
                   onClick={handleCalendarClick}
                 >
-                  &#62;
-                </p>
+                  <KeyboardArrowRightRoundedIcon style={{ fontSize: '48px' }}/>
+                  </div>
               </div>
 
               <div className="flex justify-center text-black w-full h-full">
@@ -87,21 +76,14 @@ const OrganizerDashContent = ({ activeTab }) => {
                   formatShortWeekday={(locale, date) => weeks[date.getDay()]}
                 />
               </div>
+              </div>
             </div>
 
                         {/* Fourth Box */}
-                        <div className='flex flex-col justify-between px-10 py-5 w-1/2 h-[537px] rounded-[10px] text-white font-Inter bg-black'>
-                            <div className='flex flex-col w-full h-full'>
+                        <div className='flex flex-col justify-between px-10 py-2 w-1/2 h-[537px] rounded-[10px] text-white font-Inter bg-black'>
+                            <div className='flex flex-col w-full h-full '>
                                 <p className='text-[30px] font-semibold'>Match History</p>
                             </div>
-                        </div>
-                    </div>
-
-                    {/* Create Event Button */}
-                    <div className='flex justify-center items-center w-full h-fit font-Inter p-5'>
-                        <div onClick={() => isOpen()} className='flex justify-evenly items-center w-[295px] h-[70px] text-white text-[20px] font-semibold bg-orange rounded-[50px] cursor-pointer'>
-                            <p className='flex items-center h-full text-[40px]'>+</p>
-                            <p className='flex items-center h-full'>Create New Event</p>
                         </div>
                     </div>
                 </div>
@@ -202,26 +184,11 @@ const OrganizerDashContent = ({ activeTab }) => {
             </div>
           </div>
 
-          {/* Create New Event Button */}
-          <div className="flex justify-center items-center w-full h-fit font-Inter p-5">
-            {/* Change the onClick event to navigate to "/eventdetails" */}
-            <button
-              onClick={() => navigate("/eventDetails")}
-              // onClick={() => isOpen()} className="flex justify-evenly items-center w-[295px] h-[70px] text-white text-[20px] font-semibold bg-orange rounded-[50px] cursor-pointer"
-            >
-              <p className="flex items-center h-full text-[40px]">+</p>
-              <p className="flex items-center h-full">Create New Event</p>
-            </button>
-          </div>
+
         </div>
       )}
 
-            {openmodal && 
-                <OrganizerDashboardModal 
-                    isOpen={openmodal}
-                    onClose={CloseModal}
-                />
-            }
+    
     </div>
   );
 };

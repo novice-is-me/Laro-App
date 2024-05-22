@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import OrganizerDashContent from "./OrganizerDashContent"; // Import OrganizerDashContent component
 import { useNavigate } from "react-router";
 import { ownerImg1 } from "../assets";
+import OrganizerDashboardModal from '../components/OrganizerDashboardModal';
 
 const OrganizerDashHeader = ({ activeTab, onTabChange }) => {
   const navigate = useNavigate();
@@ -9,6 +10,7 @@ const OrganizerDashHeader = ({ activeTab, onTabChange }) => {
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
   const profileImage = userInfo ? userInfo.profile_image : null;
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const showUploadImage = () => setActiveContent('uploadImage');
 
   useEffect(() => {
     const userLoggedIn = localStorage.getItem("token") !== null;
@@ -27,10 +29,25 @@ const OrganizerDashHeader = ({ activeTab, onTabChange }) => {
     console.log("Navigating to login page...");
   };
 
+  const [ openmodal, setOpenModal ] = useState(false);
+
+    const isOpen = () => {
+        setOpenModal(true)
+        console.log("Clicked!")
+        console.log(openmodal)
+    }
+
+    const CloseModal = () => {
+        setOpenModal(false)
+        console.log("Closed");
+        console.log(openmodal)
+    }
+
+
     return (
-      <div className="container flex flex-row gap-4 h-full " style={{ height: '100vh' }}>
+      <div className="container flex flex-row gap-4 h-full border" style={{ height: '100vh' }}>
           {/* Left Side of the Organizer Dashboard */}
-          <div className="flex flex-col items-center w-1/4 font-Poppins border">
+          <div className="flex flex-col items-center w-1/4 font-Poppins border border-orange ">
               {/* Back Button and Org Profile */}
               <div className='flex p-5 gap-5 w-full'>
                   <div className=''>
@@ -43,13 +60,14 @@ const OrganizerDashHeader = ({ activeTab, onTabChange }) => {
                           <path fillRule="evenodd" clipRule="evenodd" d="M1.85827 20.0176C1.19113 19.3497 0.816406 18.4442 0.816406 17.5001C0.816406 16.5561 1.19113 15.6506 1.85827 14.9826L15.2913 1.54488C15.9596 0.876882 16.8659 0.501731 17.8108 0.501953C18.2787 0.502063 18.7419 0.594327 19.1742 0.773476C19.6064 0.952626 19.9991 1.21515 20.3298 1.54607C20.6606 1.87698 20.9229 2.2698 21.1019 2.70211C21.2808 3.13441 21.3729 3.59772 21.3728 4.06559C21.3727 4.53347 21.2804 4.99674 21.1012 5.42896C20.9221 5.86117 20.6596 6.25387 20.3286 6.58463L9.41552 17.5001L20.331 28.4156C20.6714 28.7441 20.943 29.1371 21.1299 29.5716C21.3168 30.0062 21.4153 30.4736 21.4197 30.9466C21.424 31.4196 21.3341 31.8888 21.1551 32.3267C20.9762 32.7646 20.7119 33.1625 20.3776 33.4971C20.0432 33.8318 19.6456 34.0965 19.2079 34.2758C18.7701 34.4552 18.3011 34.5455 17.828 34.5416C17.355 34.5377 16.8875 34.4397 16.4528 34.2532C16.018 34.0667 15.6248 33.7955 15.296 33.4554L1.85352 20.0176H1.85827Z" fill="#545454"/>
                       </svg>
                   </div>
-                  <div className='w-full '>
-                      <img src={ownerImg1} alt="" className='rounded-[10px] h-full w-full object-cover' />
+                  <div className='w-full  rounded-[20px]  '>
+                      <img src={ownerImg1} alt="" className='rounded-[20px] h-[240px] w-[250px] object-cover border ' />
                   </div>
               </div>
 
-          <div className="border-0 p-2">
-            <div className="w-full ">
+          <div className=" w-[250px] pl-6 pt-4 p-2 ">
+            
+            <div className="w-full  ">
               <div className="flex items-center justify-between">
                 <p className="font-poppins text-[20px] font-semibold">
                   {/* {userFullName.full_name} */}
@@ -71,12 +89,13 @@ const OrganizerDashHeader = ({ activeTab, onTabChange }) => {
               </p>
             </div>
 
+<div className="">
             <p className="font-poppins text-sm font-semibold">Share</p>
             {/* Icons SVG omitted for brevity */}
             <div className="flex gap-2">
               <svg
-                width="20"
-                height="20"
+                width="25"
+                height="25 "
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
               >
@@ -86,8 +105,8 @@ const OrganizerDashHeader = ({ activeTab, onTabChange }) => {
                 />
               </svg>
               <svg
-                width="20"
-                height="20"
+                width="25"
+                height="25"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
               >
@@ -97,8 +116,8 @@ const OrganizerDashHeader = ({ activeTab, onTabChange }) => {
                 />
               </svg>
               <svg
-                width="20"
-                height="20"
+                width="25"
+                height="25"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
               >
@@ -108,8 +127,8 @@ const OrganizerDashHeader = ({ activeTab, onTabChange }) => {
                 />
               </svg>
               <svg
-                width="20"
-                height="20"
+                width="25"
+                height="25"
                 viewBox="0 0 31 28"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -119,6 +138,7 @@ const OrganizerDashHeader = ({ activeTab, onTabChange }) => {
                   fill="#6F6F6F"
                 />
               </svg>
+              </div>
             </div>
           </div>
           <div className="border-0 mt-4 flex justify-between w-[100%] h-[100%]">
@@ -131,8 +151,8 @@ const OrganizerDashHeader = ({ activeTab, onTabChange }) => {
                   }`}
                 >
                   <svg
-                    width="25"
-                    height="30"
+                    width="40"
+                    height="40"
                     viewBox="0 0 40 40"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -145,8 +165,8 @@ const OrganizerDashHeader = ({ activeTab, onTabChange }) => {
 
                   <p className="font-Poppins text-xl p-3">Overview</p>
                   <svg
-                    width="20"
-                    height="20"
+                    width="40"
+                    height="40"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 320 512"
                   >
@@ -167,8 +187,8 @@ const OrganizerDashHeader = ({ activeTab, onTabChange }) => {
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
+                    width="40"
+                    height="40"
                     fill="currentColor"
                     viewBox="0 0 16 16"
                   >
@@ -178,8 +198,8 @@ const OrganizerDashHeader = ({ activeTab, onTabChange }) => {
                   </svg>
                   <p className="font-Poppins text-xl p-3">Activities</p>
                   <svg
-                    width="20"
-                    height="20"
+                    width="40"
+                    height="40"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 320 512"
                   >
@@ -199,8 +219,8 @@ const OrganizerDashHeader = ({ activeTab, onTabChange }) => {
                   }`}
                 >
                   <svg
-                    width="25"
-                    height="30"
+                    width="40"
+                    height="40"
                     viewBox="0 0 42 42"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -234,10 +254,28 @@ const OrganizerDashHeader = ({ activeTab, onTabChange }) => {
           </div>
         </div>
         {/*with create*/}
+        <div className="flex flex-col border w-3/4">
         <div className="border-0 w-[100%] ">
           <OrganizerDashContent activeTab={activeTab} />{" "}
           {/* Render OrganizerDashContent */}
         </div>
+                    {/* Create Event Button */}
+                    <div className='flex justify-center items-center w-full h-fit font-Inter p-5'>
+                        <div onClick={() => isOpen()} className='flex justify-evenly items-center w-[295px] h-[70px] text-white text-[20px] font-semibold bg-orange rounded-[50px] cursor-pointer'>
+                            <p className='flex items-center h-full text-[40px]'>+</p>
+                            <p className='flex items-center h-full'>Create New Event</p>
+                        </div>
+                    </div>
+                  
+
+{openmodal && 
+    <OrganizerDashboardModal 
+        isOpen={openmodal}
+        onClose={CloseModal}
+    />
+}
+        </div>
+        
       </div>  
     );
 };
