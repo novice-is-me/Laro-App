@@ -46,7 +46,7 @@ export default {
         sm: { max: "639px" },
         // => @media (max-width: 639px) { ... }
 
-        xsm: { max: "539px" },
+        xsm: { max: "549px" },
         // => @media (max-width: 479px) { ... }
 
         450: { max: "450px" },

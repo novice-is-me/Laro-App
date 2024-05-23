@@ -64,18 +64,19 @@ const Header = () => {
           : "bg-bgColor"
       }`}
     >
+      <div className=" w-full justify-between flex gap-[100px] items-center relative lg:flex lg:flex-col lg:gap-0">
       <div>
         <img src={LogoHeader} alt="logo" />
       </div>
-      <div className="flex gap-[100px] items-center relative">
-        <div className="flex gap-[100px] lg:hidden">
+      <div className="flex gap-20 lg:gap-10 items-center relative items-end justify-end">
+        <div className="flex gap-20 lg:gap-10     ">
           {links[0].navigationBar.map((link, i) => {
             return <NavLinks text={link.name} path={link.path} key={i} />;
           })}
         </div>
         <div className="relative flex gap-4 items-center">
           {isLoggedIn ? (
-            <div className="relative ">
+            <div className="relative lg:hidden">
               <button
                 onClick={handleDropdownToggle}
                 className="focus:outline-none"
@@ -140,7 +141,7 @@ const Header = () => {
             ))
           )}
           {isLoggedIn && (
-            <div className="relative">
+            <div className="relative lg:hidden">
               <FontAwesomeIcon
                 icon={faBars}
                 className="fa-2xl hidden lg:block hover:cursor-pointer"
@@ -150,16 +151,19 @@ const Header = () => {
           )}
           {/* Play Now Button */}
           {isLoggedIn && (
-            <div className="relative">
-              <Link
-                to="/matches"
-                className="bg-orange text-white px-4 py-2 rounded hover:bg-orange-600"
-              >
-                Play Now
-              </Link>
-            </div>
+            <div className="relative ">
+  <Link
+    to="/matches"
+    className="bg-orange text-white px-4 py-2 rounded hover:bg-orange-600"
+  >
+    <span className="lg:hidden">Play Now</span>
+    <span className="hidden lg:inline">Play</span>
+  </Link>
+</div>
+
           )}
         </div>
+      </div>
       </div>
     </div>
   );

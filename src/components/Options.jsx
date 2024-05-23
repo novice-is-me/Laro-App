@@ -16,22 +16,20 @@ const Options = ({ id, icon, text, choice, placeholder, path }) => {
   };
 
   return (
-    <div className={`flex flex-col items-center mb-6 ${isHovered ? 'flex-col items-center' : 'items-center'} xsm:flex-col`}
+    <div className={`flex flex-col items-center mb-6 space-y-4 hover:cursor-pointer`}
          onMouseEnter={() => setIsHovered(true)} 
          onMouseLeave={() => setIsHovered(false)}>
-      <div className='bg-white rounded-[40px] p-4 w-[230px] hover:cursor-pointer xsm:p-2 xsm:w-[230px]'>  
-        <div className='flex gap-8 items-center xsm:gap-4'>
-          <FontAwesomeIcon icon={icon} className='icon fa-2x'/>    
-          <input 
-            className='font-Poppins text-[#818181] text-[11px] flex-1 outline-none' 
-            placeholder={isHovered ? placeholder : text}
-            onChange={handleChange}
-          />
-        </div>  
-      </div>
+      <FontAwesomeIcon icon={icon} className='fa-2x text-[#FA5000]'/>
+
+      <input 
+        className='font-Poppins text-[#818181] text-[11px] outline-none w-[120px] xsm:w-[100px] text-center'
+        placeholder={isHovered ? placeholder : text}
+        onChange={handleChange}
+        style={{ border: 'none', background: 'none' }}
+      />
       {isHovered && (
-        <div className='bg-[#FA5000] p-4 rounded-[40px] text-white w-[100px] 
-                     flex items-center justify-center hover:cursor-pointer xsm:p-2 xsm:mt-3 font-Poppins'>   
+        <div className='bg-[#FA5000] p-2 rounded-[40px] text-white w-[100px] 
+                     flex items-center justify-center xsm:mt-2 font-Poppins'>
           <Link to={path}>{choice}</Link>
         </div>
       )}
