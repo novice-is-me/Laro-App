@@ -15,8 +15,8 @@ const HeroSection = () => {
 
   return (
     <div className=' bg-bgColor flex gap-8 justify-between py-[3rem] px-[5rem] h-screen 950px:h-fit xl:h-fit'>
-      <div className=' flex flex-col 950px:items-center 950px:text-center '>  
-        <div className='flex flex-col gap-y-8 mb-8'>
+      <div className=' flex flex-col 950px:items-center 950px:text-center gap-8'>  
+        <div className='flex flex-col gap-y-8'>
           <h1 className='uppercase font-Poppins text-[50px] font-bold leading-[60px] xsm:text-[30px] xsm:leading-normal'>
               your partner in sports</h1>
           <p className='font-Poppins text-[#A5A5A5] text-xl xsm:text-sm'>Book, Organize, Manage with Ease</p>
@@ -51,12 +51,12 @@ const HeroSection = () => {
                 </div>
 
 
-<div className='bg-[#FA5000] w-[50%] h-[55px] border-white border-2 rounded-[40px] flex items-center pl-[10px] absolute bottom-[60px] right-[-90px]'  >
-    <div className='w-[40px] h-[40px] bg-[#ffffff] rounded-[50%] flex self-center justify-center items-center'>
-    <LocalActivityRoundedIcon style={{ color: '#fa5000' }} fontSize="medium" />
-    </div>
-      <h1 className='text-[#ffffff] mx-[12px] font-Poppins text-[19px]'>Play</h1>
-</div> 
+                <div className='bg-[#FA5000] w-[50%] h-[55px] border-white border-2 rounded-[40px] flex items-center pl-[10px] absolute bottom-[60px] right-[-90px]'  >
+                    <div className='w-[40px] h-[40px] bg-[#ffffff] rounded-[50%] flex self-center justify-center items-center'>
+                    <LocalActivityRoundedIcon style={{ color: '#fa5000' }} fontSize="medium" />
+                    </div>
+                      <h1 className='text-[#ffffff] mx-[12px] font-Poppins text-[19px]'>Play</h1>
+                </div> 
 
                  
               </div>
