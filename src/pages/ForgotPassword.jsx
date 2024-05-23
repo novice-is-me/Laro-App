@@ -63,23 +63,25 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="bg-[#FFF6F2] flex w-full overflow-x-hidden box-border px-20 lg:px-14 sm:p-0">
-      <div className="box-border mx-auto relative flex flex-col justify-center items-start gap-3 w-[50%] sm:w-[100%] pl-24 lg:pl-0 sm:items-center sm:scale-[0.9] sm:text-center">
-        <h2 className="mt-[20px] text-[40px] font-Poppins font-black">
-          Forgot Password
-        </h2>
-        <p className="font-Poppins text-sm text-[#A5A5A5] max-w-[400px]">
-          Enter the PIN you received from your Email Inbox to reset your
-          password.
-        </p>
-        <form className="sm:text-center" onSubmit={handleSubmit}>
+    <div className="bg-[#FFF6F2] flex justify-center w-full h-[85vh] font-Poppins">
+      <div className="flex flex-col items-start gap-3 sm:w-full sm:p-10 sm:gap-5 sm:h-auto">
+        <div className="flex flex-col gap-3 sm:w-full">
+          <h1 className="text-[40px] font-black sm:text-4xl sm:text-center">
+            Forgot Password
+          </h1>
+          <p className="text-lg sm:text-sm sm:text-center text-[#A5A5A5] w-[500px] sm:w-full">
+            Enter the PIN you received from your Email Inbox to reset your
+            password.
+          </p>
+        </div>
+        <form className="flex flex-col gap-5 sm:text-center sm:w-full" onSubmit={handleSubmit}>
           <input
             type="text"
             placeholder="PIN"
             value={pin}
             onChange={(e) => setPin(e.target.value)}
             required
-            className="bg-[#FFEEE6] w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins mb-4"
+            className="bg-[#FFEEE6] w-[298px] p-5 rounded-xl border-none sm:w-full"
           />
           <div className="relative input-group">
             <input
@@ -88,7 +90,7 @@ const ForgotPassword = () => {
               value={newPassword}
               onChange={(e) => setNewPassword(e.target.value)}
               required
-              className="bg-[#FFEEE6] w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins mb-4"
+              className="bg-[#FFEEE6] w-[298px] p-5 rounded-xl border-none sm:w-full"
             />
             <span
               onClick={() => setShowNewPassword(!showNewPassword)}
@@ -104,7 +106,7 @@ const ForgotPassword = () => {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
-              className="bg-[#FFEEE6] w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins mb-4"
+              className="bg-[#FFEEE6] w-[298px] p-5 rounded-xl border-none sm:w-full"
             />
             <span
               onClick={() => setShowConfirmPassword(!showConfirmPassword)}
@@ -114,14 +116,14 @@ const ForgotPassword = () => {
             </span>
           </div>
           {error && (
-            <p className="text-red-600 mt-2 font-Poppins text-[12px]">
+            <p className="text-red-600 mt-2 font-Poppins">
               {error}
             </p>
           )}
           <button
             type="submit"
-            className={`h-[45px] outline-none bg-orange px-10 py-4 rounded-[7px] text-white font-Poppins text-[13px] w-fit
-    ${loading ? "cursor-not-allowed opacity-50" : ""}`}
+            className={`outline-none bg-orange px-10 py-4 rounded-xl text-white font-Poppins w-fit sm:w-full
+            ${loading ? "cursor-not-allowed opacity-50" : ""}`}
             disabled={loading}
           >
             {loading ? "Resetting..." : "Reset Password"}

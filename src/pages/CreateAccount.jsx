@@ -198,86 +198,42 @@ const CreateAccount = () => {
   };
 
   return (
-    <div className="bg-[#FFF6F2] flex w-full overflow-x-hidden box-border px-20 lg:px-14 sm:p-0">
-      <div className="box-border mx-auto relative flex flex-col justify-center items-start gap-3 w-[50%] sm:w-[100%] pl-24 lg:pl-0 sm:items-center sm:scale-[0.9] sm:text-center">
-        <h1 className="mt-[20px] text-[40px] font-Poppins font-black">
-          SET-UP ACCOUNT
-        </h1>
-        <p className="font-Poppins text-sm text-[#A5A5A5] max-w-[400px]">
-          You can now create your own account, just make sure that the
-          information you provide is accurate.
-        </p>
-        <form className="sm:text-center" onSubmit={handelSubmit}>
-          <ol className="m-0 p-0 list-none  relative mx-auto">
-            <li className="mb-5">
-              <input
-                type="text"
-                placeholder="First Name"
-                required
-                onChange={(e) => setFirstName(e.target.value)}
-                className={`bg-[#FFEEE6] w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins
-              ${
-                firstName && validFirstName
-                  ? "outline-green-600"
-                  : "outline-none"
-              }
-              ${
-                firstName && !validFirstName
-                  ? "outline-red-600"
-                  : "outline-none"
-              }`}
-              />
-              {/* Error message for first name validation */}
-            </li>
-            <li className="mb-5">
-              <input
-                type="text"
-                placeholder="Middle Name"
-                onChange={(e) => setMiddleName(e.target.value)}
-                className="bg-[#FFEEE6] w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins"
-              />
-            </li>
-            <li className="mb-5">
-              <input
-                type="text"
-                placeholder="Last Name"
-                required
-                onChange={(e) => setLastName(e.target.value)}
-                className={`bg-[#FFEEE6] w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins
-              ${
-                lastName && validLastName ? "outline-green-600" : "outline-none"
-              }
-              ${
-                lastName && !validLastName ? "outline-red-600" : "outline-none"
-              }`}
-              />
-              {/* Error message for last name validation */}
-            </li>
-            <li className="mb-5">
-              <input
-                type="text"
-                placeholder="Address"
-                required
-                onChange={(e) => setAddress(e.target.value)}
-                className={`bg-[#FFEEE6] w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins
-              ${address ? "outline-green-600" : "outline-none"}`}
-              />
-              {/* Error message for address validation */}
-            </li>
+    <div className="flex justify-between items-center h-[85vh] font-Poppins bg-[#fff6f2]">
+      <div className="flex flex-col justify-center items-center gap-10 pl-[5rem] w-full h-full 1110:pl-0 950px:w-full sm:justify-start sm:py-5 sm:gap-0">
+        {/* Heading Setup Account - Ok */}
+        <div className="flex flex-col w-full px-[5rem] 1110:items-center 1110:px-[2rem] 1110:gap-5 950px:gap-2 sm:gap-0">
+          <p className="text-[40px] font-bold 1110:text-3xl 950px:text-3xl 950px:text-center xsm:text-3xl 450:text-xl">SET-UP ACCOUNT</p>
+          <p className="text-xl text-[#8E8D8D] 1110:text-base 950px:text-[12px] 1110:text-center xsm:text-base">
+            You can now create your own account, just make sure that the
+            information you provide is accurate.
+          </p>
+        </div>
 
-            <li className="mb-5 ">
+        <div className="hidden sm:flex sm:justify-center sm:h-[30vh] sm:relative sm:z-10 sm:w-full">
+          <PictureComponent img={hero3} value={"create"} />
+
+        </div>
+        
+
+        <form className="flex flex-col gap-5 w-full px-[5rem] 1110:px-[1rem] 950px:items-center" onSubmit={handelSubmit}>
+          <div className="flex gap-5 w-auto py-3 rounded-xl">
+            <button className="text-base font-medium py-2 px-5 rounded-xl text-white bg-orange">User</button>
+            <button className="text-base font-medium py-2 px-5 rounded-xl hover:bg-gray">Organizer</button>
+          </div>
+          <ol className="flex flex-col sm:items-center sm:w-full  gap-6 list-none relative">
+            <li className="w-full">
               <input
                 ref={userRef}
                 type="text"
                 placeholder="Email Address"
                 required
                 onChange={(e) => setEmail(e.target.value)}
-                className={`bg-[#FFEEE6] outline-none w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins
-                                          ${
-                                            emailFocus && validEmail
-                                              ? "outline-green-600"
-                                              : "outline-none"
-                                          } ${
+                className={`bg-[#FFEEE6] outline-none w-[298px] 1110:w-full h-[50px] rounded-[7px] p-5 text-base font-Poppins sm:w-full
+                    ${
+                      emailFocus && validEmail
+                        ? "outline-green-600"
+                        : "outline-none"
+                    } ${
                   email && !validEmail ? "outline-red-600" : "outline-none"
                 } `}
                 onFocus={() => setEmailFocus(true)}
@@ -286,19 +242,19 @@ const CreateAccount = () => {
               <p
                 className={`${
                   emailFocus && email && !validEmail ? "block" : "hidden"
-                } mt-2 text-red-600 font-Poppins text-[12px] w-[298px]`}
+                } mt-2 text-red-600 font-Poppins text-base w-[298px] 1110:w-full`}
               >
                 <InfoRounded style={{ fontSize: "20px" }} />
                 Input valid Email or Contact number <br />
               </p>
             </li>
 
-            <li className="mb-5">
+            <li className="w-full">
               <input
                 type="text"
                 placeholder="Username"
                 required
-                className={`bg-[#FFEEE6] w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins
+                className={`bg-[#FFEEE6] w-[298px] 1110:w-full h-[50px] rounded-[7px] border-none p-5 text-base font-Poppins sm:w-full
                                 ${
                                   userFocus && validName
                                     ? "outline-green-600"
@@ -314,7 +270,7 @@ const CreateAccount = () => {
               <p
                 className={`${
                   userFocus && user && !validName ? "block" : "hidden"
-                } mt-2 text-red-600 font-Poppins text-[12px] w-[298px]`}
+                } mt-2 text-red-600 font-Poppins text-base w-[298px] 1110:w-full`}
               >
                 <InfoRounded style={{ fontSize: "20px" }} /> 4 to 24 characters.{" "}
                 <br />
@@ -322,40 +278,27 @@ const CreateAccount = () => {
                 Letters, numbers, underscores, hypens allowed.
               </p>
             </li>
-            <li className="mb-5 relative">
+            <li className="w-full">
               <input
-                type={showPassword ? "text" : "password"}
+                type="password"
                 placeholder="Password"
                 required
                 onChange={(e) => setPass(e.target.value)}
-                className={`bg-[#FFEEE6] w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins
-                                ${
-                                  passFocus && validPass
-                                    ? "outline-green-600"
-                                    : "outline-none"
-                                } ${
+                className={`bg-[#FFEEE6] w-[298px] 1110:w-full h-[50px] rounded-[7px] border-none p-5 text-base font-Poppins sm:w-full
+                  ${
+                    passFocus && validPass
+                      ? "outline-green-600"
+                      : "outline-none"
+                  } ${
                   pass && !validPass ? "outline-red-600" : "outline-none"
                 }`}
                 onFocus={() => setPassFocus(true)}
                 onBlur={() => setPassFocus(false)}
               />
-              {showPassword ? (
-                <Visibility
-                  className="absolute right-3 top-4"
-                  style={{ fontSize: "15px", color: "gray" }}
-                  onClick={() => setShowPassword(!showPassword)}
-                />
-              ) : (
-                <VisibilityOff
-                  className="absolute right-3 top-4"
-                  style={{ fontSize: "15px", color: "gray" }}
-                  onClick={() => setShowPassword(!showPassword)}
-                />
-              )}
               <p
                 className={`${
                   passFocus && pass && !validPass ? "block" : "hidden"
-                } mt-2 text-red-600 font-Poppins text-[12px] w-[298px]`}
+                } mt-2 text-red-600 font-Poppins text-base w-[298px] 1110:w-full`}
               >
                 <InfoRounded style={{ fontSize: "20px" }} /> 8 to 24 characters.{" "}
                 <br />
@@ -364,13 +307,13 @@ const CreateAccount = () => {
                 Allowed special characters: ! @ # $ %
               </p>
             </li>
-            <li className="mb-5 relative">
+            <li className="w-full">
               <input
-                type={showMatchPassword ? "text" : "password"}
+                type="password"
                 placeholder="Confirm Password"
                 required
                 onChange={(e) => setMatchPass(e.target.value)}
-                className={`bg-[#FFEEE6] w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins
+                className={`bg-[#FFEEE6] w-[298px] 1110:w-full h-[50px] rounded-[7px] border-none p-5 text-base font-Poppins sm:w-full
                                 ${
                                   matchFocus && matchPass && validMatch
                                     ? "outline-green-600"
@@ -381,36 +324,23 @@ const CreateAccount = () => {
                 onFocus={() => setMatchFocus(true)}
                 onBlur={() => setMatchFocus(false)}
               />
-              {showMatchPassword ? (
-                <Visibility
-                  className="absolute right-3 top-4"
-                  style={{ fontSize: "15px", color: "gray" }}
-                  onClick={() => setShowMatchPassword(!showMatchPassword)}
-                />
-              ) : (
-                <VisibilityOff
-                  className="absolute right-3 top-4"
-                  style={{ fontSize: "15px", color: "gray" }}
-                  onClick={() => setShowMatchPassword(!showMatchPassword)}
-                />
-              )}
               <p
                 className={`${
                   matchFocus && matchPass && !validMatch ? "block" : "hidden"
-                } mt-2 text-red-600 font-Poppins text-[12px] w-[298px]`}
+                } mt-2 text-red-600 font-Poppins text-base w-[298px] 1110:w-full`}
               >
                 <InfoRounded style={{ fontSize: "20px" }} />
                 Password not match
                 <br />
               </p>
             </li>
-            <li className="mb-5">
+            <li className="w-full">
               <input
                 type="tel"
                 required
                 placeholder="Contact Number"
                 onChange={(e) => setContactNum(e.target.value)}
-                className={`bg-[#FFEEE6] outline-none w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins
+                className={`bg-[#FFEEE6] outline-none w-[298px] 1110:w-full h-[50px] rounded-[7px] border-none p-5 text-base font-Poppins sm:w-full
                                             ${
                                               contactFocus && validContact
                                                 ? "outline-green-600"
@@ -428,7 +358,7 @@ const CreateAccount = () => {
                   contactFocus && contactNum && !validContact
                     ? "block"
                     : "hidden"
-                } mt-2 text-red-600 font-Poppins text-[12px] w-[298px]`}
+                } mt-2 text-red-600 font-Poppins text-base w-[298px] 1110:w-full`}
               >
                 <InfoRounded style={{ fontSize: "20px" }} />
                 Please enter a valid phone number.
@@ -436,8 +366,8 @@ const CreateAccount = () => {
               </p>
             </li>
 
-            <li className="mb-5">
-              <div className="flex items-center justify-end w-[298px]">
+            <li className="w-full">
+              <div className="flex items-center justify-between w-[298px] 1110:w-full">
                 {profilePic ? (
                   <div className="w-16 h-16 rounded-full overflow-hidden bg-white">
                     <img
@@ -453,7 +383,7 @@ const CreateAccount = () => {
                 )}
                 <label
                   htmlFor="file-upload"
-                  className="bg-[#FFEEE6] outline-none w-[160px] h-[45px] rounded-[7px] border-none flex justify-center items-center font-Poppins text-[#A5A5A5] ml-4 text-[12px]"
+                  className="bg-[#FFEEE6] outline-none w-[160px] h-[50px] rounded-xl p-3 border-none flex justify-center item sm:w-fulls-center font-Poppins text-[#A5A5A5] ml-4 text-base"
                 >
                   Upload Image
                 </label>
@@ -470,7 +400,7 @@ const CreateAccount = () => {
 
           <button
             type="submit"
-            className={`mb-5 h-[45px] outline-none bg-orange px-10 py-4 rounded-[7px] text-white font-Poppins text-[13px] w-fit sm:self-center
+            className={`px-10 py-4 mt-5 outline-none bg-orange rounded-xl text-white font-Poppins text-sm w-fit sm:self-center
     ${
       !validEmail ||
       !validName ||
@@ -512,8 +442,9 @@ const CreateAccount = () => {
         </div>
       )}
 
-      <div className=" w-[50%] flex items-center justify-center sm:hidden 832px:scale-[0.8] 770px:scale-[0.7]">
-        <PictureComponent img={hero3} value={"create"} />
+      {/* Right Side - Image */}
+      <div className="flex items-center w-full h-full pl-20 sm:hidden 950px:pl-0 950px:pr-5">
+        <PictureComponent img={hero3} value={"create"}  />
       </div>
     </div>
   );

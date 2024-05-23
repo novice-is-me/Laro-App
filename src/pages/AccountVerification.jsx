@@ -87,39 +87,41 @@ const AccountVerification = () => {
   };
 
   return (
-    <div className="bg-[#FFF6F2] flex w-full overflow-x-hidden box-border px-20 lg:px-14 sm:p-0">
-      <div className="box-border mx-auto relative flex flex-col justify-center items-start gap-3 w-[50%] sm:w-[100%] pl-24 lg:pl-0 sm:items-center sm:scale-[0.9] sm:text-center">
-        <h1 className="mt-[20px] text-[40px] font-Poppins font-black">
-          ACCOUNT VERIFICATION
-        </h1>
-        <p className="font-Poppins text-sm text-[#A5A5A5] max-w-[400px]">
-          Enter the PIN you received from your SMS Inbox to verify your account.
-        </p>
-        <form className="sm:text-center" onSubmit={handleSubmit}>
+    <div className="bg-[#FFF6F2] flex justify-center w-full h-[85vh] overflow-x-hidden font-Poppins">
+      <div className="flex flex-col sm:items-center gap-5 py-5 sm:px-10">
+        <div className="flex flex-col sm:items-center sm:gap-3">
+          <h1 className="text-[40px] font-black sm:text-4xl sm:text-center">
+            ACCOUNT VERIFICATION
+          </h1>
+          <p className="text-lg sm:text-sm sm:text-center text-[#A5A5A5] w-auto">
+            Enter the PIN you received from your SMS Inbox to verify your account.
+          </p>
+        </div>
+        <form className="flex justify-between gap-5 sm:text-center sm:w-full" onSubmit={handleSubmit}>
           <input
             type="text"
             placeholder="Enter PIN"
             value={pin}
             onChange={(e) => setPin(e.target.value)}
-            className="bg-[#FFEEE6] w-[298px] h-[45px] rounded-[7px] border-none pl-[20px] pr-[35px] text-[12px] font-Poppins"
+            className="bg-[#FFEEE6] w-full rounded-[7px] border-none p-5"
           />
           <button
             type="submit"
-            className={`h-[45px] outline-none bg-orange px-10 py-4 rounded-[7px] text-white font-Poppins text-[13px] w-fit
+            className={`outline-none bg-orange px-10 py-3 rounded-xl text-white w-fit
             ${loading ? "cursor-not-allowed opacity-50" : ""}`}
             disabled={loading}
           >
             {loading ? "Verifying..." : "Verify"}
           </button>
           {errMsg && (
-            <p className="text-red-600 mt-2 font-Poppins text-[12px]">
+            <p className="text-red-600 mt-2 text-[12px]">
               {errMsg}
             </p>
           )}
         </form>
         <button
           onClick={handleResendOTP}
-          className="mt-2 outline-none bg-orange px-10 py-4 rounded-[7px] text-white font-Poppins text-[13px] w-fit"
+          className="mt-2 outline-none bg-orange px-10 py-4 rounded-xl text-white w-fit sm:w-full"
         >
           Resend OTP
         </button>

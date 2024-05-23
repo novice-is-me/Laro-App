@@ -9,8 +9,6 @@ const LoginForm = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [showSuccessModal, setShowSuccessModal] = useState(false); // State for success modal
-
-  const [showPass, setShowPass] = useState(false);
   const userRef = useRef();
 
   const navigate = useNavigate();
@@ -84,46 +82,31 @@ const LoginForm = () => {
         value={user}
         required
         placeholder="Email Address"
-        className="font-poppins p-4 bg-[#FFEEE6]"
+        className="font-poppins p-5 bg-[#FFEEE6] w-[410px] 1110:w-full"
         onChange={(e) => setUser(e.target.value)}
       />
 
       <div className="w-full flex relative">
         <input
-          type={showPass ? "text" : "password"}
+          type="password"
           required
           value={pwd}
           placeholder="Password"
-          className="font-poppins p-4 bg-[#FFEEE6] relative w-full"
+          className="font-poppins p-5 bg-[#FFEEE6] relative w-[410px] 1110:w-full"
           onChange={(e) => setPwd(e.target.value)}
         />
-        <span>
-          {showPass ? (
-            <Visibility
-              className="absolute right-4 top-5"
-              style={{ fontSize: "15px", color: "gray" }}
-              onClick={() => setShowPass(!showPass)}
-            />
-          ) : (
-            <VisibilityOff
-              className="absolute right-4 top-5"
-              style={{ fontSize: "15px", color: "gray" }}
-              onClick={() => setShowPass(!showPass)}
-            />
-          )}
-        </span>
       </div>
       {error && <p className="text-red-500">{error}</p>}
-      <div className="flex mt-8 sm:justify-center justify-start">
+      <div className="flex sm:justify-center justify-start 1110:flex-col 1110:gap-2">
         <button
-          className="bg-orange px-10 py-4 rounded-[7px] text-white"
+          className="bg-orange px-14 py-4 rounded-[7px] text-white 1110:w-full"
           disabled={loading}
         >
           {loading ? "Logging in..." : "Login"}
         </button>
         <button
           type="button"
-          className="ml-4 bg-gray-200 px-6 py-4 rounded-[7px] text-gray-700 underline"
+          className=" bg-gray-200 px-6 py-4 rounded-[7px] text-gray-700 underline"
           onClick={handleForgotPassword}
         >
           Forgot Password
