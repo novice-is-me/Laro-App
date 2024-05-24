@@ -20,17 +20,14 @@ const OrganizerDashContent = ({ activeTab }) => {
 
 
   return (
-    <div className="content">
+    <div className="content ">
+      {/* content */}
       {activeTab === "Overview" && (
-        <div
-          className="flex flex-col px-4 py-2 w-full lg:w-[1000px] "
-          style={{ height: "100vh" }}
-        >
-          {" "}
+        <div className="flex flex-col px-4 py-2 w-full h-full lg:w-full border xsm:gap-4 lg:px-0 ">
           {/* Upper Boxes */}
-          <div className="flex justify-center items-end gap-5 w-full h-fit px-10 py-2.5">
+          <div className="flex justify-center items-end gap-5 w-full h-fit  px-10 py-2.5 xsm:flex xsm:flex-col xsm:px-0 xsm:py-0 lg:px-2 border">
             {/* First Box */}
-            <div className="flex flex-col justify-between px-10 py-5 w-1/2 h-[200px] rounded-[10px] text-white font-Inter bg-black">
+            <div className="flex flex-col justify-between px-10 py-5 w-1/2 h-[200px] xl:h-[300px] lg:h-[300px] rounded-[10px] text-white font-Inter bg-black xsm:w-full xsm:h-fit">
               <div className="flex flex-col w-full h-full">
                 <p className="text-[30px] font-semibold">Credits</p>
                 <p className="text-gray">PHP</p>
@@ -46,7 +43,7 @@ const OrganizerDashContent = ({ activeTab }) => {
             </div>
 
             {/* Second Box */}
-            <div className="flex flex-col justify-between px-10 py-5 w-1/2 h-[200px] rounded-[10px] text-white font-Inter bg-orange">
+            <div className="flex flex-col justify-between px-10 py-5 w-1/2 h-[200px] xl:h-[300px] lg:h-[300px] rounded-[10px] text-white font-Inter bg-orange xsm:w-full xsm:h-fit">
               <div className="flex flex-col w-full h-1/3 ">
                 <p className="text-[30px] font-semibold">Earnings History</p>
               </div>
@@ -55,12 +52,13 @@ const OrganizerDashContent = ({ activeTab }) => {
               </div>
             </div>
           </div>
+
           {/* Lower Boxes */}
-          <div className="flex justify-center items-center gap-5 w-full h-fit px-10 py-2.5">
+          <div className="flex justify-center items-start gap-5 w-full  px-10 py-2.5 xsm:flex xsm:flex-col xsm:px-0 xsm:py-0 lg:px-2 border">
             {/* Third Box */}
-            <div className="flex flex-col justify-between px-10 w-1/2 h-[537px] rounded-[10px] gap-5 text-white font-Inter bg-orange">
+            <div className="flex flex-col justify-between px-10 py-5 w-1/2 h-[200px] 2xl:h-[500px] xl:h-[500px] lg:px-0 lg:h-[500px] rounded-[10px] text-white font-Inter bg-orange xsm:w-full xsm:h-fit">
               <div className=" flex justify-between flex-col">
-              <div className="flex justify-between items-center w-full h-fit  ">
+              <div className="flex justify-between items-center w-full h-fit xsm:px-10 lg:px-10">
                 <p className="text-[30px] font-semibold">Calendar</p>
                 <div
                   className="px-3 text-[40px] font-bold cursor-pointer"
@@ -70,7 +68,7 @@ const OrganizerDashContent = ({ activeTab }) => {
                   </div>
               </div>
 
-              <div className="flex justify-center text-black w-full h-full">
+              <div className="flex justify-center text-black w-full h-full xsm:p-2 lg:p-2">
                 <Calendar
                   className="w-full h-fit font-Poppins"
                   formatShortWeekday={(locale, date) => weeks[date.getDay()]}
@@ -80,7 +78,7 @@ const OrganizerDashContent = ({ activeTab }) => {
             </div>
 
                         {/* Fourth Box */}
-                        <div className='flex flex-col justify-between px-10 py-2 w-1/2 h-[537px] rounded-[10px] text-white font-Inter bg-black'>
+                        <div className='flex flex-col justify-between px-10 py-2 w-1/2 h-[450px] 2xl:h-[500px] xl:h-[500px] lg:h-[500px] rounded-[10px] text-white font-Inter bg-black xsm:w-full xsm:h-fit'>
                             <div className='flex flex-col w-full h-full '>
                                 <p className='text-[30px] font-semibold'>Match History</p>
                             </div>

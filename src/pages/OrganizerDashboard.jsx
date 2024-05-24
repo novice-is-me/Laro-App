@@ -9,7 +9,7 @@ import { Logo } from "../assets";
 const OrganizerDashboard = () => {
   const [activeTab, setActiveTab] = useState("Overview");
   const [userInfo, setUserInfo] = useState(null); // State to store user information
-  const [showModal, setShowModal] = useState(false); // State to manage modal visibility
+  const [showModal, setShowModal] = useState(true); // State to manage modal visibility
 
   useEffect(() => {
     const userInfo = JSON.parse(localStorage.getItem("userInfo"));
@@ -38,20 +38,23 @@ const OrganizerDashboard = () => {
       />
 
       {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center z-50">
-          <div className="bg-white w-full h-full rounded-lg shadow-lg  ">
-            <div className="flex justify-center items-center p-8 bg-[#FA5000]">
-              <p className=" font-Poppins font-bold text-white text-[40px]"> Organizing Community Name</p>
+        <div className="fixed inset-0 flex   ">
+          <div className="bg-white w-full h-full flex flex-col justify-between">
+            <div className="flex justify-center items-center p-8 bg-[#FA5000] ">
+              {/* header */}
+              <div className="border xsm:w-full xsm:text-center">
+              <p className=" font-Poppins font-bold text-white text-[40px] xsm:text-[30px]"> Organizing Community Name</p>
+              </div>
               </div>
 
-        <div className=" flex justify-center items-center pt-40">
-            <div className=" flex  flex-col p-6 w-[75%] flex justify-center items-center">
+        <div className=" flex justify-center items-center pt-20 border xsm:pt-10">
+            <div className=" flex  flex-col p-6 w-[75%] flex justify-center items-center border">
               <div className="">
-                <p className="text-center font-Poppins mb-4 text-[40px]">
+                <p className="text-center font-Poppins mb-4 text-[30px] xsm:text-[18px]">
                 Thank You for your registration. Our team will review your registration and get back to you as soon as possible.
                 </p>
                 </div>
-                <div className="pt-2">
+                <div className="pt-2 ">
                 <button
                     className="justify-start items-start  bg-orange text-white py-2 px-4 rounded-md hover:bg-orange-dark"
                     onClick={handleModalClose}
@@ -62,16 +65,17 @@ const OrganizerDashboard = () => {
             </div>
         </div>
 
-        <div className="fixed bottom-0 left-0 m-4">
-            <div className="font-light">
+<div className="flex flex-row justify-between items-center border">
+        <div className="  m-4 pl-4    ">
+            <div className="font-light text-[16px]">
                 <p>Follow Our Social Media Page</p>
             </div>
-            <div className="flex space-x-4 mt-2">
-                <FacebookIcon style={{ color: '#F24E1E', fontSize: '48px' }} />
-                <LinkedInIcon style={{ color: '#F24E1E', fontSize: '48px' }} />
-                <InstagramIcon style={{ color: '#F24E1E', fontSize: '48px' }} />
+            <div className="flex space-x-4 mt-2 border text-[#F24E1E] ">
+                <FacebookIcon style={{ fontSize: '33px' }} />
+                <LinkedInIcon  style={{ fontSize: '33px' }}/>
+                <InstagramIcon  style={{ fontSize: '33px' }} />
             </div>
-            <div className="font-light">
+            <div className="font-light xsm:hidden lg:hidden xl:hidden 2xl:hidden">
                 <p>
                     FB: 
                     <a 
@@ -97,15 +101,16 @@ const OrganizerDashboard = () => {
             </div>
         </div>
 
-        <div className="fixed bottom-0 right-0 m-4">
-                <img src={Logo} alt="Logo" className="w-40 h-20" />
+        <div className="  m-4 mb-10 mr-10 border w-fit flex items-end justify-end">
+                <img src={Logo} alt="Logo" className="w-[100px] h-[50px] " />
             </div>
 
+          </div>
           </div>
         </div>
       )}
 
-      <OrganizerDashContent />
+      <OrganizerDashContent/>
     </div>
   );
 };

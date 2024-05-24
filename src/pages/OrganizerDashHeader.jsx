@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import OrganizerDashContent from "./OrganizerDashContent"; // Import OrganizerDashContent component
 import { useNavigate } from "react-router";
-import { ownerImg1 } from "../assets";
+import { ownerImg1, Logo } from "../assets";
 import OrganizerDashboardModal from '../components/OrganizerDashboardModal';
+import { Link } from "react-router-dom";
 
 const OrganizerDashHeader = ({ activeTab, onTabChange }) => {
   const navigate = useNavigate();
@@ -45,12 +46,19 @@ const OrganizerDashHeader = ({ activeTab, onTabChange }) => {
 
 
     return (
-      <div className="container flex flex-row gap-4 h-full border" style={{ height: '100vh' }}>
-          {/* Left Side of the Organizer Dashboard */}
-          <div className="flex flex-col items-center w-1/4 font-Poppins border border-orange ">
-              {/* Back Button and Org Profile */}
-              <div className='flex p-5 gap-5 w-full'>
-                  <div className=''>
+      <div className="container flex flex-col gap-4 h-full border xsm:flex xsm:flex-col">
+        {/*contents and logout button*/}
+        <div className=" flex flex-row xsm:flex xsm:flex-col lg:flex lg:flex-col">
+          {/* Left Side of the Organizer header*/}
+          <div className="flex flex-col items-center w-1/4 font-Poppins  xsm:w-full lg:w-full  ">
+            {/* Back Button & org profile & share profile*/}
+              <div className='flex p-5 gap-5 w-full xsm:flex xsm:flex-col flex-col  '>
+                {/* Back Button and Org Profile */}
+                <div className=" flex flex-row  gap-5 xs:flex xsm:flex-col lg:flex lg:flex-col">
+                  {/* Back Button and logo*/}
+                  <div className=' xsm:flex xsm:flex-row xsm:justify-between  '>
+                    {/* Back Button */}
+                    <div className="xsm:flex xsm:items-center ">
                       <svg 
                           width="22" 
                           height="35" 
@@ -59,15 +67,31 @@ const OrganizerDashHeader = ({ activeTab, onTabChange }) => {
                           xmlns="http://www.w3.org/2000/svg">
                           <path fillRule="evenodd" clipRule="evenodd" d="M1.85827 20.0176C1.19113 19.3497 0.816406 18.4442 0.816406 17.5001C0.816406 16.5561 1.19113 15.6506 1.85827 14.9826L15.2913 1.54488C15.9596 0.876882 16.8659 0.501731 17.8108 0.501953C18.2787 0.502063 18.7419 0.594327 19.1742 0.773476C19.6064 0.952626 19.9991 1.21515 20.3298 1.54607C20.6606 1.87698 20.9229 2.2698 21.1019 2.70211C21.2808 3.13441 21.3729 3.59772 21.3728 4.06559C21.3727 4.53347 21.2804 4.99674 21.1012 5.42896C20.9221 5.86117 20.6596 6.25387 20.3286 6.58463L9.41552 17.5001L20.331 28.4156C20.6714 28.7441 20.943 29.1371 21.1299 29.5716C21.3168 30.0062 21.4153 30.4736 21.4197 30.9466C21.424 31.4196 21.3341 31.8888 21.1551 32.3267C20.9762 32.7646 20.7119 33.1625 20.3776 33.4971C20.0432 33.8318 19.6456 34.0965 19.2079 34.2758C18.7701 34.4552 18.3011 34.5455 17.828 34.5416C17.355 34.5377 16.8875 34.4397 16.4528 34.2532C16.018 34.0667 15.6248 33.7955 15.296 33.4554L1.85352 20.0176H1.85827Z" fill="#545454"/>
                       </svg>
+                      </div>
+                      
+                      <div className="hidden">
+                      <Link to="/">
+            <div className="c ">
+              <img src={Logo} alt="Logo" className="w-[100px]" />
+            </div>
+          </Link>
+                      </div>
                   </div>
-                  <div className='w-full  rounded-[20px]  '>
-                      <img src={ownerImg1} alt="" className='rounded-[20px] h-[240px] w-[250px] object-cover border ' />
+                  {/*Org Profile & share */}
+                  <div className="xsm:flex xsm:flex-row xsm:items-center lg:flex lg:flex-row lg:gap-5 lg:justify-start">
+                  {/*Org Profile */}
+                  <div className="flex flex-row items-center justify-center font-Poppins  xsm:w-full xsm:p-2  ">
+                    
+                  <div className='w-full  rounded-[20px] flex xsm: '>
+                      <img src={ownerImg1} alt="" className='rounded-[20px] h-[240px] w-[250px] object-cover border xsm:w-[150px] xsm:h-[140px] lg:w-[210] lg:h-[200px]' />
                   </div>
               </div>
 
-          <div className=" w-[250px] pl-6 pt-4 p-2 ">
+              {/*Org Details */}
+              <div className=" w-fit  pt-4  ">
+                
             
-            <div className="w-full  ">
+            <div className="w-full ">
               <div className="flex items-center justify-between">
                 <p className="font-poppins text-[20px] font-semibold">
                   {/* {userFullName.full_name} */}
@@ -89,7 +113,8 @@ const OrganizerDashHeader = ({ activeTab, onTabChange }) => {
               </p>
             </div>
 
-<div className="">
+{/*share details */}
+<div className=" ">
             <p className="font-poppins text-sm font-semibold">Share</p>
             {/* Icons SVG omitted for brevity */}
             <div className="flex gap-2">
@@ -141,9 +166,15 @@ const OrganizerDashHeader = ({ activeTab, onTabChange }) => {
               </div>
             </div>
           </div>
-          <div className="border-0 mt-4 flex justify-between w-[100%] h-[100%]">
-            <div className="flex flex-col gap-10 justify-between pt-4 w-[100%]  ">
-              <div className="flex flex-col border-0">
+        </div>
+
+              </div>
+
+          </div>
+            {/*overview activities button */}
+          <div className="   mt-4 flex justify-between w-[100%] h-[100%]  lg:flex lg:justify-start px-[1rem] lg:mt-0 ">
+            <div className="flex flex-col gap-10 justify-between  w-[100%] lg:flex lg:items-between xsm:w-full lg:w-[40%] border">
+              <div className="flex flex-col">
                 <button
                   onClick={() => onTabChange("Overview")}
                   className={`flex items-center justify-between ${
@@ -211,10 +242,25 @@ const OrganizerDashHeader = ({ activeTab, onTabChange }) => {
                 </button>
               </div>
 
-              <div className="flex flex-col border-0">
+            </div>
+          </div>
+        </div>
+        {/*content*/}
+        <div className="flex flex-col  w-3/4 xsm:w-full xsm:mt-10 lg:w-full">
+        <div className=" w-[100%] ">
+          <OrganizerDashContent activeTab={activeTab} />{" "}
+          {/* Render OrganizerDashContent */}
+        </div>
+
+        </div>
+        </div>
+        {/*logout and with create button*/}
+        <div className=" flex flex-row items-center xsm:flex xsm:flex-col-reverse lg:flex lg:flex-col-reverse">
+          {/*logout button*/}
+        <div className="flex flex-col  w-1/4 border xsm:w-full lg:w-full ">
                 <button
                   onClick={handleLogout}
-                  className={`flex items-center justify-between hover:cursor-pointer mt-auto ${
+                  className={`flex items-center justify-between xsm:flex xsm:justify-start lg:justify-start hover:cursor-pointer mt-auto ${
                     activeTab === "Logout" ? "active" : ""
                   }`}
                 >
@@ -250,17 +296,9 @@ const OrganizerDashHeader = ({ activeTab, onTabChange }) => {
                   </svg>
                 </button>
               </div>
-            </div>
-          </div>
-        </div>
-        {/*with create*/}
-        <div className="flex flex-col border w-3/4">
-        <div className="border-0 w-[100%] ">
-          <OrganizerDashContent activeTab={activeTab} />{" "}
-          {/* Render OrganizerDashContent */}
-        </div>
-                    {/* Create Event Button */}
-                    <div className='flex justify-center items-center w-full h-fit font-Inter p-5'>
+
+                                  {/* Create Event Button */}
+                                  <div className='flex justify-center items-center w-full h-fit font-Inter p-5'>
                         <div onClick={() => isOpen()} className='flex justify-evenly items-center w-[295px] h-[70px] text-white text-[20px] font-semibold bg-orange rounded-[50px] cursor-pointer'>
                             <p className='flex items-center h-full text-[40px]'>+</p>
                             <p className='flex items-center h-full'>Create New Event</p>
@@ -274,7 +312,7 @@ const OrganizerDashHeader = ({ activeTab, onTabChange }) => {
         onClose={CloseModal}
     />
 }
-        </div>
+</div>
         
       </div>  
     );
