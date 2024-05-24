@@ -58,6 +58,7 @@ import Org3 from "./image/Org3.png";
 import partner1 from "./image/partner1.png";
 import partner2 from "./image/partner2.png";
 import about from "./image/about.png";
+import event1 from "./image/event1.png";
 
 export {
   LogoHeader,
@@ -120,4 +121,5 @@ export {
   partner1,
   partner2,
   about,
+  event1,
 };

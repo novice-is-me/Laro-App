@@ -1,6 +1,6 @@
 import React from 'react';
 
-const StarRating = ({ rating, size }) => {
+const StarRating = ({ rating, className }) => {
   // Total number of stars
   const totalStars = 5;
 
@@ -10,8 +10,7 @@ const StarRating = ({ rating, size }) => {
     stars.push(
       <span
         key={i}
-        className={i < rating ? `text-yellow-500 text-${size} rounded-full inline-block` : 'text-gray-300'}
-        style={{ fontSize: size }} // Set font size dynamically
+        className={`${i < rating ? 'text-yellow-500' : 'text-gray-300'} ${className}`}
       >
         ★
       </span>

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 
-import { girlsBasket, Logo } from "../assets";
+import { girlsBasket, Logo, event1 } from "../assets";
 import { Link } from "react-router-dom";
 
 const EventSuccess = () => {
@@ -15,18 +15,19 @@ const EventSuccess = () => {
   });
 
   return (
-    <div className="bg-black min-h-screen flex flex-row lg:flex-col justify-center items-center p-20 gap-4">
+    <div className="bg-black min-h-screen flex flex-row lg:flex-col justify-center items-center p-20 gap-4 lg:gap-0 lg:p-0 lg:m-0 lg:flex lg:flex-col-reverse xl:flex xl:flex-col-reverse xl:gap-0 xl:p-0 xl:m-0">
       {/* First screen */}
-      <div className="bg-white rounded-[30px] p-12 relative w-full h-[780px] lg:h-auto lg:mr-2 mb-10 lg:mb-0 lg:p-2">
+      <div className="bg-white rounded-[30px] pl-8 pr-8 relative w-full h-[780px] lg:h-auto lg:mr-2 mb-10 lg:mb-0 lg:p-2
+      lg:flex lg:flex-col lg:rounded-[0px] xl:rounded-[0px] xl:mb-0 xl:h-fit xl:pb-12 ">
         <div className="flex justify-between items-center p-4 mb-4 pt-8 pb-4">
           <Link to="/">
-            <div className="cursor-pointer h-auto lg:w-[70%]">
-              <img src={Logo} alt="Logo" />
+            <div className="cursor-pointer h-auto lg:w-[70%] ">
+              <img src={Logo} alt="Logo" className="w-[100px]" />
             </div>
           </Link>
         </div>
 
-        <div className="flex flex-col h-[90%]  w-full justify-end items-end">
+        <div className="flex flex-col h-[90%]  w-full justify-start items-end lg:flex lg:items-center lg:justify-center">
           <div className="text-[20px] font-Poppins mb-4 lg:pb-4 pb-20 lg:w-full flex flex-col   mx-auto">
             {/*shield*/}
             <div className="flex justify-center items-center mx-auto ">
@@ -53,13 +54,13 @@ const EventSuccess = () => {
             <div className="font-Poppins text-[#FA5000] text-[36px] font-semibold mt-4 mb-2 flex justify-center items-center">
               <p>SUCCESS!!</p>
             </div>
-            <div className="lg:p-2">
-              <p>Your game has been successfully scheduled.</p>
-              <p>For more information, check your Activities.</p>
+            <div className="lg:p-2 border text-center w-[450px] lg:w-fit">
+              <p>Your game has been successfully scheduled. For more information, check your Activities.</p>
+
             </div>
           </div>
 
-          <div className="lg:flex lg:flex-col flex gap-4 mb-4 mr-4 w-1/2">
+          <div className="lg:flex lg:flex-row ml-4 lg:p-2 lg:w-full border flex gap-4 mb-4 mr-4 w-1/2">
             <Link
               to="/"
               className="border border-[#FA5000] border-2 flex justify-center items-center text-[15px] bg-[#FA5000] font-Poppins text-white p-4 rounded-[10px] w-1/2 lg:w-full"
@@ -77,22 +78,13 @@ const EventSuccess = () => {
       </div>
 
       {/* Second screen */}
-      <div className="relative w-full h-[780px] lg:mr-2 mb-10 lg:mb-0 ">
+      <div className="relative w-full h-[780px] lg:mr-2 mb-10  xl:mb-0 lg:h-[450px] xl:h-[450px] xsm:h-[450px]">
         <img
-          src={girlsBasket}
-          alt="girls"
-          className="w-full h-full object-cover rounded-[30px]"
+          src={event1}
+          alt="event"
+          className="w-full h-full object-cover rounded-[30px] lg:rounded-[0px] xl:rounded-[0px]"
         />
-        <div className="absolute bottom-0 left-0 text-white bg-orange-500 rounded p-2 lg:p-4 m-6 flex flex-col gap-4">
-          <p className="  text-white font-Poppins font-semibold text-[16px] ">
-            Be part of our organizer <br /> team and earn money.
-          </p>
-          <div className="">
-            <button className="bg-orange p-4 w-full text-white font-Poppins rounded-[10px]">
-              Apply Now
-            </button>
-          </div>
-        </div>
+
       </div>
     </div>
   );

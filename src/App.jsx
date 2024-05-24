@@ -51,7 +51,7 @@ function App() {
     "/organizerDashboard",
     "/organizerDashContent",
     "/organizerCalendar",
-    "/organizerMatches",
+    "/OrganizerMatches",
   ];
 
   const shouldShowHeader = !hideHeaderRoutes.includes(location.pathname);
