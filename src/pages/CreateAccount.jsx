@@ -3,6 +3,7 @@ import PictureComponent from "../components/PictureComponent";
 import hero3 from "../assets/image/hero3.png";
 import { InfoRounded, Visibility, VisibilityOff } from "@mui/icons-material";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -199,7 +200,7 @@ const CreateAccount = () => {
 
   return (
     <div className="flex justify-between items-center h-[85vh] font-Poppins bg-[#fff6f2]">
-      <div className="flex flex-col justify-center items-center gap-10 pl-[5rem] w-full h-full 1110:pl-0 950px:w-full sm:justify-start sm:py-5 sm:gap-0">
+      <div className="flex flex-col justify-center items-center gap-10 pl-[5rem] w-full h-full 1110:pl-0 950px:w-full sm:justify-start sm:py-5 sm:gap-5">
         {/* Heading Setup Account - Ok */}
         <div className="flex flex-col w-full px-[5rem] 1110:items-center 1110:px-[2rem] 1110:gap-5 950px:gap-2 sm:gap-0">
           <p className="text-[40px] font-bold 1110:text-3xl 950px:text-3xl 950px:text-center xsm:text-3xl 450:text-xl">SET-UP ACCOUNT</p>
@@ -209,17 +210,12 @@ const CreateAccount = () => {
           </p>
         </div>
 
-        <div className="hidden sm:flex sm:justify-center sm:h-[30vh] sm:relative sm:z-10 sm:w-full">
+        <div className="hidden sm:flex sm:justify-center sm:h-[40vh] sm:relative sm:z-10 sm:w-full">
           <PictureComponent img={hero3} value={"create"} />
-
         </div>
         
 
         <form className="flex flex-col gap-5 w-full px-[5rem] 1110:px-[1rem] 950px:items-center" onSubmit={handelSubmit}>
-          <div className="flex gap-5 w-auto py-3 rounded-xl">
-            <button className="text-base font-medium py-2 px-5 rounded-xl text-white bg-orange">User</button>
-            <button className="text-base font-medium py-2 px-5 rounded-xl hover:bg-gray">Organizer</button>
-          </div>
           <ol className="flex flex-col sm:items-center sm:w-full  gap-6 list-none relative">
             <li className="w-full">
               <input
@@ -377,7 +373,7 @@ const CreateAccount = () => {
                     />
                   </div>
                 ) : (
-                  <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center">
+                  <div className="w-16 h-16 bg-gray-300 text-center rounded-full flex items-center justify-center">
                     <span className="text-gray-600 text-sm">No Image</span>
                   </div>
                 )}
@@ -397,10 +393,9 @@ const CreateAccount = () => {
               </div>
             </li>
           </ol>
-
           <button
             type="submit"
-            className={`px-10 py-4 mt-5 outline-none bg-orange rounded-xl text-white font-Poppins text-sm w-fit sm:self-center
+            className={`px-10 py-4 outline-none bg-orange rounded-xl text-white font-Poppins text-sm w-fit sm:self-center sm:w-full
     ${
       !validEmail ||
       !validName ||
@@ -422,7 +417,11 @@ const CreateAccount = () => {
           >
             {loading ? "Loading..." : "Create Account"}
           </button>
+        
         </form>
+        <div className="w-full pl-[5rem] 1110:pl-0 950px:w-auto sm:text-center sm:w-full sm:pb-5">
+          <p className="sm:text-[12px]">Already have an account? <Link className="underline cursor-pointer" to="/login">Login Here</Link></p>
+        </div>
       </div>
 
       {showNotification && (

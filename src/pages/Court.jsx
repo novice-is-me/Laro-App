@@ -46,13 +46,9 @@ const Court = () => {
 
   return (
     <div className='bg-[#fff6f2] w-full px-9 py-7 xsm:px-3'>
-
-      {/* {main === 'default' &&
+      {main === 'default' &&
         <div className='bg-black p-[20px] rounded-[14px] px-20'>
           <div className='mt-10'>
-
-
-            
             <div className='flex justify-between border  sm:flex-col sm:items-center'>
               <h1 className='font-Poppins font-bold text-3xl uppercase mb-4 text-[#ffffff]'>Basketball Nearby</h1>
               <div className='relative'>
@@ -73,167 +69,23 @@ const Court = () => {
 
           </div>
 
-          <div className='flex gap-2 flex-wrap scale-[1] mt-5 justify-center'>
+          <div className='flex gap-5 flex-wrap justify-center'>
             {filteredData.map(card => (
               <CourtsCard key={card.id} card={card} setMain={setMain} setClickedCard={setClickedCard} />
             ))}
           </div>
-        </div>
-      } */}
+        </div>}
 
-      {main === 'default' &&
-        <div className='bg-black p-[20px] rounded-[14px] px-20 xsm:px-0 '>
-          <div className=' mt-10 flex 950px:flex-col-reverse 950px:justify-center 950px:items-center '>
-            <div className='flex-1 justify-between flex-col sm:flex-col xsm:text-center'>
-              {findCourt &&
-                <div>
-                  <p className='text font-Poppins mb-2 text-[#ffffff] 950px:text-center'>Result</p>
-                  <h1 className='text-3xl font-bold font-Poppins uppercase mb-3 950px:text-center text-[#ffffff]'>{findCourt}</h1>
-                  <p className='text-[#ffffff] font-Poppins mb-3 950px:text-center'>Suggested Most Search</p>
-                  <div className='mb-10 flex items-center flex-wrap md:gap-2 md:text-center'>
-
-                  
-                    {CardData.map((card) => (
-                      <button 
-                        key={card.id} 
-                        card={card}
-                        className='w-fit bg-[#D1CECE] rounded-full py-3 font-Poppins text-[12px] text-[#666666] ml-2 px-7'
-                      >
-                        {card.location}
-                      </button>
-
-                    ))} 
-
-                    <FontAwesomeIcon 
-                      icon={faSliders} 
-                      className='ml-5 text-[#ffffff] cursor-pointer'
-                      onClick={() => setSliders(!sliders)}
-                      
-                    />
-                    <RestartAlt className='ml-5 text-[#ffffff]'/>
-                  </div>
-
-                  {/* WALA PA SA FIGMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaaa */}
-
-                  {sliders &&
-
-                    <div className=' flex  md:flex md:flex-col '>
-                      <div className=' w-1/2  1110:w-[90%] md:w-full'>
-                        <p className='font-Poppins text-[#ffffff]'>Type of Game</p>
-
-                        <div className='  grid grid-cols-2 justify-center items-center gap-3 mt-3 404px:grid-cols-1'>
-                          {filters.map((category, idx) => (
-                            <button
-                              onClick={() => handleFilterTypeofGame(category)}
-                              key={idx}
-                              className={`w-[150px] bg-none border-orange border rounded-full py-3 font-Poppins text-[12px] text-[#666666] px-7 md:mx-auto `}
-                            
-                            >
-                              {category}
-                            </button>
-                          ))}
-                        </div>
-
-                      </div>
-                      <div className='w-1/2 1139:flex 1139:justify-center 1139:flex-col 1139:items-center md:w-full'>
-                        <p className='font-Poppins text-[#ffffff]'>Mins. and Quarter</p> 
-
-                        <div className=' flex flex-col gap-3 mt-3 '>
-                          {filters2.map((category, idx) => (
-                            <button
-                              onClick={() => handleFilterMinsandQuarter(category)}
-                              key={idx}
-                              className={`w-[150px] bg-none border-orange border rounded-full py-3 font-Poppins text-[12px] text-[#666666] px-7 md:mx-auto `}
-                            
-                            >
-                              {category}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  }
-
-
-
-                </div>
-
-              
-              
-              
-              }
-              
-              <h1 className='font-Poppins font-bold text-3xl uppercase mb-2 mt-4 md:mx-auto text-[#ffffff]'>Nearby basketball courts</h1>
-              <p className='font-Poppins text-sm mb-4 text-[#ffffff] sm:text-center mt-2'>
-                Check Basketball Court Availability, Court Details, and book them right away!
-              </p>
-             
-              
-            </div>
-
-            
-            <div className='relative w-fit 404px:w-[250px]'>
-                <input
-                  type="text"
-                  name=""
-                  id=""
-                  placeholder='Join a game near you?'
-                  className='py-3 text-sm font-Poppins rounded-[30px] pl-5 pr-20 outline-none mb-4 404px:w-full ' 
-                  onChange={handleChange}
-                />
-                <FontAwesomeIcon icon={faMagnifyingGlass} className='absolute right-5 top-3' />
-            </div>
-          </div>
-
-      {/*
-          <div className='flex gap-2 flex-wrap scale-[1] mt-5 justify-center'>
-            {filteredData.map(card => (
-              <CourtsCard key={card.id} card={card} setMain={setMain} setClickedCard={setClickedCard} />
-            ))}
-          </div>
-          */}
-
-<div className="flex flex-col items-center justify-center w-full mt-10 mb-10 ">
-  <div className="bg-white rounded-[20px] flex flex-col items-center relative mix-blend-lighten ">
-    <div
-      style={{ backgroundImage: `url(${soonBg})` }}
-      className="rounded-[20px] mt-8 mb-8 ml-5 mr-5 h-[250px] w-[350px] flex flex-col items-center justify-center lg:w-fit"
-    >
-      
-      <img src={StatsSoon} alt="Stats" className="h-[120px] w-[120px] " />
-      <p className="text-black font-poppins font-bold  uppercase mt-4 text-3xl">Coming Soon!!</p>
-    </div>
-    <p className="text-black font-poppins font-bold  uppercase text-xl mb-4">Pasig City</p>
-  </div>
+  {main === 'bookcourt' &&
+    <BookCourt setMain={setMain}  />
+  }
+  {main === 'success' &&
+    <Sucess setMain={setMain}  clickedCard={clickedCard}  />
+  }
+  {main === 'viewcourt' &&
+    <ViewCourt setMain={setMain} clickedCard={clickedCard}/>
+  }
 </div>
-
-
-        
-        </div>
-      
-      
-      }
-  
-      {main === 'bookcourt' &&
-        <BookCourt setMain={setMain}  />
-
-      }
-
-      {main === 'success' &&
-        <Sucess setMain={setMain}  clickedCard={clickedCard}  />
-      }
-
-      {main === 'viewcourt' &&
-        <ViewCourt setMain={setMain} clickedCard={clickedCard}/>
-        
-      }
-
-
-
-
-
-
-    </div>
   )
 }
 

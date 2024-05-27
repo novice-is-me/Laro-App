@@ -28,7 +28,7 @@ const About = () => {
       </div>
 
 <div className='flex flex-col w-full'>
-      <div className='w-full  flex justify-between flex-col py-[8rem] lg:py-0 lg:flex xl:py-0 xl:px-0 lg:items-center justify-center'>
+      <div className='w-full  flex flex-col py-[8rem] lg:py-0 lg:flex xl:py-0 xl:px-0 lg:items-center justify-center'>
         <div className=''>
             <h1 className='font-poppins uppercase text-[40px] font-bold mb-8 '>
               About Laro</h1></div>

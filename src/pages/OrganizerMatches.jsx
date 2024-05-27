@@ -139,58 +139,54 @@ const OrganizerMatches = () => {
                       {/* for player cards*/}
                       <div className=" flex flex-col gap-1  lg:w-full xsm:w-full xl:w-full xsm:pr-4 ">
                         {/* for 1st row*/}
-                      <div className="flex flex-row gap-10 lg:gap-4 xsm:gap-2">
+                        <div className="flex flex-row gap-10 lg:gap-4 xsm:gap-2">
+                          <div className="border-2 border-[#FA5000] rounded-[10px] h-[auto] w-1/2 lg:w-full xsm:w-full xl:w-full flex justify-start flex-row pl-4 pt-2 lg:pl-1">
+                            <div  className="mr-4 flex justify-center items-center pb-2 xsm:hidden">
+                            <img src={people1} alt="people1" height="40px" width="40px"/>
+                            </div>
+
+                            <div className="flex flex-col ">
+                              <p className="font-Poppins font-semibold text-[14px] m-0 p-0">Juan Dela Cruz</p> 
+                              <p className="font-Poppins text-[#575757] text-[10px] m-0">Veteran</p>
+                              <div className="flex flex-row  items-center  ">
+                                <PaymentsOutlinedIcon style={{ color: '#FA5000', fontSize: '20px' }} />
+                                <p className="font-Poppins text-[#00CE15] text-[8px] justify-center items-center pl-1 pr-6">Paid</p>
+                                <button onClick={() => {
+                                    console.log("Clicked to remove item."); }}
+                                  style={{ display: 'flex', alignItems: 'center', backgroundColor: 'transparent', border: 'none', cursor: 'pointer' }}>
+                                  <DeleteOutlineOutlinedIcon style={{ color: '#FA5000', fontSize: '20px' }} />
+                                  <p className="font-Poppins text-[#FA5000] text-[9px] justify-center items-center pr-4 ">Remove</p>
+                                </button>
+                              </div>
+                            </div>
+                            <div className="flex justify-start items-end pb-1 xsm:hidden">
+                              <NorthEastSharpIcon style={{ color: '#515151', fontSize: '24px', paddingBottom:''}} />
+                            </div>
+                          </div>
+
                         <div className="border-2 border-[#FA5000] rounded-[10px] h-[auto] w-1/2 lg:w-full xsm:w-full xl:w-full flex justify-start flex-row pl-4 pt-2 lg:pl-1">
-                        <div  className="mr-4 flex justify-center items-center pb-2 xsm:hidden">
-                        <img src={people1} alt="people1" height="40px" width="40px"/>
-                        </div>
+                          <div  className="mr-4 flex justify-center items-center pb-2 xsm:hidden">
+                            <img src={people1} alt="people1" height="40px" width="40px"/>
+                          </div>
 
-                        <div className="flex flex-col ">
-                        <p className="font-Poppins font-semibold text-[14px] m-0 p-0">Juan Dela Cruz</p> 
-                        <p className="font-Poppins text-[#575757] text-[10px] m-0">Veteran</p>
-                        <div className="flex flex-row  items-center  ">
-                        <PaymentsOutlinedIcon style={{ color: '#FA5000', fontSize: '20px' }} />
-                        <p className="font-Poppins text-[#00CE15] text-[8px] justify-center items-center pl-1 pr-6">Paid</p>
-                        <button onClick={() => {
-    console.log("Clicked to remove item."); }}
-  style={{ display: 'flex', alignItems: 'center', backgroundColor: 'transparent', border: 'none', cursor: 'pointer' }}>
-  <DeleteOutlineOutlinedIcon style={{ color: '#FA5000', fontSize: '20px' }} />
-  <p className="font-Poppins text-[#FA5000] text-[9px] justify-center items-center pr-4 ">Remove</p>
-</button>
-
-
+                          <div className="flex flex-col ">
+                            <p className="font-Poppins font-semibold text-[14px] ">Juan Dela Cruz</p> 
+                            <p className="font-Poppins text-[#575757] text-[10px]">Veteran</p>
+                            <div className="flex flex-row  items-center ">
+                              <PaymentsOutlinedIcon style={{ color: '#FA5000', fontSize: '20px' }} />
+                              <p className="font-Poppins text-[#00CE15] text-[8px] justify-center items-center pl-1 pr-6">Paid</p>
+                              <button onClick={() => {
+                                console.log("Clicked to remove item."); }}
+                                style={{ display: 'flex', alignItems: 'center', backgroundColor: 'transparent', border: 'none', cursor: 'pointer' }}>
+                                <DeleteOutlineOutlinedIcon style={{ color: '#FA5000', fontSize: '20px' }} />
+                                <p className="font-Poppins text-[#FA5000] text-[9px] justify-center items-center pr-4">Remove</p>
+                              </button>
+                            </div>
+                          </div>
+                          <div className="flex justify-start items-end pb-1 xsm:hidden">
+                            <NorthEastSharpIcon style={{ color: '#515151', fontSize: '24px', paddingBottom:''}} />
+                          </div>
                         </div>
-                        
-                        </div>
-                        <div className="flex justify-start items-end pb-1 xsm:hidden">
-                        <NorthEastSharpIcon style={{ color: '#515151', fontSize: '24px', paddingBottom:''}} />
-                        </div>
-                      </div>
-
-                      <div className="border-2 border-[#FA5000] rounded-[10px] h-[auto] w-1/2 lg:w-full xsm:w-full xl:w-full xsm:w-full xl:w-full flex justify-start flex-row pl-4 pt-2 lg:pl-1">
-                        <div  className="mr-4 flex justify-center items-center pb-2 xsm:hidden">
-                        <img src={people1} alt="people1" height="40px" width="40px"/>
-                        </div>
-
-                        <div className="flex flex-col ">
-                        <p className="font-Poppins font-semibold text-[14px] ">Juan Dela Cruz</p> 
-                        <p className="font-Poppins text-[#575757] text-[10px]">Veteran</p>
-                        <div className="flex flex-row  items-center ">
-                        <PaymentsOutlinedIcon style={{ color: '#FA5000', fontSize: '20px' }} />
-                        <p className="font-Poppins text-[#00CE15] text-[8px] justify-center items-center pl-1 pr-6">Paid</p>
-                        <button onClick={() => {
-    console.log("Clicked to remove item."); }}
-  style={{ display: 'flex', alignItems: 'center', backgroundColor: 'transparent', border: 'none', cursor: 'pointer' }}>
-  <DeleteOutlineOutlinedIcon style={{ color: '#FA5000', fontSize: '20px' }} />
-  <p className="font-Poppins text-[#FA5000] text-[9px] justify-center items-center pr-4">Remove</p>
-</button>
-
-                        </div>
-                        </div>
-                        <div className="flex justify-start items-end pb-1 xsm:hidden">
-                        <NorthEastSharpIcon style={{ color: '#515151', fontSize: '24px', paddingBottom:''}} />
-                        </div>
-                      </div>
                       </div>
 
                       <div className="flex flex-row gap-10 pt-2 lg:gap-4 xsm:gap-2 ">

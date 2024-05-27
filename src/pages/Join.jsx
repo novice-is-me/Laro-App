@@ -17,7 +17,7 @@ const Join = () => {
       <p className='w-[550px] lg:w-fit xl:w-[400px] xsm:w-fit'>Join and earn as Organizer. Manage games and players easier with the opportunity to be sponsored brands.</p>
     </div>
 
-    <div className='flex gap-4 lg:flex md:flex-col  w-[550px] lg:w-full xl:w-fit xsm:w-full lg:items-center lg:justify-center gap-4'>
+    <div className='flex lg:flex md:flex-col  w-[550px] lg:w-full xl:w-fit xsm:w-full lg:items-center lg:justify-center gap-4'>
     
       <Link to='/register' className='bg-orange px-[5rem] py-3 text-white rounded-[27px] text-[18px] font-bold 950px:text-sm 950px:w-[200px]'>
         Register

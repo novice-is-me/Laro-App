@@ -42,9 +42,9 @@ const CourtsCard = ({ card, setMain, setClickedCard }) => {
                 to="/court"
               >
                 <button
-                  disabled={card.isAvailable ? false : true}
+                  
                   className={`w-full h-full ${
-                    card.isAvailable ? "" : "cursor-not-allowed"
+                    card.isAvailable ? "" : "cursor-not-allowe"
                   }`}
                 >
                   Reserve

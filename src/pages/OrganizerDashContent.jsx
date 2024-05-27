@@ -77,14 +77,14 @@ const OrganizerDashContent = ({ activeTab }) => {
               </div>
             </div>
 
-                        {/* Fourth Box */}
-                        <div className='flex flex-col justify-between px-10 py-2 w-1/2 h-[450px] 2xl:h-[500px] xl:h-[500px] lg:h-[500px] rounded-[10px] text-white font-Inter bg-black xsm:w-full xsm:h-fit'>
-                            <div className='flex flex-col w-full h-full '>
-                                <p className='text-[30px] font-semibold'>Match History</p>
-                            </div>
+                    {/* Fourth Box */}
+                    <div className='flex flex-col justify-between px-10 py-2 w-1/2 h-[450px] 2xl:h-[500px] xl:h-[500px] lg:h-[500px] rounded-[10px] text-white font-Inter bg-black xsm:w-full xsm:h-fit'>
+                        <div className='flex flex-col w-full h-full '>
+                            <p className='text-[30px] font-semibold'>Match History</p>
                         </div>
                     </div>
                 </div>
+            </div>
             )}
             {activeTab === 'Activities' && (
                 <div className='flex flex-col items-center w-full h-screen px-5 gap-5'>

@@ -27,7 +27,7 @@ const CourtOwner = () => {
 
     
   return (
-    <div className=' bg-bgColor h-svh'>
+    <div className=' bg-bgColor h-[85vh]'>
         <div className=' flex justify-between 1139:text-center'> 
         {main === 'default' && 
             <div className='mx-auto pl-[5rem] relative flex flex-col justify-center items-start gap-3  

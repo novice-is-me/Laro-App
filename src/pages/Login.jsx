@@ -25,7 +25,7 @@ const Login = () => {
           <p className="text-xl text-[#8E8D8D] 1110:text-base 950px:text-[12px] 1110:text-center xsm:text-base">We’ve forwarded a code to your email. Kindly confirm to continue with the registration process.</p>
         </div>
 
-        <div className="hidden sm:h-[28vh] sm:relative sm:z-10 sm:flex">
+        <div className="hidden sm:h-[40vh] sm:relative sm:z-10 sm:flex">
             <PictureComponent img={hero3} value={"login"}  />
         </div>
 

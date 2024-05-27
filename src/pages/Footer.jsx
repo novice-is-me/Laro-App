@@ -20,14 +20,15 @@ const Footer = () => {
             return <FooterLinks {...links} key={i}/>
           })}
         </div>
-
+        
         {/* Buttons */}
-        <div className=''> 
+        <div className='grid grid-cols-2 gap-3'> 
           {links[4].footerBtn.map((link, i)=>{
           return <FooterBtn {...link} key={i}/>
           })} 
         </div>
       </div>
+
       {/*
       <div className='flex justify-center gap-[5rem] mt-8 xsm:flex-col xsm:gap-4'>
       {links[3].policies.map((policy, i)=>{

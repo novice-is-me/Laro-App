@@ -5,7 +5,7 @@ import EventDetailsForm from "../components/EventDetailsForm";
 
 const EventDetails = () => {
   return (
-    <div className="bg-black min-h-screen flex flex-row lg:flex-col justify-center items-center p-20 gap-4 lg:gap-0 lg:p-0 lg:m-0 lg:flex lg:flex-col-reverse xl:flex xl:flex-col-reverse xl:gap-0 xl:p-0 xl:m-0">
+    <div className="bg-black h-screen flex justify-center items-center p-20 gap-4">
       {/* First screen */}
       <div className="bg-white rounded-[30px] pl-8 pr-8 relative w-full h-[780px] lg:h-auto lg:mr-2 mb-10 lg:mb-0 lg:p-2
       lg:flex lg:flex-col lg:rounded-[0px] xl:rounded-[0px] xl:mb-0 xl:h-fit xl:pb-12">

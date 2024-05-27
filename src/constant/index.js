@@ -67,6 +67,21 @@ export const links = [
     footerBtn: [
       {
         id: 1,
+        name: "Login",
+        path: "/login",
+      },
+      {
+        id: 2,
+        name: "Apply as Organizer",
+        path: "/organizer",
+      },
+      {
+        id: 3,
+        name: "Create Account",
+        path: "/register",
+      },
+      {
+        id: 4,
         name: "Apply as Court Owner",
         path: "/court-owner",
       },

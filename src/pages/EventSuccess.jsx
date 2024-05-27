@@ -15,7 +15,7 @@ const EventSuccess = () => {
   });
 
   return (
-    <div className="bg-black min-h-screen flex flex-row lg:flex-col justify-center items-center p-20 gap-4 lg:gap-0 lg:p-0 lg:m-0 lg:flex lg:flex-col-reverse xl:flex xl:flex-col-reverse xl:gap-0 xl:p-0 xl:m-0">
+    <div className="bg-black h-screen flex justify-center items-center p-20 gap-4">
       {/* First screen */}
       <div className="bg-white rounded-[30px] pl-8 pr-8 relative w-full h-[780px] lg:h-auto lg:mr-2 mb-10 lg:mb-0 lg:p-2
       lg:flex lg:flex-col lg:rounded-[0px] xl:rounded-[0px] xl:mb-0 xl:h-fit xl:pb-12 ">
@@ -54,22 +54,22 @@ const EventSuccess = () => {
             <div className="font-Poppins text-[#FA5000] text-[36px] font-semibold mt-4 mb-2 flex justify-center items-center">
               <p>SUCCESS!!</p>
             </div>
-            <div className="lg:p-2 border text-center w-[450px] lg:w-fit">
+            <div className="lg:p-2 text-center w-[450px] lg:w-fit">
               <p>Your game has been successfully scheduled. For more information, check your Activities.</p>
 
             </div>
           </div>
 
-          <div className="lg:flex lg:flex-row ml-4 lg:p-2 lg:w-full border flex gap-4 mb-4 mr-4 w-1/2">
+          <div className="lg:flex lg:flex-row ml-4 lg:p-2 lg:w-full flex gap-4 mb-4 mr-4 w-1/2">
             <Link
               to="/"
-              className="border border-[#FA5000] border-2 flex justify-center items-center text-[15px] bg-[#FA5000] font-Poppins text-white p-4 rounded-[10px] w-1/2 lg:w-full"
+              className="border-[#FA5000] border-2 flex justify-center items-center text-[15px] bg-[#FA5000] font-Poppins text-white p-4 rounded-[10px] w-1/2 lg:w-full"
             >
               Home
             </Link>
             <Link
               to="/organizer"
-              className="flex justify-center items-center text-[15px] bg-[#FFE4D9] font-Poppins border p-4 border-2 text-[#FA5000] rounded-[10px] w-1/2 lg:w-full"
+              className="flex justify-center items-center text-[15px] bg-[#FFE4D9] font-Poppins p-4 border-2 text-[#FA5000] rounded-[10px] w-1/2 lg:w-full"
             >
               Dashboard
             </Link>

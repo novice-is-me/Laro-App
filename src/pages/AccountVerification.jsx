@@ -133,7 +133,7 @@ const AccountVerification = () => {
             <p className="text-lg font-bold mb-4">{regconfirmationcontent}</p>
             <button
               onClick={() => {
-                setShowNotification(false);
+                setRegConfirmation(false);
                 navigate("/login");
               }}
               className="bg-orange text-white py-2 px-4 rounded-md hover:bg-orange-dark transition duration-300 ease-in-out"
