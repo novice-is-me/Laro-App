@@ -66,13 +66,13 @@ const UserNav = ({ isOpen, setIsOpen, toggleOff }) => {
           <p onClick={toggleOff} classname="text-[32px] text-orange">&#10060;</p>
         </div>
         <div className="w-full 2xl:h-fit flex items-center gap-5 p-5">
-          <svg
+          <a href="/">
+            <svg
               width="22"
               height="35"
               viewBox="0 0 22 35"
               fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+              xmlns="http://www.w3.org/2000/svg">
               <path
                 fill-rule="evenodd"
                 clip-rule="evenodd"
@@ -80,6 +80,7 @@ const UserNav = ({ isOpen, setIsOpen, toggleOff }) => {
                 fill="#545454"
               />
             </svg>
+          </a>
             {/* Profile and Info */}
             <div className="flex gap-2 w-full 2xl:flex-col">
               <div className="h-[128px] w-full rounded-[10px] overflow-hidden">

@@ -86,8 +86,8 @@ const CourtOwnerForm = ({setIsShow}) => {
   // }
   
   return (
-    <div className='w-full flex 1139:justify-center pb-5'>
-      <form className='flex flex-col gap-6 w-[55%]' onSubmit={handleSubmit}>
+    <div className='w-full flex 1110:justify-center pb-5'>
+      <form className='flex flex-col gap-6 w-[55%] 1110:w-full' onSubmit={handleSubmit}>
         <input type="email"
           value={email}
           ref={userRef}
@@ -155,8 +155,8 @@ const CourtOwnerForm = ({setIsShow}) => {
             <InfoRounded style={{fontSize:'20px'}}/> Enter a valid phone number
           </p>
 
-        <div className='flex mt-5 1139:justify-center justify-start'>    
-            <button className='bg-orange px-20 py-4 rounded-[7px] text-white'>Next</button>  
+        <div className='flex mt-5 1110:justify-center justify-start'>    
+            <button className='bg-orange px-20 py-4 rounded-xl text-white 1110:w-full'>Next</button>  
         </div>  
       </form> 
     </div>

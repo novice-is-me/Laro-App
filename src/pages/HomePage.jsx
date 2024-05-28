@@ -15,9 +15,6 @@ import DashboardCourtOwner from './DashboardCourtOwner'
 
 
 const HomePage = () => {
-  
-
-
   return (
     <div>
       <HeroSection/>

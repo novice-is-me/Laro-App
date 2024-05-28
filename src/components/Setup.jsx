@@ -48,44 +48,75 @@ const Setup = ({setMain, setIsShow}) => {
     }
 
   return (
-    <div className='flex gap-8 items-center w-full mr-12 832px:flex-col 832px:mr-0 pb-10'>   
-      <div className='flex mt-5 gap-6  sm:flex-col'>
+    <div className='flex justify-start items-center gap-8 w-full 1110:justify-center '>   
+      <div className='flex gap-10 1110:flex-col 1110:items-center'>
         <div className=''>
-          <Calendar className='font-Poppins xsm:scale-[0.8]' formatShortWeekday={(locale, date) => weeks[date.getDay()]}
+          <Calendar className='font-Poppins sm:scale-100' formatShortWeekday={(locale, date) => weeks[date.getDay()]}
            value={date} onChange={handleDateSelect} />
         </div>
-        <div className=' sm:flex sm:flex-col sm:items-center'>
-          <div className='flex gap-1 mb-2'>
-            <div className='bg-white rounded-md p-3'>Time</div>
-              <div className='bg-white rounded-md p-3 flex w-32'>
-                <TimeField className='flex-1' onChange={(e) => setTime(e.target.value)}/>
-                <div className='border-l-[1px] border-gray px-3 cursor-pointer' 
-                  onClick={changeTime}>{isTime}</div>
+
+        {/*  Details */}
+        <div className='flex flex-col justify-between gap-2 1110:gap-5 1110:pb-5 sm:flex sm:flex-col sm:items-center'>
+          <div className='flex gap-3 1110:justify-center 1110:text-xl'>
+            <div className='bg-white rounded-md p-3'>
+              <p className=''>Time</p>
+            </div>
+            <div className='bg-white rounded-md p-3 flex w-32'>
+              <TimeField className='flex-1' onChange={(e) => setTime(e.target.value)}/>
+              <div className='-l-[1px] -gray px-3 cursor-pointer' 
+                onClick={changeTime}>{isTime}
+              </div>
             </div>
           </div>
-          <div>
-            <h1 className='font-semibold mb-2 sm:text-center'>Court Details</h1>
-              <p className='text-[12px] font-semibold mb-2'>Parking Slot</p>
-              <div className='flex gap-1 mb-2'>
-                <div className='w-[50px] text-[12px] bg-white rounded-md p-1 text-center cursor-pointer'
+
+          {/* Court Details */}
+          <div className='flex flex-col w-full gap-2 1110:gap-5'>
+            <h1 className='font-semibold mb-2 1110:text-2xl sm:text-center'>Court Details</h1>
+            {/* Parking Input */}
+            <div className='items-center gap-10 1110:flex sm:flex-col sm:items-start sm:gap-3 '>
+              <p className='text-[12px] font-semibold mb-3 1110:text-xl 1110:mb-0 1110:w-[150px] sm:text-left sm:text-base'>Parking Slot</p>
+              <div className='flex gap-1 mb-2 items-center'>
+                <div className='p-3 text-[12px] bg-white rounded-xl text-center cursor-pointer'
                   onClick={changePark}>
                   <p>{park}</p>
                 </div>
-              <div className='w-[100px] text-[12px] bg-white rounded-md p-1 text-center'>{`(e.x 20 Slots)`}</div></div>
-              <p className='text-[12px] font-semibold mb-2'>Buzzer and Timer</p>
-              <div className='w-[50px] text-[12px] bg-white rounded-md p-1 text-center mb-2 cursor-pointer'
-                onClick={changeTimer}>
-                <p>{timer}</p>
-              </div>
-              <p className='text-[12px] font-semibold mb-2'>Number of Seats</p>
-              <div className='flex gap-1 mb-3'>
-                <div className='w-[50px] text-[12px] bg-white rounded-md p-1 text-center cursor-pointer'
-                  onClick={changeSeats}>
-                  <p>{seats}</p>
+                <div className='w-full'>
+                  <input 
+                    type="text"
+                    placeholder=' ex. 20 parking'
+                    className='bg-white px-5 py-2 rounded-xl '/>
                 </div>
-              <div className='w-[100px] text-[12px] bg-white rounded-md p-1 text-center'>{`(e.x 20 Slots)`}</div></div>
+              </div>
+            </div>
+            {/* Buzzer and Timer Input */}
+            <div className='items-center gap-10 1110:flex sm:flex-col sm:items-start sm:gap-3'>
+              <p className='text-[12px] font-semibold mb-3 1110:text-xl 1110:mb-0 1110:w-[150px] sm:text-left sm:text-base'>Buzzer and Timer</p>
+              <div className='flex gap-1 mb-2 items-center'>
+                <div className='p-3 text-[12px] bg-white rounded-xl text-center cursor-pointer'
+                  onClick={changeTimer}>
+                  <p>{park}</p>
+                </div>
+              </div>
+            </div>
+            {/* Number of Seats Input */}
+            <div className='items-center gap-10 1110:flex sm:flex-col sm:items-start sm:gap-3  '>
+              <p className='text-[12px] font-semibold mb-3 1110:text-xl 1110:mb-0 1110:w-[150px] sm:text-left sm:text-base'>No. of Seats</p>
+              <div className='flex gap-1 mb-2 items-center'>
+                <div className='p-3 text-[12px] bg-white rounded-xl text-center cursor-pointer'
+                  onClick={changeSeats}>
+                  <p>{park}</p>
+                </div>
+                <div className='w-'>
+                  <input 
+                    type="text"
+                    placeholder=' ex. 20 parking'
+                    className='bg-white px-5 py-2 rounded-xl '/>
+                </div>
+              </div>
+            </div>
           </div>
-          <button className='w-[200px] bg-orange rounded-md text-[11px] p-3 text-[#ffffff] xsm:mt-4'
+
+          <button className='w-[200px] bg-orange rounded-xl text-base p-2 1110:p-5 text-[#ffffff] 1110:w-full'
             onClick={handleSubmit}>Next
           </button>
         </div>

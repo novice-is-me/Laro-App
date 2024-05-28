@@ -15,12 +15,12 @@ const EventSuccess = () => {
   });
 
   return (
-    <div className="bg-black h-screen flex justify-center items-center p-20 gap-4">
+    <div className="bg-black h-screen flex justify-center items-center p-20 gap-4 1110:flex-col-reverse 1110:bg-white 1110:p-0 1110:h-full">
       {/* First screen */}
       <div className="bg-white rounded-[30px] pl-8 pr-8 relative w-full h-[780px] lg:h-auto lg:mr-2 mb-10 lg:mb-0 lg:p-2
       lg:flex lg:flex-col lg:rounded-[0px] xl:rounded-[0px] xl:mb-0 xl:h-fit xl:pb-12 ">
         <div className="flex justify-between items-center p-4 mb-4 pt-8 pb-4">
-          <Link to="/">
+          <Link to="/organizer">
             <div className="cursor-pointer h-auto lg:w-[70%] ">
               <img src={Logo} alt="Logo" className="w-[100px]" />
             </div>
@@ -78,7 +78,7 @@ const EventSuccess = () => {
       </div>
 
       {/* Second screen */}
-      <div className="relative w-full h-[780px] lg:mr-2 mb-10  xl:mb-0 lg:h-[450px] xl:h-[450px] xsm:h-[450px]">
+      <div className="relative w-full h-[780px] 1110:sticky 1110:top-0 1110:h-[300px]">
         <img
           src={event1}
           alt="event"

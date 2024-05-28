@@ -2,8 +2,8 @@ import React from 'react'
 
 const CourtImgComponent = ({img}) => {
   return (
-    <div className='w-[50%] h-full flex items-center justify-center relative pt-[5rem]'>
-        <div className='h-[70%] relative'>
+    <div className='w-[50%] h-full flex items-center justify-center relative pt-[5rem] 1110:pt-0'>
+        <div className='h-[70%] sm:h-full relative'>
             <img src={img} alt=""
              className='h-full' /> 
              

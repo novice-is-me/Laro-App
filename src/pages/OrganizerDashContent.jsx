@@ -23,9 +23,9 @@ const OrganizerDashContent = ({ activeTab }) => {
     <div className="content ">
       {/* content */}
       {activeTab === "Overview" && (
-        <div className="flex flex-col px-4 py-2 w-full h-full lg:w-full border xsm:gap-4 lg:px-0 ">
+        <div className="flex flex-col px-4 py-2 w-full h-full lg:w-full  xsm:gap-4 lg:px-0 ">
           {/* Upper Boxes */}
-          <div className="flex justify-center items-end gap-5 w-full h-fit  px-10 py-2.5 xsm:flex xsm:flex-col xsm:px-0 xsm:py-0 lg:px-2 border">
+          <div className="flex justify-center items-end gap-5 w-full h-fit  px-10 py-2.5 xsm:flex xsm:flex-col xsm:px-0 xsm:py-0 lg:px-2 ">
             {/* First Box */}
             <div className="flex flex-col justify-between px-10 py-5 w-1/2 h-[200px] xl:h-[300px] lg:h-[300px] rounded-[10px] text-white font-Inter bg-black xsm:w-full xsm:h-fit">
               <div className="flex flex-col w-full h-full">
@@ -54,7 +54,7 @@ const OrganizerDashContent = ({ activeTab }) => {
           </div>
 
           {/* Lower Boxes */}
-          <div className="flex justify-center items-start gap-5 w-full  px-10 py-2.5 xsm:flex xsm:flex-col xsm:px-0 xsm:py-0 lg:px-2 border">
+          <div className="flex justify-center items-start gap-5 w-full  px-10 py-2.5 xsm:flex xsm:flex-col xsm:px-0 xsm:py-0 lg:px-2 ">
             {/* Third Box */}
             <div className="flex flex-col justify-between px-10 py-5 w-1/2 h-[200px] 2xl:h-[500px] xl:h-[500px] lg:px-0 lg:h-[500px] rounded-[10px] text-white font-Inter bg-orange xsm:w-full xsm:h-fit">
               <div className=" flex justify-between flex-col">
@@ -87,7 +87,7 @@ const OrganizerDashContent = ({ activeTab }) => {
             </div>
             )}
             {activeTab === 'Activities' && (
-                <div className='flex flex-col items-center w-full h-screen px-5 gap-5'>
+                <div className='flex flex-col items-center w-full h-fit px-5 gap-5'>
                     {/* Header */}
                     <div className='flex justify-between items-center p-5 w-full h-fit font-Inter'>
                         <p className='text-[40px] font-semibold'>My Activity</p>
@@ -107,9 +107,9 @@ const OrganizerDashContent = ({ activeTab }) => {
           </div>
 
           {/* History Cards */}
-          <div className="w-full h-full flex flex-col py-5 gap-5 overflow-y-auto">
+          <div className="w-full h-[550px] border flex flex-col py-5 gap-5 overflow-y-auto">
             {/* Individual Card */}
-            <div className="flex flex-col px-10 py-5 gap-5 w-full h-fit rounded-[20px] font-Inter border border-[#B0B0B0] shadow-lg">
+            <div className="flex flex-col px-10 py-5 gap-5 w-full h-fit rounded-[20px] font-Inter  -[#B0B0B0] shadow-lg">
               <div className="flex justify-between">
                 <p className="text-[30px] text-orange font-semibold">
                   Game Event No. 1
@@ -121,7 +121,7 @@ const OrganizerDashContent = ({ activeTab }) => {
               </p>
             </div>
 
-            <div className="flex flex-col px-10 py-5 gap-5 w-full h-fit rounded-[20px] font-Inter border border-[#B0B0B0] shadow-lg">
+            <div className="flex flex-col px-10 py-5 gap-5 w-full h-fit rounded-[20px] font-Inter  -[#B0B0B0] shadow-lg">
               <div className="flex justify-between">
                 <p className="text-[30px] text-orange font-semibold">
                   Game Event No. 2
@@ -133,7 +133,7 @@ const OrganizerDashContent = ({ activeTab }) => {
               </p>
             </div>
 
-            <div className="flex flex-col px-10 py-5 gap-5 w-full h-fit rounded-[20px] font-Inter border border-[#B0B0B0] shadow-lg">
+            <div className="flex flex-col px-10 py-5 gap-5 w-full h-fit rounded-[20px] font-Inter  -[#B0B0B0] shadow-lg">
               <div className="flex justify-between">
                 <p className="text-[30px] text-orange font-semibold">
                   Game Event No. 3
@@ -145,7 +145,7 @@ const OrganizerDashContent = ({ activeTab }) => {
               </p>
             </div>
 
-            <div className="flex flex-col px-10 py-5 gap-5 w-full h-fit rounded-[20px] font-Inter border border-[#B0B0B0] shadow-lg">
+            <div className="flex flex-col px-10 py-5 gap-5 w-full h-fit rounded-[20px] font-Inter  -[#B0B0B0] shadow-lg">
               <div className="flex justify-between">
                 <p className="text-[30px] text-orange font-semibold">
                   Game Event No. 4
@@ -157,7 +157,7 @@ const OrganizerDashContent = ({ activeTab }) => {
               </p>
             </div>
 
-            <div className="flex flex-col px-10 py-5 gap-5 w-full h-fit rounded-[20px] font-Inter border border-[#B0B0B0] shadow-lg">
+            <div className="flex flex-col px-10 py-5 gap-5 w-full h-fit rounded-[20px] font-Inter  -[#B0B0B0] shadow-lg">
               <div className="flex justify-between">
                 <p className="text-[30px] text-orange font-semibold">
                   Game Event No. 5
@@ -169,7 +169,7 @@ const OrganizerDashContent = ({ activeTab }) => {
               </p>
             </div>
 
-            <div className="flex flex-col px-10 py-5 gap-5 w-full h-fit rounded-[20px] font-Inter border border-[#B0B0B0] shadow-lg">
+            <div className="flex flex-col px-10 py-5 gap-5 w-full h-fit rounded-[20px] font-Inter  -[#B0B0B0] shadow-lg">
               <div className="flex justify-between">
                 <p className="text-[30px] text-orange font-semibold">
                   Game Event No. 6

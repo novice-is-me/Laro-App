@@ -66,9 +66,11 @@ const Header = () => {
     >
       <div className=" w-full justify-between flex gap-[100px] items-center relative lg:flex lg:flex-col lg:gap-0">
       <div>
-        <img src={LogoHeader} alt="logo" />
+        <a href="/">
+          <img src={LogoHeader} alt="logo" />
+        </a>
       </div>
-      <div className="flex gap-20 lg:gap-10 items-center relative items-end justify-end">
+      <div className="flex gap-20 lg:gap-10 items-center relative justify-end">
         <div className="flex gap-20 lg:gap-10     ">
           {links[0].navigationBar.map((link, i) => {
             return <NavLinks text={link.name} path={link.path} key={i} />;

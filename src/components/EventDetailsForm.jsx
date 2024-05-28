@@ -140,7 +140,7 @@ const EventDetailsForm = ({ onFormSubmit }) => {
     value={formData.fee}
     onChange={handleChange}
     placeholder='Fee (min. 200)'
-    className='lg:w-full w-[70%] bg-transparent rounded-md text-black focus:outline-none focus:ring-0'
+    className='lg:w-full w-[70%] p-4 bg-transparent rounded-md text-black focus:outline-none focus:ring-0'
     required
     min={200}
   />

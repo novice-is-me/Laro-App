@@ -31,39 +31,39 @@ const OrganizerDashboard = () => {
   };
 
   return (
-    <div>
+    <div className="h-screen">
       <OrganizerDashHeader
         activeTab={activeTab}
         onTabChange={handleTabChange}
       />
 
       {showModal && (
-        <div className="fixed inset-0 flex   ">
+        <div className="fixed inset-0 flex">
           <div className="bg-white w-full h-full flex flex-col justify-between">
             <div className="flex justify-center items-center p-8 bg-[#FA5000] ">
               {/* header */}
               <div className="xsm:w-full xsm:text-center">
-              <p className=" font-Poppins font-bold text-white text-[40px] xsm:text-[30px]"> Organizing Community Name</p>
+                <p className=" font-Poppins font-bold text-white text-[40px] xsm:text-[30px]"> Organizing Community Name</p>
               </div>
-              </div>
+            </div>
 
-        <div className=" flex justify-center items-center pt-20 xsm:pt-10">
-            <div className=" flex  flex-col p-6 w-[75%] justify-center items-center">
-              <div className="">
-                <p className="text-center font-Poppins mb-4 text-[30px] xsm:text-[18px]">
-                  Thank You for your registration. Our team will review your registration and get back to you as soon as possible.
-                </p>
-                </div>
-                <div className="pt-2 ">
-                <button
-                    className="justify-start items-start  bg-orange text-white py-2 px-4 rounded-md hover:bg-orange-dark"
-                    onClick={handleModalClose}
-                >
-                    Preview Organizer Dashboard
-                </button>
+            <div className=" flex justify-center items-center pt-20 xsm:pt-10">
+                <div className=" flex  flex-col p-6 w-[75%] justify-center items-center">
+                  <div className="">
+                    <p className="text-center font-Poppins mb-4 text-[30px] xsm:text-[18px]">
+                      Thank You for your registration. Our team will review your registration and get back to you as soon as possible.
+                    </p>
+                    </div>
+                    <div className="pt-2 ">
+                    <button
+                        className="justify-start items-start  bg-orange text-white py-2 px-4 rounded-md hover:bg-orange-dark"
+                        onClick={handleModalClose}
+                    >
+                        Preview Organizer Dashboard
+                    </button>
+                    </div>
                 </div>
             </div>
-        </div>
 
             <div className="flex flex-row justify-between items-center p-5">
               <div className="">
@@ -78,7 +78,9 @@ const OrganizerDashboard = () => {
               </div>
 
               <div className="   w-fit flex items-end justify-end">
-                <img src={Logo} alt="Logo" className="w-[100px] h-[50px] " />
+                <a href="">
+                  <img src={Logo} alt="Logo" className="w-[100px] h-[50px] " />
+                </a>
               </div>
             </div>
           </div>

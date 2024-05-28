@@ -167,7 +167,6 @@ const   BookCourt = ({ setMain }) => {
                                     />
                                 </div>
                             </div>
-
                         </div>
                         <button
                             className={`w-[200px] sm:w-[300px] bg-orange rounded-md text-[11px] p-3 text-[#ffffff] ${!selectedDate || !timeSlot? 'cursor-not-allowed' : 'cursor-pointer'}`}

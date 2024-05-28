@@ -5,9 +5,9 @@ import EventDetailsForm from "../components/EventDetailsForm";
 
 const EventDetails = () => {
   return (
-    <div className="bg-black h-screen flex justify-center items-center p-20 gap-4">
+    <div className="bg-black h-screen flex justify-center items-center p-20 gap-4 1110:flex-col-reverse 1110:bg-white 1110:p-0 1110:h-full">
       {/* First screen */}
-      <div className="bg-white rounded-[30px] pl-8 pr-8 relative w-full h-[780px] lg:h-auto lg:mr-2 mb-10 lg:mb-0 lg:p-2
+      <div className="bg-white rounded-[30px] px-8 relative w-full h-[780px] 
       lg:flex lg:flex-col lg:rounded-[0px] xl:rounded-[0px] xl:mb-0 xl:h-fit xl:pb-12">
         <div className="flex justify-between items-center pl-4 pr-4 pt-8 pb-8">
           <Link to="/">
@@ -58,11 +58,11 @@ const EventDetails = () => {
       </div>
 
       {/* Second screen */}
-      <div className="relative w-full h-[780px] lg:mr-2 mb-10 lg:mb-0 lg:sticky xl:sticky xl:top-0 xl:mb-0 lg:top-0 lg:h-[250px] xl:h-[250px] xsm:h-[250px]">
+      <div className="relative w-full h-[780px] 1110:sticky 1110:top-0 1110:h-[300px]">
         <img
           src={event1}
           alt="event"
-          className="w-full h-full object-cover rounded-[30px] lg:rounded-[0px] xl:rounded-[0px]"
+          className="w-full h-full object-cover rounded-[30px] 1110:rounded-none"
         />
       </div>
     </div>

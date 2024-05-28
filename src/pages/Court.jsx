@@ -14,9 +14,6 @@ import { soonBg, StatsSoon } from '../assets'
 const Court = () => {
 
   const {findCourt} = useContext(joinGameContext);
-
-  
-
   const [main, setMain] = useState('default')
   const [filteredData, setFilteredData] = useState(CardData)
   const [clickedCard, setClickedCard] = useState(null)

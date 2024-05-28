@@ -8,19 +8,14 @@ import LocalActivityRoundedIcon from '@mui/icons-material/LocalActivityRounded';
 
 
 const HeroSection = () => {
-
-  
-
-
-
   return (
     <div className='gap-4 lg:flex lg:items-center lg:flex-col lg:justify-center bg-bgColor flex flex-row  justify-between  py-[3rem] px-[5rem] xl:px-[1rem] lg:px-0  950px:h-[fit] xl:h-[fit] xsm:h-fit w-full'>
       <div className='w-1/2 lg:w-full lg:flex lg:justify-center lg:items-center lg:flex-col'>
 
         <div className='mb-10  '>
-      <h1 className='uppercase font-Poppins text-[50px] font-bold leading-[60px] xsm:text-[30px] xsm:leading-normal text-center'>
-              your partner in sports</h1>
-              </div>
+          <h1 className='uppercase font-Poppins text-[50px] font-bold leading-[60px] xsm:text-[30px] xsm:leading-normal text-center'>
+          your partner in sports</h1>
+        </div>
 
               <div className='mb-10 '>
           <p className='font-Poppins text-[#A5A5A5] text-xl xsm:text-sm'>Book, Organize, Manage with Ease</p>
@@ -39,7 +34,7 @@ const HeroSection = () => {
       </div>
 
       <div className='relative   w-1/2 flex justify-center items-center lg:w-full'>
-    <img src={hero4} alt="" className='w-[400px] h-[600px] rounded-[20px] lg:w-[250px] lg:h-[380px]'/>
+        <img src={hero4} alt="" className='w-[400px] h-[600px] rounded-[20px] lg:w-[250px] lg:h-[380px]'/>
     
 
     <div className='absolute top-[60px]  950px:top-[20px] 950px:left-[20px] xsm:top-[20px] xsm:left-[-10px]  left-[-20px] xl:top-[60px] xl:left-[-40px] transform -translate-x-1/4 flex justify-center w-fit'>
@@ -73,9 +68,6 @@ const HeroSection = () => {
     </div>
 
 </div>
-
-
-
     </div>
   )
 }
