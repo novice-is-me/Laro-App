@@ -31,7 +31,7 @@ const OrganizerDashboard = () => {
   };
 
   return (
-    <div className="h-screen">
+    <div className="h-screen ">
       <OrganizerDashHeader
         activeTab={activeTab}
         onTabChange={handleTabChange}

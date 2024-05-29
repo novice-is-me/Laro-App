@@ -217,13 +217,13 @@ const Matches = () => {
               />
             </div>
           </div>
-{/*
+
           <div className="flex gap-2 flex-wrap scale-[1] mt-5 justify-center">
             {filteredData.map((card) => (
               <ActiveMatchesCard key={card.id} card={card} setMain={setMain} />
             ))}
           </div>
-          */}
+         
 <div className="flex justify-center items-center text-center p-2">
 <h1 className="flex justify-center items-center font-Poppins font-bold text-3xl uppercase mb-2 mt-4 md:mx-auto pb-20 ">
                 no games and plays today!

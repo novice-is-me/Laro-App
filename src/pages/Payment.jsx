@@ -20,18 +20,18 @@ const Payment = () => {
   };
 
   return (
-    <div className="bg-black min-h-screen flex flex-row lg:flex-col justify-center items-center p-20 gap-4">
+    <div className="bg-black h-screen flex p-20 gap-5 1110:flex-col-reverse 1110:h-full 1110:p-0 1110:bg-white">
       {/* First screen */}
-      <div className="bg-white rounded-[30px] p-12 relative w-full h-[780px] lg:h-auto lg:mr-2 mb-10 lg:mb-0 lg:p-2 ">
-        <div className="flex justify-between items-center p-4 mb-4 pt-8 pb-4">
+      <div className="flex flex-col gap-3 bg-white rounded-[30px] p-12 relative w-full h-full 1110:rounded-none">
+        <div className="flex justify-between items-center ">
           <Link to="/">
-            <div className="cursor-pointer h-auto lg:w-[70%]">
+            <div className="cursor-pointer h-auto w-1/2 lg:w-[70%]">
               <img src={Logo} alt="Logo" />
             </div>
           </Link>
         </div>
 
-        <div className="pl-6 lg:pl-3 pt-2 pb-4 w-[65%]">
+        <div className="w-full">
           <p className="font-Poppins text-black font-semibold text-2xl text-[40px]">
             Payment
           </p>
@@ -42,10 +42,10 @@ const Payment = () => {
         </div>
 
         {/* Render form fields based on selectedPayment state */}
-        <div className="border-0 w-[100%] h-auto  pl-2 pb-4 ">
+        <div className="w-[100%] h-auto ">
           <PaymentHeader onSelectPayment={handleSelectPayment} />
         </div>
-        <div className=" border-0 w-[70%] pr-4">
+        <div className="w-[70%] h-[50vh] overflow-y-auto sm:w-full">
           <PaymentForm
             paymentMethod={selectedPayment}
             onFormSubmit={handleFormSubmit}
@@ -53,10 +53,10 @@ const Payment = () => {
           {/* Add other components as needed */}
         </div>
 
-        <div className="absolute flex flex-col gap-2 mt-4 bottom-8 right-14 lg:static lg:mt-1 lg:bottom-auto lg:flex-row lg:mb-6 lg:mr-12 lg:gap-4 lg:flex lg:justify-end">
+        <div className="absolute flex flex-col gap-2 mt-4 bottom-12 right-14 lg:static lg:mt-1 lg:bottom-auto lg:flex-row lg:mb-6 lg:gap-4 lg:flex lg:justify-end">
           <Link
             to="/eventSuccess"
-            className="text-[15px] bg-[#FA5000] font-Poppins border-0 text-white py-4 px-10 rounded-[10px] lg:w-auto "
+            className="text-[15px] bg-[#FA5000] font-Poppins text-white py-4 px-10 rounded-[10px] lg:w-auto "
           >
             Pay
           </Link>
@@ -64,11 +64,11 @@ const Payment = () => {
       </div>
 
       {/* Second screen */}
-      <div className="relative w-full h-[780px] lg:mr-2 mb-10 lg:mb-0">
+      <div className="relative w-full h-full 1110:scale-105">
         <img
           src={twoDudes}
           alt="girls"
-          className="w-full h-full object-cover rounded-[30px]"
+          className="w-full h-full object-cover rounded-[30px] 1110:rounded-none 1110:h-[335px]"
         />
         <div className="absolute bottom-0 left-0 text-white bg-orange-500 rounded p-2 lg:p-4 m-6 flex flex-col gap-4">
           <p className="text-white font-Poppins font-semibold text-[16px]">

@@ -33,7 +33,7 @@ const JoinViewActiveMatches = ({ setMain }) => {
   };
 
   return (
-    <div className="font-Poppins">
+    <div className="font-Poppins h-[79vh]">
       <Link
         to="/matches"
         className="font-bold flex px-20"
@@ -209,7 +209,7 @@ const JoinViewActiveMatches = ({ setMain }) => {
               ))}
             </div>
             <div className="w-[33%]  flex justify-between flex-col lg:w-[100%]">
-              <div>
+              <div className="hidden">
                 {RefereesData.map((referee) => (
                   <div className="mb-3">
                     <RefereeCard key={referee.id} referee={referee} />
